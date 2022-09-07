@@ -17,10 +17,12 @@
             android:name=".MainScreen.WalletActivity"
             android:exported="false"
             android:label="@string/title_activity_wallet"
-            android:theme="@style/Theme.Wallet.NoActionBar" />
+            android:theme="@style/Theme.Wallet.NoActionBar"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".LoginScreen.LoginActivity"
-            android:exported="true">
+            android:exported="true"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

@@ -13,13 +13,13 @@
 
     <fragment
         android:id="@+id/nav_gallery"
-        android:name="com.snail.wallet.MainScreen.ui.gallery.GalleryFragment"
+        android:name="com.snail.wallet.MainScreen.ui.revenue.RevenueFragment"
         android:label="@string/menu_gallery"
-        tools:layout="@layout/fragment_gallery" />
+        tools:layout="@layout/fragment_revenue" />
 
     <fragment
         android:id="@+id/nav_slideshow"
-        android:name="com.snail.wallet.MainScreen.ui.slideshow.SlideshowFragment"
+        android:name="com.snail.wallet.MainScreen.ui.expenses.ExpensesFragment"
         android:label="@string/menu_slideshow"
-        tools:layout="@layout/fragment_slideshow" />
+        tools:layout="@layout/fragment_expenses" />
 </navigation>

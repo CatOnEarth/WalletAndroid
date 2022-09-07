@@ -6,14 +6,22 @@ import androidx.lifecycle.ViewModel;
 
 public class HomeViewModel extends ViewModel {
 
-    private final MutableLiveData<String> mText;
+    private final MutableLiveData<String> mTextRevenue;
+    private final MutableLiveData<String> mTextExpenses;
 
     public HomeViewModel() {
-        mText = new MutableLiveData<>();
-        mText.setValue("This is home fragment");
+        mTextRevenue = new MutableLiveData<>();
+        mTextRevenue.setValue("Доходы: ");
+
+        mTextExpenses = new MutableLiveData<>();
+        mTextExpenses.setValue("Расходы: ");
+
     }
 
-    public LiveData<String> getText() {
-        return mText;
+    public LiveData<String> getTextRevenue() {
+        return mTextRevenue;
+    }
+    public LiveData<String> getTextExpenses() {
+        return mTextExpenses;
     }
 }

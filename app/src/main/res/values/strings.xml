@@ -17,4 +17,6 @@
     <string name="menu_home">Главная</string>
     <string name="menu_gallery">Доходы</string>
     <string name="menu_slideshow">Расходы</string>
+    <string name="TextRevenue">Доходы:</string>
+    <string name="TextExpenses">Расходы:</string>
 </resources>

@@ -8,16 +8,30 @@
     tools:context=".MainScreen.ui.home.HomeFragment">
 
     <TextView
-        android:id="@+id/text_home"
-        android:layout_width="match_parent"
+        android:id="@+id/textViewRevenue"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:textAlignment="center"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginStart="176dp"
+        android:layout_marginTop="222dp"
+        android:layout_marginEnd="177dp"
+        android:layout_marginBottom="98dp"
+        android:text="@string/TextRevenue"
+        app:layout_constraintBottom_toTopOf="@+id/textViewExpenses"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textViewExpenses"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="176dp"
+        android:layout_marginTop="98dp"
+        android:layout_marginEnd="177dp"
+        android:layout_marginBottom="373dp"
+        android:text="@string/TextExpenses"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewRevenue" />
 </androidx.constraintlayout.widget.ConstraintLayout>

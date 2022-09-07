@@ -5,10 +5,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#fef1a2"
-    tools:context=".MainScreen.ui.slideshow.SlideshowFragment">
+    tools:context=".MainScreen.ui.revenue.RevenueFragment">
 
     <TextView
-        android:id="@+id/text_slideshow"
+        android:id="@+id/text_gallery"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
