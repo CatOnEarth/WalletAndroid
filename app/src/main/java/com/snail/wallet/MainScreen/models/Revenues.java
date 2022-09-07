@@ -10,19 +10,8 @@ public class Revenues extends Money {
     public String storage_location;
     @ColumnInfo(name = "source")
     public String source;
-    @ColumnInfo(name = "category")
-    public String category;
 
-
-    public Revenues(double value, byte currency, String description) {
-        super(value, currency, description);
-    }
-
-    public Revenues(Money money, String storage_location, String source, String category) {
-        super(money.getValue(), money.getCurrency(), money.getDescription());
-
-        this.storage_location = storage_location;
-        this.source           = source;
-        this.category         = category;
+    public Revenues(int id, double value, int currency, int category, String description) {
+        super(id, value, currency, category, description);
     }
 }

@@ -8,10 +8,8 @@ import androidx.room.Entity;
 public class Expenses extends Money{
     @ColumnInfo(name = "purpose")
     public String purpose;
-    @ColumnInfo(name = "category")
-    public String category;
 
-    public Expenses(double value, byte currency, String description) {
-        super(value, currency, description);
+    public Expenses(int id, double value, int currency, int category, String description) {
+        super(id, value, currency, category, description);
     }
 }

@@ -11,19 +11,18 @@ public class Money {
     @ColumnInfo(name = "value")
     public double value;
     @ColumnInfo(name = "currency")
-    public byte   currency;
+    public int   currency;
+    @ColumnInfo(name = "category")
+    public int   category;
     @ColumnInfo(name = "description")
     public String description;
 
-    public Money(double value, byte currency, String description) {
+    public Money(int id, double value, int currency, int category, String description) {
+        this.id          = id;
         this.value       = value;
         this.currency    = currency;
+        this.category    = category;
         this.description = description;
-    }
-
-    public Money(double value, byte currency) {
-        this.value    = value;
-        this.currency = currency;
     }
 
     /**
@@ -62,7 +61,7 @@ public class Money {
      *
      * @return
      */
-    public byte getCurrency() {
+    public int getCurrency() {
         return currency;
     }
 
@@ -70,8 +69,24 @@ public class Money {
      *
      * @param currency
      */
-    public void setCurrency(byte currency) {
+    public void setCurrency(int currency) {
         this.currency = currency;
+    }
+
+    /**
+     *
+     * @return
+     */
+    public int getCategory() {
+        return category;
+    }
+
+    /**
+     *
+     * @param category
+     */
+    public void setCategory(int category) {
+        this.category = category;
     }
 
     /**
@@ -88,5 +103,18 @@ public class Money {
      */
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public String getCurrencyType() {
+        switch (this.currency) {
+            case 0:
+                return "руб";
+            case 1:
+                return "$";
+            case 2:
+                return "евро";
+        }
+
+        return "валюта";
     }
 }

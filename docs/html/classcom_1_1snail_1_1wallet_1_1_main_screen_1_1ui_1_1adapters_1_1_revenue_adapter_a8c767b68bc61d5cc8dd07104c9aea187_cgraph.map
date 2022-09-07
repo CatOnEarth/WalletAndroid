@@ -1,0 +1,8 @@
+<map id="com.snail.wallet.MainScreen.ui.adapters.RevenueAdapter.onBindViewHolder" name="com.snail.wallet.MainScreen.ui.adapters.RevenueAdapter.onBindViewHolder">
+<area shape="rect" id="node1" title=" " alt="" coords="5,136,265,177"/>
+<area shape="rect" id="node2" href="$classcom_1_1snail_1_1wallet_1_1_main_screen_1_1models_1_1_money.html#ad2a283cd14a3bd15cc235ab57a35b24b" title=" " alt="" coords="324,5,563,47"/>
+<area shape="rect" id="node3" href="$classcom_1_1snail_1_1wallet_1_1_main_screen_1_1models_1_1_money.html#ab95e02f769e053c5509368aa8e1092b3" title=" " alt="" coords="324,71,563,112"/>
+<area shape="rect" id="node4" href="$classcom_1_1snail_1_1wallet_1_1_main_screen_1_1models_1_1_money.html#a494fcb18760df058351a721dc0133593" title=" " alt="" coords="324,136,563,177"/>
+<area shape="rect" id="node5" href="$classcom_1_1snail_1_1wallet_1_1_main_screen_1_1models_1_1_money.html#a472b9e7822ce4dffc3e347a8c34aeeaf" title=" " alt="" coords="324,201,563,243"/>
+<area shape="rect" id="node6" href="$classcom_1_1snail_1_1wallet_1_1_main_screen_1_1ui_1_1adapters_1_1_revenue_adapter.html#a28a19b4e82e64794012a2bc00ffbdb7e" title=" " alt="" coords="313,267,573,308"/>
+</map>

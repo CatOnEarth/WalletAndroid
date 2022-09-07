@@ -1,6 +1,10 @@
 var hierarchy =
 [
+    [ "RecyclerView.Adapter", null, [
+      [ "com.snail.wallet.MainScreen.ui.adapters.RevenueAdapter", "classcom_1_1snail_1_1wallet_1_1_main_screen_1_1ui_1_1adapters_1_1_revenue_adapter.html", null ]
+    ] ],
     [ "com.snail.wallet.BuildConfig", "classcom_1_1snail_1_1wallet_1_1_build_config.html", null ],
+    [ "com.snail.wallet.MainScreen.models.Coin", "classcom_1_1snail_1_1wallet_1_1_main_screen_1_1models_1_1_coin.html", null ],
     [ "com.snail.wallet.ExampleInstrumentedTest", "classcom_1_1snail_1_1wallet_1_1_example_instrumented_test.html", null ],
     [ "com.snail.wallet.ExampleUnitTest", "classcom_1_1snail_1_1wallet_1_1_example_unit_test.html", null ],
     [ "com.snail.wallet.MainScreen.db.ExpensesDAO.ExpensesDAO", "interfacecom_1_1snail_1_1wallet_1_1_main_screen_1_1db_1_1_expenses_d_a_o_1_1_expenses_d_a_o.html", [
@@ -10,13 +14,13 @@ var hierarchy =
       [ "com.snail.wallet.MainScreen.models.Expenses", "classcom_1_1snail_1_1wallet_1_1_main_screen_1_1models_1_1_expenses.html", null ],
       [ "com.snail.wallet.MainScreen.models.Revenues", "classcom_1_1snail_1_1wallet_1_1_main_screen_1_1models_1_1_revenues.html", null ]
     ] ],
-    [ "com.snail.wallet.MainScreen.ui.adapters.RevenueAdapter", "classcom_1_1snail_1_1wallet_1_1_main_screen_1_1ui_1_1adapters_1_1_revenue_adapter.html", null ],
     [ "com.snail.wallet.MainScreen.db.RevenueDAO.RevenueDAO", "interfacecom_1_1snail_1_1wallet_1_1_main_screen_1_1db_1_1_revenue_d_a_o_1_1_revenue_d_a_o.html", [
       [ "com.snail.wallet.MainScreen.db.RevenueDAO.RevenueDAO_Impl", "classcom_1_1snail_1_1wallet_1_1_main_screen_1_1db_1_1_revenue_d_a_o_1_1_revenue_d_a_o___impl.html", null ]
     ] ],
     [ "AppCompatActivity", null, [
       [ "com.snail.wallet.LoginScreen.LoginActivity", "classcom_1_1snail_1_1wallet_1_1_login_screen_1_1_login_activity.html", null ],
-      [ "com.snail.wallet.MainScreen.WalletActivity", "classcom_1_1snail_1_1wallet_1_1_main_screen_1_1_wallet_activity.html", null ]
+      [ "com.snail.wallet.MainScreen.WalletActivity", "classcom_1_1snail_1_1wallet_1_1_main_screen_1_1_wallet_activity.html", null ],
+      [ "com.snail.wallet.MainScreen.activities.RevenueAddActivity", "classcom_1_1snail_1_1wallet_1_1_main_screen_1_1activities_1_1_revenue_add_activity.html", null ]
     ] ],
     [ "Application", null, [
       [ "com.snail.wallet.MainScreen.db.App", "classcom_1_1snail_1_1wallet_1_1_main_screen_1_1db_1_1_app.html", null ]
@@ -36,12 +40,14 @@ var hierarchy =
     ] ],
     [ "ViewBinding", null, [
       [ "com.snail.wallet.databinding.ActivityLoginBinding", "classcom_1_1snail_1_1wallet_1_1databinding_1_1_activity_login_binding.html", null ],
+      [ "com.snail.wallet.databinding.ActivityRevenueAddBinding", "classcom_1_1snail_1_1wallet_1_1databinding_1_1_activity_revenue_add_binding.html", null ],
       [ "com.snail.wallet.databinding.ActivityWalletBinding", "classcom_1_1snail_1_1wallet_1_1databinding_1_1_activity_wallet_binding.html", null ],
       [ "com.snail.wallet.databinding.AppBarWalletBinding", "classcom_1_1snail_1_1wallet_1_1databinding_1_1_app_bar_wallet_binding.html", null ],
       [ "com.snail.wallet.databinding.ContentWalletBinding", "classcom_1_1snail_1_1wallet_1_1databinding_1_1_content_wallet_binding.html", null ],
       [ "com.snail.wallet.databinding.FragmentExpensesBinding", "classcom_1_1snail_1_1wallet_1_1databinding_1_1_fragment_expenses_binding.html", null ],
       [ "com.snail.wallet.databinding.FragmentHomeBinding", "classcom_1_1snail_1_1wallet_1_1databinding_1_1_fragment_home_binding.html", null ],
       [ "com.snail.wallet.databinding.FragmentRevenueBinding", "classcom_1_1snail_1_1wallet_1_1databinding_1_1_fragment_revenue_binding.html", null ],
+      [ "com.snail.wallet.databinding.ItemRecyclerviewBinding", "classcom_1_1snail_1_1wallet_1_1databinding_1_1_item_recyclerview_binding.html", null ],
       [ "com.snail.wallet.databinding.NavHeaderWalletBinding", "classcom_1_1snail_1_1wallet_1_1databinding_1_1_nav_header_wallet_binding.html", null ]
     ] ],
     [ "ViewModel", null, [

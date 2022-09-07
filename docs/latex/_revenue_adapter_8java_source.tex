@@ -4,8 +4,72 @@
 \begin{DoxyCode}{0}
 \DoxyCodeLine{\Hypertarget{_revenue_adapter_8java_source_l00001}\mbox{\hyperlink{namespacecom_1_1snail_1_1wallet_1_1_main_screen_1_1ui_1_1adapters}{00001}} \textcolor{keyword}{package }com.snail.wallet.MainScreen.ui.adapters;}
 \DoxyCodeLine{\Hypertarget{_revenue_adapter_8java_source_l00002}00002 }
-\DoxyCodeLine{\Hypertarget{_revenue_adapter_8java_source_l00003}\mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1ui_1_1adapters_1_1_revenue_adapter}{00003}} \textcolor{keyword}{public} \textcolor{keyword}{class }\mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1ui_1_1adapters_1_1_revenue_adapter}{RevenueAdapter}} \{}
-\DoxyCodeLine{\Hypertarget{_revenue_adapter_8java_source_l00004}00004     }
-\DoxyCodeLine{\Hypertarget{_revenue_adapter_8java_source_l00005}00005 \}}
+\DoxyCodeLine{\Hypertarget{_revenue_adapter_8java_source_l00003}00003 \textcolor{keyword}{import} android.content.Context;}
+\DoxyCodeLine{\Hypertarget{_revenue_adapter_8java_source_l00004}00004 \textcolor{keyword}{import} android.view.LayoutInflater;}
+\DoxyCodeLine{\Hypertarget{_revenue_adapter_8java_source_l00005}00005 \textcolor{keyword}{import} android.view.View;}
+\DoxyCodeLine{\Hypertarget{_revenue_adapter_8java_source_l00006}00006 \textcolor{keyword}{import} android.view.ViewGroup;}
+\DoxyCodeLine{\Hypertarget{_revenue_adapter_8java_source_l00007}00007 \textcolor{keyword}{import} android.widget.TextView;}
+\DoxyCodeLine{\Hypertarget{_revenue_adapter_8java_source_l00008}00008 }
+\DoxyCodeLine{\Hypertarget{_revenue_adapter_8java_source_l00009}00009 \textcolor{keyword}{import} androidx.annotation.NonNull;}
+\DoxyCodeLine{\Hypertarget{_revenue_adapter_8java_source_l00010}00010 \textcolor{keyword}{import} androidx.recyclerview.widget.RecyclerView;}
+\DoxyCodeLine{\Hypertarget{_revenue_adapter_8java_source_l00011}00011 }
+\DoxyCodeLine{\Hypertarget{_revenue_adapter_8java_source_l00012}00012 \textcolor{keyword}{import} com.snail.wallet.MainScreen.models.Revenues;}
+\DoxyCodeLine{\Hypertarget{_revenue_adapter_8java_source_l00013}00013 \textcolor{keyword}{import} com.snail.wallet.R;}
+\DoxyCodeLine{\Hypertarget{_revenue_adapter_8java_source_l00014}00014 }
+\DoxyCodeLine{\Hypertarget{_revenue_adapter_8java_source_l00015}00015 \textcolor{keyword}{import} java.util.ArrayList;}
+\DoxyCodeLine{\Hypertarget{_revenue_adapter_8java_source_l00016}00016 \textcolor{keyword}{import} java.util.List;}
+\DoxyCodeLine{\Hypertarget{_revenue_adapter_8java_source_l00017}00017 }
+\DoxyCodeLine{\Hypertarget{_revenue_adapter_8java_source_l00018}\mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1ui_1_1adapters_1_1_revenue_adapter}{00018}} \textcolor{keyword}{public} \textcolor{keyword}{class }\mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1ui_1_1adapters_1_1_revenue_adapter}{RevenueAdapter}} \textcolor{keyword}{extends} RecyclerView.Adapter<RevenueAdapter.ViewHolder>\{}
+\DoxyCodeLine{\Hypertarget{_revenue_adapter_8java_source_l00020}\mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1ui_1_1adapters_1_1_revenue_adapter_a6c93638f31a5d3a227224184fedc90a4}{00020}}     \textcolor{keyword}{private} \textcolor{keyword}{final} List<Revenues> \mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1ui_1_1adapters_1_1_revenue_adapter_a6c93638f31a5d3a227224184fedc90a4}{localRevenues}};}
+\DoxyCodeLine{\Hypertarget{_revenue_adapter_8java_source_l00022}\mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1ui_1_1adapters_1_1_revenue_adapter_a98569a52b28f1b382426875df34df800}{00022}}     \textcolor{keyword}{private} \textcolor{keyword}{final} Context \mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1ui_1_1adapters_1_1_revenue_adapter_a98569a52b28f1b382426875df34df800}{mContext}};}
+\DoxyCodeLine{\Hypertarget{_revenue_adapter_8java_source_l00023}00023 }
+\DoxyCodeLine{\Hypertarget{_revenue_adapter_8java_source_l00024}00024     \textcolor{keyword}{public} \textcolor{keyword}{static} \textcolor{keyword}{class }ViewHolder \textcolor{keyword}{extends} RecyclerView.ViewHolder \{}
+\DoxyCodeLine{\Hypertarget{_revenue_adapter_8java_source_l00026}00026         \textcolor{keyword}{private} \textcolor{keyword}{final} TextView textViewDescription;}
+\DoxyCodeLine{\Hypertarget{_revenue_adapter_8java_source_l00028}00028         \textcolor{keyword}{private} \textcolor{keyword}{final} TextView textViewCategory;}
+\DoxyCodeLine{\Hypertarget{_revenue_adapter_8java_source_l00030}00030         \textcolor{keyword}{private} \textcolor{keyword}{final} TextView textViewValue;}
+\DoxyCodeLine{\Hypertarget{_revenue_adapter_8java_source_l00031}00031 }
+\DoxyCodeLine{\Hypertarget{_revenue_adapter_8java_source_l00036}00036         \textcolor{keyword}{public} ViewHolder(View view) \{}
+\DoxyCodeLine{\Hypertarget{_revenue_adapter_8java_source_l00037}00037             super(view);}
+\DoxyCodeLine{\Hypertarget{_revenue_adapter_8java_source_l00038}00038             textViewDescription = view.findViewById(R.id.textViewRecyclerViewDescription);}
+\DoxyCodeLine{\Hypertarget{_revenue_adapter_8java_source_l00039}00039             textViewCategory    = view.findViewById(R.id.textViewCategoryRecyclerView);}
+\DoxyCodeLine{\Hypertarget{_revenue_adapter_8java_source_l00040}00040             textViewValue       = view.findViewById(R.id.textViewValueRecyclerView);}
+\DoxyCodeLine{\Hypertarget{_revenue_adapter_8java_source_l00041}00041         \}}
+\DoxyCodeLine{\Hypertarget{_revenue_adapter_8java_source_l00042}00042     \}}
+\DoxyCodeLine{\Hypertarget{_revenue_adapter_8java_source_l00043}00043 }
+\DoxyCodeLine{\Hypertarget{_revenue_adapter_8java_source_l00049}\mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1ui_1_1adapters_1_1_revenue_adapter_afbd4bfa0ac6d9b5a66905882b5a97ee6}{00049}}     \textcolor{keyword}{public} \mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1ui_1_1adapters_1_1_revenue_adapter_afbd4bfa0ac6d9b5a66905882b5a97ee6}{RevenueAdapter}}(List<Revenues> revenues, Context context) \{}
+\DoxyCodeLine{\Hypertarget{_revenue_adapter_8java_source_l00050}00050         \mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1ui_1_1adapters_1_1_revenue_adapter_a6c93638f31a5d3a227224184fedc90a4}{localRevenues}} = revenues;}
+\DoxyCodeLine{\Hypertarget{_revenue_adapter_8java_source_l00051}00051         \mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1ui_1_1adapters_1_1_revenue_adapter_a98569a52b28f1b382426875df34df800}{mContext}}      = context;}
+\DoxyCodeLine{\Hypertarget{_revenue_adapter_8java_source_l00052}00052     \}}
+\DoxyCodeLine{\Hypertarget{_revenue_adapter_8java_source_l00053}00053 }
+\DoxyCodeLine{\Hypertarget{_revenue_adapter_8java_source_l00060}00060     @NonNull}
+\DoxyCodeLine{\Hypertarget{_revenue_adapter_8java_source_l00061}00061     @Override}
+\DoxyCodeLine{\Hypertarget{_revenue_adapter_8java_source_l00062}\mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1ui_1_1adapters_1_1_revenue_adapter_a47557c21a6a033ed834add9670cfd077}{00062}}     \textcolor{keyword}{public} ViewHolder \mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1ui_1_1adapters_1_1_revenue_adapter_a47557c21a6a033ed834add9670cfd077}{onCreateViewHolder}}(ViewGroup viewGroup, \textcolor{keywordtype}{int} viewType) \{}
+\DoxyCodeLine{\Hypertarget{_revenue_adapter_8java_source_l00063}00063         View view = LayoutInflater.from(viewGroup.getContext())}
+\DoxyCodeLine{\Hypertarget{_revenue_adapter_8java_source_l00064}00064                 .inflate(R.layout.item\_recyclerview, viewGroup, \textcolor{keyword}{false});}
+\DoxyCodeLine{\Hypertarget{_revenue_adapter_8java_source_l00065}00065 }
+\DoxyCodeLine{\Hypertarget{_revenue_adapter_8java_source_l00066}00066         \textcolor{keywordflow}{return} \textcolor{keyword}{new} ViewHolder(view);}
+\DoxyCodeLine{\Hypertarget{_revenue_adapter_8java_source_l00067}00067     \}}
+\DoxyCodeLine{\Hypertarget{_revenue_adapter_8java_source_l00068}00068 }
+\DoxyCodeLine{\Hypertarget{_revenue_adapter_8java_source_l00074}00074     @Override}
+\DoxyCodeLine{\Hypertarget{_revenue_adapter_8java_source_l00075}\mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1ui_1_1adapters_1_1_revenue_adapter_a8c767b68bc61d5cc8dd07104c9aea187}{00075}}     \textcolor{keyword}{public} \textcolor{keywordtype}{void} \mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1ui_1_1adapters_1_1_revenue_adapter_a8c767b68bc61d5cc8dd07104c9aea187}{onBindViewHolder}}(ViewHolder viewHolder, \textcolor{keyword}{final} \textcolor{keywordtype}{int} position) \{}
+\DoxyCodeLine{\Hypertarget{_revenue_adapter_8java_source_l00076}00076         \mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1models_1_1_revenues}{Revenues}} revenues = \mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1ui_1_1adapters_1_1_revenue_adapter_a6c93638f31a5d3a227224184fedc90a4}{localRevenues}}.get(position);}
+\DoxyCodeLine{\Hypertarget{_revenue_adapter_8java_source_l00077}00077 }
+\DoxyCodeLine{\Hypertarget{_revenue_adapter_8java_source_l00078}00078         viewHolder.textViewDescription.setText(revenues.\mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1models_1_1_money_a494fcb18760df058351a721dc0133593}{getDescription}}());}
+\DoxyCodeLine{\Hypertarget{_revenue_adapter_8java_source_l00079}00079         viewHolder.textViewCategory.setText(String.valueOf(revenues.\mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1models_1_1_money_ad2a283cd14a3bd15cc235ab57a35b24b}{getCategory}}()));}
+\DoxyCodeLine{\Hypertarget{_revenue_adapter_8java_source_l00080}00080 }
+\DoxyCodeLine{\Hypertarget{_revenue_adapter_8java_source_l00081}00081         String val = String.valueOf(revenues.\mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1models_1_1_money_a472b9e7822ce4dffc3e347a8c34aeeaf}{getValue}}()) + revenues.\mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1models_1_1_money_ab95e02f769e053c5509368aa8e1092b3}{getCurrencyType}}();}
+\DoxyCodeLine{\Hypertarget{_revenue_adapter_8java_source_l00082}00082         viewHolder.textViewValue.setText(val);}
+\DoxyCodeLine{\Hypertarget{_revenue_adapter_8java_source_l00083}00083 }
+\DoxyCodeLine{\Hypertarget{_revenue_adapter_8java_source_l00084}00084         viewHolder.itemView.setOnClickListener(view -\/> \mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1ui_1_1adapters_1_1_revenue_adapter_a28a19b4e82e64794012a2bc00ffbdb7e}{StartInfoActivity}}(position));}
+\DoxyCodeLine{\Hypertarget{_revenue_adapter_8java_source_l00085}00085     \}}
+\DoxyCodeLine{\Hypertarget{_revenue_adapter_8java_source_l00086}00086 }
+\DoxyCodeLine{\Hypertarget{_revenue_adapter_8java_source_l00087}\mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1ui_1_1adapters_1_1_revenue_adapter_a28a19b4e82e64794012a2bc00ffbdb7e}{00087}}     \textcolor{keyword}{public} \textcolor{keywordtype}{void} \mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1ui_1_1adapters_1_1_revenue_adapter_a28a19b4e82e64794012a2bc00ffbdb7e}{StartInfoActivity}}(\textcolor{keywordtype}{int} position) \{}
+\DoxyCodeLine{\Hypertarget{_revenue_adapter_8java_source_l00088}00088     \}}
+\DoxyCodeLine{\Hypertarget{_revenue_adapter_8java_source_l00089}00089 }
+\DoxyCodeLine{\Hypertarget{_revenue_adapter_8java_source_l00094}00094     @Override}
+\DoxyCodeLine{\Hypertarget{_revenue_adapter_8java_source_l00095}\mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1ui_1_1adapters_1_1_revenue_adapter_a75db2733046228b6f6d0c1a5cf416758}{00095}}     \textcolor{keyword}{public} \textcolor{keywordtype}{int} \mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1ui_1_1adapters_1_1_revenue_adapter_a75db2733046228b6f6d0c1a5cf416758}{getItemCount}}() \{}
+\DoxyCodeLine{\Hypertarget{_revenue_adapter_8java_source_l00096}00096         \textcolor{keywordflow}{return} \mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1ui_1_1adapters_1_1_revenue_adapter_a6c93638f31a5d3a227224184fedc90a4}{localRevenues}}.size();}
+\DoxyCodeLine{\Hypertarget{_revenue_adapter_8java_source_l00097}00097     \}}
+\DoxyCodeLine{\Hypertarget{_revenue_adapter_8java_source_l00098}00098 \}}
 
 \end{DoxyCode}

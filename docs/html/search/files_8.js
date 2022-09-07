@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['navheaderwalletbinding_2ejava_0',['NavHeaderWalletBinding.java',['../_nav_header_wallet_binding_8java.html',1,'']]]
+  ['money_2ejava_0',['Money.java',['../_money_8java.html',1,'']]]
 ];

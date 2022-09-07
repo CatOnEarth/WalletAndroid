@@ -10,26 +10,31 @@
 \DoxyCodeLine{\Hypertarget{_revenue_d_a_o_8java_source_l00006}00006 \textcolor{keyword}{import} androidx.room.Query;}
 \DoxyCodeLine{\Hypertarget{_revenue_d_a_o_8java_source_l00007}00007 \textcolor{keyword}{import} androidx.room.Update;}
 \DoxyCodeLine{\Hypertarget{_revenue_d_a_o_8java_source_l00008}00008 }
-\DoxyCodeLine{\Hypertarget{_revenue_d_a_o_8java_source_l00009}00009 \textcolor{keyword}{import} com.snail.wallet.MainScreen.models.Revenues;}
-\DoxyCodeLine{\Hypertarget{_revenue_d_a_o_8java_source_l00010}00010 }
-\DoxyCodeLine{\Hypertarget{_revenue_d_a_o_8java_source_l00011}00011 \textcolor{keyword}{import} java.util.List;}
+\DoxyCodeLine{\Hypertarget{_revenue_d_a_o_8java_source_l00009}00009 \textcolor{keyword}{import} com.snail.wallet.MainScreen.models.Coin;}
+\DoxyCodeLine{\Hypertarget{_revenue_d_a_o_8java_source_l00010}00010 \textcolor{keyword}{import} com.snail.wallet.MainScreen.models.Money;}
+\DoxyCodeLine{\Hypertarget{_revenue_d_a_o_8java_source_l00011}00011 \textcolor{keyword}{import} com.snail.wallet.MainScreen.models.Revenues;}
 \DoxyCodeLine{\Hypertarget{_revenue_d_a_o_8java_source_l00012}00012 }
-\DoxyCodeLine{\Hypertarget{_revenue_d_a_o_8java_source_l00013}00013 @Dao}
-\DoxyCodeLine{\Hypertarget{_revenue_d_a_o_8java_source_l00014}\mbox{\hyperlink{interfacecom_1_1snail_1_1wallet_1_1_main_screen_1_1db_1_1_revenue_d_a_o_1_1_revenue_d_a_o}{00014}} \textcolor{keyword}{public} \textcolor{keyword}{interface }\mbox{\hyperlink{interfacecom_1_1snail_1_1wallet_1_1_main_screen_1_1db_1_1_revenue_d_a_o_1_1_revenue_d_a_o}{RevenueDAO}} \{}
-\DoxyCodeLine{\Hypertarget{_revenue_d_a_o_8java_source_l00015}00015     @Query(\textcolor{stringliteral}{"{}SELECT * FROM revenues"{}})}
-\DoxyCodeLine{\Hypertarget{_revenue_d_a_o_8java_source_l00016}\mbox{\hyperlink{interfacecom_1_1snail_1_1wallet_1_1_main_screen_1_1db_1_1_revenue_d_a_o_1_1_revenue_d_a_o_acea07eeffc10dd8f73445f72ab57861d}{00016}}     List<\mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1models_1_1_revenues}{Revenues}}> \mbox{\hyperlink{interfacecom_1_1snail_1_1wallet_1_1_main_screen_1_1db_1_1_revenue_d_a_o_1_1_revenue_d_a_o_acea07eeffc10dd8f73445f72ab57861d}{getAll}}();}
-\DoxyCodeLine{\Hypertarget{_revenue_d_a_o_8java_source_l00017}00017 }
-\DoxyCodeLine{\Hypertarget{_revenue_d_a_o_8java_source_l00018}00018     @Query("{}SELECT value FROM revenues"{})}
-\DoxyCodeLine{\Hypertarget{_revenue_d_a_o_8java_source_l00019}\mbox{\hyperlink{interfacecom_1_1snail_1_1wallet_1_1_main_screen_1_1db_1_1_revenue_d_a_o_1_1_revenue_d_a_o_a51bcedc9cc842f84500abc99bf0767a4}{00019}}     List<Double> \mbox{\hyperlink{interfacecom_1_1snail_1_1wallet_1_1_main_screen_1_1db_1_1_revenue_d_a_o_1_1_revenue_d_a_o_a51bcedc9cc842f84500abc99bf0767a4}{getValues}}();}
-\DoxyCodeLine{\Hypertarget{_revenue_d_a_o_8java_source_l00020}00020 }
-\DoxyCodeLine{\Hypertarget{_revenue_d_a_o_8java_source_l00021}00021     @Insert}
-\DoxyCodeLine{\Hypertarget{_revenue_d_a_o_8java_source_l00022}\mbox{\hyperlink{interfacecom_1_1snail_1_1wallet_1_1_main_screen_1_1db_1_1_revenue_d_a_o_1_1_revenue_d_a_o_ada03ba9b713b70ce4c07edd02ca6e1a7}{00022}}     \textcolor{keywordtype}{void} \mbox{\hyperlink{interfacecom_1_1snail_1_1wallet_1_1_main_screen_1_1db_1_1_revenue_d_a_o_1_1_revenue_d_a_o_ada03ba9b713b70ce4c07edd02ca6e1a7}{insert}}(\mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1models_1_1_revenues}{Revenues}} revenue);}
-\DoxyCodeLine{\Hypertarget{_revenue_d_a_o_8java_source_l00023}00023 }
-\DoxyCodeLine{\Hypertarget{_revenue_d_a_o_8java_source_l00024}00024     @Update}
-\DoxyCodeLine{\Hypertarget{_revenue_d_a_o_8java_source_l00025}\mbox{\hyperlink{interfacecom_1_1snail_1_1wallet_1_1_main_screen_1_1db_1_1_revenue_d_a_o_1_1_revenue_d_a_o_a93fe702255a7e22b1654aa2f51e30bc7}{00025}}     \textcolor{keywordtype}{void} \mbox{\hyperlink{interfacecom_1_1snail_1_1wallet_1_1_main_screen_1_1db_1_1_revenue_d_a_o_1_1_revenue_d_a_o_a93fe702255a7e22b1654aa2f51e30bc7}{update}}(\mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1models_1_1_revenues}{Revenues}} revenue);}
-\DoxyCodeLine{\Hypertarget{_revenue_d_a_o_8java_source_l00026}00026 }
-\DoxyCodeLine{\Hypertarget{_revenue_d_a_o_8java_source_l00027}00027     @Delete}
-\DoxyCodeLine{\Hypertarget{_revenue_d_a_o_8java_source_l00028}\mbox{\hyperlink{interfacecom_1_1snail_1_1wallet_1_1_main_screen_1_1db_1_1_revenue_d_a_o_1_1_revenue_d_a_o_a99e41021680dfd4a2818cd76e9fa5de5}{00028}}     \textcolor{keywordtype}{void} \mbox{\hyperlink{interfacecom_1_1snail_1_1wallet_1_1_main_screen_1_1db_1_1_revenue_d_a_o_1_1_revenue_d_a_o_a99e41021680dfd4a2818cd76e9fa5de5}{delete}}(\mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1models_1_1_revenues}{Revenues}} revenue);}
-\DoxyCodeLine{\Hypertarget{_revenue_d_a_o_8java_source_l00029}00029 \}}
+\DoxyCodeLine{\Hypertarget{_revenue_d_a_o_8java_source_l00013}00013 \textcolor{keyword}{import} java.util.List;}
+\DoxyCodeLine{\Hypertarget{_revenue_d_a_o_8java_source_l00014}00014 }
+\DoxyCodeLine{\Hypertarget{_revenue_d_a_o_8java_source_l00015}00015 @Dao}
+\DoxyCodeLine{\Hypertarget{_revenue_d_a_o_8java_source_l00016}\mbox{\hyperlink{interfacecom_1_1snail_1_1wallet_1_1_main_screen_1_1db_1_1_revenue_d_a_o_1_1_revenue_d_a_o}{00016}} \textcolor{keyword}{public} \textcolor{keyword}{interface }\mbox{\hyperlink{interfacecom_1_1snail_1_1wallet_1_1_main_screen_1_1db_1_1_revenue_d_a_o_1_1_revenue_d_a_o}{RevenueDAO}} \{}
+\DoxyCodeLine{\Hypertarget{_revenue_d_a_o_8java_source_l00017}00017     @Query(\textcolor{stringliteral}{"{}SELECT * FROM revenues"{}})}
+\DoxyCodeLine{\Hypertarget{_revenue_d_a_o_8java_source_l00018}\mbox{\hyperlink{interfacecom_1_1snail_1_1wallet_1_1_main_screen_1_1db_1_1_revenue_d_a_o_1_1_revenue_d_a_o_acea07eeffc10dd8f73445f72ab57861d}{00018}}     List<\mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1models_1_1_revenues}{Revenues}}> \mbox{\hyperlink{interfacecom_1_1snail_1_1wallet_1_1_main_screen_1_1db_1_1_revenue_d_a_o_1_1_revenue_d_a_o_acea07eeffc10dd8f73445f72ab57861d}{getAll}}();}
+\DoxyCodeLine{\Hypertarget{_revenue_d_a_o_8java_source_l00019}00019 }
+\DoxyCodeLine{\Hypertarget{_revenue_d_a_o_8java_source_l00020}00020     @Query("{}SELECT \textcolor{keywordtype}{id}, value, currency, category, description FROM revenues"{})}
+\DoxyCodeLine{\Hypertarget{_revenue_d_a_o_8java_source_l00021}\mbox{\hyperlink{interfacecom_1_1snail_1_1wallet_1_1_main_screen_1_1db_1_1_revenue_d_a_o_1_1_revenue_d_a_o_a772d0effa54addb5738e707717a5199c}{00021}}     List<\mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1models_1_1_money}{Money}}> \mbox{\hyperlink{interfacecom_1_1snail_1_1wallet_1_1_main_screen_1_1db_1_1_revenue_d_a_o_1_1_revenue_d_a_o_a772d0effa54addb5738e707717a5199c}{getValues}}();}
+\DoxyCodeLine{\Hypertarget{_revenue_d_a_o_8java_source_l00022}00022 }
+\DoxyCodeLine{\Hypertarget{_revenue_d_a_o_8java_source_l00023}00023     @Query("{}SELECT value, currency FROM revenues"{})}
+\DoxyCodeLine{\Hypertarget{_revenue_d_a_o_8java_source_l00024}\mbox{\hyperlink{interfacecom_1_1snail_1_1wallet_1_1_main_screen_1_1db_1_1_revenue_d_a_o_1_1_revenue_d_a_o_a815bff159bc2cc937674e140fcdc9d9b}{00024}}     List<\mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1models_1_1_coin}{Coin}}> \mbox{\hyperlink{interfacecom_1_1snail_1_1wallet_1_1_main_screen_1_1db_1_1_revenue_d_a_o_1_1_revenue_d_a_o_a815bff159bc2cc937674e140fcdc9d9b}{getSum}}();}
+\DoxyCodeLine{\Hypertarget{_revenue_d_a_o_8java_source_l00025}00025 }
+\DoxyCodeLine{\Hypertarget{_revenue_d_a_o_8java_source_l00026}00026     @Insert}
+\DoxyCodeLine{\Hypertarget{_revenue_d_a_o_8java_source_l00027}\mbox{\hyperlink{interfacecom_1_1snail_1_1wallet_1_1_main_screen_1_1db_1_1_revenue_d_a_o_1_1_revenue_d_a_o_ada03ba9b713b70ce4c07edd02ca6e1a7}{00027}}     \textcolor{keywordtype}{void} \mbox{\hyperlink{interfacecom_1_1snail_1_1wallet_1_1_main_screen_1_1db_1_1_revenue_d_a_o_1_1_revenue_d_a_o_ada03ba9b713b70ce4c07edd02ca6e1a7}{insert}}(\mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1models_1_1_revenues}{Revenues}} revenue);}
+\DoxyCodeLine{\Hypertarget{_revenue_d_a_o_8java_source_l00028}00028 }
+\DoxyCodeLine{\Hypertarget{_revenue_d_a_o_8java_source_l00029}00029     @Update}
+\DoxyCodeLine{\Hypertarget{_revenue_d_a_o_8java_source_l00030}\mbox{\hyperlink{interfacecom_1_1snail_1_1wallet_1_1_main_screen_1_1db_1_1_revenue_d_a_o_1_1_revenue_d_a_o_a93fe702255a7e22b1654aa2f51e30bc7}{00030}}     \textcolor{keywordtype}{void} \mbox{\hyperlink{interfacecom_1_1snail_1_1wallet_1_1_main_screen_1_1db_1_1_revenue_d_a_o_1_1_revenue_d_a_o_a93fe702255a7e22b1654aa2f51e30bc7}{update}}(\mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1models_1_1_revenues}{Revenues}} revenue);}
+\DoxyCodeLine{\Hypertarget{_revenue_d_a_o_8java_source_l00031}00031 }
+\DoxyCodeLine{\Hypertarget{_revenue_d_a_o_8java_source_l00032}00032     @Delete}
+\DoxyCodeLine{\Hypertarget{_revenue_d_a_o_8java_source_l00033}\mbox{\hyperlink{interfacecom_1_1snail_1_1wallet_1_1_main_screen_1_1db_1_1_revenue_d_a_o_1_1_revenue_d_a_o_a99e41021680dfd4a2818cd76e9fa5de5}{00033}}     \textcolor{keywordtype}{void} \mbox{\hyperlink{interfacecom_1_1snail_1_1wallet_1_1_main_screen_1_1db_1_1_revenue_d_a_o_1_1_revenue_d_a_o_a99e41021680dfd4a2818cd76e9fa5de5}{delete}}(\mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1models_1_1_revenues}{Revenues}} revenue);}
+\DoxyCodeLine{\Hypertarget{_revenue_d_a_o_8java_source_l00034}00034 \}}
 
 \end{DoxyCode}

@@ -9,6 +9,7 @@ import com.snail.wallet.MainScreen.db.AppExpensesDatabase;
 import com.snail.wallet.MainScreen.db.AppRevenueDatabase;
 import com.snail.wallet.MainScreen.db.ExpensesDAO.ExpensesDAO;
 import com.snail.wallet.MainScreen.db.RevenueDAO.RevenueDAO;
+import com.snail.wallet.MainScreen.models.Coin;
 
 import java.util.List;
 
@@ -28,11 +29,11 @@ public class HomeViewModel extends ViewModel {
     private double CountRevenue() {
         AppRevenueDatabase db_revenue = App.getInstance().getRevenueDatabase();
         RevenueDAO revenueDAO         = db_revenue.revenueDAO();
-        List<Double> revenueValues    = revenueDAO.getValues();
+        List<Coin> revenueValues    = revenueDAO.getSum();
 
         double revenueSum = 0;
         for (int ii = 0; ii < revenueValues.size(); ++ii) {
-            revenueSum += revenueValues.get(ii);
+            revenueSum += revenueValues.get(ii).getValue();
         }
 
         return revenueSum;
@@ -41,11 +42,11 @@ public class HomeViewModel extends ViewModel {
     private double CountExpenses() {
         AppExpensesDatabase db_expenses = App.getInstance().getExpensesDatabase();
         ExpensesDAO expensesDAO         = db_expenses.expensesDAO();
-        List<Double> expensesValues     = expensesDAO.getValues();
+        List<Coin> expensesValues     = expensesDAO.getSum();
 
         double expensesSum = 0;
         for (int ii = 0; ii < expensesValues.size(); ++ii) {
-            expensesSum += expensesValues.get(ii);
+            expensesSum += expensesValues.get(ii).getValue();
         }
 
         return expensesSum;
