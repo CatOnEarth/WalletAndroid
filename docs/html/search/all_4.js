@@ -1,9 +1,7 @@
 var searchData=
 [
-  ['edittexttextemailaddress_0',['editTextTextEmailAddress',['../classcom_1_1snail_1_1wallet_1_1databinding_1_1_activity_login_binding.html#a28af1eaad956c46c643f2e24d5a506a1',1,'com::snail::wallet::databinding::ActivityLoginBinding']]],
-  ['edittexttextpassword_1',['editTextTextPassword',['../classcom_1_1snail_1_1wallet_1_1databinding_1_1_activity_login_binding.html#ae832886762ddbec491844357f6366e54',1,'com::snail::wallet::databinding::ActivityLoginBinding']]],
-  ['exampleinstrumentedtest_2',['ExampleInstrumentedTest',['../classcom_1_1snail_1_1wallet_1_1_example_instrumented_test.html',1,'com::snail::wallet']]],
-  ['exampleinstrumentedtest_2ejava_3',['ExampleInstrumentedTest.java',['../_example_instrumented_test_8java.html',1,'']]],
-  ['exampleunittest_4',['ExampleUnitTest',['../classcom_1_1snail_1_1wallet_1_1_example_unit_test.html',1,'com::snail::wallet']]],
-  ['exampleunittest_2ejava_5',['ExampleUnitTest.java',['../_example_unit_test_8java.html',1,'']]]
+  ['debug_0',['DEBUG',['../classcom_1_1snail_1_1wallet_1_1_build_config.html#afff6737bf22bd8a8c991801ac7f30525',1,'com::snail::wallet::BuildConfig']]],
+  ['delete_1',['delete',['../classcom_1_1snail_1_1wallet_1_1_main_screen_1_1db_1_1_expenses_d_a_o_1_1_expenses_d_a_o___impl.html#af05b63b4b2cbdb7148f8b7e7bd85bf81',1,'com.snail.wallet.MainScreen.db.ExpensesDAO.ExpensesDAO_Impl.delete()'],['../classcom_1_1snail_1_1wallet_1_1_main_screen_1_1db_1_1_revenue_d_a_o_1_1_revenue_d_a_o___impl.html#a83fdaec16d914ff59d91ed14a7bb503d',1,'com.snail.wallet.MainScreen.db.RevenueDAO.RevenueDAO_Impl.delete()'],['../interfacecom_1_1snail_1_1wallet_1_1_main_screen_1_1db_1_1_expenses_d_a_o_1_1_expenses_d_a_o.html#aff682f6008f7f7de8f745338393ef5e2',1,'com.snail.wallet.MainScreen.db.ExpensesDAO.ExpensesDAO.delete()'],['../interfacecom_1_1snail_1_1wallet_1_1_main_screen_1_1db_1_1_revenue_d_a_o_1_1_revenue_d_a_o.html#a99e41021680dfd4a2818cd76e9fa5de5',1,'com.snail.wallet.MainScreen.db.RevenueDAO.RevenueDAO.delete()']]],
+  ['description_2',['description',['../classcom_1_1snail_1_1wallet_1_1_main_screen_1_1models_1_1_money.html#a5290ed06fa6d0322607be55d7b4df977',1,'com::snail::wallet::MainScreen::models::Money']]],
+  ['drawerlayout_3',['drawerLayout',['../classcom_1_1snail_1_1wallet_1_1databinding_1_1_activity_wallet_binding.html#a4dab216f7102e79a730f0df8b93c18cd',1,'com::snail::wallet::databinding::ActivityWalletBinding']]]
 ];

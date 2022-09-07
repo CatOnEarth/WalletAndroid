@@ -29,16 +29,20 @@
 \DoxyCodeLine{\Hypertarget{_home_fragment_8java_source_l00025}00025         \mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1ui_1_1home_1_1_home_fragment_a8e10114d504bddb414f5fafccd147c3b}{binding}} = \mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1databinding_1_1_fragment_home_binding}{FragmentHomeBinding}}.\mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1databinding_1_1_fragment_home_binding_a2ecbc30111be7ab1b3eb0377428f7afb}{inflate}}(inflater, container, \textcolor{keyword}{false});}
 \DoxyCodeLine{\Hypertarget{_home_fragment_8java_source_l00026}00026         View root = \mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1ui_1_1home_1_1_home_fragment_a8e10114d504bddb414f5fafccd147c3b}{binding}}.\mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1databinding_1_1_fragment_home_binding_a2c89e8b6b1ec3c372bbdd629ffdf3932}{getRoot}}();}
 \DoxyCodeLine{\Hypertarget{_home_fragment_8java_source_l00027}00027 }
-\DoxyCodeLine{\Hypertarget{_home_fragment_8java_source_l00028}00028         \textcolor{keyword}{final} TextView textView = \mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1ui_1_1home_1_1_home_fragment_a8e10114d504bddb414f5fafccd147c3b}{binding}}.\mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1databinding_1_1_fragment_home_binding_aa3c4205337b8d377cc51bc70509d4d44}{textHome}};}
-\DoxyCodeLine{\Hypertarget{_home_fragment_8java_source_l00029}00029         homeViewModel.\mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1ui_1_1home_1_1_home_view_model_a5bf719f0bd6ee076474720491f6fd93a}{getText}}().observe(getViewLifecycleOwner(), textView::setText);}
-\DoxyCodeLine{\Hypertarget{_home_fragment_8java_source_l00030}00030         \textcolor{keywordflow}{return} root;}
-\DoxyCodeLine{\Hypertarget{_home_fragment_8java_source_l00031}00031     \}}
-\DoxyCodeLine{\Hypertarget{_home_fragment_8java_source_l00032}00032 }
-\DoxyCodeLine{\Hypertarget{_home_fragment_8java_source_l00033}00033     @Override}
-\DoxyCodeLine{\Hypertarget{_home_fragment_8java_source_l00034}\mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1ui_1_1home_1_1_home_fragment_aa4d7f8936b9f3fa0c54ee2b19e2ba9b5}{00034}}     \textcolor{keyword}{public} \textcolor{keywordtype}{void} \mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1ui_1_1home_1_1_home_fragment_aa4d7f8936b9f3fa0c54ee2b19e2ba9b5}{onDestroyView}}() \{}
-\DoxyCodeLine{\Hypertarget{_home_fragment_8java_source_l00035}00035         super.onDestroyView();}
-\DoxyCodeLine{\Hypertarget{_home_fragment_8java_source_l00036}00036         \mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1ui_1_1home_1_1_home_fragment_a8e10114d504bddb414f5fafccd147c3b}{binding}} = \textcolor{keyword}{null};}
-\DoxyCodeLine{\Hypertarget{_home_fragment_8java_source_l00037}00037     \}}
-\DoxyCodeLine{\Hypertarget{_home_fragment_8java_source_l00038}00038 \}}
+\DoxyCodeLine{\Hypertarget{_home_fragment_8java_source_l00028}00028         \textcolor{keyword}{final} TextView textViewRevenue  = \mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1ui_1_1home_1_1_home_fragment_a8e10114d504bddb414f5fafccd147c3b}{binding}}.\mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1databinding_1_1_fragment_home_binding_ad8f77e28b226ef273f34ddb200dcc6be}{textViewRevenue}};}
+\DoxyCodeLine{\Hypertarget{_home_fragment_8java_source_l00029}00029         \textcolor{keyword}{final} TextView textViewExpenses = \mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1ui_1_1home_1_1_home_fragment_a8e10114d504bddb414f5fafccd147c3b}{binding}}.\mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1databinding_1_1_fragment_home_binding_a600857400ce39b434795d302447863a0}{textViewExpenses}};}
+\DoxyCodeLine{\Hypertarget{_home_fragment_8java_source_l00030}00030 }
+\DoxyCodeLine{\Hypertarget{_home_fragment_8java_source_l00031}00031         homeViewModel.\mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1ui_1_1home_1_1_home_view_model_a5f2a4d771cf48dd96bffe60537f07ac8}{getTextRevenue}}().observe(getViewLifecycleOwner(), textViewRevenue::setText);}
+\DoxyCodeLine{\Hypertarget{_home_fragment_8java_source_l00032}00032         homeViewModel.\mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1ui_1_1home_1_1_home_view_model_a8684d7246dbe800323a4fa63a3557434}{getTextExpenses}}().observe(getViewLifecycleOwner(), textViewExpenses::setText);}
+\DoxyCodeLine{\Hypertarget{_home_fragment_8java_source_l00033}00033 }
+\DoxyCodeLine{\Hypertarget{_home_fragment_8java_source_l00034}00034         \textcolor{keywordflow}{return} root;}
+\DoxyCodeLine{\Hypertarget{_home_fragment_8java_source_l00035}00035     \}}
+\DoxyCodeLine{\Hypertarget{_home_fragment_8java_source_l00036}00036 }
+\DoxyCodeLine{\Hypertarget{_home_fragment_8java_source_l00037}00037     @Override}
+\DoxyCodeLine{\Hypertarget{_home_fragment_8java_source_l00038}\mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1ui_1_1home_1_1_home_fragment_aa4d7f8936b9f3fa0c54ee2b19e2ba9b5}{00038}}     \textcolor{keyword}{public} \textcolor{keywordtype}{void} \mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1ui_1_1home_1_1_home_fragment_aa4d7f8936b9f3fa0c54ee2b19e2ba9b5}{onDestroyView}}() \{}
+\DoxyCodeLine{\Hypertarget{_home_fragment_8java_source_l00039}00039         super.onDestroyView();}
+\DoxyCodeLine{\Hypertarget{_home_fragment_8java_source_l00040}00040         \mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1ui_1_1home_1_1_home_fragment_a8e10114d504bddb414f5fafccd147c3b}{binding}} = \textcolor{keyword}{null};}
+\DoxyCodeLine{\Hypertarget{_home_fragment_8java_source_l00041}00041     \}}
+\DoxyCodeLine{\Hypertarget{_home_fragment_8java_source_l00042}00042 \}}
 
 \end{DoxyCode}

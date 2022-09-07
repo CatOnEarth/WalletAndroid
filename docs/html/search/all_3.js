@@ -1,5 +1,21 @@
 var searchData=
 [
-  ['debug_0',['DEBUG',['../classcom_1_1snail_1_1wallet_1_1_build_config.html#afff6737bf22bd8a8c991801ac7f30525',1,'com::snail::wallet::BuildConfig']]],
-  ['drawerlayout_1',['drawerLayout',['../classcom_1_1snail_1_1wallet_1_1databinding_1_1_activity_wallet_binding.html#a4dab216f7102e79a730f0df8b93c18cd',1,'com::snail::wallet::databinding::ActivityWalletBinding']]]
+  ['category_0',['category',['../classcom_1_1snail_1_1wallet_1_1_main_screen_1_1models_1_1_expenses.html#a7cd6e62572a0e61b96fa84573f6616af',1,'com.snail.wallet.MainScreen.models.Expenses.category()'],['../classcom_1_1snail_1_1wallet_1_1_main_screen_1_1models_1_1_revenues.html#a7951a693693fc677f9721fe22fffad65',1,'com.snail.wallet.MainScreen.models.Revenues.category()']]],
+  ['clearalltables_1',['clearAllTables',['../classcom_1_1snail_1_1wallet_1_1_main_screen_1_1db_1_1_app_expenses_database___impl.html#af2b65b5e461633fc974bfc185acb6c85',1,'com.snail.wallet.MainScreen.db.AppExpensesDatabase_Impl.clearAllTables()'],['../classcom_1_1snail_1_1wallet_1_1_main_screen_1_1db_1_1_app_revenue_database___impl.html#ad819b379afde134dc7541022c512c3f0',1,'com.snail.wallet.MainScreen.db.AppRevenueDatabase_Impl.clearAllTables()']]],
+  ['contentwalletbinding_2',['ContentWalletBinding',['../classcom_1_1snail_1_1wallet_1_1databinding_1_1_content_wallet_binding.html',1,'com.snail.wallet.databinding.ContentWalletBinding'],['../classcom_1_1snail_1_1wallet_1_1databinding_1_1_content_wallet_binding.html#a25696b737fbd5f25a1742cd84b72bf46',1,'com.snail.wallet.databinding.ContentWalletBinding.ContentWalletBinding()']]],
+  ['contentwalletbinding_2ejava_3',['ContentWalletBinding.java',['../_content_wallet_binding_8java.html',1,'']]],
+  ['createinvalidationtracker_4',['createInvalidationTracker',['../classcom_1_1snail_1_1wallet_1_1_main_screen_1_1db_1_1_app_expenses_database___impl.html#a73ca84afc4b635a535f947c94a3b5c7e',1,'com.snail.wallet.MainScreen.db.AppExpensesDatabase_Impl.createInvalidationTracker()'],['../classcom_1_1snail_1_1wallet_1_1_main_screen_1_1db_1_1_app_revenue_database___impl.html#ae00c7a07fc1aa15dbd9c39e7bd16ebbf',1,'com.snail.wallet.MainScreen.db.AppRevenueDatabase_Impl.createInvalidationTracker()']]],
+  ['createopenhelper_5',['createOpenHelper',['../classcom_1_1snail_1_1wallet_1_1_main_screen_1_1db_1_1_app_expenses_database___impl.html#a1cbb8c5404dde0f9215be11765721700',1,'com.snail.wallet.MainScreen.db.AppExpensesDatabase_Impl.createOpenHelper()'],['../classcom_1_1snail_1_1wallet_1_1_main_screen_1_1db_1_1_app_revenue_database___impl.html#a0adc89afbb755a43a9db1ece9035e987',1,'com.snail.wallet.MainScreen.db.AppRevenueDatabase_Impl.createOpenHelper()']]],
+  ['currency_6',['currency',['../classcom_1_1snail_1_1wallet_1_1_main_screen_1_1models_1_1_money.html#a01ca31cb38e2eefb0a308696b89b38d3',1,'com::snail::wallet::MainScreen::models::Money']]],
+  ['databinding_7',['databinding',['../namespacecom_1_1snail_1_1wallet_1_1databinding.html',1,'com::snail::wallet']]],
+  ['db_8',['db',['../namespacecom_1_1snail_1_1wallet_1_1_main_screen_1_1db.html',1,'com::snail::wallet::MainScreen']]],
+  ['expenses_9',['expenses',['../namespacecom_1_1snail_1_1wallet_1_1_main_screen_1_1ui_1_1expenses.html',1,'com::snail::wallet::MainScreen::ui']]],
+  ['expensesdao_10',['ExpensesDAO',['../namespacecom_1_1snail_1_1wallet_1_1_main_screen_1_1db_1_1_expenses_d_a_o.html',1,'com::snail::wallet::MainScreen::db']]],
+  ['home_11',['home',['../namespacecom_1_1snail_1_1wallet_1_1_main_screen_1_1ui_1_1home.html',1,'com::snail::wallet::MainScreen::ui']]],
+  ['loginscreen_12',['LoginScreen',['../namespacecom_1_1snail_1_1wallet_1_1_login_screen.html',1,'com::snail::wallet']]],
+  ['mainscreen_13',['MainScreen',['../namespacecom_1_1snail_1_1wallet_1_1_main_screen.html',1,'com::snail::wallet']]],
+  ['models_14',['models',['../namespacecom_1_1snail_1_1wallet_1_1_main_screen_1_1models.html',1,'com::snail::wallet::MainScreen']]],
+  ['revenue_15',['revenue',['../namespacecom_1_1snail_1_1wallet_1_1_main_screen_1_1ui_1_1revenue.html',1,'com::snail::wallet::MainScreen::ui']]],
+  ['revenuedao_16',['RevenueDAO',['../namespacecom_1_1snail_1_1wallet_1_1_main_screen_1_1db_1_1_revenue_d_a_o.html',1,'com::snail::wallet::MainScreen::db']]],
+  ['wallet_17',['wallet',['../namespacecom_1_1snail_1_1wallet.html',1,'com::snail']]]
 ];

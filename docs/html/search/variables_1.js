@@ -1,6 +1,8 @@
 var searchData=
 [
-  ['binding_0',['binding',['../classcom_1_1snail_1_1wallet_1_1_main_screen_1_1ui_1_1gallery_1_1_gallery_fragment.html#a0780718114d6c21286504391b9435033',1,'com.snail.wallet.MainScreen.ui.gallery.GalleryFragment.binding()'],['../classcom_1_1snail_1_1wallet_1_1_main_screen_1_1ui_1_1home_1_1_home_fragment.html#a8e10114d504bddb414f5fafccd147c3b',1,'com.snail.wallet.MainScreen.ui.home.HomeFragment.binding()'],['../classcom_1_1snail_1_1wallet_1_1_main_screen_1_1ui_1_1slideshow_1_1_slideshow_fragment.html#af9b0133e3cbaa1a7b2309f5bc3ef6daf',1,'com.snail.wallet.MainScreen.ui.slideshow.SlideshowFragment.binding()'],['../classcom_1_1snail_1_1wallet_1_1_main_screen_1_1_wallet_activity.html#a6ad6eed063099f5405224a2a1d5fba41',1,'com.snail.wallet.MainScreen.WalletActivity.binding()']]],
-  ['build_5ftype_1',['BUILD_TYPE',['../classcom_1_1snail_1_1wallet_1_1_build_config.html#afd2ae3fb41a0a7a8befb979ff18e99ef',1,'com::snail::wallet::BuildConfig']]],
-  ['buttonlogin_2',['buttonLogIn',['../classcom_1_1snail_1_1wallet_1_1databinding_1_1_activity_login_binding.html#a8133ff1a724145b2f026a828aa76871c',1,'com::snail::wallet::databinding::ActivityLoginBinding']]]
+  ['app_5fpreferences_0',['APP_PREFERENCES',['../classcom_1_1snail_1_1wallet_1_1_login_screen_1_1_login_activity.html#a5ae05109d339453681a61737864dd7f1',1,'com::snail::wallet::LoginScreen::LoginActivity']]],
+  ['app_5fpreferences_5fuser_5femail_1',['APP_PREFERENCES_USER_EMAIL',['../classcom_1_1snail_1_1wallet_1_1_login_screen_1_1_login_activity.html#ade660f2af1d211ec3e28a34aef38fae6',1,'com::snail::wallet::LoginScreen::LoginActivity']]],
+  ['app_5fpreferences_5fusername_2',['APP_PREFERENCES_USERNAME',['../classcom_1_1snail_1_1wallet_1_1_login_screen_1_1_login_activity.html#a5dd043c1f9f883bdfa082892bf4d2f6e',1,'com::snail::wallet::LoginScreen::LoginActivity']]],
+  ['appbarwallet_3',['appBarWallet',['../classcom_1_1snail_1_1wallet_1_1databinding_1_1_activity_wallet_binding.html#a0f3a84a27a8b39619836b8f75ec24bf2',1,'com::snail::wallet::databinding::ActivityWalletBinding']]],
+  ['application_5fid_4',['APPLICATION_ID',['../classcom_1_1snail_1_1wallet_1_1_build_config.html#a96c270bc9753ba8d1711d967c1c77fa7',1,'com::snail::wallet::BuildConfig']]]
 ];

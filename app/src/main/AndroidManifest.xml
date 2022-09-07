@@ -4,6 +4,7 @@
     package="com.snail.wallet">
 
     <application
+        android:name="com.snail.wallet.MainScreen.db.App"
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"

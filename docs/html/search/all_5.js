@@ -1,10 +1,21 @@
 var searchData=
 [
-  ['fab_0',['fab',['../classcom_1_1snail_1_1wallet_1_1databinding_1_1_app_bar_wallet_binding.html#a47fe956d1fd4a7485f0c4f488fa5b017',1,'com::snail::wallet::databinding::AppBarWalletBinding']]],
-  ['fragmentgallerybinding_1',['FragmentGalleryBinding',['../classcom_1_1snail_1_1wallet_1_1databinding_1_1_fragment_gallery_binding.html',1,'com.snail.wallet.databinding.FragmentGalleryBinding'],['../classcom_1_1snail_1_1wallet_1_1databinding_1_1_fragment_gallery_binding.html#a16a447410aaacc4a42ad5f1cbfedce0e',1,'com.snail.wallet.databinding.FragmentGalleryBinding.FragmentGalleryBinding()']]],
-  ['fragmentgallerybinding_2ejava_2',['FragmentGalleryBinding.java',['../_fragment_gallery_binding_8java.html',1,'']]],
-  ['fragmenthomebinding_3',['FragmentHomeBinding',['../classcom_1_1snail_1_1wallet_1_1databinding_1_1_fragment_home_binding.html',1,'com.snail.wallet.databinding.FragmentHomeBinding'],['../classcom_1_1snail_1_1wallet_1_1databinding_1_1_fragment_home_binding.html#a2c81a24867a3e071eeabb1fb2fcd1e8d',1,'com.snail.wallet.databinding.FragmentHomeBinding.FragmentHomeBinding()']]],
-  ['fragmenthomebinding_2ejava_4',['FragmentHomeBinding.java',['../_fragment_home_binding_8java.html',1,'']]],
-  ['fragmentslideshowbinding_5',['FragmentSlideshowBinding',['../classcom_1_1snail_1_1wallet_1_1databinding_1_1_fragment_slideshow_binding.html',1,'com.snail.wallet.databinding.FragmentSlideshowBinding'],['../classcom_1_1snail_1_1wallet_1_1databinding_1_1_fragment_slideshow_binding.html#a1dfc080fe4b734179b9986fe6707fbb3',1,'com.snail.wallet.databinding.FragmentSlideshowBinding.FragmentSlideshowBinding()']]],
-  ['fragmentslideshowbinding_2ejava_6',['FragmentSlideshowBinding.java',['../_fragment_slideshow_binding_8java.html',1,'']]]
+  ['edittexttextemailaddress_0',['editTextTextEmailAddress',['../classcom_1_1snail_1_1wallet_1_1databinding_1_1_activity_login_binding.html#a28af1eaad956c46c643f2e24d5a506a1',1,'com::snail::wallet::databinding::ActivityLoginBinding']]],
+  ['edittexttextpassword_1',['editTextTextPassword',['../classcom_1_1snail_1_1wallet_1_1databinding_1_1_activity_login_binding.html#ae832886762ddbec491844357f6366e54',1,'com::snail::wallet::databinding::ActivityLoginBinding']]],
+  ['exampleinstrumentedtest_2',['ExampleInstrumentedTest',['../classcom_1_1snail_1_1wallet_1_1_example_instrumented_test.html',1,'com::snail::wallet']]],
+  ['exampleinstrumentedtest_2ejava_3',['ExampleInstrumentedTest.java',['../_example_instrumented_test_8java.html',1,'']]],
+  ['exampleunittest_4',['ExampleUnitTest',['../classcom_1_1snail_1_1wallet_1_1_example_unit_test.html',1,'com::snail::wallet']]],
+  ['exampleunittest_2ejava_5',['ExampleUnitTest.java',['../_example_unit_test_8java.html',1,'']]],
+  ['expenses_6',['Expenses',['../classcom_1_1snail_1_1wallet_1_1_main_screen_1_1models_1_1_expenses.html',1,'com.snail.wallet.MainScreen.models.Expenses'],['../classcom_1_1snail_1_1wallet_1_1_main_screen_1_1models_1_1_expenses.html#a15de9ff40dfa6dca00ffa9408c6de5ae',1,'com.snail.wallet.MainScreen.models.Expenses.Expenses()']]],
+  ['expenses_2ejava_7',['Expenses.java',['../_expenses_8java.html',1,'']]],
+  ['expenses_5frevenue_8',['expenses_revenue',['../classcom_1_1snail_1_1wallet_1_1_main_screen_1_1db_1_1_app.html#a0c8d58d7331e84ef5d46765dc3982124',1,'com::snail::wallet::MainScreen::db::App']]],
+  ['expensesdao_9',['ExpensesDAO',['../interfacecom_1_1snail_1_1wallet_1_1_main_screen_1_1db_1_1_expenses_d_a_o_1_1_expenses_d_a_o.html',1,'com::snail::wallet::MainScreen::db::ExpensesDAO']]],
+  ['expensesdao_10',['expensesDAO',['../classcom_1_1snail_1_1wallet_1_1_main_screen_1_1db_1_1_app_expenses_database___impl.html#a98700f2d112825684269595003501616',1,'com.snail.wallet.MainScreen.db.AppExpensesDatabase_Impl.expensesDAO()'],['../classcom_1_1snail_1_1wallet_1_1_main_screen_1_1db_1_1_app_expenses_database.html#a7225d154c47ce5c8067637184453b859',1,'com.snail.wallet.MainScreen.db.AppExpensesDatabase.expensesDAO()']]],
+  ['expensesdao_2ejava_11',['ExpensesDAO.java',['../_expenses_d_a_o_8java.html',1,'']]],
+  ['expensesdao_5fimpl_12',['ExpensesDAO_Impl',['../classcom_1_1snail_1_1wallet_1_1_main_screen_1_1db_1_1_expenses_d_a_o_1_1_expenses_d_a_o___impl.html',1,'com.snail.wallet.MainScreen.db.ExpensesDAO.ExpensesDAO_Impl'],['../classcom_1_1snail_1_1wallet_1_1_main_screen_1_1db_1_1_expenses_d_a_o_1_1_expenses_d_a_o___impl.html#a20636e4c191dcb6c637c32f946e94673',1,'com.snail.wallet.MainScreen.db.ExpensesDAO.ExpensesDAO_Impl.ExpensesDAO_Impl()']]],
+  ['expensesdao_5fimpl_2ejava_13',['ExpensesDAO_Impl.java',['../_expenses_d_a_o___impl_8java.html',1,'']]],
+  ['expensesfragment_14',['ExpensesFragment',['../classcom_1_1snail_1_1wallet_1_1_main_screen_1_1ui_1_1expenses_1_1_expenses_fragment.html',1,'com::snail::wallet::MainScreen::ui::expenses']]],
+  ['expensesfragment_2ejava_15',['ExpensesFragment.java',['../_expenses_fragment_8java.html',1,'']]],
+  ['expensesviewmodel_16',['ExpensesViewModel',['../classcom_1_1snail_1_1wallet_1_1_main_screen_1_1ui_1_1expenses_1_1_expenses_view_model.html',1,'com.snail.wallet.MainScreen.ui.expenses.ExpensesViewModel'],['../classcom_1_1snail_1_1wallet_1_1_main_screen_1_1ui_1_1expenses_1_1_expenses_view_model.html#a44c711e1a317315e4289e6788ba58f12',1,'com.snail.wallet.MainScreen.ui.expenses.ExpensesViewModel.ExpensesViewModel()']]],
+  ['expensesviewmodel_2ejava_17',['ExpensesViewModel.java',['../_expenses_view_model_8java.html',1,'']]]
 ];

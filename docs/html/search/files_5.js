@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['galleryfragment_2ejava_0',['GalleryFragment.java',['../_gallery_fragment_8java.html',1,'']]],
-  ['galleryviewmodel_2ejava_1',['GalleryViewModel.java',['../_gallery_view_model_8java.html',1,'']]]
+  ['homefragment_2ejava_0',['HomeFragment.java',['../_home_fragment_8java.html',1,'']]],
+  ['homeviewmodel_2ejava_1',['HomeViewModel.java',['../_home_view_model_8java.html',1,'']]]
 ];

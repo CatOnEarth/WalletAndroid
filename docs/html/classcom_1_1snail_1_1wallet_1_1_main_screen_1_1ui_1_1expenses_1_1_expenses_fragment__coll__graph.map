@@ -1,0 +1,8 @@
+<map id="com.snail.wallet.MainScreen.ui.expenses.ExpensesFragment" name="com.snail.wallet.MainScreen.ui.expenses.ExpensesFragment">
+<area shape="rect" id="node1" title=" " alt="" coords="5,199,272,240"/>
+<area shape="rect" id="node2" title=" " alt="" coords="51,102,128,129"/>
+<area shape="rect" id="node3" href="$classcom_1_1snail_1_1wallet_1_1databinding_1_1_fragment_expenses_binding.html" title=" " alt="" coords="152,95,341,136"/>
+<area shape="rect" id="node4" title=" " alt="" coords="69,5,163,32"/>
+<area shape="rect" id="node5" title=" " alt="" coords="187,5,307,32"/>
+<area shape="rect" id="node6" title=" " alt="" coords="331,5,405,32"/>
+</map>

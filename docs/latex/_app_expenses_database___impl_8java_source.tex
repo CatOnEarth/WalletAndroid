@@ -1,0 +1,177 @@
+\hypertarget{_app_expenses_database___impl_8java_source}{}\doxysection{App\+Expenses\+Database\+\_\+\+Impl.\+java}
+\label{_app_expenses_database___impl_8java_source}\index{app/build/generated/ap\_generated\_sources/debug/out/com/snail/wallet/MainScreen/db/AppExpensesDatabase\_Impl.java@{app/build/generated/ap\_generated\_sources/debug/out/com/snail/wallet/MainScreen/db/AppExpensesDatabase\_Impl.java}}
+\mbox{\hyperlink{_app_expenses_database___impl_8java}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_app_expenses_database___impl_8java_source_l00001}\mbox{\hyperlink{namespacecom_1_1snail_1_1wallet_1_1_main_screen_1_1db}{00001}} \textcolor{keyword}{package }com.snail.wallet.MainScreen.db;}
+\DoxyCodeLine{\Hypertarget{_app_expenses_database___impl_8java_source_l00002}00002 }
+\DoxyCodeLine{\Hypertarget{_app_expenses_database___impl_8java_source_l00003}00003 \textcolor{keyword}{import} androidx.annotation.NonNull;}
+\DoxyCodeLine{\Hypertarget{_app_expenses_database___impl_8java_source_l00004}00004 \textcolor{keyword}{import} androidx.room.DatabaseConfiguration;}
+\DoxyCodeLine{\Hypertarget{_app_expenses_database___impl_8java_source_l00005}00005 \textcolor{keyword}{import} androidx.room.InvalidationTracker;}
+\DoxyCodeLine{\Hypertarget{_app_expenses_database___impl_8java_source_l00006}00006 \textcolor{keyword}{import} androidx.room.RoomOpenHelper;}
+\DoxyCodeLine{\Hypertarget{_app_expenses_database___impl_8java_source_l00007}00007 \textcolor{keyword}{import} androidx.room.RoomOpenHelper.Delegate;}
+\DoxyCodeLine{\Hypertarget{_app_expenses_database___impl_8java_source_l00008}00008 \textcolor{keyword}{import} androidx.room.RoomOpenHelper.ValidationResult;}
+\DoxyCodeLine{\Hypertarget{_app_expenses_database___impl_8java_source_l00009}00009 \textcolor{keyword}{import} androidx.room.migration.AutoMigrationSpec;}
+\DoxyCodeLine{\Hypertarget{_app_expenses_database___impl_8java_source_l00010}00010 \textcolor{keyword}{import} androidx.room.migration.Migration;}
+\DoxyCodeLine{\Hypertarget{_app_expenses_database___impl_8java_source_l00011}00011 \textcolor{keyword}{import} androidx.room.util.DBUtil;}
+\DoxyCodeLine{\Hypertarget{_app_expenses_database___impl_8java_source_l00012}00012 \textcolor{keyword}{import} androidx.room.util.TableInfo;}
+\DoxyCodeLine{\Hypertarget{_app_expenses_database___impl_8java_source_l00013}00013 \textcolor{keyword}{import} androidx.room.util.TableInfo.Column;}
+\DoxyCodeLine{\Hypertarget{_app_expenses_database___impl_8java_source_l00014}00014 \textcolor{keyword}{import} androidx.room.util.TableInfo.ForeignKey;}
+\DoxyCodeLine{\Hypertarget{_app_expenses_database___impl_8java_source_l00015}00015 \textcolor{keyword}{import} androidx.room.util.TableInfo.Index;}
+\DoxyCodeLine{\Hypertarget{_app_expenses_database___impl_8java_source_l00016}00016 \textcolor{keyword}{import} androidx.sqlite.db.SupportSQLiteDatabase;}
+\DoxyCodeLine{\Hypertarget{_app_expenses_database___impl_8java_source_l00017}00017 \textcolor{keyword}{import} androidx.sqlite.db.SupportSQLiteOpenHelper;}
+\DoxyCodeLine{\Hypertarget{_app_expenses_database___impl_8java_source_l00018}00018 \textcolor{keyword}{import} androidx.sqlite.db.SupportSQLiteOpenHelper.Callback;}
+\DoxyCodeLine{\Hypertarget{_app_expenses_database___impl_8java_source_l00019}00019 \textcolor{keyword}{import} androidx.sqlite.db.SupportSQLiteOpenHelper.Configuration;}
+\DoxyCodeLine{\Hypertarget{_app_expenses_database___impl_8java_source_l00020}00020 \textcolor{keyword}{import} com.snail.wallet.MainScreen.db.ExpensesDAO.ExpensesDAO;}
+\DoxyCodeLine{\Hypertarget{_app_expenses_database___impl_8java_source_l00021}00021 \textcolor{keyword}{import} com.snail.wallet.MainScreen.db.ExpensesDAO.ExpensesDAO\_Impl;}
+\DoxyCodeLine{\Hypertarget{_app_expenses_database___impl_8java_source_l00022}00022 \textcolor{keyword}{import} java.lang.Class;}
+\DoxyCodeLine{\Hypertarget{_app_expenses_database___impl_8java_source_l00023}00023 \textcolor{keyword}{import} java.lang.Override;}
+\DoxyCodeLine{\Hypertarget{_app_expenses_database___impl_8java_source_l00024}00024 \textcolor{keyword}{import} java.lang.String;}
+\DoxyCodeLine{\Hypertarget{_app_expenses_database___impl_8java_source_l00025}00025 \textcolor{keyword}{import} java.lang.SuppressWarnings;}
+\DoxyCodeLine{\Hypertarget{_app_expenses_database___impl_8java_source_l00026}00026 \textcolor{keyword}{import} java.util.Arrays;}
+\DoxyCodeLine{\Hypertarget{_app_expenses_database___impl_8java_source_l00027}00027 \textcolor{keyword}{import} java.util.HashMap;}
+\DoxyCodeLine{\Hypertarget{_app_expenses_database___impl_8java_source_l00028}00028 \textcolor{keyword}{import} java.util.HashSet;}
+\DoxyCodeLine{\Hypertarget{_app_expenses_database___impl_8java_source_l00029}00029 \textcolor{keyword}{import} java.util.List;}
+\DoxyCodeLine{\Hypertarget{_app_expenses_database___impl_8java_source_l00030}00030 \textcolor{keyword}{import} java.util.Map;}
+\DoxyCodeLine{\Hypertarget{_app_expenses_database___impl_8java_source_l00031}00031 \textcolor{keyword}{import} java.util.Set;}
+\DoxyCodeLine{\Hypertarget{_app_expenses_database___impl_8java_source_l00032}00032 }
+\DoxyCodeLine{\Hypertarget{_app_expenses_database___impl_8java_source_l00033}00033 @SuppressWarnings(\{\textcolor{stringliteral}{"{}unchecked"{}}, \textcolor{stringliteral}{"{}deprecation"{}}\})}
+\DoxyCodeLine{\Hypertarget{_app_expenses_database___impl_8java_source_l00034}\mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1db_1_1_app_expenses_database___impl}{00034}} \textcolor{keyword}{public} \textcolor{keyword}{final} \textcolor{keyword}{class} \mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1db_1_1_app_expenses_database___impl}{AppExpensesDatabase\_Impl}} extends \mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1db_1_1_app_expenses_database}{AppExpensesDatabase}} \{}
+\DoxyCodeLine{\Hypertarget{_app_expenses_database___impl_8java_source_l00035}\mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1db_1_1_app_expenses_database___impl_a0f6a5c4407d28ea979384ae6dcd7976f}{00035}}   \textcolor{keyword}{private} \textcolor{keyword}{volatile} \mbox{\hyperlink{interfacecom_1_1snail_1_1wallet_1_1_main_screen_1_1db_1_1_expenses_d_a_o_1_1_expenses_d_a_o}{ExpensesDAO}} \mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1db_1_1_app_expenses_database___impl_a0f6a5c4407d28ea979384ae6dcd7976f}{\_expensesDAO}};}
+\DoxyCodeLine{\Hypertarget{_app_expenses_database___impl_8java_source_l00036}00036 }
+\DoxyCodeLine{\Hypertarget{_app_expenses_database___impl_8java_source_l00037}00037   @Override}
+\DoxyCodeLine{\Hypertarget{_app_expenses_database___impl_8java_source_l00038}\mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1db_1_1_app_expenses_database___impl_a1cbb8c5404dde0f9215be11765721700}{00038}}   \textcolor{keyword}{protected} SupportSQLiteOpenHelper \mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1db_1_1_app_expenses_database___impl_a1cbb8c5404dde0f9215be11765721700}{createOpenHelper}}(DatabaseConfiguration configuration) \{}
+\DoxyCodeLine{\Hypertarget{_app_expenses_database___impl_8java_source_l00039}00039     \textcolor{keyword}{final} SupportSQLiteOpenHelper.Callback \_openCallback = \textcolor{keyword}{new} RoomOpenHelper(configuration, \textcolor{keyword}{new} RoomOpenHelper.Delegate(1) \{}
+\DoxyCodeLine{\Hypertarget{_app_expenses_database___impl_8java_source_l00040}00040       @Override}
+\DoxyCodeLine{\Hypertarget{_app_expenses_database___impl_8java_source_l00041}00041       public void createAllTables(SupportSQLiteDatabase \_db) \{}
+\DoxyCodeLine{\Hypertarget{_app_expenses_database___impl_8java_source_l00042}00042         \_db.execSQL(\textcolor{stringliteral}{"{}CREATE TABLE IF NOT EXISTS `expenses` (`purpose` TEXT, `category` TEXT, `id` INTEGER NOT NULL, `value` REAL NOT NULL, `currency` INTEGER NOT NULL, `description` TEXT, PRIMARY KEY(`id`))"{}});}
+\DoxyCodeLine{\Hypertarget{_app_expenses_database___impl_8java_source_l00043}00043         \_db.execSQL(\textcolor{stringliteral}{"{}CREATE TABLE IF NOT EXISTS room\_master\_table (id INTEGER PRIMARY KEY,identity\_hash TEXT)"{}});}
+\DoxyCodeLine{\Hypertarget{_app_expenses_database___impl_8java_source_l00044}00044         \_db.execSQL(\textcolor{stringliteral}{"{}INSERT OR REPLACE INTO room\_master\_table (id,identity\_hash) VALUES(42, 'a5ffe112fab74b44acab4c173f4b6040')"{}});}
+\DoxyCodeLine{\Hypertarget{_app_expenses_database___impl_8java_source_l00045}00045       \}}
+\DoxyCodeLine{\Hypertarget{_app_expenses_database___impl_8java_source_l00046}00046 }
+\DoxyCodeLine{\Hypertarget{_app_expenses_database___impl_8java_source_l00047}00047       @Override}
+\DoxyCodeLine{\Hypertarget{_app_expenses_database___impl_8java_source_l00048}00048       \textcolor{keyword}{public} \textcolor{keywordtype}{void} dropAllTables(SupportSQLiteDatabase \_db) \{}
+\DoxyCodeLine{\Hypertarget{_app_expenses_database___impl_8java_source_l00049}00049         \_db.execSQL(\textcolor{stringliteral}{"{}DROP TABLE IF EXISTS `expenses`"{}});}
+\DoxyCodeLine{\Hypertarget{_app_expenses_database___impl_8java_source_l00050}00050         \textcolor{keywordflow}{if} (mCallbacks != \textcolor{keyword}{null}) \{}
+\DoxyCodeLine{\Hypertarget{_app_expenses_database___impl_8java_source_l00051}00051           \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} \_i = 0, \_size = mCallbacks.size(); \_i < \_size; \_i++) \{}
+\DoxyCodeLine{\Hypertarget{_app_expenses_database___impl_8java_source_l00052}00052             mCallbacks.get(\_i).onDestructiveMigration(\_db);}
+\DoxyCodeLine{\Hypertarget{_app_expenses_database___impl_8java_source_l00053}00053           \}}
+\DoxyCodeLine{\Hypertarget{_app_expenses_database___impl_8java_source_l00054}00054         \}}
+\DoxyCodeLine{\Hypertarget{_app_expenses_database___impl_8java_source_l00055}00055       \}}
+\DoxyCodeLine{\Hypertarget{_app_expenses_database___impl_8java_source_l00056}00056 }
+\DoxyCodeLine{\Hypertarget{_app_expenses_database___impl_8java_source_l00057}00057       @Override}
+\DoxyCodeLine{\Hypertarget{_app_expenses_database___impl_8java_source_l00058}00058       \textcolor{keyword}{protected} \textcolor{keywordtype}{void} onCreate(SupportSQLiteDatabase \_db) \{}
+\DoxyCodeLine{\Hypertarget{_app_expenses_database___impl_8java_source_l00059}00059         \textcolor{keywordflow}{if} (mCallbacks != \textcolor{keyword}{null}) \{}
+\DoxyCodeLine{\Hypertarget{_app_expenses_database___impl_8java_source_l00060}00060           \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} \_i = 0, \_size = mCallbacks.size(); \_i < \_size; \_i++) \{}
+\DoxyCodeLine{\Hypertarget{_app_expenses_database___impl_8java_source_l00061}00061             mCallbacks.get(\_i).onCreate(\_db);}
+\DoxyCodeLine{\Hypertarget{_app_expenses_database___impl_8java_source_l00062}00062           \}}
+\DoxyCodeLine{\Hypertarget{_app_expenses_database___impl_8java_source_l00063}00063         \}}
+\DoxyCodeLine{\Hypertarget{_app_expenses_database___impl_8java_source_l00064}00064       \}}
+\DoxyCodeLine{\Hypertarget{_app_expenses_database___impl_8java_source_l00065}00065 }
+\DoxyCodeLine{\Hypertarget{_app_expenses_database___impl_8java_source_l00066}00066       @Override}
+\DoxyCodeLine{\Hypertarget{_app_expenses_database___impl_8java_source_l00067}00067       \textcolor{keyword}{public} \textcolor{keywordtype}{void} onOpen(SupportSQLiteDatabase \_db) \{}
+\DoxyCodeLine{\Hypertarget{_app_expenses_database___impl_8java_source_l00068}00068         mDatabase = \_db;}
+\DoxyCodeLine{\Hypertarget{_app_expenses_database___impl_8java_source_l00069}00069         internalInitInvalidationTracker(\_db);}
+\DoxyCodeLine{\Hypertarget{_app_expenses_database___impl_8java_source_l00070}00070         \textcolor{keywordflow}{if} (mCallbacks != \textcolor{keyword}{null}) \{}
+\DoxyCodeLine{\Hypertarget{_app_expenses_database___impl_8java_source_l00071}00071           \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} \_i = 0, \_size = mCallbacks.size(); \_i < \_size; \_i++) \{}
+\DoxyCodeLine{\Hypertarget{_app_expenses_database___impl_8java_source_l00072}00072             mCallbacks.get(\_i).onOpen(\_db);}
+\DoxyCodeLine{\Hypertarget{_app_expenses_database___impl_8java_source_l00073}00073           \}}
+\DoxyCodeLine{\Hypertarget{_app_expenses_database___impl_8java_source_l00074}00074         \}}
+\DoxyCodeLine{\Hypertarget{_app_expenses_database___impl_8java_source_l00075}00075       \}}
+\DoxyCodeLine{\Hypertarget{_app_expenses_database___impl_8java_source_l00076}00076 }
+\DoxyCodeLine{\Hypertarget{_app_expenses_database___impl_8java_source_l00077}00077       @Override}
+\DoxyCodeLine{\Hypertarget{_app_expenses_database___impl_8java_source_l00078}00078       \textcolor{keyword}{public} \textcolor{keywordtype}{void} onPreMigrate(SupportSQLiteDatabase \_db) \{}
+\DoxyCodeLine{\Hypertarget{_app_expenses_database___impl_8java_source_l00079}00079         DBUtil.dropFtsSyncTriggers(\_db);}
+\DoxyCodeLine{\Hypertarget{_app_expenses_database___impl_8java_source_l00080}00080       \}}
+\DoxyCodeLine{\Hypertarget{_app_expenses_database___impl_8java_source_l00081}00081 }
+\DoxyCodeLine{\Hypertarget{_app_expenses_database___impl_8java_source_l00082}00082       @Override}
+\DoxyCodeLine{\Hypertarget{_app_expenses_database___impl_8java_source_l00083}00083       \textcolor{keyword}{public} \textcolor{keywordtype}{void} onPostMigrate(SupportSQLiteDatabase \_db) \{}
+\DoxyCodeLine{\Hypertarget{_app_expenses_database___impl_8java_source_l00084}00084       \}}
+\DoxyCodeLine{\Hypertarget{_app_expenses_database___impl_8java_source_l00085}00085 }
+\DoxyCodeLine{\Hypertarget{_app_expenses_database___impl_8java_source_l00086}00086       @Override}
+\DoxyCodeLine{\Hypertarget{_app_expenses_database___impl_8java_source_l00087}00087       \textcolor{keyword}{protected} RoomOpenHelper.ValidationResult onValidateSchema(SupportSQLiteDatabase \_db) \{}
+\DoxyCodeLine{\Hypertarget{_app_expenses_database___impl_8java_source_l00088}00088         \textcolor{keyword}{final} HashMap<String, TableInfo.Column> \_columnsExpenses = \textcolor{keyword}{new} HashMap<String, TableInfo.Column>(6);}
+\DoxyCodeLine{\Hypertarget{_app_expenses_database___impl_8java_source_l00089}00089         \_columnsExpenses.put(\textcolor{stringliteral}{"{}purpose"{}}, \textcolor{keyword}{new} TableInfo.Column(\textcolor{stringliteral}{"{}purpose"{}}, \textcolor{stringliteral}{"{}TEXT"{}}, \textcolor{keyword}{false}, 0, \textcolor{keyword}{null}, TableInfo.CREATED\_FROM\_ENTITY));}
+\DoxyCodeLine{\Hypertarget{_app_expenses_database___impl_8java_source_l00090}00090         \_columnsExpenses.put(\textcolor{stringliteral}{"{}category"{}}, \textcolor{keyword}{new} TableInfo.Column(\textcolor{stringliteral}{"{}category"{}}, \textcolor{stringliteral}{"{}TEXT"{}}, \textcolor{keyword}{false}, 0, \textcolor{keyword}{null}, TableInfo.CREATED\_FROM\_ENTITY));}
+\DoxyCodeLine{\Hypertarget{_app_expenses_database___impl_8java_source_l00091}00091         \_columnsExpenses.put(\textcolor{stringliteral}{"{}id"{}}, \textcolor{keyword}{new} TableInfo.Column(\textcolor{stringliteral}{"{}id"{}}, \textcolor{stringliteral}{"{}INTEGER"{}}, \textcolor{keyword}{true}, 1, \textcolor{keyword}{null}, TableInfo.CREATED\_FROM\_ENTITY));}
+\DoxyCodeLine{\Hypertarget{_app_expenses_database___impl_8java_source_l00092}00092         \_columnsExpenses.put(\textcolor{stringliteral}{"{}value"{}}, \textcolor{keyword}{new} TableInfo.Column(\textcolor{stringliteral}{"{}value"{}}, \textcolor{stringliteral}{"{}REAL"{}}, \textcolor{keyword}{true}, 0, \textcolor{keyword}{null}, TableInfo.CREATED\_FROM\_ENTITY));}
+\DoxyCodeLine{\Hypertarget{_app_expenses_database___impl_8java_source_l00093}00093         \_columnsExpenses.put(\textcolor{stringliteral}{"{}currency"{}}, \textcolor{keyword}{new} TableInfo.Column(\textcolor{stringliteral}{"{}currency"{}}, \textcolor{stringliteral}{"{}INTEGER"{}}, \textcolor{keyword}{true}, 0, \textcolor{keyword}{null}, TableInfo.CREATED\_FROM\_ENTITY));}
+\DoxyCodeLine{\Hypertarget{_app_expenses_database___impl_8java_source_l00094}00094         \_columnsExpenses.put(\textcolor{stringliteral}{"{}description"{}}, \textcolor{keyword}{new} TableInfo.Column(\textcolor{stringliteral}{"{}description"{}}, \textcolor{stringliteral}{"{}TEXT"{}}, \textcolor{keyword}{false}, 0, \textcolor{keyword}{null}, TableInfo.CREATED\_FROM\_ENTITY));}
+\DoxyCodeLine{\Hypertarget{_app_expenses_database___impl_8java_source_l00095}00095         \textcolor{keyword}{final} HashSet<TableInfo.ForeignKey> \_foreignKeysExpenses = \textcolor{keyword}{new} HashSet<TableInfo.ForeignKey>(0);}
+\DoxyCodeLine{\Hypertarget{_app_expenses_database___impl_8java_source_l00096}00096         \textcolor{keyword}{final} HashSet<TableInfo.Index> \_indicesExpenses = \textcolor{keyword}{new} HashSet<TableInfo.Index>(0);}
+\DoxyCodeLine{\Hypertarget{_app_expenses_database___impl_8java_source_l00097}00097         \textcolor{keyword}{final} TableInfo \_infoExpenses = \textcolor{keyword}{new} TableInfo(\textcolor{stringliteral}{"{}expenses"{}}, \_columnsExpenses, \_foreignKeysExpenses, \_indicesExpenses);}
+\DoxyCodeLine{\Hypertarget{_app_expenses_database___impl_8java_source_l00098}00098         \textcolor{keyword}{final} TableInfo \_existingExpenses = TableInfo.read(\_db, \textcolor{stringliteral}{"{}expenses"{}});}
+\DoxyCodeLine{\Hypertarget{_app_expenses_database___impl_8java_source_l00099}00099         \textcolor{keywordflow}{if} (! \_infoExpenses.equals(\_existingExpenses)) \{}
+\DoxyCodeLine{\Hypertarget{_app_expenses_database___impl_8java_source_l00100}00100           \textcolor{keywordflow}{return} \textcolor{keyword}{new} RoomOpenHelper.ValidationResult(\textcolor{keyword}{false}, \textcolor{stringliteral}{"{}expenses(com.snail.wallet.MainScreen.models.Expenses).\(\backslash\)n"{}}}
+\DoxyCodeLine{\Hypertarget{_app_expenses_database___impl_8java_source_l00101}00101                   + \textcolor{stringliteral}{"{} Expected:\(\backslash\)n"{}} + \_infoExpenses + \textcolor{stringliteral}{"{}\(\backslash\)n"{}}}
+\DoxyCodeLine{\Hypertarget{_app_expenses_database___impl_8java_source_l00102}00102                   + \textcolor{stringliteral}{"{} Found:\(\backslash\)n"{}} + \_existingExpenses);}
+\DoxyCodeLine{\Hypertarget{_app_expenses_database___impl_8java_source_l00103}00103         \}}
+\DoxyCodeLine{\Hypertarget{_app_expenses_database___impl_8java_source_l00104}00104         \textcolor{keywordflow}{return} \textcolor{keyword}{new} RoomOpenHelper.ValidationResult(\textcolor{keyword}{true}, \textcolor{keyword}{null});}
+\DoxyCodeLine{\Hypertarget{_app_expenses_database___impl_8java_source_l00105}00105       \}}
+\DoxyCodeLine{\Hypertarget{_app_expenses_database___impl_8java_source_l00106}00106     \}, \textcolor{stringliteral}{"{}a5ffe112fab74b44acab4c173f4b6040"{}}, \textcolor{stringliteral}{"{}cda3faf9138f1fc01c2fec653cd92709"{}});}
+\DoxyCodeLine{\Hypertarget{_app_expenses_database___impl_8java_source_l00107}00107     \textcolor{keyword}{final} SupportSQLiteOpenHelper.Configuration \_sqliteConfig = SupportSQLiteOpenHelper.Configuration.builder(configuration.context)}
+\DoxyCodeLine{\Hypertarget{_app_expenses_database___impl_8java_source_l00108}00108         .name(configuration.name)}
+\DoxyCodeLine{\Hypertarget{_app_expenses_database___impl_8java_source_l00109}00109         .callback(\_openCallback)}
+\DoxyCodeLine{\Hypertarget{_app_expenses_database___impl_8java_source_l00110}00110         .build();}
+\DoxyCodeLine{\Hypertarget{_app_expenses_database___impl_8java_source_l00111}00111     \textcolor{keyword}{final} SupportSQLiteOpenHelper \_helper = configuration.sqliteOpenHelperFactory.create(\_sqliteConfig);}
+\DoxyCodeLine{\Hypertarget{_app_expenses_database___impl_8java_source_l00112}00112     \textcolor{keywordflow}{return} \_helper;}
+\DoxyCodeLine{\Hypertarget{_app_expenses_database___impl_8java_source_l00113}00113   \}}
+\DoxyCodeLine{\Hypertarget{_app_expenses_database___impl_8java_source_l00114}00114 }
+\DoxyCodeLine{\Hypertarget{_app_expenses_database___impl_8java_source_l00115}00115   @Override}
+\DoxyCodeLine{\Hypertarget{_app_expenses_database___impl_8java_source_l00116}\mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1db_1_1_app_expenses_database___impl_a73ca84afc4b635a535f947c94a3b5c7e}{00116}}   \textcolor{keyword}{protected} InvalidationTracker \mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1db_1_1_app_expenses_database___impl_a73ca84afc4b635a535f947c94a3b5c7e}{createInvalidationTracker}}() \{}
+\DoxyCodeLine{\Hypertarget{_app_expenses_database___impl_8java_source_l00117}00117     \textcolor{keyword}{final} HashMap<String, String> \_shadowTablesMap = \textcolor{keyword}{new} HashMap<String, String>(0);}
+\DoxyCodeLine{\Hypertarget{_app_expenses_database___impl_8java_source_l00118}00118     HashMap<String, Set<String>> \_viewTables = \textcolor{keyword}{new} HashMap<String, Set<String>>(0);}
+\DoxyCodeLine{\Hypertarget{_app_expenses_database___impl_8java_source_l00119}00119     \textcolor{keywordflow}{return} \textcolor{keyword}{new} InvalidationTracker(\textcolor{keyword}{this}, \_shadowTablesMap, \_viewTables, \textcolor{stringliteral}{"{}expenses"{}});}
+\DoxyCodeLine{\Hypertarget{_app_expenses_database___impl_8java_source_l00120}00120   \}}
+\DoxyCodeLine{\Hypertarget{_app_expenses_database___impl_8java_source_l00121}00121 }
+\DoxyCodeLine{\Hypertarget{_app_expenses_database___impl_8java_source_l00122}00122   @Override}
+\DoxyCodeLine{\Hypertarget{_app_expenses_database___impl_8java_source_l00123}\mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1db_1_1_app_expenses_database___impl_af2b65b5e461633fc974bfc185acb6c85}{00123}}   \textcolor{keyword}{public} \textcolor{keywordtype}{void} \mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1db_1_1_app_expenses_database___impl_af2b65b5e461633fc974bfc185acb6c85}{clearAllTables}}() \{}
+\DoxyCodeLine{\Hypertarget{_app_expenses_database___impl_8java_source_l00124}00124     super.assertNotMainThread();}
+\DoxyCodeLine{\Hypertarget{_app_expenses_database___impl_8java_source_l00125}00125     \textcolor{keyword}{final} SupportSQLiteDatabase \_db = super.getOpenHelper().getWritableDatabase();}
+\DoxyCodeLine{\Hypertarget{_app_expenses_database___impl_8java_source_l00126}00126     \textcolor{keywordflow}{try} \{}
+\DoxyCodeLine{\Hypertarget{_app_expenses_database___impl_8java_source_l00127}00127       super.beginTransaction();}
+\DoxyCodeLine{\Hypertarget{_app_expenses_database___impl_8java_source_l00128}00128       \_db.execSQL(\textcolor{stringliteral}{"{}DELETE FROM `expenses`"{}});}
+\DoxyCodeLine{\Hypertarget{_app_expenses_database___impl_8java_source_l00129}00129       super.setTransactionSuccessful();}
+\DoxyCodeLine{\Hypertarget{_app_expenses_database___impl_8java_source_l00130}00130     \} \textcolor{keywordflow}{finally} \{}
+\DoxyCodeLine{\Hypertarget{_app_expenses_database___impl_8java_source_l00131}00131       super.endTransaction();}
+\DoxyCodeLine{\Hypertarget{_app_expenses_database___impl_8java_source_l00132}00132       \_db.query(\textcolor{stringliteral}{"{}PRAGMA wal\_checkpoint(FULL)"{}}).close();}
+\DoxyCodeLine{\Hypertarget{_app_expenses_database___impl_8java_source_l00133}00133       \textcolor{keywordflow}{if} (!\_db.inTransaction()) \{}
+\DoxyCodeLine{\Hypertarget{_app_expenses_database___impl_8java_source_l00134}00134         \_db.execSQL(\textcolor{stringliteral}{"{}VACUUM"{}});}
+\DoxyCodeLine{\Hypertarget{_app_expenses_database___impl_8java_source_l00135}00135       \}}
+\DoxyCodeLine{\Hypertarget{_app_expenses_database___impl_8java_source_l00136}00136     \}}
+\DoxyCodeLine{\Hypertarget{_app_expenses_database___impl_8java_source_l00137}00137   \}}
+\DoxyCodeLine{\Hypertarget{_app_expenses_database___impl_8java_source_l00138}00138 }
+\DoxyCodeLine{\Hypertarget{_app_expenses_database___impl_8java_source_l00139}00139   @Override}
+\DoxyCodeLine{\Hypertarget{_app_expenses_database___impl_8java_source_l00140}\mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1db_1_1_app_expenses_database___impl_ab8dad5eaf4ffb306998a3f7939c9240e}{00140}}   \textcolor{keyword}{protected} Map<Class<?>, List<Class<?>>> \mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1db_1_1_app_expenses_database___impl_ab8dad5eaf4ffb306998a3f7939c9240e}{getRequiredTypeConverters}}() \{}
+\DoxyCodeLine{\Hypertarget{_app_expenses_database___impl_8java_source_l00141}00141     \textcolor{keyword}{final} HashMap<Class<?>, List<Class<?>>> \_typeConvertersMap = \textcolor{keyword}{new} HashMap<Class<?>, List<Class<?>>>();}
+\DoxyCodeLine{\Hypertarget{_app_expenses_database___impl_8java_source_l00142}00142     \_typeConvertersMap.put(\mbox{\hyperlink{interfacecom_1_1snail_1_1wallet_1_1_main_screen_1_1db_1_1_expenses_d_a_o_1_1_expenses_d_a_o}{ExpensesDAO}}.class, \mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1db_1_1_expenses_d_a_o_1_1_expenses_d_a_o___impl}{ExpensesDAO\_Impl}}.\mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1db_1_1_expenses_d_a_o_1_1_expenses_d_a_o___impl_a33115dc2ece1441468bc06103fc6ac83}{getRequiredConverters}}());}
+\DoxyCodeLine{\Hypertarget{_app_expenses_database___impl_8java_source_l00143}00143     \textcolor{keywordflow}{return} \_typeConvertersMap;}
+\DoxyCodeLine{\Hypertarget{_app_expenses_database___impl_8java_source_l00144}00144   \}}
+\DoxyCodeLine{\Hypertarget{_app_expenses_database___impl_8java_source_l00145}00145 }
+\DoxyCodeLine{\Hypertarget{_app_expenses_database___impl_8java_source_l00146}00146   @Override}
+\DoxyCodeLine{\Hypertarget{_app_expenses_database___impl_8java_source_l00147}\mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1db_1_1_app_expenses_database___impl_aef6d9926ffb78aa686b41bba239b9651}{00147}}   \textcolor{keyword}{public} Set<Class<? extends AutoMigrationSpec>> \mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1db_1_1_app_expenses_database___impl_aef6d9926ffb78aa686b41bba239b9651}{getRequiredAutoMigrationSpecs}}() \{}
+\DoxyCodeLine{\Hypertarget{_app_expenses_database___impl_8java_source_l00148}00148     \textcolor{keyword}{final} HashSet<Class<? extends AutoMigrationSpec>> \_autoMigrationSpecsSet = \textcolor{keyword}{new} HashSet<Class<? extends AutoMigrationSpec>>();}
+\DoxyCodeLine{\Hypertarget{_app_expenses_database___impl_8java_source_l00149}00149     \textcolor{keywordflow}{return} \_autoMigrationSpecsSet;}
+\DoxyCodeLine{\Hypertarget{_app_expenses_database___impl_8java_source_l00150}00150   \}}
+\DoxyCodeLine{\Hypertarget{_app_expenses_database___impl_8java_source_l00151}00151 }
+\DoxyCodeLine{\Hypertarget{_app_expenses_database___impl_8java_source_l00152}00152   @Override}
+\DoxyCodeLine{\Hypertarget{_app_expenses_database___impl_8java_source_l00153}\mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1db_1_1_app_expenses_database___impl_a8e8ddbb3c355b37a01c1f5b6433394b4}{00153}}   \textcolor{keyword}{public} List<Migration> \mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1db_1_1_app_expenses_database___impl_a8e8ddbb3c355b37a01c1f5b6433394b4}{getAutoMigrations}}(}
+\DoxyCodeLine{\Hypertarget{_app_expenses_database___impl_8java_source_l00154}00154       @NonNull Map<Class<? extends AutoMigrationSpec>, AutoMigrationSpec> autoMigrationSpecsMap) \{}
+\DoxyCodeLine{\Hypertarget{_app_expenses_database___impl_8java_source_l00155}00155     \textcolor{keywordflow}{return} Arrays.asList();}
+\DoxyCodeLine{\Hypertarget{_app_expenses_database___impl_8java_source_l00156}00156   \}}
+\DoxyCodeLine{\Hypertarget{_app_expenses_database___impl_8java_source_l00157}00157 }
+\DoxyCodeLine{\Hypertarget{_app_expenses_database___impl_8java_source_l00158}00158   @Override}
+\DoxyCodeLine{\Hypertarget{_app_expenses_database___impl_8java_source_l00159}\mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1db_1_1_app_expenses_database___impl_a98700f2d112825684269595003501616}{00159}}   \textcolor{keyword}{public} \mbox{\hyperlink{interfacecom_1_1snail_1_1wallet_1_1_main_screen_1_1db_1_1_expenses_d_a_o_1_1_expenses_d_a_o}{ExpensesDAO}} \mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1db_1_1_app_expenses_database___impl_a98700f2d112825684269595003501616}{expensesDAO}}() \{}
+\DoxyCodeLine{\Hypertarget{_app_expenses_database___impl_8java_source_l00160}00160     \textcolor{keywordflow}{if} (\_expensesDAO != \textcolor{keyword}{null}) \{}
+\DoxyCodeLine{\Hypertarget{_app_expenses_database___impl_8java_source_l00161}00161       \textcolor{keywordflow}{return} \_expensesDAO;}
+\DoxyCodeLine{\Hypertarget{_app_expenses_database___impl_8java_source_l00162}00162     \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{\Hypertarget{_app_expenses_database___impl_8java_source_l00163}00163       \textcolor{keyword}{synchronized}(\textcolor{keyword}{this}) \{}
+\DoxyCodeLine{\Hypertarget{_app_expenses_database___impl_8java_source_l00164}00164         \textcolor{keywordflow}{if}(\_expensesDAO == \textcolor{keyword}{null}) \{}
+\DoxyCodeLine{\Hypertarget{_app_expenses_database___impl_8java_source_l00165}00165           \_expensesDAO = \textcolor{keyword}{new} \mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1db_1_1_expenses_d_a_o_1_1_expenses_d_a_o___impl}{ExpensesDAO\_Impl}}(\textcolor{keyword}{this});}
+\DoxyCodeLine{\Hypertarget{_app_expenses_database___impl_8java_source_l00166}00166         \}}
+\DoxyCodeLine{\Hypertarget{_app_expenses_database___impl_8java_source_l00167}00167         \textcolor{keywordflow}{return} \_expensesDAO;}
+\DoxyCodeLine{\Hypertarget{_app_expenses_database___impl_8java_source_l00168}00168       \}}
+\DoxyCodeLine{\Hypertarget{_app_expenses_database___impl_8java_source_l00169}00169     \}}
+\DoxyCodeLine{\Hypertarget{_app_expenses_database___impl_8java_source_l00170}00170   \}}
+\DoxyCodeLine{\Hypertarget{_app_expenses_database___impl_8java_source_l00171}00171 \}}
+
+\end{DoxyCode}

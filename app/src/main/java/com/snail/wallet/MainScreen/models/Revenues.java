@@ -7,11 +7,11 @@ import androidx.room.Entity;
 @Entity(tableName = "revenues")
 public class Revenues extends Money {
     @ColumnInfo(name = "storage_location")
-    protected String storage_location;
+    public String storage_location;
     @ColumnInfo(name = "source")
-    protected String source;
+    public String source;
     @ColumnInfo(name = "category")
-    protected String category;
+    public String category;
 
 
     public Revenues(int id, double value, byte currency, String description) {

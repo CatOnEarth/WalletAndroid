@@ -7,13 +7,13 @@ import androidx.room.PrimaryKey;
 public class Money {
     @PrimaryKey
     @ColumnInfo(name = "id")
-    protected int    id;
+    public int    id;
     @ColumnInfo(name = "value")
-    protected double value;
+    public double value;
     @ColumnInfo(name = "currency")
-    protected byte   currency;
+    public byte   currency;
     @ColumnInfo(name = "description")
-    protected String description;
+    public String description;
 
     public Money(int id, double value, byte currency, String description) {
         this.id = id;
