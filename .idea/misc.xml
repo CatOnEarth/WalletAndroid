@@ -4,6 +4,13 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/development/android/Wallet/app/src/main/res/layout/activity_main.xml" value="0.33" />
+        <entry key="..\:/development/android/Wallet/app/src/main/res/layout/activity_wallet.xml" value="0.17831813576494426" />
+        <entry key="..\:/development/android/Wallet/app/src/main/res/layout/app_bar_wallet.xml" value="0.17831813576494426" />
+        <entry key="..\:/development/android/Wallet/app/src/main/res/layout/content_wallet.xml" value="0.17831813576494426" />
+        <entry key="..\:/development/android/Wallet/app/src/main/res/layout/fragment_gallery.xml" value="0.17831813576494426" />
+        <entry key="..\:/development/android/Wallet/app/src/main/res/layout/fragment_home.xml" value="0.17831813576494426" />
+        <entry key="..\:/development/android/Wallet/app/src/main/res/layout/fragment_slideshow.xml" value="0.17831813576494426" />
+        <entry key="..\:/development/android/Wallet/app/src/main/res/layout/nav_header_wallet.xml" value="0.17831813576494426" />
       </map>
     </option>
   </component>

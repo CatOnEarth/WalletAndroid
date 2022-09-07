@@ -13,7 +13,7 @@ var hierarchy =
       [ "com.snail.wallet.MainScreen.ui.slideshow.SlideshowFragment", "classcom_1_1snail_1_1wallet_1_1_main_screen_1_1ui_1_1slideshow_1_1_slideshow_fragment.html", null ]
     ] ],
     [ "ViewBinding", null, [
-      [ "com.snail.wallet.databinding.ActivityMainBinding", "classcom_1_1snail_1_1wallet_1_1databinding_1_1_activity_main_binding.html", null ],
+      [ "com.snail.wallet.databinding.ActivityLoginBinding", "classcom_1_1snail_1_1wallet_1_1databinding_1_1_activity_login_binding.html", null ],
       [ "com.snail.wallet.databinding.ActivityWalletBinding", "classcom_1_1snail_1_1wallet_1_1databinding_1_1_activity_wallet_binding.html", null ],
       [ "com.snail.wallet.databinding.AppBarWalletBinding", "classcom_1_1snail_1_1wallet_1_1databinding_1_1_app_bar_wallet_binding.html", null ],
       [ "com.snail.wallet.databinding.ContentWalletBinding", "classcom_1_1snail_1_1wallet_1_1databinding_1_1_content_wallet_binding.html", null ],

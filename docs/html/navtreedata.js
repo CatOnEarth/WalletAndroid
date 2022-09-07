@@ -47,7 +47,7 @@ var NAVTREE =
 
 var NAVTREEINDEX =
 [
-"_activity_main_binding_8java.html"
+"_activity_login_binding_8java.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

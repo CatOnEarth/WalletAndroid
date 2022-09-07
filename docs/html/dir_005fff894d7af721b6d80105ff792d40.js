@@ -1,6 +1,6 @@
 var dir_005fff894d7af721b6d80105ff792d40 =
 [
-    [ "ActivityMainBinding.java", "_activity_main_binding_8java.html", "_activity_main_binding_8java" ],
+    [ "ActivityLoginBinding.java", "_activity_login_binding_8java.html", "_activity_login_binding_8java" ],
     [ "ActivityWalletBinding.java", "_activity_wallet_binding_8java.html", "_activity_wallet_binding_8java" ],
     [ "AppBarWalletBinding.java", "_app_bar_wallet_binding_8java.html", "_app_bar_wallet_binding_8java" ],
     [ "ContentWalletBinding.java", "_content_wallet_binding_8java.html", "_content_wallet_binding_8java" ],

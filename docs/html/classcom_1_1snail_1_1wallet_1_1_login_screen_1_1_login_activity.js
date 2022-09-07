@@ -4,5 +4,6 @@ var classcom_1_1snail_1_1wallet_1_1_login_screen_1_1_login_activity =
     [ "onCreateOptionsMenu", "classcom_1_1snail_1_1wallet_1_1_login_screen_1_1_login_activity.html#abbd222980c3a73dedb299211a5e27109", null ],
     [ "onOptionsItemSelected", "classcom_1_1snail_1_1wallet_1_1_login_screen_1_1_login_activity.html#a159acffa421e7fb73e172081155bbd12", null ],
     [ "startOfflineApp", "classcom_1_1snail_1_1wallet_1_1_login_screen_1_1_login_activity.html#a4741c03bfca472ffb2ba4163565780b7", null ],
+    [ "mSettings", "classcom_1_1snail_1_1wallet_1_1_login_screen_1_1_login_activity.html#a06a8e5cc4fd5d442d026211d4f4050b9", null ],
     [ "TAG", "classcom_1_1snail_1_1wallet_1_1_login_screen_1_1_login_activity.html#a7a6d635a65d5f17d2e473f4be102cf70", null ]
 ];

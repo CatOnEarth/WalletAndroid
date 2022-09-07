@@ -4,7 +4,7 @@ var annotated_dup =
       [ "snail", null, [
         [ "wallet", "namespacecom_1_1snail_1_1wallet.html", [
           [ "databinding", "namespacecom_1_1snail_1_1wallet_1_1databinding.html", [
-            [ "ActivityMainBinding", "classcom_1_1snail_1_1wallet_1_1databinding_1_1_activity_main_binding.html", "classcom_1_1snail_1_1wallet_1_1databinding_1_1_activity_main_binding" ],
+            [ "ActivityLoginBinding", "classcom_1_1snail_1_1wallet_1_1databinding_1_1_activity_login_binding.html", "classcom_1_1snail_1_1wallet_1_1databinding_1_1_activity_login_binding" ],
             [ "ActivityWalletBinding", "classcom_1_1snail_1_1wallet_1_1databinding_1_1_activity_wallet_binding.html", "classcom_1_1snail_1_1wallet_1_1databinding_1_1_activity_wallet_binding" ],
             [ "AppBarWalletBinding", "classcom_1_1snail_1_1wallet_1_1databinding_1_1_app_bar_wallet_binding.html", "classcom_1_1snail_1_1wallet_1_1databinding_1_1_app_bar_wallet_binding" ],
             [ "ContentWalletBinding", "classcom_1_1snail_1_1wallet_1_1databinding_1_1_content_wallet_binding.html", "classcom_1_1snail_1_1wallet_1_1databinding_1_1_content_wallet_binding" ],
