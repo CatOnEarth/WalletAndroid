@@ -1,4 +1,6 @@
 <map id="com.snail.wallet.MainScreen.db.App.getInstance" name="com.snail.wallet.MainScreen.db.App.getInstance">
-<area shape="rect" id="node1" title=" " alt="" coords="245,5,456,47"/>
-<area shape="rect" id="node2" href="$classcom_1_1snail_1_1wallet_1_1_main_screen_1_1_wallet_activity.html#a41cf532c3407a8ddd5f64bbc8ecab3ec" title=" " alt="" coords="5,5,197,47"/>
+<area shape="rect" id="node1" title=" " alt="" coords="587,39,797,80"/>
+<area shape="rect" id="node2" href="$classcom_1_1snail_1_1wallet_1_1_main_screen_1_1ui_1_1home_1_1_home_view_model.html#a4ce918a76a31e0ce710b1a548dc4c242" title=" " alt="" coords="296,5,539,47"/>
+<area shape="rect" id="node4" href="$classcom_1_1snail_1_1wallet_1_1_main_screen_1_1ui_1_1home_1_1_home_view_model.html#aa851266ac89e3005076fbc26fcb8b6d6" title=" " alt="" coords="296,71,539,112"/>
+<area shape="rect" id="node3" href="$classcom_1_1snail_1_1wallet_1_1_main_screen_1_1ui_1_1home_1_1_home_view_model.html#aeb6562ded0ab20d21e33aff824774d02" title=" " alt="" coords="5,39,248,80"/>
 </map>

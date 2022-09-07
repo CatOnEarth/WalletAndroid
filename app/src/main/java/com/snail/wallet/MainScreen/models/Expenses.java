@@ -11,7 +11,7 @@ public class Expenses extends Money{
     @ColumnInfo(name = "category")
     public String category;
 
-    public Expenses(int id, double value, byte currency, String description) {
-        super(id, value, currency, description);
+    public Expenses(double value, byte currency, String description) {
+        super(value, currency, description);
     }
 }

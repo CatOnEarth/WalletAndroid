@@ -14,12 +14,12 @@ public class Revenues extends Money {
     public String category;
 
 
-    public Revenues(int id, double value, byte currency, String description) {
-        super(id, value, currency, description);
+    public Revenues(double value, byte currency, String description) {
+        super(value, currency, description);
     }
 
     public Revenues(Money money, String storage_location, String source, String category) {
-        super(money.getId(), money.getValue(), money.getCurrency(), money.getDescription());
+        super(money.getValue(), money.getCurrency(), money.getDescription());
 
         this.storage_location = storage_location;
         this.source           = source;

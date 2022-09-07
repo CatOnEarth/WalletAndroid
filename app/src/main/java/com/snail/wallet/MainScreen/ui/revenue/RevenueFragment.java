@@ -24,8 +24,6 @@ public class RevenueFragment extends Fragment {
         binding = FragmentRevenueBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
-        final TextView textView = binding.textGallery;
-        revenueViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
         return root;
     }
 

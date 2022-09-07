@@ -43,9 +43,9 @@
 \DoxyCodeLine{\Hypertarget{_app_expenses_database___impl_8java_source_l00039}00039     \textcolor{keyword}{final} SupportSQLiteOpenHelper.Callback \_openCallback = \textcolor{keyword}{new} RoomOpenHelper(configuration, \textcolor{keyword}{new} RoomOpenHelper.Delegate(1) \{}
 \DoxyCodeLine{\Hypertarget{_app_expenses_database___impl_8java_source_l00040}00040       @Override}
 \DoxyCodeLine{\Hypertarget{_app_expenses_database___impl_8java_source_l00041}00041       public void createAllTables(SupportSQLiteDatabase \_db) \{}
-\DoxyCodeLine{\Hypertarget{_app_expenses_database___impl_8java_source_l00042}00042         \_db.execSQL(\textcolor{stringliteral}{"{}CREATE TABLE IF NOT EXISTS `expenses` (`purpose` TEXT, `category` TEXT, `id` INTEGER NOT NULL, `value` REAL NOT NULL, `currency` INTEGER NOT NULL, `description` TEXT, PRIMARY KEY(`id`))"{}});}
+\DoxyCodeLine{\Hypertarget{_app_expenses_database___impl_8java_source_l00042}00042         \_db.execSQL(\textcolor{stringliteral}{"{}CREATE TABLE IF NOT EXISTS `expenses` (`purpose` TEXT, `category` TEXT, `id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `value` REAL NOT NULL, `currency` INTEGER NOT NULL, `description` TEXT)"{}});}
 \DoxyCodeLine{\Hypertarget{_app_expenses_database___impl_8java_source_l00043}00043         \_db.execSQL(\textcolor{stringliteral}{"{}CREATE TABLE IF NOT EXISTS room\_master\_table (id INTEGER PRIMARY KEY,identity\_hash TEXT)"{}});}
-\DoxyCodeLine{\Hypertarget{_app_expenses_database___impl_8java_source_l00044}00044         \_db.execSQL(\textcolor{stringliteral}{"{}INSERT OR REPLACE INTO room\_master\_table (id,identity\_hash) VALUES(42, 'a5ffe112fab74b44acab4c173f4b6040')"{}});}
+\DoxyCodeLine{\Hypertarget{_app_expenses_database___impl_8java_source_l00044}00044         \_db.execSQL(\textcolor{stringliteral}{"{}INSERT OR REPLACE INTO room\_master\_table (id,identity\_hash) VALUES(42, '7c3084d5af810b63c289e3b732a7c3a5')"{}});}
 \DoxyCodeLine{\Hypertarget{_app_expenses_database___impl_8java_source_l00045}00045       \}}
 \DoxyCodeLine{\Hypertarget{_app_expenses_database___impl_8java_source_l00046}00046 }
 \DoxyCodeLine{\Hypertarget{_app_expenses_database___impl_8java_source_l00047}00047       @Override}
@@ -107,7 +107,7 @@
 \DoxyCodeLine{\Hypertarget{_app_expenses_database___impl_8java_source_l00103}00103         \}}
 \DoxyCodeLine{\Hypertarget{_app_expenses_database___impl_8java_source_l00104}00104         \textcolor{keywordflow}{return} \textcolor{keyword}{new} RoomOpenHelper.ValidationResult(\textcolor{keyword}{true}, \textcolor{keyword}{null});}
 \DoxyCodeLine{\Hypertarget{_app_expenses_database___impl_8java_source_l00105}00105       \}}
-\DoxyCodeLine{\Hypertarget{_app_expenses_database___impl_8java_source_l00106}00106     \}, \textcolor{stringliteral}{"{}a5ffe112fab74b44acab4c173f4b6040"{}}, \textcolor{stringliteral}{"{}cda3faf9138f1fc01c2fec653cd92709"{}});}
+\DoxyCodeLine{\Hypertarget{_app_expenses_database___impl_8java_source_l00106}00106     \}, \textcolor{stringliteral}{"{}7c3084d5af810b63c289e3b732a7c3a5"{}}, \textcolor{stringliteral}{"{}da3e88dd3ce7921e8370ea3d79bfa15f"{}});}
 \DoxyCodeLine{\Hypertarget{_app_expenses_database___impl_8java_source_l00107}00107     \textcolor{keyword}{final} SupportSQLiteOpenHelper.Configuration \_sqliteConfig = SupportSQLiteOpenHelper.Configuration.builder(configuration.context)}
 \DoxyCodeLine{\Hypertarget{_app_expenses_database___impl_8java_source_l00108}00108         .name(configuration.name)}
 \DoxyCodeLine{\Hypertarget{_app_expenses_database___impl_8java_source_l00109}00109         .callback(\_openCallback)}

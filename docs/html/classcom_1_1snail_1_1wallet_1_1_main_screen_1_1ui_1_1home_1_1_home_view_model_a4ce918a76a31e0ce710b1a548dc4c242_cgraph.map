@@ -1,0 +1,7 @@
+<map id="com.snail.wallet.MainScreen.ui.home.HomeViewModel.CountExpenses" name="com.snail.wallet.MainScreen.ui.home.HomeViewModel.CountExpenses">
+<area shape="rect" id="node1" title=" " alt="" coords="5,104,248,145"/>
+<area shape="rect" id="node2" href="$classcom_1_1snail_1_1wallet_1_1_main_screen_1_1db_1_1_app_expenses_database.html#a7225d154c47ce5c8067637184453b859" title=" " alt="" coords="303,5,549,47"/>
+<area shape="rect" id="node3" href="$classcom_1_1snail_1_1wallet_1_1_main_screen_1_1db_1_1_app.html#abcf738854171c9def9509db0a115f13d" title=" " alt="" coords="321,71,531,112"/>
+<area shape="rect" id="node4" href="$classcom_1_1snail_1_1wallet_1_1_main_screen_1_1db_1_1_app.html#ae02fb8957548ba245d569675490ed14e" title=" " alt="" coords="321,136,531,177"/>
+<area shape="rect" id="node5" href="$interfacecom_1_1snail_1_1wallet_1_1_main_screen_1_1db_1_1_expenses_d_a_o_1_1_expenses_d_a_o.html#ab36405543a29452f2c3d624e07df9e4f" title=" " alt="" coords="296,201,556,243"/>
+</map>

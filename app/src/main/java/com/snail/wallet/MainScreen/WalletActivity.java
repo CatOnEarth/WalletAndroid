@@ -1,16 +1,9 @@
 package com.snail.wallet.MainScreen;
 
 import android.os.Bundle;
-import android.view.View;
 import android.view.Menu;
 
-import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.navigation.NavigationView;
-import com.snail.wallet.MainScreen.db.App;
-import com.snail.wallet.MainScreen.db.AppExpensesDatabase;
-import com.snail.wallet.MainScreen.db.AppRevenueDatabase;
-import com.snail.wallet.MainScreen.db.RevenueDAO.RevenueDAO;
-import com.snail.wallet.MainScreen.models.Revenues;
 import com.snail.wallet.R;
 import com.snail.wallet.databinding.ActivityWalletBinding;
 
@@ -20,7 +13,6 @@ import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.room.Room;
 
 
 public class WalletActivity extends AppCompatActivity {
@@ -48,12 +40,6 @@ public class WalletActivity extends AppCompatActivity {
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_wallet);
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);
-
-        Revenues revenue = new Revenues(1,2, (byte) 3,"desc");
-        AppRevenueDatabase db = App.getInstance().getRevenueDatabase();
-        RevenueDAO revenueDAO = db.revenueDAO();
-
-        revenueDAO.insert(revenue);
     }
 
     @Override

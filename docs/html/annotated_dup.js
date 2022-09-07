@@ -38,6 +38,9 @@ var annotated_dup =
               [ "Revenues", "classcom_1_1snail_1_1wallet_1_1_main_screen_1_1models_1_1_revenues.html", "classcom_1_1snail_1_1wallet_1_1_main_screen_1_1models_1_1_revenues" ]
             ] ],
             [ "ui", null, [
+              [ "adapters", "namespacecom_1_1snail_1_1wallet_1_1_main_screen_1_1ui_1_1adapters.html", [
+                [ "RevenueAdapter", "classcom_1_1snail_1_1wallet_1_1_main_screen_1_1ui_1_1adapters_1_1_revenue_adapter.html", null ]
+              ] ],
               [ "expenses", "namespacecom_1_1snail_1_1wallet_1_1_main_screen_1_1ui_1_1expenses.html", [
                 [ "ExpensesFragment", "classcom_1_1snail_1_1wallet_1_1_main_screen_1_1ui_1_1expenses_1_1_expenses_fragment.html", "classcom_1_1snail_1_1wallet_1_1_main_screen_1_1ui_1_1expenses_1_1_expenses_fragment" ],
                 [ "ExpensesViewModel", "classcom_1_1snail_1_1wallet_1_1_main_screen_1_1ui_1_1expenses_1_1_expenses_view_model.html", "classcom_1_1snail_1_1wallet_1_1_main_screen_1_1ui_1_1expenses_1_1_expenses_view_model" ]

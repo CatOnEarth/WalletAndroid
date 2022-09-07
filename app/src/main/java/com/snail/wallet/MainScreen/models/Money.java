@@ -5,7 +5,7 @@ import androidx.room.ColumnInfo;
 import androidx.room.PrimaryKey;
 
 public class Money {
-    @PrimaryKey
+    @PrimaryKey (autoGenerate=true)
     @ColumnInfo(name = "id")
     public int    id;
     @ColumnInfo(name = "value")
@@ -15,11 +15,15 @@ public class Money {
     @ColumnInfo(name = "description")
     public String description;
 
-    public Money(int id, double value, byte currency, String description) {
-        this.id = id;
-        this.value = value;
-        this.currency = currency;
+    public Money(double value, byte currency, String description) {
+        this.value       = value;
+        this.currency    = currency;
         this.description = description;
+    }
+
+    public Money(double value, byte currency) {
+        this.value    = value;
+        this.currency = currency;
     }
 
     /**

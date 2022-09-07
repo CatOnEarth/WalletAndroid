@@ -1,7 +1,6 @@
 <map id="com.snail.wallet.MainScreen.models.Revenues.Revenues" name="com.snail.wallet.MainScreen.models.Revenues.Revenues">
-<area shape="rect" id="node1" title=" " alt="" coords="5,104,244,145"/>
+<area shape="rect" id="node1" title=" " alt="" coords="5,71,244,112"/>
 <area shape="rect" id="node2" href="$classcom_1_1snail_1_1wallet_1_1_main_screen_1_1models_1_1_money.html#a80b85569c112a589c4e5739b8c531cfa" title=" " alt="" coords="292,5,531,47"/>
 <area shape="rect" id="node3" href="$classcom_1_1snail_1_1wallet_1_1_main_screen_1_1models_1_1_money.html#a494fcb18760df058351a721dc0133593" title=" " alt="" coords="292,71,531,112"/>
-<area shape="rect" id="node4" href="$classcom_1_1snail_1_1wallet_1_1_main_screen_1_1models_1_1_money.html#ae667240d4853015b8340074d0b35f80b" title=" " alt="" coords="292,136,531,177"/>
-<area shape="rect" id="node5" href="$classcom_1_1snail_1_1wallet_1_1_main_screen_1_1models_1_1_money.html#a472b9e7822ce4dffc3e347a8c34aeeaf" title=" " alt="" coords="292,201,531,243"/>
+<area shape="rect" id="node4" href="$classcom_1_1snail_1_1wallet_1_1_main_screen_1_1models_1_1_money.html#a472b9e7822ce4dffc3e347a8c34aeeaf" title=" " alt="" coords="292,136,531,177"/>
 </map>

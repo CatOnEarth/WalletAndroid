@@ -1,6 +1,7 @@
 var classcom_1_1snail_1_1wallet_1_1_main_screen_1_1models_1_1_money =
 [
-    [ "Money", "classcom_1_1snail_1_1wallet_1_1_main_screen_1_1models_1_1_money.html#a84f8c793ffa2394f60c8ef578c6ff706", null ],
+    [ "Money", "classcom_1_1snail_1_1wallet_1_1_main_screen_1_1models_1_1_money.html#a6135cfeffccb4cdaec1da400c4e4c5bb", null ],
+    [ "Money", "classcom_1_1snail_1_1wallet_1_1_main_screen_1_1models_1_1_money.html#a40a8e48a001692f78e27c6c134480d39", null ],
     [ "getCurrency", "classcom_1_1snail_1_1wallet_1_1_main_screen_1_1models_1_1_money.html#a80b85569c112a589c4e5739b8c531cfa", null ],
     [ "getDescription", "classcom_1_1snail_1_1wallet_1_1_main_screen_1_1models_1_1_money.html#a494fcb18760df058351a721dc0133593", null ],
     [ "getId", "classcom_1_1snail_1_1wallet_1_1_main_screen_1_1models_1_1_money.html#ae667240d4853015b8340074d0b35f80b", null ],

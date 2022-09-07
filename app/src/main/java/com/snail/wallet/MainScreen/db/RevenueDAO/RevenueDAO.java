@@ -15,6 +15,9 @@ public interface RevenueDAO {
     @Query("SELECT * FROM revenues")
     List<Revenues> getAll();
 
+    @Query("SELECT value FROM revenues")
+    List<Double> getValues();
+
     @Insert
     void insert(Revenues revenue);
 

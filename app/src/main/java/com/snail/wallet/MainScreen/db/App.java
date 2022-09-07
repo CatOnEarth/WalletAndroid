@@ -9,7 +9,7 @@ public class App extends Application {
     public static App instance;
 
     private AppRevenueDatabase revenue_database;
-    private AppExpensesDatabase expenses_revenue;
+    private AppExpensesDatabase expenses_database;
 
     @Override
     public void onCreate() {
@@ -19,7 +19,7 @@ public class App extends Application {
                 .allowMainThreadQueries()
                 .build();
 
-        expenses_revenue = Room.databaseBuilder(this, AppExpensesDatabase.class, "database")
+        expenses_database = Room.databaseBuilder(this, AppExpensesDatabase.class, "database2")
                 .allowMainThreadQueries()
                 .build();
     }
@@ -33,6 +33,6 @@ public class App extends Application {
     }
 
     public AppExpensesDatabase getExpensesDatabase() {
-        return expenses_revenue;
+        return expenses_database;
     }
 }

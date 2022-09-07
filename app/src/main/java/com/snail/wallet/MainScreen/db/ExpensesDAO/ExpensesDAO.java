@@ -7,7 +7,6 @@ import androidx.room.Query;
 import androidx.room.Update;
 
 import com.snail.wallet.MainScreen.models.Expenses;
-import com.snail.wallet.MainScreen.models.Revenues;
 
 import java.util.List;
 
@@ -15,6 +14,9 @@ import java.util.List;
 public interface ExpensesDAO {
     @Query("SELECT * FROM expenses")
     List<Expenses> getAll();
+
+    @Query("SELECT value FROM expenses")
+    List<Double> getValues();
 
     @Insert
     void insert(Expenses expenses);

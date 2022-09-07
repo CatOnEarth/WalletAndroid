@@ -13,7 +13,7 @@
 \DoxyCodeLine{\Hypertarget{_app_8java_source_l00009}\mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1db_1_1_app_a3cf1e1e959d2dd81c2e1d2277012022c}{00009}}     \textcolor{keyword}{public} \textcolor{keyword}{static} \mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1db_1_1_app}{App}} \mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1db_1_1_app_a3cf1e1e959d2dd81c2e1d2277012022c}{instance}};}
 \DoxyCodeLine{\Hypertarget{_app_8java_source_l00010}00010 }
 \DoxyCodeLine{\Hypertarget{_app_8java_source_l00011}\mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1db_1_1_app_a04aeb85ddfa070f308238d66b4685fad}{00011}}     \textcolor{keyword}{private} \mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1db_1_1_app_revenue_database}{AppRevenueDatabase}} \mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1db_1_1_app_a04aeb85ddfa070f308238d66b4685fad}{revenue\_database}};}
-\DoxyCodeLine{\Hypertarget{_app_8java_source_l00012}\mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1db_1_1_app_a0c8d58d7331e84ef5d46765dc3982124}{00012}}     \textcolor{keyword}{private} \mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1db_1_1_app_expenses_database}{AppExpensesDatabase}} \mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1db_1_1_app_a0c8d58d7331e84ef5d46765dc3982124}{expenses\_revenue}};}
+\DoxyCodeLine{\Hypertarget{_app_8java_source_l00012}\mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1db_1_1_app_ab6ccf071f0ad2d9b507785065c9c4c0a}{00012}}     \textcolor{keyword}{private} \mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1db_1_1_app_expenses_database}{AppExpensesDatabase}} \mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1db_1_1_app_ab6ccf071f0ad2d9b507785065c9c4c0a}{expenses\_database}};}
 \DoxyCodeLine{\Hypertarget{_app_8java_source_l00013}00013 }
 \DoxyCodeLine{\Hypertarget{_app_8java_source_l00014}00014     @Override}
 \DoxyCodeLine{\Hypertarget{_app_8java_source_l00015}\mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1db_1_1_app_af56bfd2db1e0214d7f6da50687ce820c}{00015}}     \textcolor{keyword}{public} \textcolor{keywordtype}{void} \mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1db_1_1_app_af56bfd2db1e0214d7f6da50687ce820c}{onCreate}}() \{}
@@ -23,7 +23,7 @@
 \DoxyCodeLine{\Hypertarget{_app_8java_source_l00019}00019                 .allowMainThreadQueries()}
 \DoxyCodeLine{\Hypertarget{_app_8java_source_l00020}00020                 .build();}
 \DoxyCodeLine{\Hypertarget{_app_8java_source_l00021}00021 }
-\DoxyCodeLine{\Hypertarget{_app_8java_source_l00022}00022         \mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1db_1_1_app_a0c8d58d7331e84ef5d46765dc3982124}{expenses\_revenue}} = Room.databaseBuilder(\textcolor{keyword}{this}, \mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1db_1_1_app_expenses_database}{AppExpensesDatabase}}.class, \textcolor{stringliteral}{"{}database"{}})}
+\DoxyCodeLine{\Hypertarget{_app_8java_source_l00022}00022         \mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1db_1_1_app_ab6ccf071f0ad2d9b507785065c9c4c0a}{expenses\_database}} = Room.databaseBuilder(\textcolor{keyword}{this}, \mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1db_1_1_app_expenses_database}{AppExpensesDatabase}}.class, \textcolor{stringliteral}{"{}database2"{}})}
 \DoxyCodeLine{\Hypertarget{_app_8java_source_l00023}00023                 .allowMainThreadQueries()}
 \DoxyCodeLine{\Hypertarget{_app_8java_source_l00024}00024                 .build();}
 \DoxyCodeLine{\Hypertarget{_app_8java_source_l00025}00025     \}}
@@ -37,7 +37,7 @@
 \DoxyCodeLine{\Hypertarget{_app_8java_source_l00033}00033     \}}
 \DoxyCodeLine{\Hypertarget{_app_8java_source_l00034}00034 }
 \DoxyCodeLine{\Hypertarget{_app_8java_source_l00035}\mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1db_1_1_app_abcf738854171c9def9509db0a115f13d}{00035}}     \textcolor{keyword}{public} \mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1db_1_1_app_expenses_database}{AppExpensesDatabase}} \mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1db_1_1_app_abcf738854171c9def9509db0a115f13d}{getExpensesDatabase}}() \{}
-\DoxyCodeLine{\Hypertarget{_app_8java_source_l00036}00036         \textcolor{keywordflow}{return} \mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1db_1_1_app_a0c8d58d7331e84ef5d46765dc3982124}{expenses\_revenue}};}
+\DoxyCodeLine{\Hypertarget{_app_8java_source_l00036}00036         \textcolor{keywordflow}{return} \mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1db_1_1_app_ab6ccf071f0ad2d9b507785065c9c4c0a}{expenses\_database}};}
 \DoxyCodeLine{\Hypertarget{_app_8java_source_l00037}00037     \}}
 \DoxyCodeLine{\Hypertarget{_app_8java_source_l00038}00038 \}}
 

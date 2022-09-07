@@ -10,6 +10,7 @@ var hierarchy =
       [ "com.snail.wallet.MainScreen.models.Expenses", "classcom_1_1snail_1_1wallet_1_1_main_screen_1_1models_1_1_expenses.html", null ],
       [ "com.snail.wallet.MainScreen.models.Revenues", "classcom_1_1snail_1_1wallet_1_1_main_screen_1_1models_1_1_revenues.html", null ]
     ] ],
+    [ "com.snail.wallet.MainScreen.ui.adapters.RevenueAdapter", "classcom_1_1snail_1_1wallet_1_1_main_screen_1_1ui_1_1adapters_1_1_revenue_adapter.html", null ],
     [ "com.snail.wallet.MainScreen.db.RevenueDAO.RevenueDAO", "interfacecom_1_1snail_1_1wallet_1_1_main_screen_1_1db_1_1_revenue_d_a_o_1_1_revenue_d_a_o.html", [
       [ "com.snail.wallet.MainScreen.db.RevenueDAO.RevenueDAO_Impl", "classcom_1_1snail_1_1wallet_1_1_main_screen_1_1db_1_1_revenue_d_a_o_1_1_revenue_d_a_o___impl.html", null ]
     ] ],

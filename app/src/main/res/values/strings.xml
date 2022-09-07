@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">Кошелек</string>
     <string name="about">О приложении</string>
-    <string name="TextEmail">email</string>
+    <string name="TextEmail">Email</string>
     <string name="TextPassword">Пароль</string>
     <string name="TextContinueOffline">Проодолжить локально</string>
     <string name="TextRegistration">Регистрация</string>
