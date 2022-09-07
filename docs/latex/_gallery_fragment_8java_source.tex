@@ -1,0 +1,43 @@
+\hypertarget{_gallery_fragment_8java_source}{}\doxysection{Gallery\+Fragment.\+java}
+\label{_gallery_fragment_8java_source}\index{app/src/main/java/com/snail/wallet/MainScreen/ui/gallery/GalleryFragment.java@{app/src/main/java/com/snail/wallet/MainScreen/ui/gallery/GalleryFragment.java}}
+\mbox{\hyperlink{_gallery_fragment_8java}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_gallery_fragment_8java_source_l00001}\mbox{\hyperlink{namespacecom_1_1snail_1_1wallet_1_1_main_screen_1_1ui_1_1gallery}{00001}} \textcolor{keyword}{package }com.snail.wallet.MainScreen.ui.gallery;}
+\DoxyCodeLine{\Hypertarget{_gallery_fragment_8java_source_l00002}00002 }
+\DoxyCodeLine{\Hypertarget{_gallery_fragment_8java_source_l00003}00003 \textcolor{keyword}{import} android.os.Bundle;}
+\DoxyCodeLine{\Hypertarget{_gallery_fragment_8java_source_l00004}00004 \textcolor{keyword}{import} android.view.LayoutInflater;}
+\DoxyCodeLine{\Hypertarget{_gallery_fragment_8java_source_l00005}00005 \textcolor{keyword}{import} android.view.View;}
+\DoxyCodeLine{\Hypertarget{_gallery_fragment_8java_source_l00006}00006 \textcolor{keyword}{import} android.view.ViewGroup;}
+\DoxyCodeLine{\Hypertarget{_gallery_fragment_8java_source_l00007}00007 \textcolor{keyword}{import} android.widget.TextView;}
+\DoxyCodeLine{\Hypertarget{_gallery_fragment_8java_source_l00008}00008 }
+\DoxyCodeLine{\Hypertarget{_gallery_fragment_8java_source_l00009}00009 \textcolor{keyword}{import} androidx.annotation.NonNull;}
+\DoxyCodeLine{\Hypertarget{_gallery_fragment_8java_source_l00010}00010 \textcolor{keyword}{import} androidx.fragment.app.Fragment;}
+\DoxyCodeLine{\Hypertarget{_gallery_fragment_8java_source_l00011}00011 \textcolor{keyword}{import} androidx.lifecycle.ViewModelProvider;}
+\DoxyCodeLine{\Hypertarget{_gallery_fragment_8java_source_l00012}00012 }
+\DoxyCodeLine{\Hypertarget{_gallery_fragment_8java_source_l00013}00013 \textcolor{keyword}{import} com.snail.wallet.databinding.FragmentGalleryBinding;}
+\DoxyCodeLine{\Hypertarget{_gallery_fragment_8java_source_l00014}00014 }
+\DoxyCodeLine{\Hypertarget{_gallery_fragment_8java_source_l00015}\mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1ui_1_1gallery_1_1_gallery_fragment}{00015}} \textcolor{keyword}{public} \textcolor{keyword}{class }\mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1ui_1_1gallery_1_1_gallery_fragment}{GalleryFragment}} \textcolor{keyword}{extends} Fragment \{}
+\DoxyCodeLine{\Hypertarget{_gallery_fragment_8java_source_l00016}00016 }
+\DoxyCodeLine{\Hypertarget{_gallery_fragment_8java_source_l00017}\mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1ui_1_1gallery_1_1_gallery_fragment_a0780718114d6c21286504391b9435033}{00017}}     \textcolor{keyword}{private} \mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1databinding_1_1_fragment_gallery_binding}{FragmentGalleryBinding}} \mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1ui_1_1gallery_1_1_gallery_fragment_a0780718114d6c21286504391b9435033}{binding}};}
+\DoxyCodeLine{\Hypertarget{_gallery_fragment_8java_source_l00018}00018 }
+\DoxyCodeLine{\Hypertarget{_gallery_fragment_8java_source_l00019}\mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1ui_1_1gallery_1_1_gallery_fragment_abb4b232d1cd496b54043393b169a1c1d}{00019}}     \textcolor{keyword}{public} View \mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1ui_1_1gallery_1_1_gallery_fragment_abb4b232d1cd496b54043393b169a1c1d}{onCreateView}}(@NonNull LayoutInflater inflater,}
+\DoxyCodeLine{\Hypertarget{_gallery_fragment_8java_source_l00020}00020                              ViewGroup container, Bundle savedInstanceState) \{}
+\DoxyCodeLine{\Hypertarget{_gallery_fragment_8java_source_l00021}00021         \mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1ui_1_1gallery_1_1_gallery_view_model}{GalleryViewModel}} galleryViewModel =}
+\DoxyCodeLine{\Hypertarget{_gallery_fragment_8java_source_l00022}00022                 \textcolor{keyword}{new} ViewModelProvider(\textcolor{keyword}{this}).get(\mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1ui_1_1gallery_1_1_gallery_view_model}{GalleryViewModel}}.class);}
+\DoxyCodeLine{\Hypertarget{_gallery_fragment_8java_source_l00023}00023 }
+\DoxyCodeLine{\Hypertarget{_gallery_fragment_8java_source_l00024}00024         \mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1ui_1_1gallery_1_1_gallery_fragment_a0780718114d6c21286504391b9435033}{binding}} = \mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1databinding_1_1_fragment_gallery_binding}{FragmentGalleryBinding}}.\mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1databinding_1_1_fragment_gallery_binding_a7fb0ed294a13325fd748edc82bc7b46b}{inflate}}(inflater, container, \textcolor{keyword}{false});}
+\DoxyCodeLine{\Hypertarget{_gallery_fragment_8java_source_l00025}00025         View root = \mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1ui_1_1gallery_1_1_gallery_fragment_a0780718114d6c21286504391b9435033}{binding}}.\mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1databinding_1_1_fragment_gallery_binding_aeb67f92581cfe175d8525b4e9249f62e}{getRoot}}();}
+\DoxyCodeLine{\Hypertarget{_gallery_fragment_8java_source_l00026}00026 }
+\DoxyCodeLine{\Hypertarget{_gallery_fragment_8java_source_l00027}00027         \textcolor{keyword}{final} TextView textView = \mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1ui_1_1gallery_1_1_gallery_fragment_a0780718114d6c21286504391b9435033}{binding}}.\mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1databinding_1_1_fragment_gallery_binding_a49c084b1d935e959ff2c0256f68f3495}{textGallery}};}
+\DoxyCodeLine{\Hypertarget{_gallery_fragment_8java_source_l00028}00028         galleryViewModel.\mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1ui_1_1gallery_1_1_gallery_view_model_ad76f8bf6b261a0692491b758facbdc98}{getText}}().observe(getViewLifecycleOwner(), textView::setText);}
+\DoxyCodeLine{\Hypertarget{_gallery_fragment_8java_source_l00029}00029         \textcolor{keywordflow}{return} root;}
+\DoxyCodeLine{\Hypertarget{_gallery_fragment_8java_source_l00030}00030     \}}
+\DoxyCodeLine{\Hypertarget{_gallery_fragment_8java_source_l00031}00031 }
+\DoxyCodeLine{\Hypertarget{_gallery_fragment_8java_source_l00032}00032     @Override}
+\DoxyCodeLine{\Hypertarget{_gallery_fragment_8java_source_l00033}\mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1ui_1_1gallery_1_1_gallery_fragment_a97089c85a0d4d9fee2a8e6fe12129449}{00033}}     \textcolor{keyword}{public} \textcolor{keywordtype}{void} \mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1ui_1_1gallery_1_1_gallery_fragment_a97089c85a0d4d9fee2a8e6fe12129449}{onDestroyView}}() \{}
+\DoxyCodeLine{\Hypertarget{_gallery_fragment_8java_source_l00034}00034         super.onDestroyView();}
+\DoxyCodeLine{\Hypertarget{_gallery_fragment_8java_source_l00035}00035         \mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1ui_1_1gallery_1_1_gallery_fragment_a0780718114d6c21286504391b9435033}{binding}} = \textcolor{keyword}{null};}
+\DoxyCodeLine{\Hypertarget{_gallery_fragment_8java_source_l00036}00036     \}}
+\DoxyCodeLine{\Hypertarget{_gallery_fragment_8java_source_l00037}00037 \}}
+
+\end{DoxyCode}

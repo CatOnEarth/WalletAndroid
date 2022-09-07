@@ -1,0 +1,83 @@
+\hypertarget{_login_activity_8java_source}{}\doxysection{Login\+Activity.\+java}
+\label{_login_activity_8java_source}\index{app/src/main/java/com/snail/wallet/LoginScreen/LoginActivity.java@{app/src/main/java/com/snail/wallet/LoginScreen/LoginActivity.java}}
+\mbox{\hyperlink{_login_activity_8java}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_login_activity_8java_source_l00001}\mbox{\hyperlink{namespacecom_1_1snail_1_1wallet_1_1_login_screen}{00001}} \textcolor{keyword}{package }com.snail.wallet.LoginScreen;}
+\DoxyCodeLine{\Hypertarget{_login_activity_8java_source_l00002}00002 }
+\DoxyCodeLine{\Hypertarget{_login_activity_8java_source_l00003}00003 \textcolor{keyword}{import} androidx.annotation.NonNull;}
+\DoxyCodeLine{\Hypertarget{_login_activity_8java_source_l00004}00004 \textcolor{keyword}{import} androidx.appcompat.app.ActionBar;}
+\DoxyCodeLine{\Hypertarget{_login_activity_8java_source_l00005}00005 \textcolor{keyword}{import} androidx.appcompat.app.AppCompatActivity;}
+\DoxyCodeLine{\Hypertarget{_login_activity_8java_source_l00006}00006 }
+\DoxyCodeLine{\Hypertarget{_login_activity_8java_source_l00007}00007 \textcolor{keyword}{import} android.content.Intent;}
+\DoxyCodeLine{\Hypertarget{_login_activity_8java_source_l00008}00008 \textcolor{keyword}{import} android.os.Bundle;}
+\DoxyCodeLine{\Hypertarget{_login_activity_8java_source_l00009}00009 \textcolor{keyword}{import} android.util.Log;}
+\DoxyCodeLine{\Hypertarget{_login_activity_8java_source_l00010}00010 \textcolor{keyword}{import} android.view.Menu;}
+\DoxyCodeLine{\Hypertarget{_login_activity_8java_source_l00011}00011 \textcolor{keyword}{import} android.view.MenuItem;}
+\DoxyCodeLine{\Hypertarget{_login_activity_8java_source_l00012}00012 \textcolor{keyword}{import} android.widget.Button;}
+\DoxyCodeLine{\Hypertarget{_login_activity_8java_source_l00013}00013 \textcolor{keyword}{import} android.widget.TextView;}
+\DoxyCodeLine{\Hypertarget{_login_activity_8java_source_l00014}00014 }
+\DoxyCodeLine{\Hypertarget{_login_activity_8java_source_l00015}00015 \textcolor{keyword}{import} com.snail.wallet.MainScreen.WalletActivity;}
+\DoxyCodeLine{\Hypertarget{_login_activity_8java_source_l00016}00016 \textcolor{keyword}{import} com.snail.wallet.R;}
+\DoxyCodeLine{\Hypertarget{_login_activity_8java_source_l00017}00017 }
+\DoxyCodeLine{\Hypertarget{_login_activity_8java_source_l00019}\mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_login_screen_1_1_login_activity}{00019}} \textcolor{keyword}{public} \textcolor{keyword}{class }\mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_login_screen_1_1_login_activity}{LoginActivity}} \textcolor{keyword}{extends} AppCompatActivity \{}
+\DoxyCodeLine{\Hypertarget{_login_activity_8java_source_l00020}00020 }
+\DoxyCodeLine{\Hypertarget{_login_activity_8java_source_l00021}\mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_login_screen_1_1_login_activity_a7a6d635a65d5f17d2e473f4be102cf70}{00021}}     \textcolor{keyword}{private} \textcolor{keyword}{final} String \mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_login_screen_1_1_login_activity_a7a6d635a65d5f17d2e473f4be102cf70}{TAG}} = this.getClass().getSimpleName();}
+\DoxyCodeLine{\Hypertarget{_login_activity_8java_source_l00022}00022 }
+\DoxyCodeLine{\Hypertarget{_login_activity_8java_source_l00027}00027     @Override}
+\DoxyCodeLine{\Hypertarget{_login_activity_8java_source_l00028}\mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_login_screen_1_1_login_activity_a02406c911d65ed05f6fc07a886e4e516}{00028}}     \textcolor{keyword}{protected} \textcolor{keywordtype}{void} \mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_login_screen_1_1_login_activity_a02406c911d65ed05f6fc07a886e4e516}{onCreate}}(Bundle savedInstanceState) \{}
+\DoxyCodeLine{\Hypertarget{_login_activity_8java_source_l00029}00029         Log.i(\mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_login_screen_1_1_login_activity_a7a6d635a65d5f17d2e473f4be102cf70}{TAG}}, \textcolor{stringliteral}{"{}Start onCreate method LoginActivity"{}});}
+\DoxyCodeLine{\Hypertarget{_login_activity_8java_source_l00030}00030 }
+\DoxyCodeLine{\Hypertarget{_login_activity_8java_source_l00031}00031         super.onCreate(savedInstanceState);}
+\DoxyCodeLine{\Hypertarget{_login_activity_8java_source_l00032}00032         setContentView(R.layout.activity\_main);}
+\DoxyCodeLine{\Hypertarget{_login_activity_8java_source_l00033}00033 }
+\DoxyCodeLine{\Hypertarget{_login_activity_8java_source_l00034}00034         ActionBar actionBar = getSupportActionBar();}
+\DoxyCodeLine{\Hypertarget{_login_activity_8java_source_l00035}00035         \textcolor{keywordflow}{if} (actionBar != \textcolor{keyword}{null}) \{}
+\DoxyCodeLine{\Hypertarget{_login_activity_8java_source_l00036}00036             actionBar.setDisplayUseLogoEnabled(\textcolor{keyword}{true});}
+\DoxyCodeLine{\Hypertarget{_login_activity_8java_source_l00037}00037             actionBar.setDisplayShowHomeEnabled(\textcolor{keyword}{true});}
+\DoxyCodeLine{\Hypertarget{_login_activity_8java_source_l00038}00038         \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{\Hypertarget{_login_activity_8java_source_l00039}00039             Log.e(\mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_login_screen_1_1_login_activity_a7a6d635a65d5f17d2e473f4be102cf70}{TAG}}, \textcolor{stringliteral}{"{}ActionBar was null"{}});}
+\DoxyCodeLine{\Hypertarget{_login_activity_8java_source_l00040}00040             finish();}
+\DoxyCodeLine{\Hypertarget{_login_activity_8java_source_l00041}00041         \}}
+\DoxyCodeLine{\Hypertarget{_login_activity_8java_source_l00042}00042 }
+\DoxyCodeLine{\Hypertarget{_login_activity_8java_source_l00043}00043         Button bLogIn             = findViewById(R.id.buttonLogIn);}
+\DoxyCodeLine{\Hypertarget{_login_activity_8java_source_l00044}00044         TextView bTextViewReg     = findViewById(R.id.textViewRegistration);}
+\DoxyCodeLine{\Hypertarget{_login_activity_8java_source_l00045}00045         TextView bTextViewOffline = findViewById(R.id.textViewOffline);}
+\DoxyCodeLine{\Hypertarget{_login_activity_8java_source_l00046}00046 }
+\DoxyCodeLine{\Hypertarget{_login_activity_8java_source_l00047}00047         bLogIn.setOnClickListener(view -\/> Log.i(\mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_login_screen_1_1_login_activity_a7a6d635a65d5f17d2e473f4be102cf70}{TAG}}, \textcolor{stringliteral}{"{}Press logIn button LoginActivity"{}}));}
+\DoxyCodeLine{\Hypertarget{_login_activity_8java_source_l00048}00048 }
+\DoxyCodeLine{\Hypertarget{_login_activity_8java_source_l00049}00049         bTextViewReg.setOnClickListener(view -\/> Log.i(\mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_login_screen_1_1_login_activity_a7a6d635a65d5f17d2e473f4be102cf70}{TAG}}, \textcolor{stringliteral}{"{}Press TextViewReg text LoginActivity"{}}));}
+\DoxyCodeLine{\Hypertarget{_login_activity_8java_source_l00050}00050 }
+\DoxyCodeLine{\Hypertarget{_login_activity_8java_source_l00051}00051         bTextViewOffline.setOnClickListener(view -\/> \{}
+\DoxyCodeLine{\Hypertarget{_login_activity_8java_source_l00052}00052             Log.i(\mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_login_screen_1_1_login_activity_a7a6d635a65d5f17d2e473f4be102cf70}{TAG}}, \textcolor{stringliteral}{"{}Press TextViewOffline text LoginActivity"{}});}
+\DoxyCodeLine{\Hypertarget{_login_activity_8java_source_l00053}00053             \textcolor{keywordtype}{int} res = \mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_login_screen_1_1_login_activity_a4741c03bfca472ffb2ba4163565780b7}{startOfflineApp}}();}
+\DoxyCodeLine{\Hypertarget{_login_activity_8java_source_l00054}00054         \});}
+\DoxyCodeLine{\Hypertarget{_login_activity_8java_source_l00055}00055     \}}
+\DoxyCodeLine{\Hypertarget{_login_activity_8java_source_l00056}00056 }
+\DoxyCodeLine{\Hypertarget{_login_activity_8java_source_l00062}00062     @Override}
+\DoxyCodeLine{\Hypertarget{_login_activity_8java_source_l00063}\mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_login_screen_1_1_login_activity_abbd222980c3a73dedb299211a5e27109}{00063}}     \textcolor{keyword}{public} \textcolor{keywordtype}{boolean} \mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_login_screen_1_1_login_activity_abbd222980c3a73dedb299211a5e27109}{onCreateOptionsMenu}}(@NonNull Menu menu) \{}
+\DoxyCodeLine{\Hypertarget{_login_activity_8java_source_l00064}00064         Log.i(\mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_login_screen_1_1_login_activity_a7a6d635a65d5f17d2e473f4be102cf70}{TAG}}, \textcolor{stringliteral}{"{}Start onCreateOptionsMenu method LoginActivity"{}});}
+\DoxyCodeLine{\Hypertarget{_login_activity_8java_source_l00065}00065         getMenuInflater().inflate(R.menu.action\_menu, menu);}
+\DoxyCodeLine{\Hypertarget{_login_activity_8java_source_l00066}00066         \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_login_activity_8java_source_l00067}00067     \}}
+\DoxyCodeLine{\Hypertarget{_login_activity_8java_source_l00068}00068 }
+\DoxyCodeLine{\Hypertarget{_login_activity_8java_source_l00074}00074     @Override}
+\DoxyCodeLine{\Hypertarget{_login_activity_8java_source_l00075}\mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_login_screen_1_1_login_activity_a159acffa421e7fb73e172081155bbd12}{00075}}     \textcolor{keyword}{public} \textcolor{keywordtype}{boolean} \mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_login_screen_1_1_login_activity_a159acffa421e7fb73e172081155bbd12}{onOptionsItemSelected}}(MenuItem item) \{}
+\DoxyCodeLine{\Hypertarget{_login_activity_8java_source_l00076}00076         Log.i(\mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_login_screen_1_1_login_activity_a7a6d635a65d5f17d2e473f4be102cf70}{TAG}}, \textcolor{stringliteral}{"{}Start onOptionsItemSelected method LoginActivity"{}});}
+\DoxyCodeLine{\Hypertarget{_login_activity_8java_source_l00077}00077         \textcolor{keywordflow}{if} (item.getItemId() == R.id.about) \{}
+\DoxyCodeLine{\Hypertarget{_login_activity_8java_source_l00078}00078             Log.i(\mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_login_screen_1_1_login_activity_a7a6d635a65d5f17d2e473f4be102cf70}{TAG}}, \textcolor{stringliteral}{"{}About choose in menu actionBar"{}});}
+\DoxyCodeLine{\Hypertarget{_login_activity_8java_source_l00079}00079             \textcolor{keywordflow}{return} (\textcolor{keyword}{true});}
+\DoxyCodeLine{\Hypertarget{_login_activity_8java_source_l00080}00080         \}}
+\DoxyCodeLine{\Hypertarget{_login_activity_8java_source_l00081}00081 }
+\DoxyCodeLine{\Hypertarget{_login_activity_8java_source_l00082}00082         \textcolor{keywordflow}{return}(super.onOptionsItemSelected(item));}
+\DoxyCodeLine{\Hypertarget{_login_activity_8java_source_l00083}00083     \}}
+\DoxyCodeLine{\Hypertarget{_login_activity_8java_source_l00084}00084 }
+\DoxyCodeLine{\Hypertarget{_login_activity_8java_source_l00085}\mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_login_screen_1_1_login_activity_a4741c03bfca472ffb2ba4163565780b7}{00085}}     \textcolor{keyword}{public} \textcolor{keywordtype}{int} \mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_login_screen_1_1_login_activity_a4741c03bfca472ffb2ba4163565780b7}{startOfflineApp}}() \{}
+\DoxyCodeLine{\Hypertarget{_login_activity_8java_source_l00086}00086         Intent intent = \textcolor{keyword}{new} Intent(\mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_login_screen_1_1_login_activity}{LoginActivity}}.this, \mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1_wallet_activity}{WalletActivity}}.class);}
+\DoxyCodeLine{\Hypertarget{_login_activity_8java_source_l00087}00087         startActivity(intent);}
+\DoxyCodeLine{\Hypertarget{_login_activity_8java_source_l00088}00088         finish();}
+\DoxyCodeLine{\Hypertarget{_login_activity_8java_source_l00089}00089 }
+\DoxyCodeLine{\Hypertarget{_login_activity_8java_source_l00090}00090         \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{\Hypertarget{_login_activity_8java_source_l00091}00091     \}}
+\DoxyCodeLine{\Hypertarget{_login_activity_8java_source_l00092}00092 \}}
+
+\end{DoxyCode}

@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['exampleinstrumentedtest_2ejava_0',['ExampleInstrumentedTest.java',['../_example_instrumented_test_8java.html',1,'']]],
-  ['exampleunittest_2ejava_1',['ExampleUnitTest.java',['../_example_unit_test_8java.html',1,'']]]
+  ['activitymainbinding_2ejava_0',['ActivityMainBinding.java',['../_activity_main_binding_8java.html',1,'']]],
+  ['activitywalletbinding_2ejava_1',['ActivityWalletBinding.java',['../_activity_wallet_binding_8java.html',1,'']]],
+  ['appbarwalletbinding_2ejava_2',['AppBarWalletBinding.java',['../_app_bar_wallet_binding_8java.html',1,'']]]
 ];

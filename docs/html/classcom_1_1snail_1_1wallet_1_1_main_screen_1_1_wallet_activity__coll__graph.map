@@ -1,0 +1,13 @@
+<map id="com.snail.wallet.MainScreen.WalletActivity" name="com.snail.wallet.MainScreen.WalletActivity">
+<area shape="rect" id="node1" title=" " alt="" coords="941,49,1133,90"/>
+<area shape="rect" id="node2" title=" " alt="" coords="599,5,731,32"/>
+<area shape="rect" id="node3" title=" " alt="" coords="595,56,735,83"/>
+<area shape="rect" id="node4" href="$classcom_1_1snail_1_1wallet_1_1databinding_1_1_activity_wallet_binding.html" title=" " alt="" coords="571,107,760,149"/>
+<area shape="rect" id="node5" title=" " alt="" coords="30,25,123,52"/>
+<area shape="rect" id="node7" href="$classcom_1_1snail_1_1wallet_1_1databinding_1_1_app_bar_wallet_binding.html" title=" " alt="" coords="251,77,440,118"/>
+<area shape="rect" id="node6" title=" " alt="" coords="295,144,396,171"/>
+<area shape="rect" id="node8" title=" " alt="" coords="13,81,140,108"/>
+<area shape="rect" id="node9" title=" " alt="" coords="5,132,148,159"/>
+<area shape="rect" id="node10" title=" " alt="" coords="45,183,109,209"/>
+<area shape="rect" id="node11" title=" " alt="" coords="291,195,400,221"/>
+</map>

@@ -1,0 +1,6 @@
+<map id="com.snail.wallet.MainScreen.ui.gallery.GalleryFragment.onCreateView" name="com.snail.wallet.MainScreen.ui.gallery.GalleryFragment.onCreateView">
+<area shape="rect" id="node1" title=" " alt="" coords="5,71,253,112"/>
+<area shape="rect" id="node2" href="$classcom_1_1snail_1_1wallet_1_1databinding_1_1_fragment_gallery_binding.html#aeb67f92581cfe175d8525b4e9249f62e" title=" " alt="" coords="320,5,531,47"/>
+<area shape="rect" id="node3" href="$classcom_1_1snail_1_1wallet_1_1_main_screen_1_1ui_1_1gallery_1_1_gallery_view_model.html#ad76f8bf6b261a0692491b758facbdc98" title=" " alt="" coords="301,71,549,112"/>
+<area shape="rect" id="node4" href="$classcom_1_1snail_1_1wallet_1_1databinding_1_1_fragment_gallery_binding.html#a7fb0ed294a13325fd748edc82bc7b46b" title=" " alt="" coords="326,160,525,201"/>
+</map>

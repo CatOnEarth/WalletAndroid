@@ -14,7 +14,12 @@
         android:theme="@style/Theme.Wallet"
         tools:targetApi="31">
         <activity
-            android:name=".LoginActivity"
+            android:name=".MainScreen.WalletActivity"
+            android:exported="false"
+            android:label="@string/title_activity_wallet"
+            android:theme="@style/Theme.Wallet.NoActionBar" />
+        <activity
+            android:name=".LoginScreen.LoginActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

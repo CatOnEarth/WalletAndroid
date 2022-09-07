@@ -1,0 +1,72 @@
+\hypertarget{_wallet_activity_8java_source}{}\doxysection{Wallet\+Activity.\+java}
+\label{_wallet_activity_8java_source}\index{app/src/main/java/com/snail/wallet/MainScreen/WalletActivity.java@{app/src/main/java/com/snail/wallet/MainScreen/WalletActivity.java}}
+\mbox{\hyperlink{_wallet_activity_8java}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_wallet_activity_8java_source_l00001}00001 \textcolor{keyword}{package }com.snail.wallet.MainScreen;}
+\DoxyCodeLine{\Hypertarget{_wallet_activity_8java_source_l00002}00002 }
+\DoxyCodeLine{\Hypertarget{_wallet_activity_8java_source_l00003}00003 \textcolor{keyword}{import} android.os.Bundle;}
+\DoxyCodeLine{\Hypertarget{_wallet_activity_8java_source_l00004}00004 \textcolor{keyword}{import} android.view.View;}
+\DoxyCodeLine{\Hypertarget{_wallet_activity_8java_source_l00005}00005 \textcolor{keyword}{import} android.view.Menu;}
+\DoxyCodeLine{\Hypertarget{_wallet_activity_8java_source_l00006}00006 }
+\DoxyCodeLine{\Hypertarget{_wallet_activity_8java_source_l00007}00007 \textcolor{keyword}{import} com.google.android.material.snackbar.Snackbar;}
+\DoxyCodeLine{\Hypertarget{_wallet_activity_8java_source_l00008}00008 \textcolor{keyword}{import} com.google.android.material.navigation.NavigationView;}
+\DoxyCodeLine{\Hypertarget{_wallet_activity_8java_source_l00009}00009 \textcolor{keyword}{import} com.snail.wallet.R;}
+\DoxyCodeLine{\Hypertarget{_wallet_activity_8java_source_l00010}00010 \textcolor{keyword}{import} com.snail.wallet.databinding.ActivityWalletBinding;}
+\DoxyCodeLine{\Hypertarget{_wallet_activity_8java_source_l00011}00011 }
+\DoxyCodeLine{\Hypertarget{_wallet_activity_8java_source_l00012}00012 \textcolor{keyword}{import} androidx.navigation.NavController;}
+\DoxyCodeLine{\Hypertarget{_wallet_activity_8java_source_l00013}00013 \textcolor{keyword}{import} androidx.navigation.Navigation;}
+\DoxyCodeLine{\Hypertarget{_wallet_activity_8java_source_l00014}00014 \textcolor{keyword}{import} androidx.navigation.ui.AppBarConfiguration;}
+\DoxyCodeLine{\Hypertarget{_wallet_activity_8java_source_l00015}00015 \textcolor{keyword}{import} androidx.navigation.ui.NavigationUI;}
+\DoxyCodeLine{\Hypertarget{_wallet_activity_8java_source_l00016}00016 \textcolor{keyword}{import} androidx.drawerlayout.widget.DrawerLayout;}
+\DoxyCodeLine{\Hypertarget{_wallet_activity_8java_source_l00017}00017 \textcolor{keyword}{import} androidx.appcompat.app.AppCompatActivity;}
+\DoxyCodeLine{\Hypertarget{_wallet_activity_8java_source_l00018}00018 }
+\DoxyCodeLine{\Hypertarget{_wallet_activity_8java_source_l00019}00019 }
+\DoxyCodeLine{\Hypertarget{_wallet_activity_8java_source_l00020}\mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1_wallet_activity}{00020}} \textcolor{keyword}{public} \textcolor{keyword}{class }\mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1_wallet_activity}{WalletActivity}} \textcolor{keyword}{extends} AppCompatActivity \{}
+\DoxyCodeLine{\Hypertarget{_wallet_activity_8java_source_l00021}00021 }
+\DoxyCodeLine{\Hypertarget{_wallet_activity_8java_source_l00022}\mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1_wallet_activity_a6b6112b400806a111dc89715dcefec54}{00022}}     \textcolor{keyword}{private} AppBarConfiguration \mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1_wallet_activity_a6b6112b400806a111dc89715dcefec54}{mAppBarConfiguration}};}
+\DoxyCodeLine{\Hypertarget{_wallet_activity_8java_source_l00023}\mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1_wallet_activity_a6ad6eed063099f5405224a2a1d5fba41}{00023}}     \textcolor{keyword}{private} \mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1databinding_1_1_activity_wallet_binding}{ActivityWalletBinding}} \mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1_wallet_activity_a6ad6eed063099f5405224a2a1d5fba41}{binding}};}
+\DoxyCodeLine{\Hypertarget{_wallet_activity_8java_source_l00024}00024 }
+\DoxyCodeLine{\Hypertarget{_wallet_activity_8java_source_l00025}00025     @Override}
+\DoxyCodeLine{\Hypertarget{_wallet_activity_8java_source_l00026}\mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1_wallet_activity_a41cf532c3407a8ddd5f64bbc8ecab3ec}{00026}}     \textcolor{keyword}{protected} \textcolor{keywordtype}{void} \mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1_wallet_activity_a41cf532c3407a8ddd5f64bbc8ecab3ec}{onCreate}}(Bundle savedInstanceState) \{}
+\DoxyCodeLine{\Hypertarget{_wallet_activity_8java_source_l00027}00027         super.onCreate(savedInstanceState);}
+\DoxyCodeLine{\Hypertarget{_wallet_activity_8java_source_l00028}00028 }
+\DoxyCodeLine{\Hypertarget{_wallet_activity_8java_source_l00029}00029         \mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1_wallet_activity_a6ad6eed063099f5405224a2a1d5fba41}{binding}} = \mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1databinding_1_1_activity_wallet_binding}{ActivityWalletBinding}}.\mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1databinding_1_1_activity_wallet_binding_a50d90929f0cfca978910ebce33dc4526}{inflate}}(getLayoutInflater());}
+\DoxyCodeLine{\Hypertarget{_wallet_activity_8java_source_l00030}00030         setContentView(\mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1_wallet_activity_a6ad6eed063099f5405224a2a1d5fba41}{binding}}.\mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1databinding_1_1_activity_wallet_binding_a07fddaaeb7fc5e78dbb415681d3327f4}{getRoot}}());}
+\DoxyCodeLine{\Hypertarget{_wallet_activity_8java_source_l00031}00031 }
+\DoxyCodeLine{\Hypertarget{_wallet_activity_8java_source_l00032}00032         setSupportActionBar(\mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1_wallet_activity_a6ad6eed063099f5405224a2a1d5fba41}{binding}}.\mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1databinding_1_1_activity_wallet_binding_a0f3a84a27a8b39619836b8f75ec24bf2}{appBarWallet}}.\mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1databinding_1_1_app_bar_wallet_binding_af9fd8a74d0939f838adfa9b7c3d5bb43}{toolbar}});}
+\DoxyCodeLine{\Hypertarget{_wallet_activity_8java_source_l00033}00033         \mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1_wallet_activity_a6ad6eed063099f5405224a2a1d5fba41}{binding}}.\mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1databinding_1_1_activity_wallet_binding_a0f3a84a27a8b39619836b8f75ec24bf2}{appBarWallet}}.\mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1databinding_1_1_app_bar_wallet_binding_a47fe956d1fd4a7485f0c4f488fa5b017}{fab}}.setOnClickListener(\textcolor{keyword}{new} View.OnClickListener() \{}
+\DoxyCodeLine{\Hypertarget{_wallet_activity_8java_source_l00034}00034             @Override}
+\DoxyCodeLine{\Hypertarget{_wallet_activity_8java_source_l00035}00035             public void onClick(View view) \{}
+\DoxyCodeLine{\Hypertarget{_wallet_activity_8java_source_l00036}00036                 Snackbar.make(view, \textcolor{stringliteral}{"{}Replace with your own action"{}}, Snackbar.LENGTH\_LONG)}
+\DoxyCodeLine{\Hypertarget{_wallet_activity_8java_source_l00037}00037                         .setAction(\textcolor{stringliteral}{"{}Action"{}}, null).show();}
+\DoxyCodeLine{\Hypertarget{_wallet_activity_8java_source_l00038}00038             \}}
+\DoxyCodeLine{\Hypertarget{_wallet_activity_8java_source_l00039}00039         \});}
+\DoxyCodeLine{\Hypertarget{_wallet_activity_8java_source_l00040}00040         DrawerLayout drawer = \mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1_wallet_activity_a6ad6eed063099f5405224a2a1d5fba41}{binding}}.\mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1databinding_1_1_activity_wallet_binding_a4dab216f7102e79a730f0df8b93c18cd}{drawerLayout}};}
+\DoxyCodeLine{\Hypertarget{_wallet_activity_8java_source_l00041}00041         NavigationView navigationView = \mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1_wallet_activity_a6ad6eed063099f5405224a2a1d5fba41}{binding}}.\mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1databinding_1_1_activity_wallet_binding_a1df2f4448ccaa43d00b13ac13ac2c909}{navView}};}
+\DoxyCodeLine{\Hypertarget{_wallet_activity_8java_source_l00042}00042         \textcolor{comment}{// Passing each menu ID as a set of Ids because each}}
+\DoxyCodeLine{\Hypertarget{_wallet_activity_8java_source_l00043}00043         \textcolor{comment}{// menu should be considered as top level destinations.}}
+\DoxyCodeLine{\Hypertarget{_wallet_activity_8java_source_l00044}00044         \mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1_wallet_activity_a6b6112b400806a111dc89715dcefec54}{mAppBarConfiguration}} = \textcolor{keyword}{new} AppBarConfiguration.Builder(}
+\DoxyCodeLine{\Hypertarget{_wallet_activity_8java_source_l00045}00045                 R.id.nav\_home, R.id.nav\_gallery, R.id.nav\_slideshow)}
+\DoxyCodeLine{\Hypertarget{_wallet_activity_8java_source_l00046}00046                 .setOpenableLayout(drawer)}
+\DoxyCodeLine{\Hypertarget{_wallet_activity_8java_source_l00047}00047                 .build();}
+\DoxyCodeLine{\Hypertarget{_wallet_activity_8java_source_l00048}00048         NavController navController = Navigation.findNavController(\textcolor{keyword}{this}, R.id.nav\_host\_fragment\_content\_wallet);}
+\DoxyCodeLine{\Hypertarget{_wallet_activity_8java_source_l00049}00049         NavigationUI.setupActionBarWithNavController(\textcolor{keyword}{this}, navController, \mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1_wallet_activity_a6b6112b400806a111dc89715dcefec54}{mAppBarConfiguration}});}
+\DoxyCodeLine{\Hypertarget{_wallet_activity_8java_source_l00050}00050         NavigationUI.setupWithNavController(navigationView, navController);}
+\DoxyCodeLine{\Hypertarget{_wallet_activity_8java_source_l00051}00051     \}}
+\DoxyCodeLine{\Hypertarget{_wallet_activity_8java_source_l00052}00052 }
+\DoxyCodeLine{\Hypertarget{_wallet_activity_8java_source_l00053}00053     @Override}
+\DoxyCodeLine{\Hypertarget{_wallet_activity_8java_source_l00054}\mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1_wallet_activity_aa15ceb75e1a0908be436808b316427da}{00054}}     \textcolor{keyword}{public} \textcolor{keywordtype}{boolean} \mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1_wallet_activity_aa15ceb75e1a0908be436808b316427da}{onCreateOptionsMenu}}(Menu menu) \{}
+\DoxyCodeLine{\Hypertarget{_wallet_activity_8java_source_l00055}00055         \textcolor{comment}{// Inflate the menu; this adds items to the action bar if it is present.}}
+\DoxyCodeLine{\Hypertarget{_wallet_activity_8java_source_l00056}00056         getMenuInflater().inflate(R.menu.wallet, menu);}
+\DoxyCodeLine{\Hypertarget{_wallet_activity_8java_source_l00057}00057         \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_wallet_activity_8java_source_l00058}00058     \}}
+\DoxyCodeLine{\Hypertarget{_wallet_activity_8java_source_l00059}00059 }
+\DoxyCodeLine{\Hypertarget{_wallet_activity_8java_source_l00060}00060     @Override}
+\DoxyCodeLine{\Hypertarget{_wallet_activity_8java_source_l00061}\mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1_wallet_activity_a0e3949b469b186b617c4de9a34685d90}{00061}}     \textcolor{keyword}{public} \textcolor{keywordtype}{boolean} \mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1_wallet_activity_a0e3949b469b186b617c4de9a34685d90}{onSupportNavigateUp}}() \{}
+\DoxyCodeLine{\Hypertarget{_wallet_activity_8java_source_l00062}00062         NavController navController = Navigation.findNavController(\textcolor{keyword}{this}, R.id.nav\_host\_fragment\_content\_wallet);}
+\DoxyCodeLine{\Hypertarget{_wallet_activity_8java_source_l00063}00063         \textcolor{keywordflow}{return} NavigationUI.navigateUp(navController, mAppBarConfiguration)}
+\DoxyCodeLine{\Hypertarget{_wallet_activity_8java_source_l00064}00064                 || super.onSupportNavigateUp();}
+\DoxyCodeLine{\Hypertarget{_wallet_activity_8java_source_l00065}00065     \}}
+\DoxyCodeLine{\Hypertarget{_wallet_activity_8java_source_l00066}00066 \}}
+
+\end{DoxyCode}

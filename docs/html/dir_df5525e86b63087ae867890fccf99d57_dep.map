@@ -1,4 +1,6 @@
 <map id="app/src/main/java/com/snail/wallet" name="app/src/main/java/com/snail/wallet">
-<area shape="rect" id="node1" href="dir_df5525e86b63087ae867890fccf99d57.html" title="wallet" alt="" coords="27,52,99,100"/>
-<area shape="rect" id="clust1" href="dir_849c6b8609d2983106b794b2d05f57f8.html" title="snail" alt="" coords="16,16,109,111"/>
+<area shape="rect" id="node2" href="dir_a1e65440493b01db15ad0e628402e522.html" title="LoginScreen" alt="" coords="153,63,247,111"/>
+<area shape="rect" id="node3" href="dir_f262eb04047cfe4c0fb53af4d855d41f.html" title="MainScreen" alt="" coords="37,63,128,111"/>
+<area shape="rect" id="clust2" href="dir_df5525e86b63087ae867890fccf99d57.html" alt="" coords="27,52,355,121"/>
+<area shape="rect" id="clust1" href="dir_849c6b8609d2983106b794b2d05f57f8.html" title="snail" alt="" coords="16,16,365,132"/>
 </map>
