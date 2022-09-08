@@ -8,18 +8,14 @@ public class App extends Application {
 
     public static App instance;
 
-    private AppRevenueDatabase revenue_database;
-    private AppExpensesDatabase expenses_database;
+    private AppDatabase database;
 
     @Override
     public void onCreate() {
         super.onCreate();
         instance = this;
-        revenue_database = Room.databaseBuilder(this, AppRevenueDatabase.class, "database")
-                .allowMainThreadQueries()
-                .build();
 
-        expenses_database = Room.databaseBuilder(this, AppExpensesDatabase.class, "database2")
+        database = Room.databaseBuilder(this, AppDatabase.class, "wallet_db")
                 .allowMainThreadQueries()
                 .build();
     }
@@ -28,11 +24,8 @@ public class App extends Application {
         return instance;
     }
 
-    public AppRevenueDatabase getRevenueDatabase() {
-        return revenue_database;
+    public AppDatabase getAppDatabase() {
+        return database;
     }
 
-    public AppExpensesDatabase getExpensesDatabase() {
-        return expenses_database;
-    }
 }
