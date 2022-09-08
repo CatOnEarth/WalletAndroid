@@ -1,9 +1,13 @@
 package com.snail.wallet.MainScreen;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
+import android.view.View;
+import android.widget.TextView;
 
 import com.google.android.material.navigation.NavigationView;
+import com.snail.wallet.LoginScreen.LoginActivity;
 import com.snail.wallet.R;
 import com.snail.wallet.databinding.ActivityWalletBinding;
 
@@ -40,6 +44,15 @@ public class WalletActivity extends AppCompatActivity {
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_wallet);
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);
+
+        View mHeaderView =  navigationView.getHeaderView(0);
+
+        TextView textViewUsername = mHeaderView.findViewById(R.id.textViewNavViewUsername);
+        TextView textViewEmail    = mHeaderView.findViewById(R.id.textViewNavViewEmail);
+
+        Intent intent = getIntent();
+        textViewUsername.setText(intent.getStringExtra(LoginActivity.APP_PREFERENCES_USERNAME));
+        textViewEmail.setText(intent.getStringExtra(LoginActivity.APP_PREFERENCES_USER_EMAIL));
     }
 
     @Override

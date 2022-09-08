@@ -14,6 +14,7 @@ import android.view.MenuItem;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.snail.wallet.MainScreen.SharedPrefManager.PermanentStorage;
 import com.snail.wallet.MainScreen.WalletActivity;
 import com.snail.wallet.R;
 
@@ -30,6 +31,8 @@ public class LoginActivity extends AppCompatActivity {
     public static final String APP_PREFERENCES_USERNAME   = "user_name";
     /** Key to save user's email in preferences */
     public static final String APP_PREFERENCES_USER_EMAIL = "user_email";
+    /** Key to save user's email in preferences */
+    public static final String APP_PREFERENCES_IS_USER_LOG = "is_user_log";
 
     /**onCreate method of LoginActivity
      *
@@ -38,6 +41,11 @@ public class LoginActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         Log.i(TAG, "Start onCreate method LoginActivity");
+
+        PermanentStorage.init(this);
+        if (PermanentStorage.getPropertyBoolean(APP_PREFERENCES_IS_USER_LOG)) {
+            startOfflineApp();
+        }
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
@@ -61,6 +69,7 @@ public class LoginActivity extends AppCompatActivity {
 
         bTextViewOffline.setOnClickListener(view -> {
             Log.i(TAG, "Press TextViewOffline text LoginActivity");
+            setLocalUser();
             int res = startOfflineApp();
         });
 
@@ -95,13 +104,16 @@ public class LoginActivity extends AppCompatActivity {
         return(super.onOptionsItemSelected(item));
     }
 
-    public int startOfflineApp() {
-        SharedPreferences.Editor editor = mSettings.edit();
-        editor.putString(APP_PREFERENCES_USERNAME,   "Local");
-        editor.putString(APP_PREFERENCES_USER_EMAIL, "Local@local.ru");
-        editor.apply();
+    public void setLocalUser() {
+        PermanentStorage.addPropertyString(APP_PREFERENCES_USERNAME, "local");
+        PermanentStorage.addPropertyString(APP_PREFERENCES_USER_EMAIL, "local@local.ru");
+        PermanentStorage.addPropertyBoolean(APP_PREFERENCES_IS_USER_LOG, true);
+    }
 
+    public int startOfflineApp() {
         Intent intent = new Intent(LoginActivity.this, WalletActivity.class);
+        intent.putExtra(APP_PREFERENCES_USERNAME, "local");
+        intent.putExtra(APP_PREFERENCES_USER_EMAIL, "local@local.ru");
         startActivity(intent);
         finish();
 

@@ -46,7 +46,7 @@ public class CurrencyAdapter extends ArrayAdapter<Currency> {
         // It is used the name to the TextView when the
         // current item is not null.
         if (currentItem != null) {
-            textViewName.setText(currentItem.getName());
+            textViewName.setText(currentItem.getSymbol());
         }
         return convertView;
     }

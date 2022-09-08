@@ -81,8 +81,8 @@ public class RevenueAddActivity extends AppCompatActivity {
         spinnerSource.setAdapter(sourceAdapter);
 
         ArrayList<Currency> currencyList = new ArrayList<>();
-        currencyList.add(new Currency(1, "Российский рубль", "первая"));
-        currencyList.add(new Currency(2, "Евро", "вторая"));
+        currencyList.add(new Currency(1, "Российский рубль", "$"));
+        currencyList.add(new Currency(2, "Евро", "#"));
         currencyAdapter = new CurrencyAdapter(this, currencyList);
         spinnerCurrency.setAdapter(currencyAdapter);
 
@@ -119,7 +119,7 @@ public class RevenueAddActivity extends AppCompatActivity {
     }
 
     // установка обработчика выбора даты
-    DatePickerDialog.OnDateSetListener d=new DatePickerDialog.OnDateSetListener() {
+    DatePickerDialog.OnDateSetListener d = new DatePickerDialog.OnDateSetListener() {
         public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
             dateAndTime.set(Calendar.YEAR, year);
             dateAndTime.set(Calendar.MONTH, monthOfYear);
