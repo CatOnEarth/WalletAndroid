@@ -10,6 +10,7 @@ var dir_005fff894d7af721b6d80105ff792d40 =
     [ "FragmentHomeBinding.java", "_fragment_home_binding_8java.html", "_fragment_home_binding_8java" ],
     [ "FragmentRevenueBinding.java", "_fragment_revenue_binding_8java.html", "_fragment_revenue_binding_8java" ],
     [ "ItemCategorySpinnerBinding.java", "_item_category_spinner_binding_8java.html", "_item_category_spinner_binding_8java" ],
+    [ "ItemCurrencySpinnerBinding.java", "_item_currency_spinner_binding_8java.html", "_item_currency_spinner_binding_8java" ],
     [ "ItemExpensesRecyclerviewBinding.java", "_item_expenses_recyclerview_binding_8java.html", "_item_expenses_recyclerview_binding_8java" ],
     [ "ItemRevenueRecyclerviewBinding.java", "_item_revenue_recyclerview_binding_8java.html", "_item_revenue_recyclerview_binding_8java" ],
     [ "NavHeaderWalletBinding.java", "_nav_header_wallet_binding_8java.html", "_nav_header_wallet_binding_8java" ]

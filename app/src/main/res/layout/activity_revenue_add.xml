@@ -16,7 +16,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.6"
-        app:layout_constraintStart_toEndOf="@+id/spinnerSource"
+        app:layout_constraintStart_toEndOf="@+id/spinnerSourceRevenue"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.075" />
 
@@ -26,7 +26,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:text="Источник"
-        app:layout_constraintBottom_toTopOf="@+id/spinnerSource"
+        app:layout_constraintBottom_toTopOf="@+id/spinnerSourceRevenue"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.045"
         app:layout_constraintStart_toStartOf="parent"
@@ -34,7 +34,7 @@
         app:layout_constraintVertical_bias="1.0" />
 
     <Spinner
-        android:id="@+id/spinnerSource"
+        android:id="@+id/spinnerSourceRevenue"
         android:layout_width="276dp"
         android:layout_height="31dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -78,12 +78,12 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.666"
-        app:layout_constraintStart_toEndOf="@+id/spinner3"
+        app:layout_constraintStart_toEndOf="@+id/spinnerCategoryRevenue"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.295" />
 
     <Spinner
-        android:id="@+id/spinner3"
+        android:id="@+id/spinnerCategoryRevenue"
         android:layout_width="283dp"
         android:layout_height="35dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -94,7 +94,7 @@
         app:layout_constraintVertical_bias="0.308" />
 
     <TextView
-        android:id="@+id/textView7"
+        android:id="@+id/textViewCategoryRevenue"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Категория"
@@ -131,7 +131,7 @@
         app:layout_constraintVertical_bias="0.432" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/textViewCurrencyRevenue"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Валюта"
@@ -143,7 +143,7 @@
         app:layout_constraintVertical_bias="0.389" />
 
     <Spinner
-        android:id="@+id/spinner4"
+        android:id="@+id/spinnerCurrencyRevenue"
         android:layout_width="86dp"
         android:layout_height="39dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -154,7 +154,7 @@
         app:layout_constraintVertical_bias="0.427" />
 
     <TextView
-        android:id="@+id/textView9"
+        android:id="@+id/textViewStorageLocationRevenue"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Место хранения"
@@ -166,7 +166,7 @@
         app:layout_constraintVertical_bias="0.533" />
 
     <Spinner
-        android:id="@+id/spinner5"
+        android:id="@+id/spinnerStorageLocationRevenue"
         android:layout_width="277dp"
         android:layout_height="33dp"
         app:layout_constraintBottom_toBottomOf="parent"

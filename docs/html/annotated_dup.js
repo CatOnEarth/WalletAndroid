@@ -14,6 +14,7 @@ var annotated_dup =
             [ "FragmentHomeBinding", "classcom_1_1snail_1_1wallet_1_1databinding_1_1_fragment_home_binding.html", "classcom_1_1snail_1_1wallet_1_1databinding_1_1_fragment_home_binding" ],
             [ "FragmentRevenueBinding", "classcom_1_1snail_1_1wallet_1_1databinding_1_1_fragment_revenue_binding.html", "classcom_1_1snail_1_1wallet_1_1databinding_1_1_fragment_revenue_binding" ],
             [ "ItemCategorySpinnerBinding", "classcom_1_1snail_1_1wallet_1_1databinding_1_1_item_category_spinner_binding.html", "classcom_1_1snail_1_1wallet_1_1databinding_1_1_item_category_spinner_binding" ],
+            [ "ItemCurrencySpinnerBinding", "classcom_1_1snail_1_1wallet_1_1databinding_1_1_item_currency_spinner_binding.html", "classcom_1_1snail_1_1wallet_1_1databinding_1_1_item_currency_spinner_binding" ],
             [ "ItemExpensesRecyclerviewBinding", "classcom_1_1snail_1_1wallet_1_1databinding_1_1_item_expenses_recyclerview_binding.html", "classcom_1_1snail_1_1wallet_1_1databinding_1_1_item_expenses_recyclerview_binding" ],
             [ "ItemRevenueRecyclerviewBinding", "classcom_1_1snail_1_1wallet_1_1databinding_1_1_item_revenue_recyclerview_binding.html", "classcom_1_1snail_1_1wallet_1_1databinding_1_1_item_revenue_recyclerview_binding" ],
             [ "NavHeaderWalletBinding", "classcom_1_1snail_1_1wallet_1_1databinding_1_1_nav_header_wallet_binding.html", "classcom_1_1snail_1_1wallet_1_1databinding_1_1_nav_header_wallet_binding" ]
@@ -68,8 +69,11 @@ var annotated_dup =
             [ "ui", null, [
               [ "adapters", "namespacecom_1_1snail_1_1wallet_1_1_main_screen_1_1ui_1_1adapters.html", [
                 [ "CategoryAdapter", "classcom_1_1snail_1_1wallet_1_1_main_screen_1_1ui_1_1adapters_1_1_category_adapter.html", "classcom_1_1snail_1_1wallet_1_1_main_screen_1_1ui_1_1adapters_1_1_category_adapter" ],
+                [ "CurrencyAdapter", "classcom_1_1snail_1_1wallet_1_1_main_screen_1_1ui_1_1adapters_1_1_currency_adapter.html", "classcom_1_1snail_1_1wallet_1_1_main_screen_1_1ui_1_1adapters_1_1_currency_adapter" ],
                 [ "ExpensesAdapter", "classcom_1_1snail_1_1wallet_1_1_main_screen_1_1ui_1_1adapters_1_1_expenses_adapter.html", null ],
-                [ "RevenueAdapter", "classcom_1_1snail_1_1wallet_1_1_main_screen_1_1ui_1_1adapters_1_1_revenue_adapter.html", "classcom_1_1snail_1_1wallet_1_1_main_screen_1_1ui_1_1adapters_1_1_revenue_adapter" ]
+                [ "RevenueAdapter", "classcom_1_1snail_1_1wallet_1_1_main_screen_1_1ui_1_1adapters_1_1_revenue_adapter.html", "classcom_1_1snail_1_1wallet_1_1_main_screen_1_1ui_1_1adapters_1_1_revenue_adapter" ],
+                [ "SourceAdapter", "classcom_1_1snail_1_1wallet_1_1_main_screen_1_1ui_1_1adapters_1_1_source_adapter.html", null ],
+                [ "StorageLocationAdapter", "classcom_1_1snail_1_1wallet_1_1_main_screen_1_1ui_1_1adapters_1_1_storage_location_adapter.html", null ]
               ] ],
               [ "expenses", "namespacecom_1_1snail_1_1wallet_1_1_main_screen_1_1ui_1_1expenses.html", [
                 [ "ExpensesFragment", "classcom_1_1snail_1_1wallet_1_1_main_screen_1_1ui_1_1expenses_1_1_expenses_fragment.html", "classcom_1_1snail_1_1wallet_1_1_main_screen_1_1ui_1_1expenses_1_1_expenses_fragment" ],

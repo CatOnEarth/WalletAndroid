@@ -48,8 +48,8 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "_activity_expenses_add_binding_8java.html",
-"classcom_1_1snail_1_1wallet_1_1_main_screen_1_1models_1_1_currency.html#a70f5896023be9b0e6a7b47315ddd0404",
-"functions_func.html"
+"classcom_1_1snail_1_1wallet_1_1_main_screen_1_1models_1_1_coin.html",
+"dir_c033f731660b9b391579f1e04611dca1.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

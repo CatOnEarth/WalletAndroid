@@ -30,7 +30,9 @@ var hierarchy =
     [ "com.snail.wallet.MainScreen.db.RevenueDAO.RevenueDAO", "interfacecom_1_1snail_1_1wallet_1_1_main_screen_1_1db_1_1_revenue_d_a_o_1_1_revenue_d_a_o.html", [
       [ "com.snail.wallet.MainScreen.db.RevenueDAO.RevenueDAO_Impl", "classcom_1_1snail_1_1wallet_1_1_main_screen_1_1db_1_1_revenue_d_a_o_1_1_revenue_d_a_o___impl.html", null ]
     ] ],
+    [ "com.snail.wallet.MainScreen.ui.adapters.SourceAdapter", "classcom_1_1snail_1_1wallet_1_1_main_screen_1_1ui_1_1adapters_1_1_source_adapter.html", null ],
     [ "com.snail.wallet.MainScreen.models.StorageLocation", "classcom_1_1snail_1_1wallet_1_1_main_screen_1_1models_1_1_storage_location.html", null ],
+    [ "com.snail.wallet.MainScreen.ui.adapters.StorageLocationAdapter", "classcom_1_1snail_1_1wallet_1_1_main_screen_1_1ui_1_1adapters_1_1_storage_location_adapter.html", null ],
     [ "com.snail.wallet.MainScreen.db.StorageLocationDAO.StorageLocationDAO", "interfacecom_1_1snail_1_1wallet_1_1_main_screen_1_1db_1_1_storage_location_d_a_o_1_1_storage_location_d_a_o.html", [
       [ "com.snail.wallet.MainScreen.db.StorageLocationDAO.StorageLocationDAO_Impl", "classcom_1_1snail_1_1wallet_1_1_main_screen_1_1db_1_1_storage_location_d_a_o_1_1_storage_location_d_a_o___impl.html", null ]
     ] ],
@@ -44,7 +46,8 @@ var hierarchy =
       [ "com.snail.wallet.MainScreen.db.App", "classcom_1_1snail_1_1wallet_1_1_main_screen_1_1db_1_1_app.html", null ]
     ] ],
     [ "ArrayAdapter", null, [
-      [ "com.snail.wallet.MainScreen.ui.adapters.CategoryAdapter", "classcom_1_1snail_1_1wallet_1_1_main_screen_1_1ui_1_1adapters_1_1_category_adapter.html", null ]
+      [ "com.snail.wallet.MainScreen.ui.adapters.CategoryAdapter", "classcom_1_1snail_1_1wallet_1_1_main_screen_1_1ui_1_1adapters_1_1_category_adapter.html", null ],
+      [ "com.snail.wallet.MainScreen.ui.adapters.CurrencyAdapter", "classcom_1_1snail_1_1wallet_1_1_main_screen_1_1ui_1_1adapters_1_1_currency_adapter.html", null ]
     ] ],
     [ "Fragment", null, [
       [ "com.snail.wallet.MainScreen.ui.expenses.ExpensesFragment", "classcom_1_1snail_1_1wallet_1_1_main_screen_1_1ui_1_1expenses_1_1_expenses_fragment.html", null ],
@@ -67,6 +70,7 @@ var hierarchy =
       [ "com.snail.wallet.databinding.FragmentHomeBinding", "classcom_1_1snail_1_1wallet_1_1databinding_1_1_fragment_home_binding.html", null ],
       [ "com.snail.wallet.databinding.FragmentRevenueBinding", "classcom_1_1snail_1_1wallet_1_1databinding_1_1_fragment_revenue_binding.html", null ],
       [ "com.snail.wallet.databinding.ItemCategorySpinnerBinding", "classcom_1_1snail_1_1wallet_1_1databinding_1_1_item_category_spinner_binding.html", null ],
+      [ "com.snail.wallet.databinding.ItemCurrencySpinnerBinding", "classcom_1_1snail_1_1wallet_1_1databinding_1_1_item_currency_spinner_binding.html", null ],
       [ "com.snail.wallet.databinding.ItemExpensesRecyclerviewBinding", "classcom_1_1snail_1_1wallet_1_1databinding_1_1_item_expenses_recyclerview_binding.html", null ],
       [ "com.snail.wallet.databinding.ItemRevenueRecyclerviewBinding", "classcom_1_1snail_1_1wallet_1_1databinding_1_1_item_revenue_recyclerview_binding.html", null ],
       [ "com.snail.wallet.databinding.NavHeaderWalletBinding", "classcom_1_1snail_1_1wallet_1_1databinding_1_1_nav_header_wallet_binding.html", null ]

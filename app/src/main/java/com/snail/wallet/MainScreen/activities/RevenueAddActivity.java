@@ -12,7 +12,10 @@ import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 
 import com.snail.wallet.MainScreen.models.Category;
+import com.snail.wallet.MainScreen.models.Currency;
 import com.snail.wallet.MainScreen.ui.adapters.CategoryAdapter;
+import com.snail.wallet.MainScreen.ui.adapters.CurrencyAdapter;
+import com.snail.wallet.MainScreen.ui.adapters.SourceAdapter;
 import com.snail.wallet.R;
 
 import java.util.ArrayList;
@@ -24,7 +27,13 @@ public class RevenueAddActivity extends AppCompatActivity {
 
     /**  */
     private Spinner spinnerSource;
-    private CategoryAdapter category_adapter;
+    private Spinner spinnerCategory;
+    private Spinner spinnerCurrency;
+    private Spinner spinnerStorageLocation;
+
+    private SourceAdapter   sourceAdapter;
+    private CategoryAdapter categoryAdapter;
+    private CurrencyAdapter currencyAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,14 +49,22 @@ public class RevenueAddActivity extends AppCompatActivity {
             finish();
         }
 
-        spinnerSource = findViewById(R.id.spinnerSource);
-        ArrayList<Category> arrayList = new ArrayList<>();
+        spinnerCategory        = findViewById(R.id.spinnerCategoryRevenue);
+        spinnerSource          = findViewById(R.id.spinnerSourceRevenue);
+        spinnerCurrency        = findViewById(R.id.spinnerCurrencyRevenue);
+        spinnerStorageLocation = findViewById(R.id.spinnerStorageLocationRevenue);
 
-        arrayList.add(new Category(1, 2, "первая"));
-        arrayList.add(new Category(2, 3, "вторая"));
-        // we pass our item list and context to our Adapter.
-        category_adapter = new CategoryAdapter(this, arrayList);
-        spinnerSource.setAdapter(category_adapter);
+        ArrayList<Currency> currencyList = new ArrayList<>();
+        currencyList.add(new Currency(1, "Рубль", "первая"));
+        currencyList.add(new Currency(2, "Евро", "вторая"));
+        currencyAdapter = new CurrencyAdapter(this, currencyList);
+        spinnerCurrency.setAdapter(currencyAdapter);
+
+        ArrayList<Category> categoryList = new ArrayList<>();
+        categoryList.add(new Category(1, 2, "первая"));
+        categoryList.add(new Category(2, 3, "вторая"));
+        categoryAdapter = new CategoryAdapter(this, categoryList);
+        spinnerCategory.setAdapter(categoryAdapter);
 
 
     }

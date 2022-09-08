@@ -1,0 +1,59 @@
+\hypertarget{_currency_adapter_8java_source}{}\doxysection{Currency\+Adapter.\+java}
+\label{_currency_adapter_8java_source}\index{app/src/main/java/com/snail/wallet/MainScreen/ui/adapters/CurrencyAdapter.java@{app/src/main/java/com/snail/wallet/MainScreen/ui/adapters/CurrencyAdapter.java}}
+\mbox{\hyperlink{_currency_adapter_8java}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_currency_adapter_8java_source_l00001}00001 \textcolor{keyword}{package }com.snail.wallet.MainScreen.ui.adapters;}
+\DoxyCodeLine{\Hypertarget{_currency_adapter_8java_source_l00002}00002 }
+\DoxyCodeLine{\Hypertarget{_currency_adapter_8java_source_l00003}00003 \textcolor{keyword}{import} android.content.Context;}
+\DoxyCodeLine{\Hypertarget{_currency_adapter_8java_source_l00004}00004 \textcolor{keyword}{import} android.view.LayoutInflater;}
+\DoxyCodeLine{\Hypertarget{_currency_adapter_8java_source_l00005}00005 \textcolor{keyword}{import} android.view.View;}
+\DoxyCodeLine{\Hypertarget{_currency_adapter_8java_source_l00006}00006 \textcolor{keyword}{import} android.view.ViewGroup;}
+\DoxyCodeLine{\Hypertarget{_currency_adapter_8java_source_l00007}00007 \textcolor{keyword}{import} android.widget.ArrayAdapter;}
+\DoxyCodeLine{\Hypertarget{_currency_adapter_8java_source_l00008}00008 \textcolor{keyword}{import} android.widget.TextView;}
+\DoxyCodeLine{\Hypertarget{_currency_adapter_8java_source_l00009}00009 }
+\DoxyCodeLine{\Hypertarget{_currency_adapter_8java_source_l00010}00010 \textcolor{keyword}{import} androidx.annotation.NonNull;}
+\DoxyCodeLine{\Hypertarget{_currency_adapter_8java_source_l00011}00011 \textcolor{keyword}{import} androidx.annotation.Nullable;}
+\DoxyCodeLine{\Hypertarget{_currency_adapter_8java_source_l00012}00012 }
+\DoxyCodeLine{\Hypertarget{_currency_adapter_8java_source_l00013}00013 \textcolor{keyword}{import} com.snail.wallet.MainScreen.models.Category;}
+\DoxyCodeLine{\Hypertarget{_currency_adapter_8java_source_l00014}00014 \textcolor{keyword}{import} com.snail.wallet.MainScreen.models.Currency;}
+\DoxyCodeLine{\Hypertarget{_currency_adapter_8java_source_l00015}00015 \textcolor{keyword}{import} com.snail.wallet.R;}
+\DoxyCodeLine{\Hypertarget{_currency_adapter_8java_source_l00016}00016 }
+\DoxyCodeLine{\Hypertarget{_currency_adapter_8java_source_l00017}00017 \textcolor{keyword}{import} java.util.ArrayList;}
+\DoxyCodeLine{\Hypertarget{_currency_adapter_8java_source_l00018}00018 }
+\DoxyCodeLine{\Hypertarget{_currency_adapter_8java_source_l00019}\mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1ui_1_1adapters_1_1_currency_adapter}{00019}} \textcolor{keyword}{public} \textcolor{keyword}{class }\mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1ui_1_1adapters_1_1_currency_adapter}{CurrencyAdapter}} \textcolor{keyword}{extends} ArrayAdapter<Currency> \{}
+\DoxyCodeLine{\Hypertarget{_currency_adapter_8java_source_l00020}\mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1ui_1_1adapters_1_1_currency_adapter_ab58b46d0216605756b7da55e3b4c1d69}{00020}}     \textcolor{keyword}{public} \mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1ui_1_1adapters_1_1_currency_adapter_ab58b46d0216605756b7da55e3b4c1d69}{CurrencyAdapter}}(Context context, ArrayList<Currency> currency) \{}
+\DoxyCodeLine{\Hypertarget{_currency_adapter_8java_source_l00021}00021         super(context, 0, currency);}
+\DoxyCodeLine{\Hypertarget{_currency_adapter_8java_source_l00022}00022     \}}
+\DoxyCodeLine{\Hypertarget{_currency_adapter_8java_source_l00023}00023 }
+\DoxyCodeLine{\Hypertarget{_currency_adapter_8java_source_l00024}00024     @NonNull}
+\DoxyCodeLine{\Hypertarget{_currency_adapter_8java_source_l00025}00025     @Override}
+\DoxyCodeLine{\Hypertarget{_currency_adapter_8java_source_l00026}\mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1ui_1_1adapters_1_1_currency_adapter_aae025cf87f09a069ac843e471bced600}{00026}}     \textcolor{keyword}{public} View \mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1ui_1_1adapters_1_1_currency_adapter_aae025cf87f09a069ac843e471bced600}{getView}}(\textcolor{keywordtype}{int} position, @Nullable View convertView, @NonNull ViewGroup parent) \{}
+\DoxyCodeLine{\Hypertarget{_currency_adapter_8java_source_l00027}00027         \textcolor{keywordflow}{return} \mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1ui_1_1adapters_1_1_currency_adapter_ad4ebf42bff13c388eab6e94a5f40b06b}{initView}}(position, convertView, parent);}
+\DoxyCodeLine{\Hypertarget{_currency_adapter_8java_source_l00028}00028     \}}
+\DoxyCodeLine{\Hypertarget{_currency_adapter_8java_source_l00029}00029 }
+\DoxyCodeLine{\Hypertarget{_currency_adapter_8java_source_l00030}00030     @Override}
+\DoxyCodeLine{\Hypertarget{_currency_adapter_8java_source_l00031}\mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1ui_1_1adapters_1_1_currency_adapter_aab30419ac06d145a372eafd8508b15f4}{00031}}     \textcolor{keyword}{public} View \mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1ui_1_1adapters_1_1_currency_adapter_aab30419ac06d145a372eafd8508b15f4}{getDropDownView}}(\textcolor{keywordtype}{int} position, @Nullable}
+\DoxyCodeLine{\Hypertarget{_currency_adapter_8java_source_l00032}00032             View convertView, @NonNull ViewGroup parent)}
+\DoxyCodeLine{\Hypertarget{_currency_adapter_8java_source_l00033}00033     \{}
+\DoxyCodeLine{\Hypertarget{_currency_adapter_8java_source_l00034}00034         \textcolor{keywordflow}{return} \mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1ui_1_1adapters_1_1_currency_adapter_ad4ebf42bff13c388eab6e94a5f40b06b}{initView}}(position, convertView, parent);}
+\DoxyCodeLine{\Hypertarget{_currency_adapter_8java_source_l00035}00035     \}}
+\DoxyCodeLine{\Hypertarget{_currency_adapter_8java_source_l00036}00036 }
+\DoxyCodeLine{\Hypertarget{_currency_adapter_8java_source_l00037}\mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1ui_1_1adapters_1_1_currency_adapter_ad4ebf42bff13c388eab6e94a5f40b06b}{00037}}     \textcolor{keyword}{private} View \mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1ui_1_1adapters_1_1_currency_adapter_ad4ebf42bff13c388eab6e94a5f40b06b}{initView}}(\textcolor{keywordtype}{int} position, View convertView, ViewGroup parent) \{}
+\DoxyCodeLine{\Hypertarget{_currency_adapter_8java_source_l00038}00038         \textcolor{comment}{// It is used to set our custom view.}}
+\DoxyCodeLine{\Hypertarget{_currency_adapter_8java_source_l00039}00039         \textcolor{keywordflow}{if} (convertView == \textcolor{keyword}{null}) \{}
+\DoxyCodeLine{\Hypertarget{_currency_adapter_8java_source_l00040}00040             convertView = LayoutInflater.from(getContext()).inflate(R.layout.item\_currency\_spinner, parent, \textcolor{keyword}{false});}
+\DoxyCodeLine{\Hypertarget{_currency_adapter_8java_source_l00041}00041         \}}
+\DoxyCodeLine{\Hypertarget{_currency_adapter_8java_source_l00042}00042 }
+\DoxyCodeLine{\Hypertarget{_currency_adapter_8java_source_l00043}00043         TextView textViewName = convertView.findViewById(R.id.textViewCurrencySpinnerRevenueAdapter);}
+\DoxyCodeLine{\Hypertarget{_currency_adapter_8java_source_l00044}00044         \mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1models_1_1_currency}{Currency}} currentItem = getItem(position);}
+\DoxyCodeLine{\Hypertarget{_currency_adapter_8java_source_l00045}00045 }
+\DoxyCodeLine{\Hypertarget{_currency_adapter_8java_source_l00046}00046         \textcolor{comment}{// It is used the name to the TextView when the}}
+\DoxyCodeLine{\Hypertarget{_currency_adapter_8java_source_l00047}00047         \textcolor{comment}{// current item is not null.}}
+\DoxyCodeLine{\Hypertarget{_currency_adapter_8java_source_l00048}00048         \textcolor{keywordflow}{if} (currentItem != \textcolor{keyword}{null}) \{}
+\DoxyCodeLine{\Hypertarget{_currency_adapter_8java_source_l00049}00049             textViewName.setText(currentItem.\mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1models_1_1_currency_a9654945a595aca7f617d5d7d3260d510}{getName}}());}
+\DoxyCodeLine{\Hypertarget{_currency_adapter_8java_source_l00050}00050         \}}
+\DoxyCodeLine{\Hypertarget{_currency_adapter_8java_source_l00051}00051         \textcolor{keywordflow}{return} convertView;}
+\DoxyCodeLine{\Hypertarget{_currency_adapter_8java_source_l00052}00052     \}}
+\DoxyCodeLine{\Hypertarget{_currency_adapter_8java_source_l00053}00053 \}}
+
+\end{DoxyCode}

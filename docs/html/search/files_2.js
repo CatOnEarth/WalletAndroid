@@ -7,6 +7,7 @@ var searchData=
   ['coin_2ejava_4',['Coin.java',['../_coin_8java.html',1,'']]],
   ['contentwalletbinding_2ejava_5',['ContentWalletBinding.java',['../_content_wallet_binding_8java.html',1,'']]],
   ['currency_2ejava_6',['Currency.java',['../_currency_8java.html',1,'']]],
-  ['currencydao_2ejava_7',['CurrencyDAO.java',['../_currency_d_a_o_8java.html',1,'']]],
-  ['currencydao_5fimpl_2ejava_8',['CurrencyDAO_Impl.java',['../_currency_d_a_o___impl_8java.html',1,'']]]
+  ['currencyadapter_2ejava_7',['CurrencyAdapter.java',['../_currency_adapter_8java.html',1,'']]],
+  ['currencydao_2ejava_8',['CurrencyDAO.java',['../_currency_d_a_o_8java.html',1,'']]],
+  ['currencydao_5fimpl_2ejava_9',['CurrencyDAO_Impl.java',['../_currency_d_a_o___impl_8java.html',1,'']]]
 ];
