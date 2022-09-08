@@ -38,7 +38,7 @@
 \DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00034}00034     this.\_\_insertionAdapterOfExpenses = \textcolor{keyword}{new} EntityInsertionAdapter<Expenses>(\_\_db) \{}
 \DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00035}00035       @Override}
 \DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00036}00036       \textcolor{keyword}{public} String createQuery() \{}
-\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00037}00037         \textcolor{keywordflow}{return} \textcolor{stringliteral}{"{}INSERT OR ABORT INTO `expenses` (`purpose`,`id`,`value`,`currency`,`category`,`description`) VALUES (?,nullif(?, 0),?,?,?,?)"{}};}
+\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00037}00037         \textcolor{keywordflow}{return} \textcolor{stringliteral}{"{}INSERT OR ABORT INTO `expenses` (`purpose`,`id`,`value`,`currency`,`category`,`date`,`description`) VALUES (?,nullif(?, 0),?,?,?,?,?)"{}};}
 \DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00038}00038       \}}
 \DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00039}00039 }
 \DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00040}00040       @Override}
@@ -52,200 +52,217 @@
 \DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00048}00048         stmt.bindDouble(3, value.\mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1models_1_1_money_afe1b4cafd897951efb4305540a5ad34a}{value}});}
 \DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00049}00049         stmt.bindLong(4, value.\mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1models_1_1_money_a0a039bcff5aadc7babd3da358515e0a6}{currency}});}
 \DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00050}00050         stmt.bindLong(5, value.\mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1models_1_1_money_a45b20618f28483dd62b822d02ea35161}{category}});}
-\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00051}00051         \textcolor{keywordflow}{if} (value.\mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1models_1_1_money_a5290ed06fa6d0322607be55d7b4df977}{description}} == \textcolor{keyword}{null}) \{}
+\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00051}00051         \textcolor{keywordflow}{if} (value.\mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1models_1_1_money_ad0d18733f364048a2c02751a5fa4af46}{date}} == \textcolor{keyword}{null}) \{}
 \DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00052}00052           stmt.bindNull(6);}
 \DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00053}00053         \} \textcolor{keywordflow}{else} \{}
-\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00054}00054           stmt.bindString(6, value.\mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1models_1_1_money_a5290ed06fa6d0322607be55d7b4df977}{description}});}
+\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00054}00054           stmt.bindString(6, value.\mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1models_1_1_money_ad0d18733f364048a2c02751a5fa4af46}{date}});}
 \DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00055}00055         \}}
-\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00056}00056       \}}
-\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00057}00057     \};}
-\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00058}00058     this.\_\_deletionAdapterOfExpenses = \textcolor{keyword}{new} EntityDeletionOrUpdateAdapter<Expenses>(\_\_db) \{}
-\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00059}00059       @Override}
-\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00060}00060       \textcolor{keyword}{public} String createQuery() \{}
-\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00061}00061         \textcolor{keywordflow}{return} \textcolor{stringliteral}{"{}DELETE FROM `expenses` WHERE `id` = ?"{}};}
-\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00062}00062       \}}
-\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00063}00063 }
+\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00056}00056         \textcolor{keywordflow}{if} (value.\mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1models_1_1_money_a5290ed06fa6d0322607be55d7b4df977}{description}} == \textcolor{keyword}{null}) \{}
+\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00057}00057           stmt.bindNull(7);}
+\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00058}00058         \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00059}00059           stmt.bindString(7, value.\mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1models_1_1_money_a5290ed06fa6d0322607be55d7b4df977}{description}});}
+\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00060}00060         \}}
+\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00061}00061       \}}
+\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00062}00062     \};}
+\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00063}00063     this.\_\_deletionAdapterOfExpenses = \textcolor{keyword}{new} EntityDeletionOrUpdateAdapter<Expenses>(\_\_db) \{}
 \DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00064}00064       @Override}
-\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00065}00065       \textcolor{keyword}{public} \textcolor{keywordtype}{void} bind(SupportSQLiteStatement stmt, \mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1models_1_1_expenses}{Expenses}} value) \{}
-\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00066}00066         stmt.bindLong(1, value.\mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1models_1_1_money_aabf9244eb46f3f02a9becb0e64967596}{id}});}
+\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00065}00065       \textcolor{keyword}{public} String createQuery() \{}
+\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00066}00066         \textcolor{keywordflow}{return} \textcolor{stringliteral}{"{}DELETE FROM `expenses` WHERE `id` = ?"{}};}
 \DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00067}00067       \}}
-\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00068}00068     \};}
-\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00069}00069     this.\_\_updateAdapterOfExpenses = \textcolor{keyword}{new} EntityDeletionOrUpdateAdapter<Expenses>(\_\_db) \{}
-\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00070}00070       @Override}
-\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00071}00071       \textcolor{keyword}{public} String createQuery() \{}
-\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00072}00072         \textcolor{keywordflow}{return} \textcolor{stringliteral}{"{}UPDATE OR ABORT `expenses` SET `purpose` = ?,`id` = ?,`value` = ?,`currency` = ?,`category` = ?,`description` = ? WHERE `id` = ?"{}};}
-\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00073}00073       \}}
-\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00074}00074 }
+\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00068}00068 }
+\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00069}00069       @Override}
+\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00070}00070       \textcolor{keyword}{public} \textcolor{keywordtype}{void} bind(SupportSQLiteStatement stmt, \mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1models_1_1_expenses}{Expenses}} value) \{}
+\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00071}00071         stmt.bindLong(1, value.\mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1models_1_1_money_aabf9244eb46f3f02a9becb0e64967596}{id}});}
+\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00072}00072       \}}
+\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00073}00073     \};}
+\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00074}00074     this.\_\_updateAdapterOfExpenses = \textcolor{keyword}{new} EntityDeletionOrUpdateAdapter<Expenses>(\_\_db) \{}
 \DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00075}00075       @Override}
-\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00076}00076       \textcolor{keyword}{public} \textcolor{keywordtype}{void} bind(SupportSQLiteStatement stmt, \mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1models_1_1_expenses}{Expenses}} value) \{}
-\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00077}00077         \textcolor{keywordflow}{if} (value.\mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1models_1_1_expenses_a3ffa75c29800b54e5ca1f2277f65cce6}{purpose}} == \textcolor{keyword}{null}) \{}
-\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00078}00078           stmt.bindNull(1);}
-\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00079}00079         \} \textcolor{keywordflow}{else} \{}
-\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00080}00080           stmt.bindString(1, value.\mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1models_1_1_expenses_a3ffa75c29800b54e5ca1f2277f65cce6}{purpose}});}
-\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00081}00081         \}}
-\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00082}00082         stmt.bindLong(2, value.\mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1models_1_1_money_aabf9244eb46f3f02a9becb0e64967596}{id}});}
-\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00083}00083         stmt.bindDouble(3, value.\mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1models_1_1_money_afe1b4cafd897951efb4305540a5ad34a}{value}});}
-\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00084}00084         stmt.bindLong(4, value.\mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1models_1_1_money_a0a039bcff5aadc7babd3da358515e0a6}{currency}});}
-\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00085}00085         stmt.bindLong(5, value.\mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1models_1_1_money_a45b20618f28483dd62b822d02ea35161}{category}});}
-\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00086}00086         \textcolor{keywordflow}{if} (value.\mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1models_1_1_money_a5290ed06fa6d0322607be55d7b4df977}{description}} == \textcolor{keyword}{null}) \{}
-\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00087}00087           stmt.bindNull(6);}
-\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00088}00088         \} \textcolor{keywordflow}{else} \{}
-\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00089}00089           stmt.bindString(6, value.\mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1models_1_1_money_a5290ed06fa6d0322607be55d7b4df977}{description}});}
-\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00090}00090         \}}
-\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00091}00091         stmt.bindLong(7, value.\mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1models_1_1_money_aabf9244eb46f3f02a9becb0e64967596}{id}});}
-\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00092}00092       \}}
-\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00093}00093     \};}
-\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00094}00094   \}}
-\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00095}00095 }
-\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00096}00096   @Override}
-\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00097}\mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1db_1_1_expenses_d_a_o_1_1_expenses_d_a_o___impl_af6d38b4c66fd208b1d0dd40d21c8095a}{00097}}   \textcolor{keyword}{public} \textcolor{keywordtype}{void} \mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1db_1_1_expenses_d_a_o_1_1_expenses_d_a_o___impl_af6d38b4c66fd208b1d0dd40d21c8095a}{insert}}(\textcolor{keyword}{final} \mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1models_1_1_expenses}{Expenses}} expenses) \{}
-\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00098}00098     \_\_db.assertNotSuspendingTransaction();}
-\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00099}00099     \_\_db.beginTransaction();}
-\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00100}00100     \textcolor{keywordflow}{try} \{}
-\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00101}00101       \_\_insertionAdapterOfExpenses.insert(expenses);}
-\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00102}00102       \_\_db.setTransactionSuccessful();}
-\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00103}00103     \} \textcolor{keywordflow}{finally} \{}
-\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00104}00104       \_\_db.endTransaction();}
-\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00105}00105     \}}
-\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00106}00106   \}}
-\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00107}00107 }
-\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00108}00108   @Override}
-\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00109}\mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1db_1_1_expenses_d_a_o_1_1_expenses_d_a_o___impl_af05b63b4b2cbdb7148f8b7e7bd85bf81}{00109}}   \textcolor{keyword}{public} \textcolor{keywordtype}{void} \mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1db_1_1_expenses_d_a_o_1_1_expenses_d_a_o___impl_af05b63b4b2cbdb7148f8b7e7bd85bf81}{delete}}(\textcolor{keyword}{final} \mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1models_1_1_expenses}{Expenses}} expenses) \{}
-\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00110}00110     \_\_db.assertNotSuspendingTransaction();}
-\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00111}00111     \_\_db.beginTransaction();}
-\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00112}00112     \textcolor{keywordflow}{try} \{}
-\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00113}00113       \_\_deletionAdapterOfExpenses.handle(expenses);}
-\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00114}00114       \_\_db.setTransactionSuccessful();}
-\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00115}00115     \} \textcolor{keywordflow}{finally} \{}
-\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00116}00116       \_\_db.endTransaction();}
-\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00117}00117     \}}
-\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00118}00118   \}}
-\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00119}00119 }
-\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00120}00120   @Override}
-\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00121}\mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1db_1_1_expenses_d_a_o_1_1_expenses_d_a_o___impl_aa7cd4b0c74142ed4fbeb107649529fc3}{00121}}   \textcolor{keyword}{public} \textcolor{keywordtype}{void} \mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1db_1_1_expenses_d_a_o_1_1_expenses_d_a_o___impl_aa7cd4b0c74142ed4fbeb107649529fc3}{update}}(\textcolor{keyword}{final} \mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1models_1_1_expenses}{Expenses}} expenses) \{}
-\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00122}00122     \_\_db.assertNotSuspendingTransaction();}
-\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00123}00123     \_\_db.beginTransaction();}
-\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00124}00124     \textcolor{keywordflow}{try} \{}
-\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00125}00125       \_\_updateAdapterOfExpenses.handle(expenses);}
-\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00126}00126       \_\_db.setTransactionSuccessful();}
-\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00127}00127     \} \textcolor{keywordflow}{finally} \{}
-\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00128}00128       \_\_db.endTransaction();}
-\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00129}00129     \}}
-\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00130}00130   \}}
-\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00131}00131 }
-\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00132}00132   @Override}
-\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00133}\mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1db_1_1_expenses_d_a_o_1_1_expenses_d_a_o___impl_a6a45fb9dc640ad04c03709856564a6a1}{00133}}   \textcolor{keyword}{public} List<Expenses> \mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1db_1_1_expenses_d_a_o_1_1_expenses_d_a_o___impl_a6a45fb9dc640ad04c03709856564a6a1}{getAll}}() \{}
-\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00134}00134     \textcolor{keyword}{final} String \_sql = \textcolor{stringliteral}{"{}SELECT * FROM expenses"{}};}
-\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00135}00135     \textcolor{keyword}{final} RoomSQLiteQuery \_statement = RoomSQLiteQuery.acquire(\_sql, 0);}
-\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00136}00136     \_\_db.assertNotSuspendingTransaction();}
-\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00137}00137     \textcolor{keyword}{final} Cursor \_cursor = DBUtil.query(\_\_db, \_statement, \textcolor{keyword}{false}, \textcolor{keyword}{null});}
-\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00138}00138     \textcolor{keywordflow}{try} \{}
-\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00139}00139       \textcolor{keyword}{final} \textcolor{keywordtype}{int} \_cursorIndexOfPurpose = CursorUtil.getColumnIndexOrThrow(\_cursor, \textcolor{stringliteral}{"{}purpose"{}});}
-\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00140}00140       \textcolor{keyword}{final} \textcolor{keywordtype}{int} \_cursorIndexOfId = CursorUtil.getColumnIndexOrThrow(\_cursor, \textcolor{stringliteral}{"{}id"{}});}
-\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00141}00141       \textcolor{keyword}{final} \textcolor{keywordtype}{int} \_cursorIndexOfValue = CursorUtil.getColumnIndexOrThrow(\_cursor, \textcolor{stringliteral}{"{}value"{}});}
-\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00142}00142       \textcolor{keyword}{final} \textcolor{keywordtype}{int} \_cursorIndexOfCurrency = CursorUtil.getColumnIndexOrThrow(\_cursor, \textcolor{stringliteral}{"{}currency"{}});}
-\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00143}00143       \textcolor{keyword}{final} \textcolor{keywordtype}{int} \_cursorIndexOfCategory = CursorUtil.getColumnIndexOrThrow(\_cursor, \textcolor{stringliteral}{"{}category"{}});}
-\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00144}00144       \textcolor{keyword}{final} \textcolor{keywordtype}{int} \_cursorIndexOfDescription = CursorUtil.getColumnIndexOrThrow(\_cursor, \textcolor{stringliteral}{"{}description"{}});}
-\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00145}00145       \textcolor{keyword}{final} List<Expenses> \_result = \textcolor{keyword}{new} ArrayList<Expenses>(\_cursor.getCount());}
-\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00146}00146       \textcolor{keywordflow}{while}(\_cursor.moveToNext()) \{}
-\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00147}00147         \textcolor{keyword}{final} \mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1models_1_1_expenses}{Expenses}} \_item;}
-\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00148}00148         \textcolor{keyword}{final} \textcolor{keywordtype}{int} \_tmpId;}
-\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00149}00149         \_tmpId = \_cursor.getInt(\_cursorIndexOfId);}
-\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00150}00150         \textcolor{keyword}{final} \textcolor{keywordtype}{double} \_tmpValue;}
-\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00151}00151         \_tmpValue = \_cursor.getDouble(\_cursorIndexOfValue);}
-\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00152}00152         \textcolor{keyword}{final} \textcolor{keywordtype}{int} \_tmpCurrency;}
-\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00153}00153         \_tmpCurrency = \_cursor.getInt(\_cursorIndexOfCurrency);}
-\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00154}00154         \textcolor{keyword}{final} \textcolor{keywordtype}{int} \_tmpCategory;}
-\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00155}00155         \_tmpCategory = \_cursor.getInt(\_cursorIndexOfCategory);}
-\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00156}00156         \textcolor{keyword}{final} String \_tmpDescription;}
-\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00157}00157         \textcolor{keywordflow}{if} (\_cursor.isNull(\_cursorIndexOfDescription)) \{}
-\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00158}00158           \_tmpDescription = \textcolor{keyword}{null};}
-\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00159}00159         \} \textcolor{keywordflow}{else} \{}
-\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00160}00160           \_tmpDescription = \_cursor.getString(\_cursorIndexOfDescription);}
-\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00161}00161         \}}
-\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00162}00162         \_item = \textcolor{keyword}{new} \mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1models_1_1_expenses}{Expenses}}(\_tmpId,\_tmpValue,\_tmpCurrency,\_tmpCategory,\_tmpDescription);}
-\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00163}00163         \textcolor{keywordflow}{if} (\_cursor.isNull(\_cursorIndexOfPurpose)) \{}
-\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00164}00164           \_item.purpose = \textcolor{keyword}{null};}
-\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00165}00165         \} \textcolor{keywordflow}{else} \{}
-\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00166}00166           \_item.purpose = \_cursor.getString(\_cursorIndexOfPurpose);}
-\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00167}00167         \}}
-\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00168}00168         \_result.add(\_item);}
-\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00169}00169       \}}
-\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00170}00170       \textcolor{keywordflow}{return} \_result;}
-\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00171}00171     \} \textcolor{keywordflow}{finally} \{}
-\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00172}00172       \_cursor.close();}
-\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00173}00173       \_statement.release();}
-\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00174}00174     \}}
-\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00175}00175   \}}
-\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00176}00176 }
-\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00177}00177   @Override}
-\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00178}\mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1db_1_1_expenses_d_a_o_1_1_expenses_d_a_o___impl_a845d1c88a50e65fb54eb51b5d9191d6f}{00178}}   \textcolor{keyword}{public} List<Money> \mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1db_1_1_expenses_d_a_o_1_1_expenses_d_a_o___impl_a845d1c88a50e65fb54eb51b5d9191d6f}{getValues}}() \{}
-\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00179}00179     \textcolor{keyword}{final} String \_sql = \textcolor{stringliteral}{"{}SELECT id, value, currency, category, description FROM expenses"{}};}
-\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00180}00180     \textcolor{keyword}{final} RoomSQLiteQuery \_statement = RoomSQLiteQuery.acquire(\_sql, 0);}
-\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00181}00181     \_\_db.assertNotSuspendingTransaction();}
-\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00182}00182     \textcolor{keyword}{final} Cursor \_cursor = DBUtil.query(\_\_db, \_statement, \textcolor{keyword}{false}, \textcolor{keyword}{null});}
-\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00183}00183     \textcolor{keywordflow}{try} \{}
-\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00184}00184       \textcolor{keyword}{final} \textcolor{keywordtype}{int} \_cursorIndexOfId = 0;}
-\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00185}00185       \textcolor{keyword}{final} \textcolor{keywordtype}{int} \_cursorIndexOfValue = 1;}
-\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00186}00186       \textcolor{keyword}{final} \textcolor{keywordtype}{int} \_cursorIndexOfCurrency = 2;}
-\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00187}00187       \textcolor{keyword}{final} \textcolor{keywordtype}{int} \_cursorIndexOfCategory = 3;}
-\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00188}00188       \textcolor{keyword}{final} \textcolor{keywordtype}{int} \_cursorIndexOfDescription = 4;}
-\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00189}00189       \textcolor{keyword}{final} List<Money> \_result = \textcolor{keyword}{new} ArrayList<Money>(\_cursor.getCount());}
-\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00190}00190       \textcolor{keywordflow}{while}(\_cursor.moveToNext()) \{}
-\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00191}00191         \textcolor{keyword}{final} \mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1models_1_1_money}{Money}} \_item;}
-\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00192}00192         \textcolor{keyword}{final} \textcolor{keywordtype}{int} \_tmpId;}
-\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00193}00193         \_tmpId = \_cursor.getInt(\_cursorIndexOfId);}
-\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00194}00194         \textcolor{keyword}{final} \textcolor{keywordtype}{double} \_tmpValue;}
-\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00195}00195         \_tmpValue = \_cursor.getDouble(\_cursorIndexOfValue);}
-\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00196}00196         \textcolor{keyword}{final} \textcolor{keywordtype}{int} \_tmpCurrency;}
-\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00197}00197         \_tmpCurrency = \_cursor.getInt(\_cursorIndexOfCurrency);}
-\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00198}00198         \textcolor{keyword}{final} \textcolor{keywordtype}{int} \_tmpCategory;}
-\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00199}00199         \_tmpCategory = \_cursor.getInt(\_cursorIndexOfCategory);}
-\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00200}00200         \textcolor{keyword}{final} String \_tmpDescription;}
-\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00201}00201         \textcolor{keywordflow}{if} (\_cursor.isNull(\_cursorIndexOfDescription)) \{}
-\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00202}00202           \_tmpDescription = \textcolor{keyword}{null};}
-\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00203}00203         \} \textcolor{keywordflow}{else} \{}
-\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00204}00204           \_tmpDescription = \_cursor.getString(\_cursorIndexOfDescription);}
-\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00205}00205         \}}
-\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00206}00206         \_item = \textcolor{keyword}{new} \mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1models_1_1_money}{Money}}(\_tmpId,\_tmpValue,\_tmpCurrency,\_tmpCategory,\_tmpDescription);}
-\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00207}00207         \_result.add(\_item);}
-\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00208}00208       \}}
-\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00209}00209       \textcolor{keywordflow}{return} \_result;}
-\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00210}00210     \} \textcolor{keywordflow}{finally} \{}
-\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00211}00211       \_cursor.close();}
-\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00212}00212       \_statement.release();}
-\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00213}00213     \}}
-\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00214}00214   \}}
-\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00215}00215 }
-\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00216}00216   @Override}
-\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00217}\mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1db_1_1_expenses_d_a_o_1_1_expenses_d_a_o___impl_a9189200a8d74f6332a76334efa744ac4}{00217}}   \textcolor{keyword}{public} List<Coin> \mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1db_1_1_expenses_d_a_o_1_1_expenses_d_a_o___impl_a9189200a8d74f6332a76334efa744ac4}{getSum}}() \{}
-\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00218}00218     \textcolor{keyword}{final} String \_sql = \textcolor{stringliteral}{"{}SELECT value, currency FROM expenses"{}};}
-\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00219}00219     \textcolor{keyword}{final} RoomSQLiteQuery \_statement = RoomSQLiteQuery.acquire(\_sql, 0);}
-\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00220}00220     \_\_db.assertNotSuspendingTransaction();}
-\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00221}00221     \textcolor{keyword}{final} Cursor \_cursor = DBUtil.query(\_\_db, \_statement, \textcolor{keyword}{false}, \textcolor{keyword}{null});}
-\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00222}00222     \textcolor{keywordflow}{try} \{}
-\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00223}00223       \textcolor{keyword}{final} \textcolor{keywordtype}{int} \_cursorIndexOfValue = 0;}
-\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00224}00224       \textcolor{keyword}{final} \textcolor{keywordtype}{int} \_cursorIndexOfCurrency = 1;}
-\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00225}00225       \textcolor{keyword}{final} List<Coin> \_result = \textcolor{keyword}{new} ArrayList<Coin>(\_cursor.getCount());}
-\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00226}00226       \textcolor{keywordflow}{while}(\_cursor.moveToNext()) \{}
-\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00227}00227         \textcolor{keyword}{final} \mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1models_1_1_coin}{Coin}} \_item;}
-\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00228}00228         \textcolor{keyword}{final} \textcolor{keywordtype}{double} \_tmpValue;}
-\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00229}00229         \_tmpValue = \_cursor.getDouble(\_cursorIndexOfValue);}
-\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00230}00230         \textcolor{keyword}{final} \textcolor{keywordtype}{int} \_tmpCurrency;}
-\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00231}00231         \_tmpCurrency = \_cursor.getInt(\_cursorIndexOfCurrency);}
-\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00232}00232         \_item = \textcolor{keyword}{new} \mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1models_1_1_coin}{Coin}}(\_tmpValue,\_tmpCurrency);}
-\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00233}00233         \_result.add(\_item);}
-\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00234}00234       \}}
-\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00235}00235       \textcolor{keywordflow}{return} \_result;}
-\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00236}00236     \} \textcolor{keywordflow}{finally} \{}
-\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00237}00237       \_cursor.close();}
-\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00238}00238       \_statement.release();}
-\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00239}00239     \}}
-\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00240}00240   \}}
-\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00241}00241 }
-\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00242}\mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1db_1_1_expenses_d_a_o_1_1_expenses_d_a_o___impl_a33115dc2ece1441468bc06103fc6ac83}{00242}}   \textcolor{keyword}{public} \textcolor{keyword}{static} List<Class<?>> \mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1db_1_1_expenses_d_a_o_1_1_expenses_d_a_o___impl_a33115dc2ece1441468bc06103fc6ac83}{getRequiredConverters}}() \{}
-\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00243}00243     \textcolor{keywordflow}{return} Collections.emptyList();}
-\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00244}00244   \}}
-\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00245}00245 \}}
+\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00076}00076       \textcolor{keyword}{public} String createQuery() \{}
+\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00077}00077         \textcolor{keywordflow}{return} \textcolor{stringliteral}{"{}UPDATE OR ABORT `expenses` SET `purpose` = ?,`id` = ?,`value` = ?,`currency` = ?,`category` = ?,`date` = ?,`description` = ? WHERE `id` = ?"{}};}
+\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00078}00078       \}}
+\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00079}00079 }
+\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00080}00080       @Override}
+\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00081}00081       \textcolor{keyword}{public} \textcolor{keywordtype}{void} bind(SupportSQLiteStatement stmt, \mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1models_1_1_expenses}{Expenses}} value) \{}
+\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00082}00082         \textcolor{keywordflow}{if} (value.\mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1models_1_1_expenses_a3ffa75c29800b54e5ca1f2277f65cce6}{purpose}} == \textcolor{keyword}{null}) \{}
+\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00083}00083           stmt.bindNull(1);}
+\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00084}00084         \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00085}00085           stmt.bindString(1, value.\mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1models_1_1_expenses_a3ffa75c29800b54e5ca1f2277f65cce6}{purpose}});}
+\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00086}00086         \}}
+\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00087}00087         stmt.bindLong(2, value.\mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1models_1_1_money_aabf9244eb46f3f02a9becb0e64967596}{id}});}
+\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00088}00088         stmt.bindDouble(3, value.\mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1models_1_1_money_afe1b4cafd897951efb4305540a5ad34a}{value}});}
+\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00089}00089         stmt.bindLong(4, value.\mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1models_1_1_money_a0a039bcff5aadc7babd3da358515e0a6}{currency}});}
+\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00090}00090         stmt.bindLong(5, value.\mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1models_1_1_money_a45b20618f28483dd62b822d02ea35161}{category}});}
+\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00091}00091         \textcolor{keywordflow}{if} (value.\mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1models_1_1_money_ad0d18733f364048a2c02751a5fa4af46}{date}} == \textcolor{keyword}{null}) \{}
+\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00092}00092           stmt.bindNull(6);}
+\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00093}00093         \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00094}00094           stmt.bindString(6, value.\mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1models_1_1_money_ad0d18733f364048a2c02751a5fa4af46}{date}});}
+\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00095}00095         \}}
+\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00096}00096         \textcolor{keywordflow}{if} (value.\mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1models_1_1_money_a5290ed06fa6d0322607be55d7b4df977}{description}} == \textcolor{keyword}{null}) \{}
+\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00097}00097           stmt.bindNull(7);}
+\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00098}00098         \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00099}00099           stmt.bindString(7, value.\mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1models_1_1_money_a5290ed06fa6d0322607be55d7b4df977}{description}});}
+\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00100}00100         \}}
+\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00101}00101         stmt.bindLong(8, value.\mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1models_1_1_money_aabf9244eb46f3f02a9becb0e64967596}{id}});}
+\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00102}00102       \}}
+\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00103}00103     \};}
+\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00104}00104   \}}
+\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00105}00105 }
+\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00106}00106   @Override}
+\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00107}\mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1db_1_1_expenses_d_a_o_1_1_expenses_d_a_o___impl_af6d38b4c66fd208b1d0dd40d21c8095a}{00107}}   \textcolor{keyword}{public} \textcolor{keywordtype}{void} \mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1db_1_1_expenses_d_a_o_1_1_expenses_d_a_o___impl_af6d38b4c66fd208b1d0dd40d21c8095a}{insert}}(\textcolor{keyword}{final} \mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1models_1_1_expenses}{Expenses}} expenses) \{}
+\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00108}00108     \_\_db.assertNotSuspendingTransaction();}
+\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00109}00109     \_\_db.beginTransaction();}
+\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00110}00110     \textcolor{keywordflow}{try} \{}
+\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00111}00111       \_\_insertionAdapterOfExpenses.insert(expenses);}
+\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00112}00112       \_\_db.setTransactionSuccessful();}
+\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00113}00113     \} \textcolor{keywordflow}{finally} \{}
+\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00114}00114       \_\_db.endTransaction();}
+\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00115}00115     \}}
+\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00116}00116   \}}
+\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00117}00117 }
+\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00118}00118   @Override}
+\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00119}\mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1db_1_1_expenses_d_a_o_1_1_expenses_d_a_o___impl_af05b63b4b2cbdb7148f8b7e7bd85bf81}{00119}}   \textcolor{keyword}{public} \textcolor{keywordtype}{void} \mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1db_1_1_expenses_d_a_o_1_1_expenses_d_a_o___impl_af05b63b4b2cbdb7148f8b7e7bd85bf81}{delete}}(\textcolor{keyword}{final} \mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1models_1_1_expenses}{Expenses}} expenses) \{}
+\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00120}00120     \_\_db.assertNotSuspendingTransaction();}
+\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00121}00121     \_\_db.beginTransaction();}
+\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00122}00122     \textcolor{keywordflow}{try} \{}
+\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00123}00123       \_\_deletionAdapterOfExpenses.handle(expenses);}
+\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00124}00124       \_\_db.setTransactionSuccessful();}
+\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00125}00125     \} \textcolor{keywordflow}{finally} \{}
+\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00126}00126       \_\_db.endTransaction();}
+\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00127}00127     \}}
+\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00128}00128   \}}
+\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00129}00129 }
+\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00130}00130   @Override}
+\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00131}\mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1db_1_1_expenses_d_a_o_1_1_expenses_d_a_o___impl_aa7cd4b0c74142ed4fbeb107649529fc3}{00131}}   \textcolor{keyword}{public} \textcolor{keywordtype}{void} \mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1db_1_1_expenses_d_a_o_1_1_expenses_d_a_o___impl_aa7cd4b0c74142ed4fbeb107649529fc3}{update}}(\textcolor{keyword}{final} \mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1models_1_1_expenses}{Expenses}} expenses) \{}
+\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00132}00132     \_\_db.assertNotSuspendingTransaction();}
+\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00133}00133     \_\_db.beginTransaction();}
+\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00134}00134     \textcolor{keywordflow}{try} \{}
+\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00135}00135       \_\_updateAdapterOfExpenses.handle(expenses);}
+\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00136}00136       \_\_db.setTransactionSuccessful();}
+\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00137}00137     \} \textcolor{keywordflow}{finally} \{}
+\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00138}00138       \_\_db.endTransaction();}
+\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00139}00139     \}}
+\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00140}00140   \}}
+\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00141}00141 }
+\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00142}00142   @Override}
+\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00143}\mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1db_1_1_expenses_d_a_o_1_1_expenses_d_a_o___impl_a6a45fb9dc640ad04c03709856564a6a1}{00143}}   \textcolor{keyword}{public} List<Expenses> \mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1db_1_1_expenses_d_a_o_1_1_expenses_d_a_o___impl_a6a45fb9dc640ad04c03709856564a6a1}{getAll}}() \{}
+\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00144}00144     \textcolor{keyword}{final} String \_sql = \textcolor{stringliteral}{"{}SELECT * FROM expenses"{}};}
+\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00145}00145     \textcolor{keyword}{final} RoomSQLiteQuery \_statement = RoomSQLiteQuery.acquire(\_sql, 0);}
+\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00146}00146     \_\_db.assertNotSuspendingTransaction();}
+\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00147}00147     \textcolor{keyword}{final} Cursor \_cursor = DBUtil.query(\_\_db, \_statement, \textcolor{keyword}{false}, \textcolor{keyword}{null});}
+\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00148}00148     \textcolor{keywordflow}{try} \{}
+\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00149}00149       \textcolor{keyword}{final} \textcolor{keywordtype}{int} \_cursorIndexOfPurpose = CursorUtil.getColumnIndexOrThrow(\_cursor, \textcolor{stringliteral}{"{}purpose"{}});}
+\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00150}00150       \textcolor{keyword}{final} \textcolor{keywordtype}{int} \_cursorIndexOfId = CursorUtil.getColumnIndexOrThrow(\_cursor, \textcolor{stringliteral}{"{}id"{}});}
+\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00151}00151       \textcolor{keyword}{final} \textcolor{keywordtype}{int} \_cursorIndexOfValue = CursorUtil.getColumnIndexOrThrow(\_cursor, \textcolor{stringliteral}{"{}value"{}});}
+\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00152}00152       \textcolor{keyword}{final} \textcolor{keywordtype}{int} \_cursorIndexOfCurrency = CursorUtil.getColumnIndexOrThrow(\_cursor, \textcolor{stringliteral}{"{}currency"{}});}
+\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00153}00153       \textcolor{keyword}{final} \textcolor{keywordtype}{int} \_cursorIndexOfCategory = CursorUtil.getColumnIndexOrThrow(\_cursor, \textcolor{stringliteral}{"{}category"{}});}
+\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00154}00154       \textcolor{keyword}{final} \textcolor{keywordtype}{int} \_cursorIndexOfDate = CursorUtil.getColumnIndexOrThrow(\_cursor, \textcolor{stringliteral}{"{}date"{}});}
+\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00155}00155       \textcolor{keyword}{final} \textcolor{keywordtype}{int} \_cursorIndexOfDescription = CursorUtil.getColumnIndexOrThrow(\_cursor, \textcolor{stringliteral}{"{}description"{}});}
+\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00156}00156       \textcolor{keyword}{final} List<Expenses> \_result = \textcolor{keyword}{new} ArrayList<Expenses>(\_cursor.getCount());}
+\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00157}00157       \textcolor{keywordflow}{while}(\_cursor.moveToNext()) \{}
+\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00158}00158         \textcolor{keyword}{final} \mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1models_1_1_expenses}{Expenses}} \_item;}
+\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00159}00159         \textcolor{keyword}{final} \textcolor{keywordtype}{int} \_tmpId;}
+\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00160}00160         \_tmpId = \_cursor.getInt(\_cursorIndexOfId);}
+\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00161}00161         \textcolor{keyword}{final} \textcolor{keywordtype}{double} \_tmpValue;}
+\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00162}00162         \_tmpValue = \_cursor.getDouble(\_cursorIndexOfValue);}
+\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00163}00163         \textcolor{keyword}{final} \textcolor{keywordtype}{int} \_tmpCurrency;}
+\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00164}00164         \_tmpCurrency = \_cursor.getInt(\_cursorIndexOfCurrency);}
+\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00165}00165         \textcolor{keyword}{final} \textcolor{keywordtype}{int} \_tmpCategory;}
+\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00166}00166         \_tmpCategory = \_cursor.getInt(\_cursorIndexOfCategory);}
+\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00167}00167         \textcolor{keyword}{final} String \_tmpDate;}
+\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00168}00168         \textcolor{keywordflow}{if} (\_cursor.isNull(\_cursorIndexOfDate)) \{}
+\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00169}00169           \_tmpDate = \textcolor{keyword}{null};}
+\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00170}00170         \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00171}00171           \_tmpDate = \_cursor.getString(\_cursorIndexOfDate);}
+\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00172}00172         \}}
+\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00173}00173         \textcolor{keyword}{final} String \_tmpDescription;}
+\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00174}00174         \textcolor{keywordflow}{if} (\_cursor.isNull(\_cursorIndexOfDescription)) \{}
+\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00175}00175           \_tmpDescription = \textcolor{keyword}{null};}
+\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00176}00176         \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00177}00177           \_tmpDescription = \_cursor.getString(\_cursorIndexOfDescription);}
+\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00178}00178         \}}
+\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00179}00179         \_item = \textcolor{keyword}{new} \mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1models_1_1_expenses}{Expenses}}(\_tmpId,\_tmpValue,\_tmpCurrency,\_tmpCategory,\_tmpDate,\_tmpDescription);}
+\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00180}00180         \textcolor{keywordflow}{if} (\_cursor.isNull(\_cursorIndexOfPurpose)) \{}
+\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00181}00181           \_item.purpose = \textcolor{keyword}{null};}
+\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00182}00182         \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00183}00183           \_item.purpose = \_cursor.getString(\_cursorIndexOfPurpose);}
+\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00184}00184         \}}
+\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00185}00185         \_result.add(\_item);}
+\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00186}00186       \}}
+\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00187}00187       \textcolor{keywordflow}{return} \_result;}
+\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00188}00188     \} \textcolor{keywordflow}{finally} \{}
+\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00189}00189       \_cursor.close();}
+\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00190}00190       \_statement.release();}
+\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00191}00191     \}}
+\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00192}00192   \}}
+\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00193}00193 }
+\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00194}00194   @Override}
+\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00195}\mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1db_1_1_expenses_d_a_o_1_1_expenses_d_a_o___impl_a845d1c88a50e65fb54eb51b5d9191d6f}{00195}}   \textcolor{keyword}{public} List<Money> \mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1db_1_1_expenses_d_a_o_1_1_expenses_d_a_o___impl_a845d1c88a50e65fb54eb51b5d9191d6f}{getValues}}() \{}
+\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00196}00196     \textcolor{keyword}{final} String \_sql = \textcolor{stringliteral}{"{}SELECT id, value, currency, category, description FROM expenses"{}};}
+\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00197}00197     \textcolor{keyword}{final} RoomSQLiteQuery \_statement = RoomSQLiteQuery.acquire(\_sql, 0);}
+\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00198}00198     \_\_db.assertNotSuspendingTransaction();}
+\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00199}00199     \textcolor{keyword}{final} Cursor \_cursor = DBUtil.query(\_\_db, \_statement, \textcolor{keyword}{false}, \textcolor{keyword}{null});}
+\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00200}00200     \textcolor{keywordflow}{try} \{}
+\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00201}00201       \textcolor{keyword}{final} \textcolor{keywordtype}{int} \_cursorIndexOfId = 0;}
+\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00202}00202       \textcolor{keyword}{final} \textcolor{keywordtype}{int} \_cursorIndexOfValue = 1;}
+\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00203}00203       \textcolor{keyword}{final} \textcolor{keywordtype}{int} \_cursorIndexOfCurrency = 2;}
+\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00204}00204       \textcolor{keyword}{final} \textcolor{keywordtype}{int} \_cursorIndexOfCategory = 3;}
+\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00205}00205       \textcolor{keyword}{final} \textcolor{keywordtype}{int} \_cursorIndexOfDescription = 4;}
+\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00206}00206       \textcolor{keyword}{final} List<Money> \_result = \textcolor{keyword}{new} ArrayList<Money>(\_cursor.getCount());}
+\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00207}00207       \textcolor{keywordflow}{while}(\_cursor.moveToNext()) \{}
+\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00208}00208         \textcolor{keyword}{final} \mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1models_1_1_money}{Money}} \_item;}
+\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00209}00209         \textcolor{keyword}{final} \textcolor{keywordtype}{int} \_tmpId;}
+\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00210}00210         \_tmpId = \_cursor.getInt(\_cursorIndexOfId);}
+\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00211}00211         \textcolor{keyword}{final} \textcolor{keywordtype}{double} \_tmpValue;}
+\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00212}00212         \_tmpValue = \_cursor.getDouble(\_cursorIndexOfValue);}
+\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00213}00213         \textcolor{keyword}{final} \textcolor{keywordtype}{int} \_tmpCurrency;}
+\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00214}00214         \_tmpCurrency = \_cursor.getInt(\_cursorIndexOfCurrency);}
+\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00215}00215         \textcolor{keyword}{final} \textcolor{keywordtype}{int} \_tmpCategory;}
+\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00216}00216         \_tmpCategory = \_cursor.getInt(\_cursorIndexOfCategory);}
+\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00217}00217         \textcolor{keyword}{final} String \_tmpDescription;}
+\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00218}00218         \textcolor{keywordflow}{if} (\_cursor.isNull(\_cursorIndexOfDescription)) \{}
+\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00219}00219           \_tmpDescription = \textcolor{keyword}{null};}
+\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00220}00220         \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00221}00221           \_tmpDescription = \_cursor.getString(\_cursorIndexOfDescription);}
+\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00222}00222         \}}
+\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00223}00223         \_item = \textcolor{keyword}{new} \mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1models_1_1_money}{Money}}(\_tmpId,\_tmpValue,\_tmpCurrency,\_tmpCategory,\textcolor{keyword}{null},\_tmpDescription);}
+\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00224}00224         \_result.add(\_item);}
+\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00225}00225       \}}
+\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00226}00226       \textcolor{keywordflow}{return} \_result;}
+\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00227}00227     \} \textcolor{keywordflow}{finally} \{}
+\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00228}00228       \_cursor.close();}
+\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00229}00229       \_statement.release();}
+\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00230}00230     \}}
+\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00231}00231   \}}
+\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00232}00232 }
+\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00233}00233   @Override}
+\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00234}\mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1db_1_1_expenses_d_a_o_1_1_expenses_d_a_o___impl_a9189200a8d74f6332a76334efa744ac4}{00234}}   \textcolor{keyword}{public} List<Coin> \mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1db_1_1_expenses_d_a_o_1_1_expenses_d_a_o___impl_a9189200a8d74f6332a76334efa744ac4}{getSum}}() \{}
+\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00235}00235     \textcolor{keyword}{final} String \_sql = \textcolor{stringliteral}{"{}SELECT value, currency FROM expenses"{}};}
+\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00236}00236     \textcolor{keyword}{final} RoomSQLiteQuery \_statement = RoomSQLiteQuery.acquire(\_sql, 0);}
+\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00237}00237     \_\_db.assertNotSuspendingTransaction();}
+\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00238}00238     \textcolor{keyword}{final} Cursor \_cursor = DBUtil.query(\_\_db, \_statement, \textcolor{keyword}{false}, \textcolor{keyword}{null});}
+\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00239}00239     \textcolor{keywordflow}{try} \{}
+\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00240}00240       \textcolor{keyword}{final} \textcolor{keywordtype}{int} \_cursorIndexOfValue = 0;}
+\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00241}00241       \textcolor{keyword}{final} \textcolor{keywordtype}{int} \_cursorIndexOfCurrency = 1;}
+\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00242}00242       \textcolor{keyword}{final} List<Coin> \_result = \textcolor{keyword}{new} ArrayList<Coin>(\_cursor.getCount());}
+\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00243}00243       \textcolor{keywordflow}{while}(\_cursor.moveToNext()) \{}
+\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00244}00244         \textcolor{keyword}{final} \mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1models_1_1_coin}{Coin}} \_item;}
+\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00245}00245         \textcolor{keyword}{final} \textcolor{keywordtype}{double} \_tmpValue;}
+\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00246}00246         \_tmpValue = \_cursor.getDouble(\_cursorIndexOfValue);}
+\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00247}00247         \textcolor{keyword}{final} \textcolor{keywordtype}{int} \_tmpCurrency;}
+\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00248}00248         \_tmpCurrency = \_cursor.getInt(\_cursorIndexOfCurrency);}
+\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00249}00249         \_item = \textcolor{keyword}{new} \mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1models_1_1_coin}{Coin}}(\_tmpValue,\_tmpCurrency);}
+\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00250}00250         \_result.add(\_item);}
+\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00251}00251       \}}
+\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00252}00252       \textcolor{keywordflow}{return} \_result;}
+\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00253}00253     \} \textcolor{keywordflow}{finally} \{}
+\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00254}00254       \_cursor.close();}
+\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00255}00255       \_statement.release();}
+\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00256}00256     \}}
+\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00257}00257   \}}
+\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00258}00258 }
+\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00259}\mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1db_1_1_expenses_d_a_o_1_1_expenses_d_a_o___impl_a33115dc2ece1441468bc06103fc6ac83}{00259}}   \textcolor{keyword}{public} \textcolor{keyword}{static} List<Class<?>> \mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1db_1_1_expenses_d_a_o_1_1_expenses_d_a_o___impl_a33115dc2ece1441468bc06103fc6ac83}{getRequiredConverters}}() \{}
+\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00260}00260     \textcolor{keywordflow}{return} Collections.emptyList();}
+\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00261}00261   \}}
+\DoxyCodeLine{\Hypertarget{_expenses_d_a_o___impl_8java_source_l00262}00262 \}}
 
 \end{DoxyCode}

@@ -9,7 +9,8 @@ public class Expenses extends Money{
     @ColumnInfo(name = "purpose")
     public String purpose;
 
-    public Expenses(int id, double value, int currency, int category, String description) {
-        super(id, value, currency, category, description);
+
+    public Expenses(int id, double value, int currency, int category, String date, String description) {
+        super(id, value, currency, category, date, description);
     }
 }

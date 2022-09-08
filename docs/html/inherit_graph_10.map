@@ -1,4 +1,4 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" title=" " alt="" coords="5,13,156,39"/>
-<area shape="rect" id="node2" href="$classcom_1_1snail_1_1wallet_1_1_main_screen_1_1ui_1_1adapters_1_1_revenue_adapter.html" title=" " alt="" coords="204,5,464,47"/>
+<area shape="rect" id="node1" href="$interfacecom_1_1snail_1_1wallet_1_1_main_screen_1_1db_1_1_revenue_d_a_o_1_1_revenue_d_a_o.html" title=" " alt="" coords="5,5,216,47"/>
+<area shape="rect" id="node2" href="$classcom_1_1snail_1_1wallet_1_1_main_screen_1_1db_1_1_revenue_d_a_o_1_1_revenue_d_a_o___impl.html" title=" " alt="" coords="264,5,475,47"/>
 </map>

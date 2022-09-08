@@ -1,5 +1,9 @@
 <map id="com.snail.wallet.databinding.ActivityRevenueAddBinding" name="com.snail.wallet.databinding.ActivityRevenueAddBinding">
-<area shape="rect" id="node1" title=" " alt="" coords="23,95,212,136"/>
+<area shape="rect" id="node1" title=" " alt="" coords="253,183,443,224"/>
 <area shape="rect" id="node2" title=" " alt="" coords="5,5,99,32"/>
 <area shape="rect" id="node3" title=" " alt="" coords="123,5,243,32"/>
+<area shape="rect" id="node4" title=" " alt="" coords="267,5,327,32"/>
+<area shape="rect" id="node5" title=" " alt="" coords="379,5,450,32"/>
+<area shape="rect" id="node6" title=" " alt="" coords="565,5,632,32"/>
+<area shape="rect" id="node7" title=" " alt="" coords="676,5,751,32"/>
 </map>

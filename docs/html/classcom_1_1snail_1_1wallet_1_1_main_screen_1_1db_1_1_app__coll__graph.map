@@ -1,8 +1,7 @@
 <map id="com.snail.wallet.MainScreen.db.App" name="com.snail.wallet.MainScreen.db.App">
-<area shape="rect" id="node1" title=" " alt="" coords="880,104,1113,131"/>
-<area shape="rect" id="node2" title=" " alt="" coords="227,13,314,40"/>
-<area shape="rect" id="node3" href="$classcom_1_1snail_1_1wallet_1_1_main_screen_1_1db_1_1_app.html" title=" " alt="" coords="545,76,779,103"/>
-<area shape="rect" id="node4" href="$classcom_1_1snail_1_1wallet_1_1_main_screen_1_1db_1_1_app_revenue_database.html" title=" " alt="" coords="165,106,376,147"/>
-<area shape="rect" id="node5" title=" " alt="" coords="5,147,116,173"/>
-<area shape="rect" id="node6" href="$classcom_1_1snail_1_1wallet_1_1_main_screen_1_1db_1_1_app_expenses_database.html" title=" " alt="" coords="165,171,376,213"/>
+<area shape="rect" id="node1" title=" " alt="" coords="816,67,1049,94"/>
+<area shape="rect" id="node2" title=" " alt="" coords="227,10,314,37"/>
+<area shape="rect" id="node3" href="$classcom_1_1snail_1_1wallet_1_1_main_screen_1_1db_1_1_app.html" title=" " alt="" coords="481,67,715,94"/>
+<area shape="rect" id="node4" href="$classcom_1_1snail_1_1wallet_1_1_main_screen_1_1db_1_1_app_database.html" title=" " alt="" coords="165,79,376,120"/>
+<area shape="rect" id="node5" title=" " alt="" coords="5,86,116,113"/>
 </map>

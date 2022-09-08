@@ -1,5 +1,5 @@
 <map id="com.snail.wallet.MainScreen.models.Revenues" name="com.snail.wallet.MainScreen.models.Revenues">
-<area shape="rect" id="node1" title=" " alt="" coords="5,185,244,227"/>
-<area shape="rect" id="node2" href="$classcom_1_1snail_1_1wallet_1_1_main_screen_1_1models_1_1_money.html" title=" " alt="" coords="177,95,416,136"/>
+<area shape="rect" id="node1" title=" " alt="" coords="5,200,244,241"/>
+<area shape="rect" id="node2" href="$classcom_1_1snail_1_1wallet_1_1_main_screen_1_1models_1_1_money.html" title=" " alt="" coords="177,109,416,151"/>
 <area shape="rect" id="node3" title=" " alt="" coords="50,5,106,32"/>
 </map>

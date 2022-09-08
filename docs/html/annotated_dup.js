@@ -4,6 +4,7 @@ var annotated_dup =
       [ "snail", null, [
         [ "wallet", "namespacecom_1_1snail_1_1wallet.html", [
           [ "databinding", "namespacecom_1_1snail_1_1wallet_1_1databinding.html", [
+            [ "ActivityExpensesAddBinding", "classcom_1_1snail_1_1wallet_1_1databinding_1_1_activity_expenses_add_binding.html", "classcom_1_1snail_1_1wallet_1_1databinding_1_1_activity_expenses_add_binding" ],
             [ "ActivityLoginBinding", "classcom_1_1snail_1_1wallet_1_1databinding_1_1_activity_login_binding.html", "classcom_1_1snail_1_1wallet_1_1databinding_1_1_activity_login_binding" ],
             [ "ActivityRevenueAddBinding", "classcom_1_1snail_1_1wallet_1_1databinding_1_1_activity_revenue_add_binding.html", "classcom_1_1snail_1_1wallet_1_1databinding_1_1_activity_revenue_add_binding" ],
             [ "ActivityWalletBinding", "classcom_1_1snail_1_1wallet_1_1databinding_1_1_activity_wallet_binding.html", "classcom_1_1snail_1_1wallet_1_1databinding_1_1_activity_wallet_binding" ],
@@ -12,7 +13,9 @@ var annotated_dup =
             [ "FragmentExpensesBinding", "classcom_1_1snail_1_1wallet_1_1databinding_1_1_fragment_expenses_binding.html", "classcom_1_1snail_1_1wallet_1_1databinding_1_1_fragment_expenses_binding" ],
             [ "FragmentHomeBinding", "classcom_1_1snail_1_1wallet_1_1databinding_1_1_fragment_home_binding.html", "classcom_1_1snail_1_1wallet_1_1databinding_1_1_fragment_home_binding" ],
             [ "FragmentRevenueBinding", "classcom_1_1snail_1_1wallet_1_1databinding_1_1_fragment_revenue_binding.html", "classcom_1_1snail_1_1wallet_1_1databinding_1_1_fragment_revenue_binding" ],
-            [ "ItemRecyclerviewBinding", "classcom_1_1snail_1_1wallet_1_1databinding_1_1_item_recyclerview_binding.html", "classcom_1_1snail_1_1wallet_1_1databinding_1_1_item_recyclerview_binding" ],
+            [ "ItemCategorySpinnerBinding", "classcom_1_1snail_1_1wallet_1_1databinding_1_1_item_category_spinner_binding.html", "classcom_1_1snail_1_1wallet_1_1databinding_1_1_item_category_spinner_binding" ],
+            [ "ItemExpensesRecyclerviewBinding", "classcom_1_1snail_1_1wallet_1_1databinding_1_1_item_expenses_recyclerview_binding.html", "classcom_1_1snail_1_1wallet_1_1databinding_1_1_item_expenses_recyclerview_binding" ],
+            [ "ItemRevenueRecyclerviewBinding", "classcom_1_1snail_1_1wallet_1_1databinding_1_1_item_revenue_recyclerview_binding.html", "classcom_1_1snail_1_1wallet_1_1databinding_1_1_item_revenue_recyclerview_binding" ],
             [ "NavHeaderWalletBinding", "classcom_1_1snail_1_1wallet_1_1databinding_1_1_nav_header_wallet_binding.html", "classcom_1_1snail_1_1wallet_1_1databinding_1_1_nav_header_wallet_binding" ]
           ] ],
           [ "LoginScreen", "namespacecom_1_1snail_1_1wallet_1_1_login_screen.html", [
@@ -20,31 +23,52 @@ var annotated_dup =
           ] ],
           [ "MainScreen", "namespacecom_1_1snail_1_1wallet_1_1_main_screen.html", [
             [ "activities", "namespacecom_1_1snail_1_1wallet_1_1_main_screen_1_1activities.html", [
+              [ "ExpensesAddActivity", "classcom_1_1snail_1_1wallet_1_1_main_screen_1_1activities_1_1_expenses_add_activity.html", "classcom_1_1snail_1_1wallet_1_1_main_screen_1_1activities_1_1_expenses_add_activity" ],
               [ "RevenueAddActivity", "classcom_1_1snail_1_1wallet_1_1_main_screen_1_1activities_1_1_revenue_add_activity.html", "classcom_1_1snail_1_1wallet_1_1_main_screen_1_1activities_1_1_revenue_add_activity" ]
             ] ],
             [ "db", "namespacecom_1_1snail_1_1wallet_1_1_main_screen_1_1db.html", [
+              [ "CategoryDAO", "namespacecom_1_1snail_1_1wallet_1_1_main_screen_1_1db_1_1_category_d_a_o.html", [
+                [ "CategoryDAO", "interfacecom_1_1snail_1_1wallet_1_1_main_screen_1_1db_1_1_category_d_a_o_1_1_category_d_a_o.html", "interfacecom_1_1snail_1_1wallet_1_1_main_screen_1_1db_1_1_category_d_a_o_1_1_category_d_a_o" ],
+                [ "CategoryDAO_Impl", "classcom_1_1snail_1_1wallet_1_1_main_screen_1_1db_1_1_category_d_a_o_1_1_category_d_a_o___impl.html", "classcom_1_1snail_1_1wallet_1_1_main_screen_1_1db_1_1_category_d_a_o_1_1_category_d_a_o___impl" ]
+              ] ],
+              [ "CurrencyDAO", "namespacecom_1_1snail_1_1wallet_1_1_main_screen_1_1db_1_1_currency_d_a_o.html", [
+                [ "CurrencyDAO", "interfacecom_1_1snail_1_1wallet_1_1_main_screen_1_1db_1_1_currency_d_a_o_1_1_currency_d_a_o.html", "interfacecom_1_1snail_1_1wallet_1_1_main_screen_1_1db_1_1_currency_d_a_o_1_1_currency_d_a_o" ],
+                [ "CurrencyDAO_Impl", "classcom_1_1snail_1_1wallet_1_1_main_screen_1_1db_1_1_currency_d_a_o_1_1_currency_d_a_o___impl.html", "classcom_1_1snail_1_1wallet_1_1_main_screen_1_1db_1_1_currency_d_a_o_1_1_currency_d_a_o___impl" ]
+              ] ],
               [ "ExpensesDAO", "namespacecom_1_1snail_1_1wallet_1_1_main_screen_1_1db_1_1_expenses_d_a_o.html", [
                 [ "ExpensesDAO", "interfacecom_1_1snail_1_1wallet_1_1_main_screen_1_1db_1_1_expenses_d_a_o_1_1_expenses_d_a_o.html", "interfacecom_1_1snail_1_1wallet_1_1_main_screen_1_1db_1_1_expenses_d_a_o_1_1_expenses_d_a_o" ],
                 [ "ExpensesDAO_Impl", "classcom_1_1snail_1_1wallet_1_1_main_screen_1_1db_1_1_expenses_d_a_o_1_1_expenses_d_a_o___impl.html", "classcom_1_1snail_1_1wallet_1_1_main_screen_1_1db_1_1_expenses_d_a_o_1_1_expenses_d_a_o___impl" ]
+              ] ],
+              [ "MoneySouceDAO", "namespacecom_1_1snail_1_1wallet_1_1_main_screen_1_1db_1_1_money_souce_d_a_o.html", [
+                [ "MoneySourceDAO", "interfacecom_1_1snail_1_1wallet_1_1_main_screen_1_1db_1_1_money_souce_d_a_o_1_1_money_source_d_a_o.html", "interfacecom_1_1snail_1_1wallet_1_1_main_screen_1_1db_1_1_money_souce_d_a_o_1_1_money_source_d_a_o" ],
+                [ "MoneySourceDAO_Impl", "classcom_1_1snail_1_1wallet_1_1_main_screen_1_1db_1_1_money_souce_d_a_o_1_1_money_source_d_a_o___impl.html", "classcom_1_1snail_1_1wallet_1_1_main_screen_1_1db_1_1_money_souce_d_a_o_1_1_money_source_d_a_o___impl" ]
               ] ],
               [ "RevenueDAO", "namespacecom_1_1snail_1_1wallet_1_1_main_screen_1_1db_1_1_revenue_d_a_o.html", [
                 [ "RevenueDAO", "interfacecom_1_1snail_1_1wallet_1_1_main_screen_1_1db_1_1_revenue_d_a_o_1_1_revenue_d_a_o.html", "interfacecom_1_1snail_1_1wallet_1_1_main_screen_1_1db_1_1_revenue_d_a_o_1_1_revenue_d_a_o" ],
                 [ "RevenueDAO_Impl", "classcom_1_1snail_1_1wallet_1_1_main_screen_1_1db_1_1_revenue_d_a_o_1_1_revenue_d_a_o___impl.html", "classcom_1_1snail_1_1wallet_1_1_main_screen_1_1db_1_1_revenue_d_a_o_1_1_revenue_d_a_o___impl" ]
               ] ],
+              [ "StorageLocationDAO", "namespacecom_1_1snail_1_1wallet_1_1_main_screen_1_1db_1_1_storage_location_d_a_o.html", [
+                [ "StorageLocationDAO", "interfacecom_1_1snail_1_1wallet_1_1_main_screen_1_1db_1_1_storage_location_d_a_o_1_1_storage_location_d_a_o.html", "interfacecom_1_1snail_1_1wallet_1_1_main_screen_1_1db_1_1_storage_location_d_a_o_1_1_storage_location_d_a_o" ],
+                [ "StorageLocationDAO_Impl", "classcom_1_1snail_1_1wallet_1_1_main_screen_1_1db_1_1_storage_location_d_a_o_1_1_storage_location_d_a_o___impl.html", "classcom_1_1snail_1_1wallet_1_1_main_screen_1_1db_1_1_storage_location_d_a_o_1_1_storage_location_d_a_o___impl" ]
+              ] ],
               [ "App", "classcom_1_1snail_1_1wallet_1_1_main_screen_1_1db_1_1_app.html", "classcom_1_1snail_1_1wallet_1_1_main_screen_1_1db_1_1_app" ],
-              [ "AppExpensesDatabase", "classcom_1_1snail_1_1wallet_1_1_main_screen_1_1db_1_1_app_expenses_database.html", "classcom_1_1snail_1_1wallet_1_1_main_screen_1_1db_1_1_app_expenses_database" ],
-              [ "AppExpensesDatabase_Impl", "classcom_1_1snail_1_1wallet_1_1_main_screen_1_1db_1_1_app_expenses_database___impl.html", "classcom_1_1snail_1_1wallet_1_1_main_screen_1_1db_1_1_app_expenses_database___impl" ],
-              [ "AppRevenueDatabase", "classcom_1_1snail_1_1wallet_1_1_main_screen_1_1db_1_1_app_revenue_database.html", "classcom_1_1snail_1_1wallet_1_1_main_screen_1_1db_1_1_app_revenue_database" ],
-              [ "AppRevenueDatabase_Impl", "classcom_1_1snail_1_1wallet_1_1_main_screen_1_1db_1_1_app_revenue_database___impl.html", "classcom_1_1snail_1_1wallet_1_1_main_screen_1_1db_1_1_app_revenue_database___impl" ]
+              [ "AppDatabase", "classcom_1_1snail_1_1wallet_1_1_main_screen_1_1db_1_1_app_database.html", "classcom_1_1snail_1_1wallet_1_1_main_screen_1_1db_1_1_app_database" ],
+              [ "AppDatabase_Impl", "classcom_1_1snail_1_1wallet_1_1_main_screen_1_1db_1_1_app_database___impl.html", "classcom_1_1snail_1_1wallet_1_1_main_screen_1_1db_1_1_app_database___impl" ]
             ] ],
             [ "models", "namespacecom_1_1snail_1_1wallet_1_1_main_screen_1_1models.html", [
+              [ "Category", "classcom_1_1snail_1_1wallet_1_1_main_screen_1_1models_1_1_category.html", "classcom_1_1snail_1_1wallet_1_1_main_screen_1_1models_1_1_category" ],
               [ "Coin", "classcom_1_1snail_1_1wallet_1_1_main_screen_1_1models_1_1_coin.html", "classcom_1_1snail_1_1wallet_1_1_main_screen_1_1models_1_1_coin" ],
+              [ "Currency", "classcom_1_1snail_1_1wallet_1_1_main_screen_1_1models_1_1_currency.html", "classcom_1_1snail_1_1wallet_1_1_main_screen_1_1models_1_1_currency" ],
               [ "Expenses", "classcom_1_1snail_1_1wallet_1_1_main_screen_1_1models_1_1_expenses.html", "classcom_1_1snail_1_1wallet_1_1_main_screen_1_1models_1_1_expenses" ],
               [ "Money", "classcom_1_1snail_1_1wallet_1_1_main_screen_1_1models_1_1_money.html", "classcom_1_1snail_1_1wallet_1_1_main_screen_1_1models_1_1_money" ],
-              [ "Revenues", "classcom_1_1snail_1_1wallet_1_1_main_screen_1_1models_1_1_revenues.html", "classcom_1_1snail_1_1wallet_1_1_main_screen_1_1models_1_1_revenues" ]
+              [ "MoneySource", "classcom_1_1snail_1_1wallet_1_1_main_screen_1_1models_1_1_money_source.html", "classcom_1_1snail_1_1wallet_1_1_main_screen_1_1models_1_1_money_source" ],
+              [ "Revenues", "classcom_1_1snail_1_1wallet_1_1_main_screen_1_1models_1_1_revenues.html", "classcom_1_1snail_1_1wallet_1_1_main_screen_1_1models_1_1_revenues" ],
+              [ "StorageLocation", "classcom_1_1snail_1_1wallet_1_1_main_screen_1_1models_1_1_storage_location.html", "classcom_1_1snail_1_1wallet_1_1_main_screen_1_1models_1_1_storage_location" ]
             ] ],
             [ "ui", null, [
               [ "adapters", "namespacecom_1_1snail_1_1wallet_1_1_main_screen_1_1ui_1_1adapters.html", [
+                [ "CategoryAdapter", "classcom_1_1snail_1_1wallet_1_1_main_screen_1_1ui_1_1adapters_1_1_category_adapter.html", "classcom_1_1snail_1_1wallet_1_1_main_screen_1_1ui_1_1adapters_1_1_category_adapter" ],
+                [ "ExpensesAdapter", "classcom_1_1snail_1_1wallet_1_1_main_screen_1_1ui_1_1adapters_1_1_expenses_adapter.html", null ],
                 [ "RevenueAdapter", "classcom_1_1snail_1_1wallet_1_1_main_screen_1_1ui_1_1adapters_1_1_revenue_adapter.html", "classcom_1_1snail_1_1wallet_1_1_main_screen_1_1ui_1_1adapters_1_1_revenue_adapter" ]
               ] ],
               [ "expenses", "namespacecom_1_1snail_1_1wallet_1_1_main_screen_1_1ui_1_1expenses.html", [

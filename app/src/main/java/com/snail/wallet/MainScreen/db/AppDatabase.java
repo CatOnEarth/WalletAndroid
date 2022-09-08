@@ -16,12 +16,14 @@ import com.snail.wallet.MainScreen.models.MoneySource;
 import com.snail.wallet.MainScreen.models.Revenues;
 import com.snail.wallet.MainScreen.models.StorageLocation;
 
-@Database(entities = {Category.class, Currency.class, Expenses.class, MoneySource.class, Revenues.class, StorageLocation.class}, version = 1)
+@Database(entities = {Category.class, Currency.class, Expenses.class,
+                      MoneySource.class, Revenues.class, StorageLocation.class},
+                      version = 1)
 public abstract class AppDatabase extends RoomDatabase {
-    public abstract CategoryDAO categoryDAO();
-    public abstract CurrencyDAO currencyDAO();
-    public abstract ExpensesDAO expensesDAO();
-    public abstract MoneySourceDAO moneySourceDAO();
-    public abstract RevenueDAO revenueDAO();
+    public abstract CategoryDAO        categoryDAO();
+    public abstract CurrencyDAO        currencyDAO();
+    public abstract ExpensesDAO        expensesDAO();
+    public abstract MoneySourceDAO     moneySourceDAO();
+    public abstract RevenueDAO         revenueDAO();
     public abstract StorageLocationDAO storageLocationDAO();
 }

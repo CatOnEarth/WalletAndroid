@@ -3,16 +3,20 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/development/android/Wallet/app/src/main/res/layout/activity_expenses_add.xml" value="0.12318840579710146" />
         <entry key="..\:/development/android/Wallet/app/src/main/res/layout/activity_login.xml" value="0.5" />
         <entry key="..\:/development/android/Wallet/app/src/main/res/layout/activity_main.xml" value="0.33" />
-        <entry key="..\:/development/android/Wallet/app/src/main/res/layout/activity_revenue_add.xml" value="0.12318840579710146" />
+        <entry key="..\:/development/android/Wallet/app/src/main/res/layout/activity_revenue_add.xml" value="0.33" />
         <entry key="..\:/development/android/Wallet/app/src/main/res/layout/activity_wallet.xml" value="0.17831813576494426" />
         <entry key="..\:/development/android/Wallet/app/src/main/res/layout/app_bar_wallet.xml" value="0.17831813576494426" />
         <entry key="..\:/development/android/Wallet/app/src/main/res/layout/content_wallet.xml" value="0.17831813576494426" />
+        <entry key="..\:/development/android/Wallet/app/src/main/res/layout/fragment_expenses.xml" value="0.12318840579710146" />
         <entry key="..\:/development/android/Wallet/app/src/main/res/layout/fragment_gallery.xml" value="0.17831813576494426" />
         <entry key="..\:/development/android/Wallet/app/src/main/res/layout/fragment_home.xml" value="0.2" />
         <entry key="..\:/development/android/Wallet/app/src/main/res/layout/fragment_revenue.xml" value="0.17831813576494426" />
         <entry key="..\:/development/android/Wallet/app/src/main/res/layout/fragment_slideshow.xml" value="0.17831813576494426" />
+        <entry key="..\:/development/android/Wallet/app/src/main/res/layout/item_category_spinner.xml" value="0.23958333333333334" />
+        <entry key="..\:/development/android/Wallet/app/src/main/res/layout/item_expenses_recyclerview.xml" value="0.12318840579710146" />
         <entry key="..\:/development/android/Wallet/app/src/main/res/layout/item_recyclerview.xml" value="0.75" />
         <entry key="..\:/development/android/Wallet/app/src/main/res/layout/nav_header_wallet.xml" value="0.17831813576494426" />
         <entry key="..\:/development/android/Wallet/app/src/main/res/menu/add_revenue_menu.xml" value="0.18802083333333333" />

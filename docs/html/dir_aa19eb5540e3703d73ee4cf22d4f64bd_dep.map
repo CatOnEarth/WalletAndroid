@@ -1,6 +1,10 @@
 <map id="app/src/main/java/com/snail/wallet/MainScreen/db" name="app/src/main/java/com/snail/wallet/MainScreen/db">
-<area shape="rect" id="node2" href="dir_5bb6a41b549695e8a2af114afa799d0e.html" title="ExpensesDAO" alt="" coords="161,63,269,111"/>
-<area shape="rect" id="node3" href="dir_6c2e519f6e4f1cd0e20368ee43d15496.html" title="RevenueDAO" alt="" coords="37,63,136,111"/>
-<area shape="rect" id="clust2" href="dir_aa19eb5540e3703d73ee4cf22d4f64bd.html" alt="" coords="27,52,376,121"/>
-<area shape="rect" id="clust1" href="dir_f262eb04047cfe4c0fb53af4d855d41f.html" title="MainScreen" alt="" coords="16,16,387,132"/>
+<area shape="rect" id="node2" href="dir_b27d7755d0919d5570c6fc63f7f47933.html" title="CategoryDAO" alt="" coords="738,63,841,111"/>
+<area shape="rect" id="node3" href="dir_c6901cfca616d9b3addc4be19209753e.html" title="CurrencyDAO" alt="" coords="611,63,714,111"/>
+<area shape="rect" id="node4" href="dir_5bb6a41b549695e8a2af114afa799d0e.html" title="ExpensesDAO" alt="" coords="479,63,587,111"/>
+<area shape="rect" id="node5" href="dir_07ae30d6fc16a3ea8a6de78c6108d1c0.html" title="MoneySouceDAO" alt="" coords="329,63,455,111"/>
+<area shape="rect" id="node6" href="dir_6c2e519f6e4f1cd0e20368ee43d15496.html" title="RevenueDAO" alt="" coords="205,63,304,111"/>
+<area shape="rect" id="node7" href="dir_7b26046015395d003bd39962e6f36660.html" title="StorageLocationDAO" alt="" coords="37,63,181,111"/>
+<area shape="rect" id="clust2" href="dir_aa19eb5540e3703d73ee4cf22d4f64bd.html" alt="" coords="27,52,948,121"/>
+<area shape="rect" id="clust1" href="dir_f262eb04047cfe4c0fb53af4d855d41f.html" title="MainScreen" alt="" coords="16,16,959,132"/>
 </map>

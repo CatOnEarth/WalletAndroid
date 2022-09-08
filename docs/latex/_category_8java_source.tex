@@ -1,0 +1,52 @@
+\hypertarget{_category_8java_source}{}\doxysection{Category.\+java}
+\label{_category_8java_source}\index{app/src/main/java/com/snail/wallet/MainScreen/models/Category.java@{app/src/main/java/com/snail/wallet/MainScreen/models/Category.java}}
+\mbox{\hyperlink{_category_8java}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_category_8java_source_l00001}\mbox{\hyperlink{namespacecom_1_1snail_1_1wallet_1_1_main_screen_1_1models}{00001}} \textcolor{keyword}{package }com.snail.wallet.MainScreen.models;}
+\DoxyCodeLine{\Hypertarget{_category_8java_source_l00002}00002 }
+\DoxyCodeLine{\Hypertarget{_category_8java_source_l00003}00003 \textcolor{keyword}{import} androidx.room.ColumnInfo;}
+\DoxyCodeLine{\Hypertarget{_category_8java_source_l00004}00004 \textcolor{keyword}{import} androidx.room.Entity;}
+\DoxyCodeLine{\Hypertarget{_category_8java_source_l00005}00005 \textcolor{keyword}{import} androidx.room.PrimaryKey;}
+\DoxyCodeLine{\Hypertarget{_category_8java_source_l00006}00006 }
+\DoxyCodeLine{\Hypertarget{_category_8java_source_l00007}00007 @Entity(tableName = \textcolor{stringliteral}{"{}category"{}})}
+\DoxyCodeLine{\Hypertarget{_category_8java_source_l00008}\mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1models_1_1_category}{00008}} public class \mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1models_1_1_category}{Category}} \{}
+\DoxyCodeLine{\Hypertarget{_category_8java_source_l00009}00009     @PrimaryKey(autoGenerate=\textcolor{keyword}{true})}
+\DoxyCodeLine{\Hypertarget{_category_8java_source_l00010}00010     @ColumnInfo(name = \textcolor{stringliteral}{"{}id"{}})}
+\DoxyCodeLine{\Hypertarget{_category_8java_source_l00011}\mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1models_1_1_category_a04af3bbe7760c485cc2b27357313f1ef}{00011}}     public \textcolor{keywordtype}{int} \textcolor{keywordtype}{id};}
+\DoxyCodeLine{\Hypertarget{_category_8java_source_l00012}00012     @ColumnInfo(name = "{}type"{})}
+\DoxyCodeLine{\Hypertarget{_category_8java_source_l00013}\mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1models_1_1_category_a8c3743385eb3f72e64388443ff6b4723}{00013}}     public \textcolor{keywordtype}{int} type;}
+\DoxyCodeLine{\Hypertarget{_category_8java_source_l00014}00014     @ColumnInfo(name = "{}name"{})}
+\DoxyCodeLine{\Hypertarget{_category_8java_source_l00015}\mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1models_1_1_category_ad557285d35ef200040e44e254386b8fb}{00015}}     public String name;}
+\DoxyCodeLine{\Hypertarget{_category_8java_source_l00016}00016 }
+\DoxyCodeLine{\Hypertarget{_category_8java_source_l00017}\mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1models_1_1_category_a263bb99de5ab8e9c862bfcf57595d13f}{00017}}     public \mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1models_1_1_category}{Category}}(\textcolor{keywordtype}{int} \textcolor{keywordtype}{id}, \textcolor{keywordtype}{int} type, String name) \{}
+\DoxyCodeLine{\Hypertarget{_category_8java_source_l00018}00018         this.id = id;}
+\DoxyCodeLine{\Hypertarget{_category_8java_source_l00019}00019         this.type = type;}
+\DoxyCodeLine{\Hypertarget{_category_8java_source_l00020}00020         this.name = name;}
+\DoxyCodeLine{\Hypertarget{_category_8java_source_l00021}00021     \}}
+\DoxyCodeLine{\Hypertarget{_category_8java_source_l00022}00022 }
+\DoxyCodeLine{\Hypertarget{_category_8java_source_l00023}\mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1models_1_1_category_a243390b16c9b311a8c3e1cc7d0ebc09a}{00023}}     \textcolor{keyword}{public} \textcolor{keywordtype}{int} \mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1models_1_1_category_a243390b16c9b311a8c3e1cc7d0ebc09a}{getId}}() \{}
+\DoxyCodeLine{\Hypertarget{_category_8java_source_l00024}00024         \textcolor{keywordflow}{return} id;}
+\DoxyCodeLine{\Hypertarget{_category_8java_source_l00025}00025     \}}
+\DoxyCodeLine{\Hypertarget{_category_8java_source_l00026}00026 }
+\DoxyCodeLine{\Hypertarget{_category_8java_source_l00027}\mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1models_1_1_category_a9e960d2333d4983f723dada92490448f}{00027}}     \textcolor{keyword}{public} \textcolor{keywordtype}{void} \mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1models_1_1_category_a9e960d2333d4983f723dada92490448f}{setId}}(\textcolor{keywordtype}{int} \textcolor{keywordtype}{id}) \{}
+\DoxyCodeLine{\Hypertarget{_category_8java_source_l00028}00028         this.id = id;}
+\DoxyCodeLine{\Hypertarget{_category_8java_source_l00029}00029     \}}
+\DoxyCodeLine{\Hypertarget{_category_8java_source_l00030}00030 }
+\DoxyCodeLine{\Hypertarget{_category_8java_source_l00031}\mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1models_1_1_category_a5ef129eb007c869b16b2d8541df1ff84}{00031}}     \textcolor{keyword}{public} \textcolor{keywordtype}{int} \mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1models_1_1_category_a5ef129eb007c869b16b2d8541df1ff84}{getType}}() \{}
+\DoxyCodeLine{\Hypertarget{_category_8java_source_l00032}00032         \textcolor{keywordflow}{return} type;}
+\DoxyCodeLine{\Hypertarget{_category_8java_source_l00033}00033     \}}
+\DoxyCodeLine{\Hypertarget{_category_8java_source_l00034}00034 }
+\DoxyCodeLine{\Hypertarget{_category_8java_source_l00035}\mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1models_1_1_category_a4c358cc45cb3c4ea33e1de1bf75b9101}{00035}}     \textcolor{keyword}{public} \textcolor{keywordtype}{void} \mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1models_1_1_category_a4c358cc45cb3c4ea33e1de1bf75b9101}{setType}}(\textcolor{keywordtype}{int} type) \{}
+\DoxyCodeLine{\Hypertarget{_category_8java_source_l00036}00036         this.type = type;}
+\DoxyCodeLine{\Hypertarget{_category_8java_source_l00037}00037     \}}
+\DoxyCodeLine{\Hypertarget{_category_8java_source_l00038}00038 }
+\DoxyCodeLine{\Hypertarget{_category_8java_source_l00039}\mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1models_1_1_category_a22b8d88f82fac133abefe257629eae67}{00039}}     \textcolor{keyword}{public} String \mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1models_1_1_category_a22b8d88f82fac133abefe257629eae67}{getName}}() \{}
+\DoxyCodeLine{\Hypertarget{_category_8java_source_l00040}00040         \textcolor{keywordflow}{return} name;}
+\DoxyCodeLine{\Hypertarget{_category_8java_source_l00041}00041     \}}
+\DoxyCodeLine{\Hypertarget{_category_8java_source_l00042}00042 }
+\DoxyCodeLine{\Hypertarget{_category_8java_source_l00043}\mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1models_1_1_category_a7f713acb0aa83cb6ba01b4e533b691e9}{00043}}     \textcolor{keyword}{public} \textcolor{keywordtype}{void} \mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1models_1_1_category_a7f713acb0aa83cb6ba01b4e533b691e9}{setName}}(String name) \{}
+\DoxyCodeLine{\Hypertarget{_category_8java_source_l00044}00044         this.name = name;}
+\DoxyCodeLine{\Hypertarget{_category_8java_source_l00045}00045     \}}
+\DoxyCodeLine{\Hypertarget{_category_8java_source_l00046}00046 \}}
+
+\end{DoxyCode}

@@ -2,7 +2,7 @@
 \label{_revenue_add_activity_8java_source}\index{app/src/main/java/com/snail/wallet/MainScreen/activities/RevenueAddActivity.java@{app/src/main/java/com/snail/wallet/MainScreen/activities/RevenueAddActivity.java}}
 \mbox{\hyperlink{_revenue_add_activity_8java}{Go to the documentation of this file.}}
 \begin{DoxyCode}{0}
-\DoxyCodeLine{\Hypertarget{_revenue_add_activity_8java_source_l00001}\mbox{\hyperlink{namespacecom_1_1snail_1_1wallet_1_1_main_screen_1_1activities}{00001}} \textcolor{keyword}{package }com.snail.wallet.MainScreen.activities;}
+\DoxyCodeLine{\Hypertarget{_revenue_add_activity_8java_source_l00001}00001 \textcolor{keyword}{package }com.snail.wallet.MainScreen.activities;}
 \DoxyCodeLine{\Hypertarget{_revenue_add_activity_8java_source_l00002}00002 }
 \DoxyCodeLine{\Hypertarget{_revenue_add_activity_8java_source_l00003}00003 \textcolor{keyword}{import} androidx.annotation.NonNull;}
 \DoxyCodeLine{\Hypertarget{_revenue_add_activity_8java_source_l00004}00004 \textcolor{keyword}{import} androidx.appcompat.app.ActionBar;}
@@ -12,44 +12,65 @@
 \DoxyCodeLine{\Hypertarget{_revenue_add_activity_8java_source_l00008}00008 \textcolor{keyword}{import} android.util.Log;}
 \DoxyCodeLine{\Hypertarget{_revenue_add_activity_8java_source_l00009}00009 \textcolor{keyword}{import} android.view.Menu;}
 \DoxyCodeLine{\Hypertarget{_revenue_add_activity_8java_source_l00010}00010 \textcolor{keyword}{import} android.view.MenuItem;}
-\DoxyCodeLine{\Hypertarget{_revenue_add_activity_8java_source_l00011}00011 }
-\DoxyCodeLine{\Hypertarget{_revenue_add_activity_8java_source_l00012}00012 \textcolor{keyword}{import} com.snail.wallet.R;}
+\DoxyCodeLine{\Hypertarget{_revenue_add_activity_8java_source_l00011}00011 \textcolor{keyword}{import} android.widget.ArrayAdapter;}
+\DoxyCodeLine{\Hypertarget{_revenue_add_activity_8java_source_l00012}00012 \textcolor{keyword}{import} android.widget.Spinner;}
 \DoxyCodeLine{\Hypertarget{_revenue_add_activity_8java_source_l00013}00013 }
-\DoxyCodeLine{\Hypertarget{_revenue_add_activity_8java_source_l00014}\mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1activities_1_1_revenue_add_activity}{00014}} \textcolor{keyword}{public} \textcolor{keyword}{class }\mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1activities_1_1_revenue_add_activity}{RevenueAddActivity}} \textcolor{keyword}{extends} AppCompatActivity \{}
-\DoxyCodeLine{\Hypertarget{_revenue_add_activity_8java_source_l00016}\mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1activities_1_1_revenue_add_activity_a55dd98889e5190ec23bf80188497e50d}{00016}}     \textcolor{keyword}{private} \textcolor{keyword}{final} String \mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1activities_1_1_revenue_add_activity_a55dd98889e5190ec23bf80188497e50d}{TAG}} = this.getClass().getSimpleName();}
+\DoxyCodeLine{\Hypertarget{_revenue_add_activity_8java_source_l00014}00014 \textcolor{keyword}{import} com.snail.wallet.MainScreen.models.Category;}
+\DoxyCodeLine{\Hypertarget{_revenue_add_activity_8java_source_l00015}00015 \textcolor{keyword}{import} com.snail.wallet.MainScreen.ui.adapters.CategoryAdapter;}
+\DoxyCodeLine{\Hypertarget{_revenue_add_activity_8java_source_l00016}00016 \textcolor{keyword}{import} com.snail.wallet.R;}
 \DoxyCodeLine{\Hypertarget{_revenue_add_activity_8java_source_l00017}00017 }
-\DoxyCodeLine{\Hypertarget{_revenue_add_activity_8java_source_l00018}00018     @Override}
-\DoxyCodeLine{\Hypertarget{_revenue_add_activity_8java_source_l00019}\mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1activities_1_1_revenue_add_activity_a9e119c689fd1bf6adbb6d5b43abfa490}{00019}}     \textcolor{keyword}{protected} \textcolor{keywordtype}{void} \mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1activities_1_1_revenue_add_activity_a9e119c689fd1bf6adbb6d5b43abfa490}{onCreate}}(Bundle savedInstanceState) \{}
-\DoxyCodeLine{\Hypertarget{_revenue_add_activity_8java_source_l00020}00020         super.onCreate(savedInstanceState);}
-\DoxyCodeLine{\Hypertarget{_revenue_add_activity_8java_source_l00021}00021         setContentView(R.layout.activity\_revenue\_add);}
-\DoxyCodeLine{\Hypertarget{_revenue_add_activity_8java_source_l00022}00022 }
-\DoxyCodeLine{\Hypertarget{_revenue_add_activity_8java_source_l00023}00023         ActionBar actionBar = getSupportActionBar();}
-\DoxyCodeLine{\Hypertarget{_revenue_add_activity_8java_source_l00024}00024         \textcolor{keywordflow}{if} (actionBar != \textcolor{keyword}{null}) \{}
-\DoxyCodeLine{\Hypertarget{_revenue_add_activity_8java_source_l00025}00025             actionBar.setDisplayUseLogoEnabled(\textcolor{keyword}{true});}
-\DoxyCodeLine{\Hypertarget{_revenue_add_activity_8java_source_l00026}00026             actionBar.setDisplayShowHomeEnabled(\textcolor{keyword}{true});}
-\DoxyCodeLine{\Hypertarget{_revenue_add_activity_8java_source_l00027}00027         \} \textcolor{keywordflow}{else} \{}
-\DoxyCodeLine{\Hypertarget{_revenue_add_activity_8java_source_l00028}00028             Log.e(\mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1activities_1_1_revenue_add_activity_a55dd98889e5190ec23bf80188497e50d}{TAG}}, \textcolor{stringliteral}{"{}ActionBar was null"{}});}
-\DoxyCodeLine{\Hypertarget{_revenue_add_activity_8java_source_l00029}00029             finish();}
-\DoxyCodeLine{\Hypertarget{_revenue_add_activity_8java_source_l00030}00030         \}}
-\DoxyCodeLine{\Hypertarget{_revenue_add_activity_8java_source_l00031}00031     \}}
-\DoxyCodeLine{\Hypertarget{_revenue_add_activity_8java_source_l00032}00032 }
-\DoxyCodeLine{\Hypertarget{_revenue_add_activity_8java_source_l00038}00038     @Override}
-\DoxyCodeLine{\Hypertarget{_revenue_add_activity_8java_source_l00039}\mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1activities_1_1_revenue_add_activity_abb541680f985be9317a875ad921306f8}{00039}}     \textcolor{keyword}{public} \textcolor{keywordtype}{boolean} \mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1activities_1_1_revenue_add_activity_abb541680f985be9317a875ad921306f8}{onCreateOptionsMenu}}(@NonNull Menu menu) \{}
-\DoxyCodeLine{\Hypertarget{_revenue_add_activity_8java_source_l00040}00040         Log.i(\mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1activities_1_1_revenue_add_activity_a55dd98889e5190ec23bf80188497e50d}{TAG}}, \textcolor{stringliteral}{"{}Start onCreateOptionsMenu method LoginActivity"{}});}
-\DoxyCodeLine{\Hypertarget{_revenue_add_activity_8java_source_l00041}00041         getMenuInflater().inflate(R.menu.add\_revenue\_menu, menu);}
-\DoxyCodeLine{\Hypertarget{_revenue_add_activity_8java_source_l00042}00042         \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
-\DoxyCodeLine{\Hypertarget{_revenue_add_activity_8java_source_l00043}00043     \}}
-\DoxyCodeLine{\Hypertarget{_revenue_add_activity_8java_source_l00044}00044 }
-\DoxyCodeLine{\Hypertarget{_revenue_add_activity_8java_source_l00050}00050     @Override}
-\DoxyCodeLine{\Hypertarget{_revenue_add_activity_8java_source_l00051}\mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1activities_1_1_revenue_add_activity_a5374cf3c7faff93a0c2f373f8dd49f7a}{00051}}     \textcolor{keyword}{public} \textcolor{keywordtype}{boolean} \mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1activities_1_1_revenue_add_activity_a5374cf3c7faff93a0c2f373f8dd49f7a}{onOptionsItemSelected}}(MenuItem item) \{}
-\DoxyCodeLine{\Hypertarget{_revenue_add_activity_8java_source_l00052}00052         Log.i(\mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1activities_1_1_revenue_add_activity_a55dd98889e5190ec23bf80188497e50d}{TAG}}, \textcolor{stringliteral}{"{}Start onOptionsItemSelected method"{}});}
-\DoxyCodeLine{\Hypertarget{_revenue_add_activity_8java_source_l00053}00053         \textcolor{keywordflow}{if} (item.getItemId() == R.id.save) \{}
-\DoxyCodeLine{\Hypertarget{_revenue_add_activity_8java_source_l00054}00054             Log.i(\mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1activities_1_1_revenue_add_activity_a55dd98889e5190ec23bf80188497e50d}{TAG}}, \textcolor{stringliteral}{"{}save choose in menu actionBar"{}});}
-\DoxyCodeLine{\Hypertarget{_revenue_add_activity_8java_source_l00055}00055             \textcolor{keywordflow}{return} (\textcolor{keyword}{true});}
-\DoxyCodeLine{\Hypertarget{_revenue_add_activity_8java_source_l00056}00056         \}}
-\DoxyCodeLine{\Hypertarget{_revenue_add_activity_8java_source_l00057}00057 }
-\DoxyCodeLine{\Hypertarget{_revenue_add_activity_8java_source_l00058}00058         \textcolor{keywordflow}{return}(super.onOptionsItemSelected(item));}
-\DoxyCodeLine{\Hypertarget{_revenue_add_activity_8java_source_l00059}00059     \}}
-\DoxyCodeLine{\Hypertarget{_revenue_add_activity_8java_source_l00060}00060 \}}
+\DoxyCodeLine{\Hypertarget{_revenue_add_activity_8java_source_l00018}00018 \textcolor{keyword}{import} java.util.ArrayList;}
+\DoxyCodeLine{\Hypertarget{_revenue_add_activity_8java_source_l00019}00019 \textcolor{keyword}{import} java.util.List;}
+\DoxyCodeLine{\Hypertarget{_revenue_add_activity_8java_source_l00020}00020 }
+\DoxyCodeLine{\Hypertarget{_revenue_add_activity_8java_source_l00021}\mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1activities_1_1_revenue_add_activity}{00021}} \textcolor{keyword}{public} \textcolor{keyword}{class }\mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1activities_1_1_revenue_add_activity}{RevenueAddActivity}} \textcolor{keyword}{extends} AppCompatActivity \{}
+\DoxyCodeLine{\Hypertarget{_revenue_add_activity_8java_source_l00023}\mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1activities_1_1_revenue_add_activity_a55dd98889e5190ec23bf80188497e50d}{00023}}     \textcolor{keyword}{private} \textcolor{keyword}{final} String \mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1activities_1_1_revenue_add_activity_a55dd98889e5190ec23bf80188497e50d}{TAG}} = this.getClass().getSimpleName();}
+\DoxyCodeLine{\Hypertarget{_revenue_add_activity_8java_source_l00024}00024 }
+\DoxyCodeLine{\Hypertarget{_revenue_add_activity_8java_source_l00026}\mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1activities_1_1_revenue_add_activity_ab0c38f6cecebbd81bffe19890c8d20be}{00026}}     \textcolor{keyword}{private} Spinner \mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1activities_1_1_revenue_add_activity_ab0c38f6cecebbd81bffe19890c8d20be}{spinnerSource}};}
+\DoxyCodeLine{\Hypertarget{_revenue_add_activity_8java_source_l00027}\mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1activities_1_1_revenue_add_activity_ae86e95d7d463b654314b6dbaf83d0785}{00027}}     \textcolor{keyword}{private} \mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1ui_1_1adapters_1_1_category_adapter}{CategoryAdapter}} \mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1activities_1_1_revenue_add_activity_ae86e95d7d463b654314b6dbaf83d0785}{category\_adapter}};}
+\DoxyCodeLine{\Hypertarget{_revenue_add_activity_8java_source_l00028}00028 }
+\DoxyCodeLine{\Hypertarget{_revenue_add_activity_8java_source_l00029}00029     @Override}
+\DoxyCodeLine{\Hypertarget{_revenue_add_activity_8java_source_l00030}\mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1activities_1_1_revenue_add_activity_a9e119c689fd1bf6adbb6d5b43abfa490}{00030}}     \textcolor{keyword}{protected} \textcolor{keywordtype}{void} \mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1activities_1_1_revenue_add_activity_a9e119c689fd1bf6adbb6d5b43abfa490}{onCreate}}(Bundle savedInstanceState) \{}
+\DoxyCodeLine{\Hypertarget{_revenue_add_activity_8java_source_l00031}00031         super.onCreate(savedInstanceState);}
+\DoxyCodeLine{\Hypertarget{_revenue_add_activity_8java_source_l00032}00032         setContentView(R.layout.activity\_revenue\_add);}
+\DoxyCodeLine{\Hypertarget{_revenue_add_activity_8java_source_l00033}00033 }
+\DoxyCodeLine{\Hypertarget{_revenue_add_activity_8java_source_l00034}00034         ActionBar actionBar = getSupportActionBar();}
+\DoxyCodeLine{\Hypertarget{_revenue_add_activity_8java_source_l00035}00035         \textcolor{keywordflow}{if} (actionBar != \textcolor{keyword}{null}) \{}
+\DoxyCodeLine{\Hypertarget{_revenue_add_activity_8java_source_l00036}00036             actionBar.setDisplayUseLogoEnabled(\textcolor{keyword}{true});}
+\DoxyCodeLine{\Hypertarget{_revenue_add_activity_8java_source_l00037}00037             actionBar.setDisplayShowHomeEnabled(\textcolor{keyword}{true});}
+\DoxyCodeLine{\Hypertarget{_revenue_add_activity_8java_source_l00038}00038         \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{\Hypertarget{_revenue_add_activity_8java_source_l00039}00039             Log.e(\mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1activities_1_1_revenue_add_activity_a55dd98889e5190ec23bf80188497e50d}{TAG}}, \textcolor{stringliteral}{"{}ActionBar was null"{}});}
+\DoxyCodeLine{\Hypertarget{_revenue_add_activity_8java_source_l00040}00040             finish();}
+\DoxyCodeLine{\Hypertarget{_revenue_add_activity_8java_source_l00041}00041         \}}
+\DoxyCodeLine{\Hypertarget{_revenue_add_activity_8java_source_l00042}00042 }
+\DoxyCodeLine{\Hypertarget{_revenue_add_activity_8java_source_l00043}00043         \mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1activities_1_1_revenue_add_activity_ab0c38f6cecebbd81bffe19890c8d20be}{spinnerSource}} = findViewById(R.id.spinnerSource);}
+\DoxyCodeLine{\Hypertarget{_revenue_add_activity_8java_source_l00044}00044         ArrayList<Category> arrayList = \textcolor{keyword}{new} ArrayList<>();}
+\DoxyCodeLine{\Hypertarget{_revenue_add_activity_8java_source_l00045}00045 }
+\DoxyCodeLine{\Hypertarget{_revenue_add_activity_8java_source_l00046}00046         arrayList.add(\textcolor{keyword}{new} \mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1models_1_1_category}{Category}}(1, 2, \textcolor{stringliteral}{"{}первая"{}}));}
+\DoxyCodeLine{\Hypertarget{_revenue_add_activity_8java_source_l00047}00047         arrayList.add(\textcolor{keyword}{new} \mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1models_1_1_category}{Category}}(2, 3, \textcolor{stringliteral}{"{}вторая"{}}));}
+\DoxyCodeLine{\Hypertarget{_revenue_add_activity_8java_source_l00048}00048         \textcolor{comment}{// we pass our item list and context to our Adapter.}}
+\DoxyCodeLine{\Hypertarget{_revenue_add_activity_8java_source_l00049}00049         \mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1activities_1_1_revenue_add_activity_ae86e95d7d463b654314b6dbaf83d0785}{category\_adapter}} = \textcolor{keyword}{new} \mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1ui_1_1adapters_1_1_category_adapter}{CategoryAdapter}}(\textcolor{keyword}{this}, arrayList);}
+\DoxyCodeLine{\Hypertarget{_revenue_add_activity_8java_source_l00050}00050         \mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1activities_1_1_revenue_add_activity_ab0c38f6cecebbd81bffe19890c8d20be}{spinnerSource}}.setAdapter(\mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1activities_1_1_revenue_add_activity_ae86e95d7d463b654314b6dbaf83d0785}{category\_adapter}});}
+\DoxyCodeLine{\Hypertarget{_revenue_add_activity_8java_source_l00051}00051 }
+\DoxyCodeLine{\Hypertarget{_revenue_add_activity_8java_source_l00052}00052 }
+\DoxyCodeLine{\Hypertarget{_revenue_add_activity_8java_source_l00053}00053     \}}
+\DoxyCodeLine{\Hypertarget{_revenue_add_activity_8java_source_l00054}00054 }
+\DoxyCodeLine{\Hypertarget{_revenue_add_activity_8java_source_l00060}00060     @Override}
+\DoxyCodeLine{\Hypertarget{_revenue_add_activity_8java_source_l00061}\mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1activities_1_1_revenue_add_activity_abb541680f985be9317a875ad921306f8}{00061}}     \textcolor{keyword}{public} \textcolor{keywordtype}{boolean} \mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1activities_1_1_revenue_add_activity_abb541680f985be9317a875ad921306f8}{onCreateOptionsMenu}}(@NonNull Menu menu) \{}
+\DoxyCodeLine{\Hypertarget{_revenue_add_activity_8java_source_l00062}00062         Log.i(\mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1activities_1_1_revenue_add_activity_a55dd98889e5190ec23bf80188497e50d}{TAG}}, \textcolor{stringliteral}{"{}Start onCreateOptionsMenu method LoginActivity"{}});}
+\DoxyCodeLine{\Hypertarget{_revenue_add_activity_8java_source_l00063}00063         getMenuInflater().inflate(R.menu.add\_revenue\_menu, menu);}
+\DoxyCodeLine{\Hypertarget{_revenue_add_activity_8java_source_l00064}00064         \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_revenue_add_activity_8java_source_l00065}00065     \}}
+\DoxyCodeLine{\Hypertarget{_revenue_add_activity_8java_source_l00066}00066 }
+\DoxyCodeLine{\Hypertarget{_revenue_add_activity_8java_source_l00072}00072     @Override}
+\DoxyCodeLine{\Hypertarget{_revenue_add_activity_8java_source_l00073}\mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1activities_1_1_revenue_add_activity_a5374cf3c7faff93a0c2f373f8dd49f7a}{00073}}     \textcolor{keyword}{public} \textcolor{keywordtype}{boolean} \mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1activities_1_1_revenue_add_activity_a5374cf3c7faff93a0c2f373f8dd49f7a}{onOptionsItemSelected}}(MenuItem item) \{}
+\DoxyCodeLine{\Hypertarget{_revenue_add_activity_8java_source_l00074}00074         Log.i(\mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1activities_1_1_revenue_add_activity_a55dd98889e5190ec23bf80188497e50d}{TAG}}, \textcolor{stringliteral}{"{}Start onOptionsItemSelected method"{}});}
+\DoxyCodeLine{\Hypertarget{_revenue_add_activity_8java_source_l00075}00075         \textcolor{keywordflow}{if} (item.getItemId() == R.id.save) \{}
+\DoxyCodeLine{\Hypertarget{_revenue_add_activity_8java_source_l00076}00076             Log.i(\mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1activities_1_1_revenue_add_activity_a55dd98889e5190ec23bf80188497e50d}{TAG}}, \textcolor{stringliteral}{"{}save choose in menu actionBar"{}});}
+\DoxyCodeLine{\Hypertarget{_revenue_add_activity_8java_source_l00077}00077             \textcolor{keywordflow}{return} (\textcolor{keyword}{true});}
+\DoxyCodeLine{\Hypertarget{_revenue_add_activity_8java_source_l00078}00078         \}}
+\DoxyCodeLine{\Hypertarget{_revenue_add_activity_8java_source_l00079}00079 }
+\DoxyCodeLine{\Hypertarget{_revenue_add_activity_8java_source_l00080}00080         \textcolor{keywordflow}{return}(super.onOptionsItemSelected(item));}
+\DoxyCodeLine{\Hypertarget{_revenue_add_activity_8java_source_l00081}00081     \}}
+\DoxyCodeLine{\Hypertarget{_revenue_add_activity_8java_source_l00082}00082 \}}
 
 \end{DoxyCode}

@@ -6,7 +6,7 @@ import androidx.room.Insert;
 import androidx.room.Query;
 import androidx.room.Update;
 
-import com.snail.wallet.MainScreen.models.MoneySource;
+
 import com.snail.wallet.MainScreen.models.StorageLocation;
 
 import java.util.List;

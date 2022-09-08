@@ -1,0 +1,33 @@
+\hypertarget{_storage_location_d_a_o_8java_source}{}\doxysection{Storage\+Location\+DAO.\+java}
+\label{_storage_location_d_a_o_8java_source}\index{app/src/main/java/com/snail/wallet/MainScreen/db/StorageLocationDAO/StorageLocationDAO.java@{app/src/main/java/com/snail/wallet/MainScreen/db/StorageLocationDAO/StorageLocationDAO.java}}
+\mbox{\hyperlink{_storage_location_d_a_o_8java}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_storage_location_d_a_o_8java_source_l00001}00001 \textcolor{keyword}{package }com.snail.wallet.MainScreen.db.StorageLocationDAO;}
+\DoxyCodeLine{\Hypertarget{_storage_location_d_a_o_8java_source_l00002}00002 }
+\DoxyCodeLine{\Hypertarget{_storage_location_d_a_o_8java_source_l00003}00003 \textcolor{keyword}{import} androidx.room.Dao;}
+\DoxyCodeLine{\Hypertarget{_storage_location_d_a_o_8java_source_l00004}00004 \textcolor{keyword}{import} androidx.room.Delete;}
+\DoxyCodeLine{\Hypertarget{_storage_location_d_a_o_8java_source_l00005}00005 \textcolor{keyword}{import} androidx.room.Insert;}
+\DoxyCodeLine{\Hypertarget{_storage_location_d_a_o_8java_source_l00006}00006 \textcolor{keyword}{import} androidx.room.Query;}
+\DoxyCodeLine{\Hypertarget{_storage_location_d_a_o_8java_source_l00007}00007 \textcolor{keyword}{import} androidx.room.Update;}
+\DoxyCodeLine{\Hypertarget{_storage_location_d_a_o_8java_source_l00008}00008 }
+\DoxyCodeLine{\Hypertarget{_storage_location_d_a_o_8java_source_l00009}00009 }
+\DoxyCodeLine{\Hypertarget{_storage_location_d_a_o_8java_source_l00010}00010 \textcolor{keyword}{import} com.snail.wallet.MainScreen.models.StorageLocation;}
+\DoxyCodeLine{\Hypertarget{_storage_location_d_a_o_8java_source_l00011}00011 }
+\DoxyCodeLine{\Hypertarget{_storage_location_d_a_o_8java_source_l00012}00012 \textcolor{keyword}{import} java.util.List;}
+\DoxyCodeLine{\Hypertarget{_storage_location_d_a_o_8java_source_l00013}00013 }
+\DoxyCodeLine{\Hypertarget{_storage_location_d_a_o_8java_source_l00014}00014 @Dao}
+\DoxyCodeLine{\Hypertarget{_storage_location_d_a_o_8java_source_l00015}\mbox{\hyperlink{interfacecom_1_1snail_1_1wallet_1_1_main_screen_1_1db_1_1_storage_location_d_a_o_1_1_storage_location_d_a_o}{00015}} \textcolor{keyword}{public} \textcolor{keyword}{interface }\mbox{\hyperlink{interfacecom_1_1snail_1_1wallet_1_1_main_screen_1_1db_1_1_storage_location_d_a_o_1_1_storage_location_d_a_o}{StorageLocationDAO}} \{}
+\DoxyCodeLine{\Hypertarget{_storage_location_d_a_o_8java_source_l00016}00016     @Query(\textcolor{stringliteral}{"{}SELECT * FROM storage\_location"{}})}
+\DoxyCodeLine{\Hypertarget{_storage_location_d_a_o_8java_source_l00017}\mbox{\hyperlink{interfacecom_1_1snail_1_1wallet_1_1_main_screen_1_1db_1_1_storage_location_d_a_o_1_1_storage_location_d_a_o_ae421d219b5fa2e6ec6c65d84b37ff038}{00017}}     List<\mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1models_1_1_storage_location}{StorageLocation}}> \mbox{\hyperlink{interfacecom_1_1snail_1_1wallet_1_1_main_screen_1_1db_1_1_storage_location_d_a_o_1_1_storage_location_d_a_o_ae421d219b5fa2e6ec6c65d84b37ff038}{getAll}}();}
+\DoxyCodeLine{\Hypertarget{_storage_location_d_a_o_8java_source_l00018}00018 }
+\DoxyCodeLine{\Hypertarget{_storage_location_d_a_o_8java_source_l00019}00019     @Insert}
+\DoxyCodeLine{\Hypertarget{_storage_location_d_a_o_8java_source_l00020}\mbox{\hyperlink{interfacecom_1_1snail_1_1wallet_1_1_main_screen_1_1db_1_1_storage_location_d_a_o_1_1_storage_location_d_a_o_a2102ef02210f0da3d2bf9889119f90a1}{00020}}     \textcolor{keywordtype}{void} \mbox{\hyperlink{interfacecom_1_1snail_1_1wallet_1_1_main_screen_1_1db_1_1_storage_location_d_a_o_1_1_storage_location_d_a_o_a2102ef02210f0da3d2bf9889119f90a1}{insert}}(\mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1models_1_1_storage_location}{StorageLocation}} storage\_location);}
+\DoxyCodeLine{\Hypertarget{_storage_location_d_a_o_8java_source_l00021}00021 }
+\DoxyCodeLine{\Hypertarget{_storage_location_d_a_o_8java_source_l00022}00022     @Update}
+\DoxyCodeLine{\Hypertarget{_storage_location_d_a_o_8java_source_l00023}\mbox{\hyperlink{interfacecom_1_1snail_1_1wallet_1_1_main_screen_1_1db_1_1_storage_location_d_a_o_1_1_storage_location_d_a_o_a8dd6232ea6c4b5924f03bb0168fc3eeb}{00023}}     \textcolor{keywordtype}{void} \mbox{\hyperlink{interfacecom_1_1snail_1_1wallet_1_1_main_screen_1_1db_1_1_storage_location_d_a_o_1_1_storage_location_d_a_o_a8dd6232ea6c4b5924f03bb0168fc3eeb}{update}}(\mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1models_1_1_storage_location}{StorageLocation}} storage\_location);}
+\DoxyCodeLine{\Hypertarget{_storage_location_d_a_o_8java_source_l00024}00024 }
+\DoxyCodeLine{\Hypertarget{_storage_location_d_a_o_8java_source_l00025}00025     @Delete}
+\DoxyCodeLine{\Hypertarget{_storage_location_d_a_o_8java_source_l00026}\mbox{\hyperlink{interfacecom_1_1snail_1_1wallet_1_1_main_screen_1_1db_1_1_storage_location_d_a_o_1_1_storage_location_d_a_o_ab16ef8c5cdbe4ceaa673c22beb2b74c7}{00026}}     \textcolor{keywordtype}{void} \mbox{\hyperlink{interfacecom_1_1snail_1_1wallet_1_1_main_screen_1_1db_1_1_storage_location_d_a_o_1_1_storage_location_d_a_o_ab16ef8c5cdbe4ceaa673c22beb2b74c7}{delete}}(\mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1models_1_1_storage_location}{StorageLocation}} storage\_location);}
+\DoxyCodeLine{\Hypertarget{_storage_location_d_a_o_8java_source_l00027}00027 \}}
+
+\end{DoxyCode}

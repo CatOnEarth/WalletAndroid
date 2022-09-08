@@ -12,7 +12,6 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.snail.wallet.MainScreen.models.Revenues;
 import com.snail.wallet.R;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class RevenueAdapter extends RecyclerView.Adapter<RevenueAdapter.ViewHolder>{
@@ -61,7 +60,7 @@ public class RevenueAdapter extends RecyclerView.Adapter<RevenueAdapter.ViewHold
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup viewGroup, int viewType) {
         View view = LayoutInflater.from(viewGroup.getContext())
-                .inflate(R.layout.item_recyclerview, viewGroup, false);
+                .inflate(R.layout.item_revenue_recyclerview, viewGroup, false);
 
         return new ViewHolder(view);
     }

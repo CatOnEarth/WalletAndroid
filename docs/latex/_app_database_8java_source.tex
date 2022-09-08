@@ -1,0 +1,35 @@
+\hypertarget{_app_database_8java_source}{}\doxysection{App\+Database.\+java}
+\label{_app_database_8java_source}\index{app/src/main/java/com/snail/wallet/MainScreen/db/AppDatabase.java@{app/src/main/java/com/snail/wallet/MainScreen/db/AppDatabase.java}}
+\mbox{\hyperlink{_app_database_8java}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_app_database_8java_source_l00001}00001 \textcolor{keyword}{package }com.snail.wallet.MainScreen.db;}
+\DoxyCodeLine{\Hypertarget{_app_database_8java_source_l00002}00002 }
+\DoxyCodeLine{\Hypertarget{_app_database_8java_source_l00003}00003 \textcolor{keyword}{import} androidx.room.Database;}
+\DoxyCodeLine{\Hypertarget{_app_database_8java_source_l00004}00004 \textcolor{keyword}{import} androidx.room.RoomDatabase;}
+\DoxyCodeLine{\Hypertarget{_app_database_8java_source_l00005}00005 }
+\DoxyCodeLine{\Hypertarget{_app_database_8java_source_l00006}00006 \textcolor{keyword}{import} com.snail.wallet.MainScreen.db.CategoryDAO.CategoryDAO;}
+\DoxyCodeLine{\Hypertarget{_app_database_8java_source_l00007}00007 \textcolor{keyword}{import} com.snail.wallet.MainScreen.db.CurrencyDAO.CurrencyDAO;}
+\DoxyCodeLine{\Hypertarget{_app_database_8java_source_l00008}00008 \textcolor{keyword}{import} com.snail.wallet.MainScreen.db.ExpensesDAO.ExpensesDAO;}
+\DoxyCodeLine{\Hypertarget{_app_database_8java_source_l00009}00009 \textcolor{keyword}{import} com.snail.wallet.MainScreen.db.MoneySouceDAO.MoneySourceDAO;}
+\DoxyCodeLine{\Hypertarget{_app_database_8java_source_l00010}00010 \textcolor{keyword}{import} com.snail.wallet.MainScreen.db.RevenueDAO.RevenueDAO;}
+\DoxyCodeLine{\Hypertarget{_app_database_8java_source_l00011}00011 \textcolor{keyword}{import} com.snail.wallet.MainScreen.db.StorageLocationDAO.StorageLocationDAO;}
+\DoxyCodeLine{\Hypertarget{_app_database_8java_source_l00012}00012 \textcolor{keyword}{import} com.snail.wallet.MainScreen.models.Category;}
+\DoxyCodeLine{\Hypertarget{_app_database_8java_source_l00013}00013 \textcolor{keyword}{import} com.snail.wallet.MainScreen.models.Currency;}
+\DoxyCodeLine{\Hypertarget{_app_database_8java_source_l00014}00014 \textcolor{keyword}{import} com.snail.wallet.MainScreen.models.Expenses;}
+\DoxyCodeLine{\Hypertarget{_app_database_8java_source_l00015}00015 \textcolor{keyword}{import} com.snail.wallet.MainScreen.models.MoneySource;}
+\DoxyCodeLine{\Hypertarget{_app_database_8java_source_l00016}00016 \textcolor{keyword}{import} com.snail.wallet.MainScreen.models.Revenues;}
+\DoxyCodeLine{\Hypertarget{_app_database_8java_source_l00017}00017 \textcolor{keyword}{import} com.snail.wallet.MainScreen.models.StorageLocation;}
+\DoxyCodeLine{\Hypertarget{_app_database_8java_source_l00018}00018 }
+\DoxyCodeLine{\Hypertarget{_app_database_8java_source_l00019}00019 @Database(entities = \{Category.class, Currency.class, Expenses.class,}
+\DoxyCodeLine{\Hypertarget{_app_database_8java_source_l00020}00020                       MoneySource.class, Revenues.class, StorageLocation.class\},}
+\DoxyCodeLine{\Hypertarget{_app_database_8java_source_l00021}00021                       version = 1)}
+\DoxyCodeLine{\Hypertarget{_app_database_8java_source_l00022}\mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1db_1_1_app_database}{00022}} \textcolor{keyword}{public} \textcolor{keyword}{abstract} \textcolor{keyword}{class} \mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1db_1_1_app_database}{AppDatabase}} extends RoomDatabase \{}
+\DoxyCodeLine{\Hypertarget{_app_database_8java_source_l00023}\mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1db_1_1_app_database_aac6856ba3f57d61a4871cf6697684b85}{00023}}     \textcolor{keyword}{public} \textcolor{keyword}{abstract} \mbox{\hyperlink{interfacecom_1_1snail_1_1wallet_1_1_main_screen_1_1db_1_1_category_d_a_o_1_1_category_d_a_o}{CategoryDAO}}        \mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1db_1_1_app_database_aac6856ba3f57d61a4871cf6697684b85}{categoryDAO}}();}
+\DoxyCodeLine{\Hypertarget{_app_database_8java_source_l00024}\mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1db_1_1_app_database_a3046e00753dbd6dc46e4e8e7c65b551f}{00024}}     \textcolor{keyword}{public} \textcolor{keyword}{abstract} \mbox{\hyperlink{interfacecom_1_1snail_1_1wallet_1_1_main_screen_1_1db_1_1_currency_d_a_o_1_1_currency_d_a_o}{CurrencyDAO}}        \mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1db_1_1_app_database_a3046e00753dbd6dc46e4e8e7c65b551f}{currencyDAO}}();}
+\DoxyCodeLine{\Hypertarget{_app_database_8java_source_l00025}\mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1db_1_1_app_database_ae3c3bf82ad06259d897fcb4af1cab724}{00025}}     \textcolor{keyword}{public} \textcolor{keyword}{abstract} \mbox{\hyperlink{interfacecom_1_1snail_1_1wallet_1_1_main_screen_1_1db_1_1_expenses_d_a_o_1_1_expenses_d_a_o}{ExpensesDAO}}        \mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1db_1_1_app_database_ae3c3bf82ad06259d897fcb4af1cab724}{expensesDAO}}();}
+\DoxyCodeLine{\Hypertarget{_app_database_8java_source_l00026}\mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1db_1_1_app_database_a15fb354a799944d4ac4db8d5313e7c6c}{00026}}     \textcolor{keyword}{public} \textcolor{keyword}{abstract} \mbox{\hyperlink{interfacecom_1_1snail_1_1wallet_1_1_main_screen_1_1db_1_1_money_souce_d_a_o_1_1_money_source_d_a_o}{MoneySourceDAO}}     \mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1db_1_1_app_database_a15fb354a799944d4ac4db8d5313e7c6c}{moneySourceDAO}}();}
+\DoxyCodeLine{\Hypertarget{_app_database_8java_source_l00027}\mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1db_1_1_app_database_aa6c23da6d6928dc93a682df91dbba076}{00027}}     \textcolor{keyword}{public} \textcolor{keyword}{abstract} \mbox{\hyperlink{interfacecom_1_1snail_1_1wallet_1_1_main_screen_1_1db_1_1_revenue_d_a_o_1_1_revenue_d_a_o}{RevenueDAO}}         \mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1db_1_1_app_database_aa6c23da6d6928dc93a682df91dbba076}{revenueDAO}}();}
+\DoxyCodeLine{\Hypertarget{_app_database_8java_source_l00028}\mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1db_1_1_app_database_ac8e95bac362fd1818d312f36206f07a0}{00028}}     \textcolor{keyword}{public} \textcolor{keyword}{abstract} \mbox{\hyperlink{interfacecom_1_1snail_1_1wallet_1_1_main_screen_1_1db_1_1_storage_location_d_a_o_1_1_storage_location_d_a_o}{StorageLocationDAO}} \mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1db_1_1_app_database_ac8e95bac362fd1818d312f36206f07a0}{storageLocationDAO}}();}
+\DoxyCodeLine{\Hypertarget{_app_database_8java_source_l00029}00029 \}}
+
+\end{DoxyCode}

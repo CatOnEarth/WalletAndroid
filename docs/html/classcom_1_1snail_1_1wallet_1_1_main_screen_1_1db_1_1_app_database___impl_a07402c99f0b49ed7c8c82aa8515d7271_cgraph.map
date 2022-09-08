@@ -1,0 +1,9 @@
+<map id="com.snail.wallet.MainScreen.db.AppDatabase_Impl.getRequiredTypeConverters" name="com.snail.wallet.MainScreen.db.AppDatabase_Impl.getRequiredTypeConverters">
+<area shape="rect" id="node1" title=" " alt="" coords="5,213,299,254"/>
+<area shape="rect" id="node2" href="$classcom_1_1snail_1_1wallet_1_1_main_screen_1_1db_1_1_category_d_a_o_1_1_category_d_a_o___impl.html#a5b9b8d9d12df2d2a57f790cc1d8925a8" title=" " alt="" coords="353,5,643,61"/>
+<area shape="rect" id="node3" href="$classcom_1_1snail_1_1wallet_1_1_main_screen_1_1db_1_1_currency_d_a_o_1_1_currency_d_a_o___impl.html#a2388e693164ba1fa8573157cd152ca30" title=" " alt="" coords="353,85,643,141"/>
+<area shape="rect" id="node4" href="$classcom_1_1snail_1_1wallet_1_1_main_screen_1_1db_1_1_expenses_d_a_o_1_1_expenses_d_a_o___impl.html#a33115dc2ece1441468bc06103fc6ac83" title=" " alt="" coords="347,165,649,221"/>
+<area shape="rect" id="node5" href="$classcom_1_1snail_1_1wallet_1_1_main_screen_1_1db_1_1_money_souce_d_a_o_1_1_money_source_d_a_o___impl.html#a015881282dd8e004435dee9529e49052" title=" " alt="" coords="379,245,617,301"/>
+<area shape="rect" id="node6" href="$classcom_1_1snail_1_1wallet_1_1_main_screen_1_1db_1_1_revenue_d_a_o_1_1_revenue_d_a_o___impl.html#a794f191ff3d412063493d95d317e8b22" title=" " alt="" coords="356,325,640,381"/>
+<area shape="rect" id="node7" href="$classcom_1_1snail_1_1wallet_1_1_main_screen_1_1db_1_1_storage_location_d_a_o_1_1_storage_location_d_a_o___impl.html#a643752826b0412dda892ff1ef6d107f7" title=" " alt="" coords="377,405,619,461"/>
+</map>

@@ -11,7 +11,8 @@ public class Revenues extends Money {
     @ColumnInfo(name = "source")
     public String source;
 
-    public Revenues(int id, double value, int currency, int category, String description) {
-        super(id, value, currency, category, description);
+
+    public Revenues(int id, double value, int currency, int category, String date, String description) {
+        super(id, value, currency, category, date, description);
     }
 }

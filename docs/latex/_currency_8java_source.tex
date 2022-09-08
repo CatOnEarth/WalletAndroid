@@ -1,0 +1,52 @@
+\hypertarget{_currency_8java_source}{}\doxysection{Currency.\+java}
+\label{_currency_8java_source}\index{app/src/main/java/com/snail/wallet/MainScreen/models/Currency.java@{app/src/main/java/com/snail/wallet/MainScreen/models/Currency.java}}
+\mbox{\hyperlink{_currency_8java}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_currency_8java_source_l00001}00001 \textcolor{keyword}{package }com.snail.wallet.MainScreen.models;}
+\DoxyCodeLine{\Hypertarget{_currency_8java_source_l00002}00002 }
+\DoxyCodeLine{\Hypertarget{_currency_8java_source_l00003}00003 \textcolor{keyword}{import} androidx.room.ColumnInfo;}
+\DoxyCodeLine{\Hypertarget{_currency_8java_source_l00004}00004 \textcolor{keyword}{import} androidx.room.Entity;}
+\DoxyCodeLine{\Hypertarget{_currency_8java_source_l00005}00005 \textcolor{keyword}{import} androidx.room.PrimaryKey;}
+\DoxyCodeLine{\Hypertarget{_currency_8java_source_l00006}00006 }
+\DoxyCodeLine{\Hypertarget{_currency_8java_source_l00007}00007 @Entity(tableName = \textcolor{stringliteral}{"{}currency"{}})}
+\DoxyCodeLine{\Hypertarget{_currency_8java_source_l00008}\mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1models_1_1_currency}{00008}} public class \mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1models_1_1_currency}{Currency}} \{}
+\DoxyCodeLine{\Hypertarget{_currency_8java_source_l00009}00009     @PrimaryKey(autoGenerate=\textcolor{keyword}{true})}
+\DoxyCodeLine{\Hypertarget{_currency_8java_source_l00010}00010     @ColumnInfo(name = \textcolor{stringliteral}{"{}id"{}})}
+\DoxyCodeLine{\Hypertarget{_currency_8java_source_l00011}\mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1models_1_1_currency_a3cb0ceb69de4253e0cb5cbfe5965f47d}{00011}}     public \textcolor{keywordtype}{int} \textcolor{keywordtype}{id};}
+\DoxyCodeLine{\Hypertarget{_currency_8java_source_l00012}00012     @ColumnInfo(name = "{}name"{})}
+\DoxyCodeLine{\Hypertarget{_currency_8java_source_l00013}\mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1models_1_1_currency_a5963c2b8bf73f1ec832d09ec9b347b18}{00013}}     public String name;}
+\DoxyCodeLine{\Hypertarget{_currency_8java_source_l00014}00014     @ColumnInfo(name = "{}symbol"{})}
+\DoxyCodeLine{\Hypertarget{_currency_8java_source_l00015}\mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1models_1_1_currency_a70f5896023be9b0e6a7b47315ddd0404}{00015}}     public String symbol;}
+\DoxyCodeLine{\Hypertarget{_currency_8java_source_l00016}00016 }
+\DoxyCodeLine{\Hypertarget{_currency_8java_source_l00017}\mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1models_1_1_currency_a9af99c1712bd406b76a7ec708846097b}{00017}}     public \mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1models_1_1_currency}{Currency}}(\textcolor{keywordtype}{int} \textcolor{keywordtype}{id}, String name, String symbol) \{}
+\DoxyCodeLine{\Hypertarget{_currency_8java_source_l00018}00018         this.id = id;}
+\DoxyCodeLine{\Hypertarget{_currency_8java_source_l00019}00019         this.name = name;}
+\DoxyCodeLine{\Hypertarget{_currency_8java_source_l00020}00020         this.symbol = symbol;}
+\DoxyCodeLine{\Hypertarget{_currency_8java_source_l00021}00021     \}}
+\DoxyCodeLine{\Hypertarget{_currency_8java_source_l00022}00022 }
+\DoxyCodeLine{\Hypertarget{_currency_8java_source_l00023}\mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1models_1_1_currency_a96a61fd12d9715edd3b19166328ac9b3}{00023}}     \textcolor{keyword}{public} \textcolor{keywordtype}{int} \mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1models_1_1_currency_a96a61fd12d9715edd3b19166328ac9b3}{getId}}() \{}
+\DoxyCodeLine{\Hypertarget{_currency_8java_source_l00024}00024         \textcolor{keywordflow}{return} id;}
+\DoxyCodeLine{\Hypertarget{_currency_8java_source_l00025}00025     \}}
+\DoxyCodeLine{\Hypertarget{_currency_8java_source_l00026}00026 }
+\DoxyCodeLine{\Hypertarget{_currency_8java_source_l00027}\mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1models_1_1_currency_ae5c54918bc6f81940a37a2b34e1ff5a6}{00027}}     \textcolor{keyword}{public} \textcolor{keywordtype}{void} \mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1models_1_1_currency_ae5c54918bc6f81940a37a2b34e1ff5a6}{setId}}(\textcolor{keywordtype}{int} \textcolor{keywordtype}{id}) \{}
+\DoxyCodeLine{\Hypertarget{_currency_8java_source_l00028}00028         this.id = id;}
+\DoxyCodeLine{\Hypertarget{_currency_8java_source_l00029}00029     \}}
+\DoxyCodeLine{\Hypertarget{_currency_8java_source_l00030}00030 }
+\DoxyCodeLine{\Hypertarget{_currency_8java_source_l00031}\mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1models_1_1_currency_a9654945a595aca7f617d5d7d3260d510}{00031}}     \textcolor{keyword}{public} String \mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1models_1_1_currency_a9654945a595aca7f617d5d7d3260d510}{getName}}() \{}
+\DoxyCodeLine{\Hypertarget{_currency_8java_source_l00032}00032         \textcolor{keywordflow}{return} name;}
+\DoxyCodeLine{\Hypertarget{_currency_8java_source_l00033}00033     \}}
+\DoxyCodeLine{\Hypertarget{_currency_8java_source_l00034}00034 }
+\DoxyCodeLine{\Hypertarget{_currency_8java_source_l00035}\mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1models_1_1_currency_a5e28926a0a58e8e6bf19076966fff151}{00035}}     \textcolor{keyword}{public} \textcolor{keywordtype}{void} \mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1models_1_1_currency_a5e28926a0a58e8e6bf19076966fff151}{setName}}(String name) \{}
+\DoxyCodeLine{\Hypertarget{_currency_8java_source_l00036}00036         this.name = name;}
+\DoxyCodeLine{\Hypertarget{_currency_8java_source_l00037}00037     \}}
+\DoxyCodeLine{\Hypertarget{_currency_8java_source_l00038}00038 }
+\DoxyCodeLine{\Hypertarget{_currency_8java_source_l00039}\mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1models_1_1_currency_ab025e77134b71dc99b9edf9f47f260b8}{00039}}     \textcolor{keyword}{public} String \mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1models_1_1_currency_ab025e77134b71dc99b9edf9f47f260b8}{getSymbol}}() \{}
+\DoxyCodeLine{\Hypertarget{_currency_8java_source_l00040}00040         \textcolor{keywordflow}{return} symbol;}
+\DoxyCodeLine{\Hypertarget{_currency_8java_source_l00041}00041     \}}
+\DoxyCodeLine{\Hypertarget{_currency_8java_source_l00042}00042 }
+\DoxyCodeLine{\Hypertarget{_currency_8java_source_l00043}\mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1models_1_1_currency_a281e15b2d90e5d81154a639a1aa01e31}{00043}}     \textcolor{keyword}{public} \textcolor{keywordtype}{void} \mbox{\hyperlink{classcom_1_1snail_1_1wallet_1_1_main_screen_1_1models_1_1_currency_a281e15b2d90e5d81154a639a1aa01e31}{setSymbol}}(String symbol) \{}
+\DoxyCodeLine{\Hypertarget{_currency_8java_source_l00044}00044         this.symbol = symbol;}
+\DoxyCodeLine{\Hypertarget{_currency_8java_source_l00045}00045     \}}
+\DoxyCodeLine{\Hypertarget{_currency_8java_source_l00046}00046 \}}
+
+\end{DoxyCode}
