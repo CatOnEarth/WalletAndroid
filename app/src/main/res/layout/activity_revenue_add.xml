@@ -45,8 +45,8 @@
         app:layout_constraintVertical_bias="0.085" />
 
     <TextView
-        android:id="@+id/textView5"
-        android:layout_width="158dp"
+        android:id="@+id/textViewDateSelectedRevenue"
+        android:layout_width="wrap_content"
         android:layout_height="37dp"
         android:text="08.09.2022"
         android:textSize="24sp"
@@ -137,21 +137,21 @@
         android:text="Валюта"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.75"
+        app:layout_constraintHorizontal_bias="0.659"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.389" />
 
     <Spinner
         android:id="@+id/spinnerCurrencyRevenue"
-        android:layout_width="86dp"
-        android:layout_height="39dp"
+        android:layout_width="166dp"
+        android:layout_height="45dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.833"
+        app:layout_constraintHorizontal_bias="0.971"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.427" />
+        app:layout_constraintVertical_bias="0.431" />
 
     <TextView
         android:id="@+id/textViewStorageLocationRevenue"
@@ -191,15 +191,25 @@
 
     <EditText
         android:id="@+id/editTextTextPersonName3"
-        android:layout_width="374dp"
-        android:layout_height="249dp"
+        android:layout_width="413dp"
+        android:layout_height="175dp"
         android:ems="10"
         android:hint="Описание"
         android:inputType="textPersonName"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.459"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.966" />
+        app:layout_constraintVertical_bias="0.836" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="223dp"
+        android:layout_height="42dp"
+        android:text="Button"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.957" />
 </androidx.constraintlayout.widget.ConstraintLayout>

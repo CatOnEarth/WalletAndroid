@@ -6,11 +6,10 @@
     android:background="#fef1a2" >
 
     <TextView
-        android:id="@+id/textViewCurrencySpinnerRevenueAdapter"
+        android:id="@+id/textViewMoneySourceSpinnerRevenueAdapter"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_marginStart="15dp"
-        android:layout_marginEnd="15dp"
         android:gravity="center"
         android:textColor="@android:color/black"
         android:textSize="20sp" />
