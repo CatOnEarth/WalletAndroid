@@ -77,7 +77,7 @@ public class RevenueAdapter extends RecyclerView.Adapter<RevenueAdapter.ViewHold
         viewHolder.textViewDescription.setText(revenues.getDescription());
         viewHolder.textViewCategory.setText(String.valueOf(revenues.getCategory()));
 
-        String val = String.valueOf(revenues.getValue()) + revenues.getCurrencyType();
+        String val = revenues.getValue() + revenues.getCurrencyType();
         viewHolder.textViewValue.setText(val);
 
         viewHolder.itemView.setOnClickListener(view -> StartInfoActivity(position));

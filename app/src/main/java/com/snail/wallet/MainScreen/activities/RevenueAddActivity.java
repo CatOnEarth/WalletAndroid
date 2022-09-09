@@ -5,6 +5,7 @@ import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.DatePickerDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.format.DateUtils;
 import android.util.Log;
@@ -12,14 +13,24 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.DatePicker;
+import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
 
 import com.snail.wallet.MainScreen.WalletActivity;
+import com.snail.wallet.MainScreen.db.App;
+import com.snail.wallet.MainScreen.db.AppDatabase;
+import com.snail.wallet.MainScreen.db.CategoryDAO.CategoryDAO;
+import com.snail.wallet.MainScreen.db.CurrencyDAO.CurrencyDAO;
+import com.snail.wallet.MainScreen.db.MoneySouceDAO.MoneySourceDAO;
+import com.snail.wallet.MainScreen.db.RevenueDAO.RevenueDAO;
+import com.snail.wallet.MainScreen.db.StorageLocationDAO.StorageLocationDAO;
 import com.snail.wallet.MainScreen.models.Category;
 import com.snail.wallet.MainScreen.models.Currency;
 import com.snail.wallet.MainScreen.models.MoneySource;
+import com.snail.wallet.MainScreen.models.Revenues;
 import com.snail.wallet.MainScreen.models.StorageLocation;
 import com.snail.wallet.MainScreen.ui.adapters.CategoryAdapter;
 import com.snail.wallet.MainScreen.ui.adapters.CurrencyAdapter;
@@ -46,8 +57,11 @@ public class RevenueAddActivity extends AppCompatActivity {
     private CurrencyAdapter currencyAdapter;
     private StorageLocationAdapter storageLocationAdapter;
 
-    TextView date;
-    Calendar dateAndTime = Calendar.getInstance();
+    private EditText editTextValue;
+    private EditText editTextDescription;
+
+    private TextView date;
+    private Calendar dateAndTime = Calendar.getInstance();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,37 +72,39 @@ public class RevenueAddActivity extends AppCompatActivity {
         if (actionBar != null) {
             actionBar.setDisplayUseLogoEnabled(true);
             actionBar.setDisplayShowHomeEnabled(true);
+            actionBar.setDisplayHomeAsUpEnabled(true);
         } else {
             Log.e(TAG, "ActionBar was null");
             finish();
         }
+
+        editTextValue = findViewById(R.id.editTextNumberValueRevenue);
+        editTextDescription = findViewById(R.id.editTextTextDescriptionRevenue);
 
         spinnerCategory        = findViewById(R.id.spinnerCategoryRevenue);
         spinnerSource          = findViewById(R.id.spinnerSourceRevenue);
         spinnerCurrency        = findViewById(R.id.spinnerCurrencyRevenue);
         spinnerStorageLocation = findViewById(R.id.spinnerStorageLocationRevenue);
 
-        ArrayList<Category> categoryList = new ArrayList<>();
-        categoryList.add(new Category(1, 2, "первая"));
-        categoryList.add(new Category(2, 3, "вторая"));
+        AppDatabase db          = App.getInstance().getAppDatabase();
+
+        CategoryDAO categoryDAO = db.categoryDAO();
+        ArrayList<Category> categoryList = (ArrayList<Category>) categoryDAO.getAll();
         categoryAdapter = new CategoryAdapter(this, categoryList);
         spinnerCategory.setAdapter(categoryAdapter);
 
-        ArrayList<MoneySource> sourceList = new ArrayList<>();
-        sourceList.add(new MoneySource(1, "работа"));
-        sourceList.add(new MoneySource(2, "акции"));
+        MoneySourceDAO moneySourceDAO = db.moneySourceDAO();
+        ArrayList<MoneySource> sourceList = (ArrayList<MoneySource>) moneySourceDAO.getAll();
         sourceAdapter = new SourceAdapter(this, sourceList);
         spinnerSource.setAdapter(sourceAdapter);
 
-        ArrayList<Currency> currencyList = new ArrayList<>();
-        currencyList.add(new Currency(1, "Российский рубль", "$"));
-        currencyList.add(new Currency(2, "Евро", "#"));
+        CurrencyDAO currencyDAO = db.currencyDAO();
+        ArrayList<Currency> currencyList = (ArrayList<Currency>) currencyDAO.getAll();
         currencyAdapter = new CurrencyAdapter(this, currencyList);
         spinnerCurrency.setAdapter(currencyAdapter);
 
-        ArrayList<StorageLocation> storageLocationList = new ArrayList<>();
-        storageLocationList.add(new StorageLocation(1, "банк"));
-        storageLocationList.add(new StorageLocation(2, "сейф"));
+        StorageLocationDAO storageLocationDAO = db.storageLocationDAO();
+        ArrayList<StorageLocation> storageLocationList = (ArrayList<StorageLocation>) storageLocationDAO.getAll();
         storageLocationAdapter = new StorageLocationAdapter(this, storageLocationList);
         spinnerStorageLocation.setAdapter(storageLocationAdapter);
 
@@ -98,6 +114,22 @@ public class RevenueAddActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 setDate(view);
+            }
+        });
+
+        Button bAddSource = findViewById(R.id.buttonAddSource);
+        bAddSource.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+            }
+        });
+
+        Button bSaveRevenue = findViewById(R.id.bAddRevenueSave);
+        bSaveRevenue.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                SaveRevenue();
             }
         });
     }
@@ -150,9 +182,59 @@ public class RevenueAddActivity extends AppCompatActivity {
         Log.i(TAG, "Start onOptionsItemSelected method");
         if (item.getItemId() == R.id.save) {
             Log.i(TAG, "save choose in menu actionBar");
-            return (true);
+            SaveRevenue();
         }
 
         return(super.onOptionsItemSelected(item));
+    }
+
+    private void SaveRevenue() {
+        if (!IsAllCorrect()) {
+            return;
+        }
+
+        int    category         = ((Category)spinnerCategory.getSelectedItem()).getId();
+        String dateStr          = date.toString();
+        String description      = editTextDescription.getText().toString();
+        double value            = getValue();
+        int    currency         = ((Currency)spinnerCurrency.getSelectedItem()).getId();
+        int    storage_location = ((StorageLocation)spinnerStorageLocation.getSelectedItem()).getId();
+        int    source           = ((MoneySource)spinnerSource.getSelectedItem()).getId();
+
+        Revenues revenue = new Revenues(value, currency, category, dateStr, description, storage_location, source);
+
+        AppDatabase db          = App.getInstance().getAppDatabase();
+        RevenueDAO revenueDAO = db.revenueDAO();
+
+        revenueDAO.insert(revenue);
+
+        finish();
+    }
+
+    private boolean IsAllCorrect() {
+        if (IsCorrectValue()) {
+            return true;
+        }
+        return false;
+    }
+
+    private boolean IsCorrectValue() {
+        String textValue = editTextValue.getText().toString();
+        try {
+            double value = Double.parseDouble(textValue);
+            if (value <= 0) {
+                return false;
+            }
+        } catch  (NumberFormatException ex) {
+            Log.i(TAG, "catch exception age converting string to int");
+
+            return false;
+        }
+
+        return true;
+    }
+
+    private double getValue() {
+        return Double.parseDouble(editTextValue.getText().toString());
     }
 }

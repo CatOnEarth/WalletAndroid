@@ -2,6 +2,7 @@ package com.snail.wallet.MainScreen.models;
 
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
+import androidx.room.Ignore;
 import androidx.room.PrimaryKey;
 
 @Entity(tableName = "storage_location")
@@ -14,6 +15,11 @@ public class StorageLocation {
 
     public StorageLocation(int id, String location) {
         this.id = id;
+        this.location = location;
+    }
+
+    @Ignore
+    public StorageLocation(String location) {
         this.location = location;
     }
 

@@ -4,9 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Context;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
@@ -22,11 +20,6 @@ import com.snail.wallet.R;
 public class LoginActivity extends AppCompatActivity {
     /**  */
     private final String TAG = this.getClass().getSimpleName();
-
-    /**  */
-    private SharedPreferences mSettings;
-    /**  */
-    public static final String APP_PREFERENCES            = "user_info";
     /** Key to save username in preferences */
     public static final String APP_PREFERENCES_USERNAME   = "user_name";
     /** Key to save user's email in preferences */
@@ -70,10 +63,8 @@ public class LoginActivity extends AppCompatActivity {
         bTextViewOffline.setOnClickListener(view -> {
             Log.i(TAG, "Press TextViewOffline text LoginActivity");
             setLocalUser();
-            int res = startOfflineApp();
+            startOfflineApp();
         });
-
-        mSettings = getSharedPreferences(APP_PREFERENCES, Context.MODE_PRIVATE);
     }
 
     /**
@@ -108,15 +99,14 @@ public class LoginActivity extends AppCompatActivity {
         PermanentStorage.addPropertyString(APP_PREFERENCES_USERNAME, "local");
         PermanentStorage.addPropertyString(APP_PREFERENCES_USER_EMAIL, "local@local.ru");
         PermanentStorage.addPropertyBoolean(APP_PREFERENCES_IS_USER_LOG, true);
+        PermanentStorage.addPropertyBoolean(WalletActivity.APP_PREFERENCES_IS_INIT_DB, false);
     }
 
-    public int startOfflineApp() {
+    public void startOfflineApp() {
         Intent intent = new Intent(LoginActivity.this, WalletActivity.class);
         intent.putExtra(APP_PREFERENCES_USERNAME, "local");
         intent.putExtra(APP_PREFERENCES_USER_EMAIL, "local@local.ru");
         startActivity(intent);
         finish();
-
-        return 0;
     }
 }

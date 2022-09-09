@@ -15,7 +15,10 @@
         android:theme="@style/Theme.Wallet"
         tools:targetApi="31">
         <activity
-            android:name=".ExpensesAddActivity"
+            android:name=".MainScreen.activities.AddingVariantsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".MainScreen.activities.ExpensesAddActivity"
             android:exported="false" />
         <activity
             android:name=".MainScreen.activities.RevenueAddActivity"

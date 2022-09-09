@@ -2,6 +2,7 @@ package com.snail.wallet.MainScreen.models;
 
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
+import androidx.room.Ignore;
 import androidx.room.PrimaryKey;
 
 @Entity(tableName = "category")
@@ -16,6 +17,12 @@ public class Category {
 
     public Category(int id, int type, String name) {
         this.id = id;
+        this.type = type;
+        this.name = name;
+    }
+
+    @Ignore
+    public Category(int type, String name) {
         this.type = type;
         this.name = name;
     }

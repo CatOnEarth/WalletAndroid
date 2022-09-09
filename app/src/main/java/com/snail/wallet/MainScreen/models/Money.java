@@ -2,6 +2,7 @@ package com.snail.wallet.MainScreen.models;
 
 
 import androidx.room.ColumnInfo;
+import androidx.room.Ignore;
 import androidx.room.PrimaryKey;
 
 public class Money {
@@ -21,6 +22,15 @@ public class Money {
 
     public Money(int id, double value, int currency, int category, String date, String description) {
         this.id = id;
+        this.value = value;
+        this.currency = currency;
+        this.category = category;
+        this.date = date;
+        this.description = description;
+    }
+
+    @Ignore
+    public Money(double value, int currency, int category, String date, String description) {
         this.value = value;
         this.currency = currency;
         this.category = category;

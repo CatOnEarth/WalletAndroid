@@ -17,9 +17,6 @@ public interface RevenueDAO {
     @Query("SELECT * FROM revenues")
     List<Revenues> getAll();
 
-    @Query("SELECT id, value, currency, category, description FROM revenues")
-    List<Money> getValues();
-
     @Query("SELECT value, currency FROM revenues")
     List<Coin> getSum();
 

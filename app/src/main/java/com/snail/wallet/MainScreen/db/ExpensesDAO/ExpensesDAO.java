@@ -17,9 +17,6 @@ public interface ExpensesDAO {
     @Query("SELECT * FROM expenses")
     List<Expenses> getAll();
 
-    @Query("SELECT id, value, currency, category, description FROM expenses")
-    List<Money> getValues();
-
     @Query("SELECT value, currency FROM expenses")
     List<Coin> getSum();
 

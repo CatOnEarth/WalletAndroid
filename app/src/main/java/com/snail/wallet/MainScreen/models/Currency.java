@@ -2,6 +2,7 @@ package com.snail.wallet.MainScreen.models;
 
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
+import androidx.room.Ignore;
 import androidx.room.PrimaryKey;
 
 @Entity(tableName = "currency")
@@ -16,6 +17,12 @@ public class Currency {
 
     public Currency(int id, String name, String symbol) {
         this.id = id;
+        this.name = name;
+        this.symbol = symbol;
+    }
+
+    @Ignore
+    public Currency(String name, String symbol) {
         this.name = name;
         this.symbol = symbol;
     }
