@@ -20,23 +20,11 @@ public class Date {
         return date_day;
     }
 
-    public void setDate_day(int date_day) {
-        this.date_day = date_day;
-    }
-
     public int getDate_month() {
         return date_month;
     }
 
-    public void setDate_month(int date_month) {
-        this.date_month = date_month;
-    }
-
     public int getDate_year() {
         return date_year;
-    }
-
-    public void setDate_year(int date_year) {
-        this.date_year = date_year;
     }
 }

@@ -3,6 +3,10 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/development/android/Wallet/app/src/main/res/layout-land/activity_login.xml" value="0.5" />
+        <entry key="..\:/development/android/Wallet/app/src/main/res/layout-land/activity_login_portrain.xml" value="0.11623931623931624" />
+        <entry key="..\:/development/android/Wallet/app/src/main/res/layout-port/activity_login_portrait.xml" value="0.14661654135338345" />
+        <entry key="..\:/development/android/Wallet/app/src/main/res/layout/activity_add.xml" value="0.14703425229741018" />
         <entry key="..\:/development/android/Wallet/app/src/main/res/layout/activity_adding_variants.xml" value="0.12318840579710146" />
         <entry key="..\:/development/android/Wallet/app/src/main/res/layout/activity_expenses_add.xml" value="0.12318840579710146" />
         <entry key="..\:/development/android/Wallet/app/src/main/res/layout/activity_login.xml" value="0.5" />
@@ -27,6 +31,7 @@
         <entry key="..\:/development/android/Wallet/app/src/main/res/layout/item_spinner.xml" value="0.12318840579710146" />
         <entry key="..\:/development/android/Wallet/app/src/main/res/layout/item_storage_location_spinner.xml" value="0.12318840579710146" />
         <entry key="..\:/development/android/Wallet/app/src/main/res/layout/nav_header_wallet.xml" value="0.17831813576494426" />
+        <entry key="..\:/development/android/Wallet/app/src/main/res/layout/test_orientation_landscape.xml" value="0.14661654135338345" />
         <entry key="..\:/development/android/Wallet/app/src/main/res/menu/action_menu.xml" value="0.2518518518518518" />
         <entry key="..\:/development/android/Wallet/app/src/main/res/menu/activity_main_drawer.xml" value="0.36102564102564105" />
         <entry key="..\:/development/android/Wallet/app/src/main/res/menu/add_revenue_menu.xml" value="0.18802083333333333" />

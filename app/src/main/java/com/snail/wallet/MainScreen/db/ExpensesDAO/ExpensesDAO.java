@@ -8,7 +8,6 @@ import androidx.room.Update;
 
 import com.snail.wallet.MainScreen.models.money.Coin;
 import com.snail.wallet.MainScreen.models.money.Expenses;
-import com.snail.wallet.MainScreen.models.money.Revenues;
 import com.snail.wallet.MainScreen.models.parametrs.Date;
 
 import java.util.List;

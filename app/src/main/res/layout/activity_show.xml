@@ -1,92 +1,61 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#fef1a2"
+    android:orientation="vertical"
     tools:context=".MainScreen.activities.ShowActivity">
 
     <TextView
         android:id="@+id/textViewCategoryShow"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="37dp"
-        android:layout_marginTop="60dp"
-        android:layout_marginEnd="293dp"
-        android:layout_marginBottom="92dp"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="120dp"
         android:text="@string/textCategory"
-        android:textColor="#33691E"
-        android:textSize="16sp"
-        app:layout_constraintBottom_toTopOf="@+id/textViewValueShow"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:textColor="#000000"
+        android:textSize="24sp" />
 
     <TextView
         android:id="@+id/textViewValueShow"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="37dp"
-        android:layout_marginEnd="320dp"
-        android:layout_marginBottom="76dp"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="50dp"
         android:text="@string/textValue"
-        android:textColor="#33691E"
-        android:textSize="16sp"
-        app:layout_constraintBottom_toTopOf="@+id/textViewStorageLocationShow"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
-
-    <TextView
-        android:id="@+id/textViewStorageLocationShow"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="37dp"
-        android:layout_marginTop="272dp"
-        android:layout_marginEnd="248dp"
-        android:layout_marginBottom="60dp"
-        android:text="@string/textStorageLocation"
-        android:textColor="#33691E"
-        android:textSize="16sp"
-        app:layout_constraintBottom_toTopOf="@+id/textViewDescriptionShow"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/textViewDescriptionShow"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="37dp"
-        android:layout_marginEnd="297dp"
-        android:layout_marginBottom="352dp"
-        android:text="@string/HintDescription"
-        android:textColor="#33691E"
-        android:textSize="16sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent" />
+        android:textColor="#000000"
+        android:textSize="24sp" />
 
     <TextView
         android:id="@+id/textViewDataShow"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="39dp"
-        android:layout_marginTop="35dp"
-        android:layout_marginEnd="314dp"
-        android:layout_marginBottom="39dp"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="50dp"
         android:text="@string/textData"
-        android:textColor="#33691E"
-        android:textSize="16sp"
-        app:layout_constraintBottom_toTopOf="@+id/textViewValueShow"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewCategoryShow"
-        app:layout_constraintVertical_bias="1.0" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        android:textColor="#000000"
+        android:textSize="24sp" />
+
+    <TextView
+        android:id="@+id/textViewStorageLocationShow"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="50dp"
+        android:text="@string/textStorageLocation"
+        android:textColor="#000000"
+        android:textSize="24sp" />
+
+    <TextView
+        android:id="@+id/textViewDescriptionShow"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="50dp"
+        android:text="@string/HintDescription"
+        android:textColor="#000000"
+        android:textSize="24sp" />
+
+</LinearLayout>

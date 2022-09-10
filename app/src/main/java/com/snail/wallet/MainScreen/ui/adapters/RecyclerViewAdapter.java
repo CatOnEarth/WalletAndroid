@@ -31,7 +31,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     /** Context */
     private final Context mContext;
 
-    private int typeData;
+    private final int typeData;
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
         /** TextView description revenue  in list */
@@ -85,7 +85,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
      * @param position The position of the item within the adapter's data set.
      */
     @Override
-    public void onBindViewHolder(ViewHolder viewHolder, final int position) {
+    public void onBindViewHolder(@NonNull ViewHolder viewHolder, final int position) {
         AppDatabase db = App.getInstance().getAppDatabase();
         CategoryDAO categoryDAO = db.categoryDAO();
         CurrencyDAO currencyDAO = db.currencyDAO();

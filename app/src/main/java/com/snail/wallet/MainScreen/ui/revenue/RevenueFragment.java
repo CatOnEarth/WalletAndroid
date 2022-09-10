@@ -32,11 +32,9 @@ public class RevenueFragment extends Fragment {
 
     private FragmentRevenueBinding binding;
 
-    private RecyclerView   recyclerView;
     private RecyclerViewAdapter recyclerViewAdapter;
 
     private RevenueDAO revenueDAO;
-    private AppDatabase db;
     private List<Revenues> revenues;
 
     @SuppressLint("NotifyDataSetChanged")
@@ -46,12 +44,12 @@ public class RevenueFragment extends Fragment {
         binding = FragmentRevenueBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
-        recyclerView = binding.recyclerViewRevenue;
+        RecyclerView recyclerView = binding.recyclerViewRevenue;
 
-        db          = App.getInstance().getAppDatabase();
+        AppDatabase db = App.getInstance().getAppDatabase();
         revenueDAO = db.revenueDAO();
 
-        revenues = new ArrayList<Revenues>();
+        revenues = new ArrayList<>();
         revenues.addAll(revenueDAO.getAll());
         recyclerViewAdapter = new RecyclerViewAdapter(ADDING_REVENUE, revenues, getContext());
 
@@ -60,17 +58,15 @@ public class RevenueFragment extends Fragment {
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
 
         FloatingActionButton bAddRevenue = binding.floatingActionButtonAdd;
-        bAddRevenue.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Log.i(TAG, "floating button clicked");
-                StartAddActivity();
-            }
+        bAddRevenue.setOnClickListener(view -> {
+            Log.i(TAG, "floating button clicked");
+            StartAddActivity();
         });
 
         return root;
     }
 
+    @SuppressLint("NotifyDataSetChanged")
     @Override
     public void onResume() {
         super.onResume();

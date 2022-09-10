@@ -2,6 +2,7 @@ package com.snail.wallet.MainScreen.ui.expenses;
 
 import static com.snail.wallet.MainScreen.activities.AddActivity.ADDING_EXPENSES;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -31,11 +32,9 @@ public class ExpensesFragment extends Fragment {
 
     private FragmentExpensesBinding binding;
 
-    private RecyclerView        recyclerView;
     private RecyclerViewAdapter recyclerViewAdapter;
 
     private ExpensesDAO    expensesDAO;
-    private AppDatabase    db;
     private List<Expenses> expenses;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
@@ -44,9 +43,9 @@ public class ExpensesFragment extends Fragment {
         binding = FragmentExpensesBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
-        recyclerView = binding.recyclerViewExpenses;
+        RecyclerView recyclerView = binding.recyclerViewExpenses;
 
-        db          = App.getInstance().getAppDatabase();
+        AppDatabase db = App.getInstance().getAppDatabase();
         expensesDAO = db.expensesDAO();
 
         expenses = new ArrayList<>();
@@ -72,6 +71,7 @@ public class ExpensesFragment extends Fragment {
         startActivity(intent);
     }
 
+    @SuppressLint("NotifyDataSetChanged")
     @Override
     public void onResume() {
         super.onResume();

@@ -109,9 +109,7 @@ public class ShowActivity extends AppCompatActivity {
                 (dialog, which) -> deleteItem());
 
         alertDialog.setNegativeButton("Нет",
-                (dialog, which) -> {
-                    dialog.cancel();
-                });
+                (dialog, which) -> dialog.cancel());
 
         alertDialog.show();
     }

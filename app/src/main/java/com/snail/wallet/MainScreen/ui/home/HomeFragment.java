@@ -23,8 +23,6 @@ import com.snail.wallet.databinding.FragmentHomeBinding;
 
 import java.text.DecimalFormat;
 import java.util.List;
-import java.util.Objects;
-
 
 public class HomeFragment extends Fragment {
 
@@ -70,19 +68,9 @@ public class HomeFragment extends Fragment {
         ImageButton bAddRevenue  = root.findViewById(R.id.bAddRevenuesHome);
         ImageButton bAddExpenses = root.findViewById(R.id.bAddExpensesHome);
 
-        bAddRevenue.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startAddActivity(AddActivity.ADDING_REVENUE);
-            }
-        });
+        bAddRevenue.setOnClickListener(view -> startAddActivity(AddActivity.ADDING_REVENUE));
 
-        bAddExpenses.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startAddActivity(AddActivity.ADDING_EXPENSES);
-            }
-        });
+        bAddExpenses.setOnClickListener(view -> startAddActivity(AddActivity.ADDING_EXPENSES));
     }
 
     private void startAddActivity(int type_add) {

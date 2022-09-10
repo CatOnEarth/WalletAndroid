@@ -8,30 +8,30 @@
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/ic_wallet_icon"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@mipmap/ic_wallet_icon_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Wallet"
         tools:targetApi="31">
         <activity
             android:name=".MainScreen.activities.ShowActivity"
-            android:screenOrientation="portrait"
+            android:screenOrientation="fullSensor"
             android:exported="false" />
         <activity
             android:name=".MainScreen.activities.AddActivity"
-            android:screenOrientation="portrait"
+            android:screenOrientation="fullSensor"
             android:exported="false" />
         <activity
             android:name=".MainScreen.WalletActivity"
             android:exported="false"
             android:label="@string/title_activity_wallet"
-            android:screenOrientation="portrait"
+            android:screenOrientation="fullSensor"
             android:theme="@style/Theme.Wallet.NoActionBar" />
         <activity
             android:name=".LoginScreen.LoginActivity"
             android:exported="true"
-            android:screenOrientation="portrait">
+            android:screenOrientation="fullSensor">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

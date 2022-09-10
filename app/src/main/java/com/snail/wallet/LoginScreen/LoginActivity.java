@@ -2,6 +2,7 @@ package com.snail.wallet.LoginScreen;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -67,11 +68,6 @@ public class LoginActivity extends AppCompatActivity {
         });
     }
 
-    /**
-     *
-     * @param menu
-     * @return
-     */
     @Override
     public boolean onCreateOptionsMenu(@NonNull Menu menu) {
         Log.i(TAG, "Start onCreateOptionsMenu method LoginActivity");
@@ -79,17 +75,12 @@ public class LoginActivity extends AppCompatActivity {
         return true;
     }
 
-    /**
-     * 
-     * @param item
-     * @return
-     */
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         Log.i(TAG, "Start onOptionsItemSelected method LoginActivity");
-        if (item.getItemId() == R.id.about) {
+        if (item.getItemId() == R.id.about_login_activity) {
             Log.i(TAG, "About choose in menu actionBar");
-            return (true);
+            aboutDialog();
         }
 
         return(super.onOptionsItemSelected(item));
@@ -108,5 +99,17 @@ public class LoginActivity extends AppCompatActivity {
         intent.putExtra(APP_PREFERENCES_USER_EMAIL, "local@local.ru");
         startActivity(intent);
         finish();
+    }
+
+    private void aboutDialog() {
+        AlertDialog.Builder alertDialog = new AlertDialog.Builder(LoginActivity.this);
+
+        alertDialog.setTitle("О приложении");
+        alertDialog.setMessage("О приложении");
+
+        alertDialog.setPositiveButton("Ок",
+                (dialog, which) -> dialog.cancel());
+
+        alertDialog.show();
     }
 }

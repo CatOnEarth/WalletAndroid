@@ -23,8 +23,4 @@ public class Revenues extends Money {
     public int getStorage_location() {
         return storage_location;
     }
-
-    public void setStorage_location(int storage_location) {
-        this.storage_location = storage_location;
-    }
 }

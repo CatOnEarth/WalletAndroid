@@ -2,7 +2,9 @@ package com.snail.wallet.MainScreen;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 
@@ -21,6 +23,7 @@ import com.snail.wallet.MainScreen.models.parametrs.StorageLocation;
 import com.snail.wallet.R;
 import com.snail.wallet.databinding.ActivityWalletBinding;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
@@ -30,6 +33,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 
 public class WalletActivity extends AppCompatActivity {
+    private final String TAG = this.getClass().getSimpleName();
+
     private AppBarConfiguration   mAppBarConfiguration;
 
     public static final int CODE_CURRENCY_RUBLE        = 1;
@@ -86,6 +91,16 @@ public class WalletActivity extends AppCompatActivity {
     }
 
     @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        Log.i(TAG, "Start onOptionsItemSelected method");
+        if (item.getItemId() == R.id.about_wallet_activity) {
+            aboutDialog();
+        }
+
+        return(super.onOptionsItemSelected(item));
+    }
+
+    @Override
     public boolean onSupportNavigateUp() {
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_wallet);
         return NavigationUI.navigateUp(navController, mAppBarConfiguration)
@@ -124,5 +139,17 @@ public class WalletActivity extends AppCompatActivity {
         storageLocationDAO.insert(new StorageLocation( "Банк"));
         storageLocationDAO.insert(new StorageLocation( "Кошелек"));
         storageLocationDAO.insert(new StorageLocation( "Сейф"));
+    }
+
+    private void aboutDialog() {
+        AlertDialog.Builder alertDialog = new AlertDialog.Builder(WalletActivity.this);
+
+        alertDialog.setTitle("О приложении");
+        alertDialog.setMessage("О приложении");
+
+        alertDialog.setPositiveButton("Ок",
+                (dialog, which) -> dialog.cancel());
+
+        alertDialog.show();
     }
 }

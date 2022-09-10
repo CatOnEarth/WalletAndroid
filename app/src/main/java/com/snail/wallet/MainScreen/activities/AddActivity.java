@@ -13,6 +13,7 @@ import android.app.DatePickerDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.InputFilter;
 import android.text.format.DateUtils;
 import android.util.Log;
 import android.view.Menu;
@@ -40,7 +41,6 @@ import com.snail.wallet.MainScreen.models.parametrs.StorageLocation;
 import com.snail.wallet.MainScreen.ui.adapters.SpinnerAdapter;
 import com.snail.wallet.R;
 
-import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 
@@ -310,6 +310,10 @@ public class AddActivity extends AppCompatActivity {
         LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(
                 LinearLayout.LayoutParams.MATCH_PARENT,
                 LinearLayout.LayoutParams.MATCH_PARENT);
+        int maxLength        = 32;
+        InputFilter[] fArray = new InputFilter[1];
+        fArray[0]            = new InputFilter.LengthFilter(maxLength);
+        input.setFilters(fArray);
         input.setLayoutParams(lp);
         alertDialog.setView(input);
 

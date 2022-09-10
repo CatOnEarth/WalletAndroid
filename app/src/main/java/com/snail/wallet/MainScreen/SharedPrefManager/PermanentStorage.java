@@ -1,5 +1,6 @@
 package com.snail.wallet.MainScreen.SharedPrefManager;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.SharedPreferences;
 
@@ -8,10 +9,11 @@ public class PermanentStorage {
 
     private static SharedPreferences settings = null;
     private static SharedPreferences.Editor editor = null;
+    @SuppressLint("StaticFieldLeak")
     private static Context context = null;
 
-    public static void init( Context cntxt ){
-        context = cntxt;
+    public static void init( Context cxt ){
+        context = cxt;
     }
 
     private static void init(){
@@ -27,34 +29,12 @@ public class PermanentStorage {
         editor.apply();
     }
 
-    public static void addPropertyInt( String name, int value ){
-        if( settings == null ){
-            init();
-        }
-        editor.putInt( name, value );
-        editor.apply();
-    }
-
     public static void addPropertyBoolean( String name, boolean value ){
         if( settings == null ){
             init();
         }
         editor.putBoolean( name, value );
         editor.apply();
-    }
-
-    public static String getPropertyString( String name ){
-        if( settings == null ){
-            init();
-        }
-        return settings.getString( name, null );
-    }
-
-    public static int getPropertyInt( String name ){
-        if( settings == null ){
-            init();
-        }
-        return settings.getInt( name, -1 );
     }
 
     public static Boolean getPropertyBoolean( String name ){
