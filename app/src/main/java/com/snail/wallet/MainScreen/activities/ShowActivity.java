@@ -27,8 +27,6 @@ import com.snail.wallet.MainScreen.models.money.Revenues;
 import com.snail.wallet.MainScreen.models.parametrs.Date;
 import com.snail.wallet.R;
 
-import java.util.List;
-
 public class ShowActivity extends AppCompatActivity {
     private final String TAG = this.getClass().getSimpleName();
 
@@ -108,51 +106,62 @@ public class ShowActivity extends AppCompatActivity {
     private void initData() {
         AppDatabase db = App.getInstance().getAppDatabase();
 
-        String category    = "";
-        String date        = "";
-        double value       = 0;
-        String value_str   = "";
-        String description = "";
-
-        String date_item   = "";
-        Date   custom_date;
-
-        CategoryDAO categoryDAO = db.categoryDAO();
-
         if (type_item == ADDING_REVENUE) {
-            String storageLocation = "";
-            StorageLocationDAO storageLocationDAO = db.storageLocationDAO();
-            RevenueDAO revenueDAO = db.revenueDAO();
-            Revenues revenues     = revenueDAO.getById(id_item);
-            category = getResources().getText(R.string.textCategory) + ": " +
-                       categoryDAO.getCategoryById(revenues.getCategory()).getName();
-            storageLocation = getResources().getText(R.string.textStorageLocation) + ": " +
-                    storageLocationDAO.getLocationById(revenues.getStorage_location());
-            value = revenues.getValue();
-            custom_date = revenueDAO.getDateById(id_item);
-            date_item = getResources().getText(R.string.textData) + ": " + custom_date.getDate_day() + "." +
-                    custom_date.getDate_month() + "." + custom_date.getDate_year();
-            description = getResources().getText(R.string.HintDescription) + ": " + revenues.getDescription();
-
-            textViewStorageLocation.setText(storageLocation);
+            initDataRevenue(db);
         } else if (type_item == ADDING_EXPENSES) {
-            String storageLocation;
-            ExpensesDAO expensesDAO = db.expensesDAO();
-            Expenses expenses       = expensesDAO.getById(id_item);
-            category = categoryDAO.getCategoryById(expenses.getCategory()).getName();
-            value = expenses.getValue();
-            custom_date = expensesDAO.getDateById(id_item);
-            date_item = getResources().getText(R.string.textData) + ": " + custom_date.getDate_day() + "." +
-                    custom_date.getDate_month() + "." + custom_date.getDate_year();
-            description = getResources().getText(R.string.HintDescription) + ": " + expenses.getDescription();
+            initDataExpenses(db);
         }
+    }
 
-        value_str = getResources().getText(R.string.textData) + ": " + String.valueOf(value);
+    private void initDataRevenue(AppDatabase db) {
+        StorageLocationDAO storageLocationDAO = db.storageLocationDAO();
+        CategoryDAO categoryDAO               = db.categoryDAO();
+        RevenueDAO  revenueDAO                = db.revenueDAO();
+        Date        custom_date               = revenueDAO.getDateById(id_item);
+        Revenues    revenues                  = revenueDAO.getById(id_item);
 
+        String category        = getResources().getText(R.string.textCategory) + ": " +
+                                   categoryDAO.getCategoryById(revenues.getCategory()).getName();
+
+        String storageLocation = getResources().getText(R.string.textStorageLocation) + ": " +
+                                   storageLocationDAO.getLocationById(revenues.getStorage_location());
+
+        String value           = getResources().getText(R.string.textData) + ": " + revenues.getValue();
+
+        String date_item       = getResources().getText(R.string.textData) + ": " + custom_date.getDate_day() + "." +
+                                   custom_date.getDate_month() + "." + custom_date.getDate_year();
+
+        String description     = getResources().getText(R.string.HintDescription) + ": " +
+                                   revenues.getDescription();
+
+        textViewCategory.setText(category);
+        textViewStorageLocation.setText(storageLocation);
         textViewData.setText(date_item);
-        textViewValue.setText(value_str);
+        textViewValue.setText(value);
         textViewDescription.setText(description);
+    }
 
+    private void initDataExpenses(AppDatabase db) {
+        CategoryDAO categoryDAO               = db.categoryDAO();
+        ExpensesDAO expensesDAO               = db.expensesDAO();
+        Date        custom_date               = expensesDAO.getDateById(id_item);
+        Expenses    expenses                  = expensesDAO.getById(id_item);
+
+        String category        = getResources().getText(R.string.textCategory) + ": " +
+                categoryDAO.getCategoryById(expenses.getCategory()).getName();
+
+        String value           = getResources().getText(R.string.textData) + ": " + expenses.getValue();
+
+        String date_item       = getResources().getText(R.string.textData) + ": " + custom_date.getDate_day() + "." +
+                custom_date.getDate_month() + "." + custom_date.getDate_year();
+
+        String description     = getResources().getText(R.string.HintDescription) + ": " +
+                expenses.getDescription();
+
+        textViewCategory.setText(category);
+        textViewData.setText(date_item);
+        textViewValue.setText(value);
+        textViewDescription.setText(description);
     }
 
     private void startEditingActivity() {
