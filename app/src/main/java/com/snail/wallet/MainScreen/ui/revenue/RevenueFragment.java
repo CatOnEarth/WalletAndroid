@@ -77,7 +77,7 @@ public class RevenueFragment extends Fragment {
         Log.i(TAG, "onResume Fragment");
         revenues.clear();
         revenues.addAll(revenueDAO.getAll());
-        recyclerViewAdapter.notifyItemRangeChanged(0, revenues.size());
+        recyclerViewAdapter.notifyDataSetChanged();
     }
 
     private void StartAddActivity() {

@@ -74,9 +74,26 @@ public class ShowActivity extends AppCompatActivity {
         } else if (item.getItemId() == R.id.menuEdit) {
             startEditingActivity();
             finish();
+        } else if (item.getItemId() == R.id.menuDelete) {
+            deleteItem();
+            finish();
         }
 
         return(super.onOptionsItemSelected(item));
+    }
+
+    private void deleteItem() {
+        AppDatabase db = App.getInstance().getAppDatabase();
+
+        if (type_item == ADDING_REVENUE) {
+            RevenueDAO revenueDAO = db.revenueDAO();
+            revenueDAO.deleteById(id_item);
+        } else if (type_item == ADDING_EXPENSES) {
+            ExpensesDAO expensesDAO = db.expensesDAO();
+            expensesDAO.deleteById(id_item);
+        } else {
+            finish();
+        }
     }
 
     private void initActionBar() {

@@ -35,4 +35,7 @@ public interface ExpensesDAO {
 
     @Delete
     void delete(Expenses expenses);
+
+    @Query("DELETE FROM expenses WHERE id = :id")
+    void deleteById(int id);
 }

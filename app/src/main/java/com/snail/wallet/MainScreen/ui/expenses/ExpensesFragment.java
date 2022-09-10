@@ -19,9 +19,7 @@ import com.snail.wallet.MainScreen.activities.AddActivity;
 import com.snail.wallet.MainScreen.db.App;
 import com.snail.wallet.MainScreen.db.AppDatabase;
 import com.snail.wallet.MainScreen.db.ExpensesDAO.ExpensesDAO;
-import com.snail.wallet.MainScreen.db.RevenueDAO.RevenueDAO;
 import com.snail.wallet.MainScreen.models.money.Expenses;
-import com.snail.wallet.MainScreen.models.money.Revenues;
 import com.snail.wallet.MainScreen.ui.adapters.RecyclerViewAdapter;
 import com.snail.wallet.databinding.FragmentExpensesBinding;
 
@@ -80,7 +78,7 @@ public class ExpensesFragment extends Fragment {
         Log.i(TAG, "onResume Fragment");
         expenses.clear();
         expenses.addAll(expensesDAO.getAll());
-        recyclerViewAdapter.notifyItemRangeChanged(0, expenses.size());
+        recyclerViewAdapter.notifyDataSetChanged();
     }
 
     @Override

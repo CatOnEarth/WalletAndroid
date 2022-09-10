@@ -30,4 +30,5 @@
     <string name="textSelectDate">Выберите дату</string>
     <string name="menuEdit">Редактировать</string>
     <string name="textData">Дата</string>
+    <string name="menuDelete">Удалить</string>
 </resources>

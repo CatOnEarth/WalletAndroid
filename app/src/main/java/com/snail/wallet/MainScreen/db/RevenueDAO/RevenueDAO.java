@@ -34,4 +34,7 @@ public interface RevenueDAO {
 
     @Delete
     void delete(Revenues revenue);
+
+    @Query("DELETE FROM revenues WHERE id = :id")
+    void deleteById(int id);
 }
