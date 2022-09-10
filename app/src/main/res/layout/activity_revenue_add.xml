@@ -70,7 +70,7 @@
         app:layout_constraintVertical_bias="0.16" />
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/buttonAddCategory"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Добавить"
@@ -177,7 +177,7 @@
         app:layout_constraintVertical_bias="0.57" />
 
     <Button
-        android:id="@+id/button4"
+        android:id="@+id/buttonAddStorageLocation"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Добавить"

@@ -3,7 +3,7 @@
     <string name="about">О приложении</string>
     <string name="TextEmail">Email</string>
     <string name="TextPassword">Пароль</string>
-    <string name="TextContinueOffline">Проодолжить локально</string>
+    <string name="TextContinueOffline">Продолжить локально</string>
     <string name="TextRegistration">Регистрация</string>
     <string name="TextLogIn">Войти</string>
     <string name="title_activity_wallet">WalletActivity</string>

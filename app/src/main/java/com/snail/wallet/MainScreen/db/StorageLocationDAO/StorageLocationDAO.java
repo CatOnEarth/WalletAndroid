@@ -7,6 +7,7 @@ import androidx.room.Query;
 import androidx.room.Update;
 
 
+import com.snail.wallet.MainScreen.models.MoneySource;
 import com.snail.wallet.MainScreen.models.StorageLocation;
 
 import java.util.List;
@@ -15,6 +16,9 @@ import java.util.List;
 public interface StorageLocationDAO {
     @Query("SELECT * FROM storage_location")
     List<StorageLocation> getAll();
+
+    @Query("SELECT * FROM storage_location WHERE location = :location")
+    List<MoneySource> getByStorageLocationName(String location);
 
     @Insert
     void insert(StorageLocation storage_location);

@@ -16,6 +16,9 @@ public interface MoneySourceDAO {
     @Query("SELECT * FROM money_source")
     List<MoneySource> getAll();
 
+    @Query("SELECT * FROM money_source WHERE source = :source")
+    List<MoneySource> getBySourceName(String source);
+
     @Insert
     void insert(MoneySource moneySource);
 
