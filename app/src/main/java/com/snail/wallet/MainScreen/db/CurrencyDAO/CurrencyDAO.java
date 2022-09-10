@@ -9,12 +9,15 @@ import androidx.room.Update;
 
 import java.util.List;
 
-import com.snail.wallet.MainScreen.models.Currency;
+import com.snail.wallet.MainScreen.models.parametrs.Currency;
 
 @Dao
 public interface CurrencyDAO {
     @Query("SELECT * FROM currency")
     List<Currency> getAll();
+
+    @Query("SELECT * FROM currency WHERE id = :id")
+    Currency getCurrencyById(int id);
 
     @Insert
     void insert(Currency currency);

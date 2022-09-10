@@ -8,7 +8,7 @@ import com.snail.wallet.MainScreen.db.App;
 import com.snail.wallet.MainScreen.db.AppDatabase;
 import com.snail.wallet.MainScreen.db.ExpensesDAO.ExpensesDAO;
 import com.snail.wallet.MainScreen.db.RevenueDAO.RevenueDAO;
-import com.snail.wallet.MainScreen.models.Coin;
+import com.snail.wallet.MainScreen.models.money.Coin;
 
 import java.util.List;
 

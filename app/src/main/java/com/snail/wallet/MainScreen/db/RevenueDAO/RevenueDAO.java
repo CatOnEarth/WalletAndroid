@@ -6,9 +6,8 @@ import androidx.room.Insert;
 import androidx.room.Query;
 import androidx.room.Update;
 
-import com.snail.wallet.MainScreen.models.Coin;
-import com.snail.wallet.MainScreen.models.Money;
-import com.snail.wallet.MainScreen.models.Revenues;
+import com.snail.wallet.MainScreen.models.money.Coin;
+import com.snail.wallet.MainScreen.models.money.Revenues;
 
 import java.util.List;
 

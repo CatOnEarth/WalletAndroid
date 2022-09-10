@@ -5,117 +5,82 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#fef1a2"
-    tools:context=".MainScreen.activities.RevenueAddActivity">
-
-    <Button
-        android:id="@+id/buttonAddSource"
-        android:layout_width="108dp"
-        android:layout_height="38dp"
-        android:text="Добавить"
-        android:textSize="12sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.6"
-        app:layout_constraintStart_toEndOf="@+id/spinnerSourceRevenue"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.075" />
-
-    <TextView
-        android:id="@+id/textViewRevenueSource"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="Источник"
-        app:layout_constraintBottom_toTopOf="@+id/spinnerSourceRevenue"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.045"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
-
-    <Spinner
-        android:id="@+id/spinnerSourceRevenue"
-        android:layout_width="276dp"
-        android:layout_height="31dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.125"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.085" />
+    tools:context=".MainScreen.activities.AddActivity">
 
     <TextView
         android:id="@+id/textViewDateSelectedRevenue"
         android:layout_width="wrap_content"
         android:layout_height="37dp"
-        android:text="08.09.2022"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.071"
+        app:layout_constraintHorizontal_bias="0.099"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.191" />
+        app:layout_constraintVertical_bias="0.211" />
 
     <TextView
-        android:id="@+id/textView4"
+        android:id="@+id/textViewSelectDateRevenue"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Выберите дату"
+        android:text="@string/textSelectDate"
+        android:textColor="#33691E"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.053"
+        app:layout_constraintHorizontal_bias="0.092"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.16" />
+        app:layout_constraintVertical_bias="0.179" />
 
     <Button
         android:id="@+id/buttonAddCategory"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Добавить"
-        android:textSize="10sp"
+        android:text="@string/textButtonAdd"
+        android:textSize="12sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.666"
+        app:layout_constraintHorizontal_bias="0.523"
         app:layout_constraintStart_toEndOf="@+id/spinnerCategoryRevenue"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.295" />
+        app:layout_constraintVertical_bias="0.062" />
 
     <Spinner
         android:id="@+id/spinnerCategoryRevenue"
-        android:layout_width="283dp"
-        android:layout_height="35dp"
+        android:layout_width="270dp"
+        android:layout_height="48dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.125"
+        app:layout_constraintHorizontal_bias="0.203"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.308" />
+        app:layout_constraintVertical_bias="0.067" />
 
     <TextView
         android:id="@+id/textViewCategoryRevenue"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Категория"
+        android:text="@string/textCategory"
+        android:textColor="#33691E"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.052"
+        app:layout_constraintHorizontal_bias="0.084"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.275" />
+        app:layout_constraintVertical_bias="0.037" />
 
     <TextView
-        android:id="@+id/textView8"
+        android:id="@+id/textViewValueRevenue"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Сумма"
+        android:text="@string/textValue"
+        android:textColor="#33691E"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.046"
+        app:layout_constraintHorizontal_bias="0.079"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.389" />
+        app:layout_constraintVertical_bias="0.313" />
 
     <EditText
         android:id="@+id/editTextNumberValueRevenue"
@@ -123,93 +88,102 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="number"
+        android:minHeight="48dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.084"
+        app:layout_constraintHorizontal_bias="0.144"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.432" />
+        app:layout_constraintVertical_bias="0.352"
+        android:autofillHints="creditCardNumber"
+        tools:ignore="LabelFor" />
 
     <TextView
         android:id="@+id/textViewCurrencyRevenue"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Валюта"
+        android:text="@string/textCurrency"
+        android:textColor="#33691E"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.659"
+        app:layout_constraintHorizontal_bias="0.698"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.389" />
+        app:layout_constraintVertical_bias="0.313" />
 
     <Spinner
         android:id="@+id/spinnerCurrencyRevenue"
-        android:layout_width="166dp"
-        android:layout_height="45dp"
+        android:layout_width="149dp"
+        android:layout_height="48dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.971"
+        app:layout_constraintHorizontal_bias="0.961"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.431" />
+        app:layout_constraintVertical_bias="0.352" />
 
     <TextView
         android:id="@+id/textViewStorageLocationRevenue"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Место хранения"
+        android:text="@string/textStorageLocation"
+        android:textColor="#33691E"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.055"
+        app:layout_constraintHorizontal_bias="0.095"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.533" />
+        app:layout_constraintVertical_bias="0.469" />
 
     <Spinner
         android:id="@+id/spinnerStorageLocationRevenue"
-        android:layout_width="277dp"
-        android:layout_height="33dp"
+        android:layout_width="270dp"
+        android:layout_height="48dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.126"
+        app:layout_constraintHorizontal_bias="0.205"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.57" />
+        app:layout_constraintVertical_bias="0.514" />
 
     <Button
         android:id="@+id/buttonAddStorageLocation"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Добавить"
-        android:textSize="10sp"
+        android:text="@string/textButtonAdd"
+        android:textSize="12sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.968"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.554" />
+        app:layout_constraintVertical_bias="0.512" />
 
     <EditText
         android:id="@+id/editTextTextDescriptionRevenue"
-        android:layout_width="413dp"
-        android:layout_height="175dp"
+        android:layout_width="373dp"
+        android:layout_height="155dp"
         android:ems="10"
-        android:hint="Описание"
+        android:hint="@string/HintDescription"
         android:inputType="textPersonName"
+        android:textColorHint="#33691E"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.578"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.836" />
+        app:layout_constraintVertical_bias="0.788"
+        android:autofillHints="" />
 
     <Button
         android:id="@+id/bAddRevenueSave"
         android:layout_width="223dp"
-        android:layout_height="42dp"
-        android:text="Сохранить"
+        android:layout_height="48dp"
+        android:text="@string/textButtonSave"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.515"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.957" />
+        app:layout_constraintVertical_bias="0.934" />
 </androidx.constraintlayout.widget.ConstraintLayout>

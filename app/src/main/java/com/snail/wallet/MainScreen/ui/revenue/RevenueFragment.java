@@ -14,11 +14,11 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.snail.wallet.MainScreen.activities.RevenueAddActivity;
+import com.snail.wallet.MainScreen.activities.AddActivity;
 import com.snail.wallet.MainScreen.db.App;
 import com.snail.wallet.MainScreen.db.AppDatabase;
 import com.snail.wallet.MainScreen.db.RevenueDAO.RevenueDAO;
-import com.snail.wallet.MainScreen.models.Revenues;
+import com.snail.wallet.MainScreen.models.money.Revenues;
 import com.snail.wallet.MainScreen.ui.adapters.RevenueAdapter;
 import com.snail.wallet.databinding.FragmentRevenueBinding;
 
@@ -79,7 +79,7 @@ public class RevenueFragment extends Fragment {
     }
 
     private void StartRevenueAddActivity() {
-        Intent intent = new Intent(getContext(), RevenueAddActivity.class);
+        Intent intent = new Intent(getContext(), AddActivity.class);
         startActivity(intent);
     }
 

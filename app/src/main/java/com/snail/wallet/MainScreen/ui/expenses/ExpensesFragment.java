@@ -7,7 +7,6 @@ import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.ViewModelProvider;
 
 import com.snail.wallet.databinding.FragmentExpensesBinding;
 
@@ -17,8 +16,6 @@ public class ExpensesFragment extends Fragment {
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        ExpensesViewModel expensesViewModel =
-                new ViewModelProvider(this).get(ExpensesViewModel.class);
 
         binding = FragmentExpensesBinding.inflate(inflater, container, false);
         View root = binding.getRoot();

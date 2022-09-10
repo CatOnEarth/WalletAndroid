@@ -128,7 +128,7 @@
 \DoxyCodeLine{\Hypertarget{_app_database___impl_8java_source_l00124}00124         \textcolor{keyword}{final} TableInfo \_infoCategory = \textcolor{keyword}{new} TableInfo(\textcolor{stringliteral}{"{}category"{}}, \_columnsCategory, \_foreignKeysCategory, \_indicesCategory);}
 \DoxyCodeLine{\Hypertarget{_app_database___impl_8java_source_l00125}00125         \textcolor{keyword}{final} TableInfo \_existingCategory = TableInfo.read(\_db, \textcolor{stringliteral}{"{}category"{}});}
 \DoxyCodeLine{\Hypertarget{_app_database___impl_8java_source_l00126}00126         \textcolor{keywordflow}{if} (! \_infoCategory.equals(\_existingCategory)) \{}
-\DoxyCodeLine{\Hypertarget{_app_database___impl_8java_source_l00127}00127           \textcolor{keywordflow}{return} \textcolor{keyword}{new} RoomOpenHelper.ValidationResult(\textcolor{keyword}{false}, \textcolor{stringliteral}{"{}category(com.snail.wallet.MainScreen.models.Category).\(\backslash\)n"{}}}
+\DoxyCodeLine{\Hypertarget{_app_database___impl_8java_source_l00127}00127           \textcolor{keywordflow}{return} \textcolor{keyword}{new} RoomOpenHelper.ValidationResult(\textcolor{keyword}{false}, \textcolor{stringliteral}{"{}category(com.snail.wallet.MainScreen.models.parametrs.Category).\(\backslash\)n"{}}}
 \DoxyCodeLine{\Hypertarget{_app_database___impl_8java_source_l00128}00128                   + \textcolor{stringliteral}{"{} Expected:\(\backslash\)n"{}} + \_infoCategory + \textcolor{stringliteral}{"{}\(\backslash\)n"{}}}
 \DoxyCodeLine{\Hypertarget{_app_database___impl_8java_source_l00129}00129                   + \textcolor{stringliteral}{"{} Found:\(\backslash\)n"{}} + \_existingCategory);}
 \DoxyCodeLine{\Hypertarget{_app_database___impl_8java_source_l00130}00130         \}}
@@ -141,7 +141,7 @@
 \DoxyCodeLine{\Hypertarget{_app_database___impl_8java_source_l00137}00137         \textcolor{keyword}{final} TableInfo \_infoCurrency = \textcolor{keyword}{new} TableInfo(\textcolor{stringliteral}{"{}currency"{}}, \_columnsCurrency, \_foreignKeysCurrency, \_indicesCurrency);}
 \DoxyCodeLine{\Hypertarget{_app_database___impl_8java_source_l00138}00138         \textcolor{keyword}{final} TableInfo \_existingCurrency = TableInfo.read(\_db, \textcolor{stringliteral}{"{}currency"{}});}
 \DoxyCodeLine{\Hypertarget{_app_database___impl_8java_source_l00139}00139         \textcolor{keywordflow}{if} (! \_infoCurrency.equals(\_existingCurrency)) \{}
-\DoxyCodeLine{\Hypertarget{_app_database___impl_8java_source_l00140}00140           \textcolor{keywordflow}{return} \textcolor{keyword}{new} RoomOpenHelper.ValidationResult(\textcolor{keyword}{false}, \textcolor{stringliteral}{"{}currency(com.snail.wallet.MainScreen.models.Currency).\(\backslash\)n"{}}}
+\DoxyCodeLine{\Hypertarget{_app_database___impl_8java_source_l00140}00140           \textcolor{keywordflow}{return} \textcolor{keyword}{new} RoomOpenHelper.ValidationResult(\textcolor{keyword}{false}, \textcolor{stringliteral}{"{}currency(com.snail.wallet.MainScreen.models.parametrs.Currency).\(\backslash\)n"{}}}
 \DoxyCodeLine{\Hypertarget{_app_database___impl_8java_source_l00141}00141                   + \textcolor{stringliteral}{"{} Expected:\(\backslash\)n"{}} + \_infoCurrency + \textcolor{stringliteral}{"{}\(\backslash\)n"{}}}
 \DoxyCodeLine{\Hypertarget{_app_database___impl_8java_source_l00142}00142                   + \textcolor{stringliteral}{"{} Found:\(\backslash\)n"{}} + \_existingCurrency);}
 \DoxyCodeLine{\Hypertarget{_app_database___impl_8java_source_l00143}00143         \}}
@@ -158,7 +158,7 @@
 \DoxyCodeLine{\Hypertarget{_app_database___impl_8java_source_l00154}00154         \textcolor{keyword}{final} TableInfo \_infoExpenses = \textcolor{keyword}{new} TableInfo(\textcolor{stringliteral}{"{}expenses"{}}, \_columnsExpenses, \_foreignKeysExpenses, \_indicesExpenses);}
 \DoxyCodeLine{\Hypertarget{_app_database___impl_8java_source_l00155}00155         \textcolor{keyword}{final} TableInfo \_existingExpenses = TableInfo.read(\_db, \textcolor{stringliteral}{"{}expenses"{}});}
 \DoxyCodeLine{\Hypertarget{_app_database___impl_8java_source_l00156}00156         \textcolor{keywordflow}{if} (! \_infoExpenses.equals(\_existingExpenses)) \{}
-\DoxyCodeLine{\Hypertarget{_app_database___impl_8java_source_l00157}00157           \textcolor{keywordflow}{return} \textcolor{keyword}{new} RoomOpenHelper.ValidationResult(\textcolor{keyword}{false}, \textcolor{stringliteral}{"{}expenses(com.snail.wallet.MainScreen.models.Expenses).\(\backslash\)n"{}}}
+\DoxyCodeLine{\Hypertarget{_app_database___impl_8java_source_l00157}00157           \textcolor{keywordflow}{return} \textcolor{keyword}{new} RoomOpenHelper.ValidationResult(\textcolor{keyword}{false}, \textcolor{stringliteral}{"{}expenses(com.snail.wallet.MainScreen.models.money.Expenses).\(\backslash\)n"{}}}
 \DoxyCodeLine{\Hypertarget{_app_database___impl_8java_source_l00158}00158                   + \textcolor{stringliteral}{"{} Expected:\(\backslash\)n"{}} + \_infoExpenses + \textcolor{stringliteral}{"{}\(\backslash\)n"{}}}
 \DoxyCodeLine{\Hypertarget{_app_database___impl_8java_source_l00159}00159                   + \textcolor{stringliteral}{"{} Found:\(\backslash\)n"{}} + \_existingExpenses);}
 \DoxyCodeLine{\Hypertarget{_app_database___impl_8java_source_l00160}00160         \}}
@@ -170,7 +170,7 @@
 \DoxyCodeLine{\Hypertarget{_app_database___impl_8java_source_l00166}00166         \textcolor{keyword}{final} TableInfo \_infoMoneySource = \textcolor{keyword}{new} TableInfo(\textcolor{stringliteral}{"{}money\_source"{}}, \_columnsMoneySource, \_foreignKeysMoneySource, \_indicesMoneySource);}
 \DoxyCodeLine{\Hypertarget{_app_database___impl_8java_source_l00167}00167         \textcolor{keyword}{final} TableInfo \_existingMoneySource = TableInfo.read(\_db, \textcolor{stringliteral}{"{}money\_source"{}});}
 \DoxyCodeLine{\Hypertarget{_app_database___impl_8java_source_l00168}00168         \textcolor{keywordflow}{if} (! \_infoMoneySource.equals(\_existingMoneySource)) \{}
-\DoxyCodeLine{\Hypertarget{_app_database___impl_8java_source_l00169}00169           \textcolor{keywordflow}{return} \textcolor{keyword}{new} RoomOpenHelper.ValidationResult(\textcolor{keyword}{false}, \textcolor{stringliteral}{"{}money\_source(com.snail.wallet.MainScreen.models.MoneySource).\(\backslash\)n"{}}}
+\DoxyCodeLine{\Hypertarget{_app_database___impl_8java_source_l00169}00169           \textcolor{keywordflow}{return} \textcolor{keyword}{new} RoomOpenHelper.ValidationResult(\textcolor{keyword}{false}, \textcolor{stringliteral}{"{}money\_source(com.snail.wallet.MainScreen.models.parametrs.MoneySource).\(\backslash\)n"{}}}
 \DoxyCodeLine{\Hypertarget{_app_database___impl_8java_source_l00170}00170                   + \textcolor{stringliteral}{"{} Expected:\(\backslash\)n"{}} + \_infoMoneySource + \textcolor{stringliteral}{"{}\(\backslash\)n"{}}}
 \DoxyCodeLine{\Hypertarget{_app_database___impl_8java_source_l00171}00171                   + \textcolor{stringliteral}{"{} Found:\(\backslash\)n"{}} + \_existingMoneySource);}
 \DoxyCodeLine{\Hypertarget{_app_database___impl_8java_source_l00172}00172         \}}
@@ -188,7 +188,7 @@
 \DoxyCodeLine{\Hypertarget{_app_database___impl_8java_source_l00184}00184         \textcolor{keyword}{final} TableInfo \_infoRevenues = \textcolor{keyword}{new} TableInfo(\textcolor{stringliteral}{"{}revenues"{}}, \_columnsRevenues, \_foreignKeysRevenues, \_indicesRevenues);}
 \DoxyCodeLine{\Hypertarget{_app_database___impl_8java_source_l00185}00185         \textcolor{keyword}{final} TableInfo \_existingRevenues = TableInfo.read(\_db, \textcolor{stringliteral}{"{}revenues"{}});}
 \DoxyCodeLine{\Hypertarget{_app_database___impl_8java_source_l00186}00186         \textcolor{keywordflow}{if} (! \_infoRevenues.equals(\_existingRevenues)) \{}
-\DoxyCodeLine{\Hypertarget{_app_database___impl_8java_source_l00187}00187           \textcolor{keywordflow}{return} \textcolor{keyword}{new} RoomOpenHelper.ValidationResult(\textcolor{keyword}{false}, \textcolor{stringliteral}{"{}revenues(com.snail.wallet.MainScreen.models.Revenues).\(\backslash\)n"{}}}
+\DoxyCodeLine{\Hypertarget{_app_database___impl_8java_source_l00187}00187           \textcolor{keywordflow}{return} \textcolor{keyword}{new} RoomOpenHelper.ValidationResult(\textcolor{keyword}{false}, \textcolor{stringliteral}{"{}revenues(com.snail.wallet.MainScreen.models.money.Revenues).\(\backslash\)n"{}}}
 \DoxyCodeLine{\Hypertarget{_app_database___impl_8java_source_l00188}00188                   + \textcolor{stringliteral}{"{} Expected:\(\backslash\)n"{}} + \_infoRevenues + \textcolor{stringliteral}{"{}\(\backslash\)n"{}}}
 \DoxyCodeLine{\Hypertarget{_app_database___impl_8java_source_l00189}00189                   + \textcolor{stringliteral}{"{} Found:\(\backslash\)n"{}} + \_existingRevenues);}
 \DoxyCodeLine{\Hypertarget{_app_database___impl_8java_source_l00190}00190         \}}
@@ -200,7 +200,7 @@
 \DoxyCodeLine{\Hypertarget{_app_database___impl_8java_source_l00196}00196         \textcolor{keyword}{final} TableInfo \_infoStorageLocation = \textcolor{keyword}{new} TableInfo(\textcolor{stringliteral}{"{}storage\_location"{}}, \_columnsStorageLocation, \_foreignKeysStorageLocation, \_indicesStorageLocation);}
 \DoxyCodeLine{\Hypertarget{_app_database___impl_8java_source_l00197}00197         \textcolor{keyword}{final} TableInfo \_existingStorageLocation = TableInfo.read(\_db, \textcolor{stringliteral}{"{}storage\_location"{}});}
 \DoxyCodeLine{\Hypertarget{_app_database___impl_8java_source_l00198}00198         \textcolor{keywordflow}{if} (! \_infoStorageLocation.equals(\_existingStorageLocation)) \{}
-\DoxyCodeLine{\Hypertarget{_app_database___impl_8java_source_l00199}00199           \textcolor{keywordflow}{return} \textcolor{keyword}{new} RoomOpenHelper.ValidationResult(\textcolor{keyword}{false}, \textcolor{stringliteral}{"{}storage\_location(com.snail.wallet.MainScreen.models.StorageLocation).\(\backslash\)n"{}}}
+\DoxyCodeLine{\Hypertarget{_app_database___impl_8java_source_l00199}00199           \textcolor{keywordflow}{return} \textcolor{keyword}{new} RoomOpenHelper.ValidationResult(\textcolor{keyword}{false}, \textcolor{stringliteral}{"{}storage\_location(com.snail.wallet.MainScreen.models.parametrs.StorageLocation).\(\backslash\)n"{}}}
 \DoxyCodeLine{\Hypertarget{_app_database___impl_8java_source_l00200}00200                   + \textcolor{stringliteral}{"{} Expected:\(\backslash\)n"{}} + \_infoStorageLocation + \textcolor{stringliteral}{"{}\(\backslash\)n"{}}}
 \DoxyCodeLine{\Hypertarget{_app_database___impl_8java_source_l00201}00201                   + \textcolor{stringliteral}{"{} Found:\(\backslash\)n"{}} + \_existingStorageLocation);}
 \DoxyCodeLine{\Hypertarget{_app_database___impl_8java_source_l00202}00202         \}}

@@ -1,4 +1,4 @@
-<map id="com.snail.wallet.MainScreen.models.Currency.getName" name="com.snail.wallet.MainScreen.models.Currency.getName">
+<map id="com.snail.wallet.MainScreen.models.parametrs.Currency.getName" name="com.snail.wallet.MainScreen.models.parametrs.Currency.getName">
 <area shape="rect" id="node1" title=" " alt="" coords="621,39,860,80"/>
 <area shape="rect" id="node2" href="$classcom_1_1snail_1_1wallet_1_1_main_screen_1_1ui_1_1adapters_1_1_currency_adapter.html#ad4ebf42bff13c388eab6e94a5f40b06b" title=" " alt="" coords="313,39,573,80"/>
 <area shape="rect" id="node3" href="$classcom_1_1snail_1_1wallet_1_1_main_screen_1_1ui_1_1adapters_1_1_currency_adapter.html#aab30419ac06d145a372eafd8508b15f4" title=" " alt="" coords="5,5,265,47"/>

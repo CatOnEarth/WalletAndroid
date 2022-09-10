@@ -13,14 +13,10 @@ import com.snail.wallet.MainScreen.db.App;
 import com.snail.wallet.MainScreen.db.AppDatabase;
 import com.snail.wallet.MainScreen.db.CategoryDAO.CategoryDAO;
 import com.snail.wallet.MainScreen.db.CurrencyDAO.CurrencyDAO;
-import com.snail.wallet.MainScreen.db.MoneySouceDAO.MoneySourceDAO;
-import com.snail.wallet.MainScreen.db.RevenueDAO.RevenueDAO;
 import com.snail.wallet.MainScreen.db.StorageLocationDAO.StorageLocationDAO;
-import com.snail.wallet.MainScreen.models.Category;
-import com.snail.wallet.MainScreen.models.Coin;
-import com.snail.wallet.MainScreen.models.Currency;
-import com.snail.wallet.MainScreen.models.MoneySource;
-import com.snail.wallet.MainScreen.models.StorageLocation;
+import com.snail.wallet.MainScreen.models.parametrs.Category;
+import com.snail.wallet.MainScreen.models.parametrs.Currency;
+import com.snail.wallet.MainScreen.models.parametrs.StorageLocation;
 import com.snail.wallet.R;
 import com.snail.wallet.databinding.ActivityWalletBinding;
 
@@ -31,13 +27,13 @@ import androidx.navigation.ui.NavigationUI;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.appcompat.app.AppCompatActivity;
 
-import java.util.List;
-
 
 public class WalletActivity extends AppCompatActivity {
+    private AppBarConfiguration   mAppBarConfiguration;
 
-    private AppBarConfiguration mAppBarConfiguration;
-    private ActivityWalletBinding binding;
+    public static final int TYPE_CATEGORY         = 1;
+    public static final int TYPE_CURRENCY         = 2;
+    public static final int TYPE_STORAGE_LOCATION = 3;
 
     public static final String APP_PREFERENCES_IS_INIT_DB   = "is_init_db";
 
@@ -51,15 +47,14 @@ public class WalletActivity extends AppCompatActivity {
 
         super.onCreate(savedInstanceState);
 
-        binding = ActivityWalletBinding.inflate(getLayoutInflater());
+        com.snail.wallet.databinding.ActivityWalletBinding binding = ActivityWalletBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
         setSupportActionBar(binding.appBarWallet.toolbar);
 
-        DrawerLayout drawer = binding.drawerLayout;
+        DrawerLayout drawer           = binding.drawerLayout;
         NavigationView navigationView = binding.navView;
-        // Passing each menu ID as a set of Ids because each
-        // menu should be considered as top level destinations.
+
         mAppBarConfiguration = new AppBarConfiguration.Builder(
                 R.id.nav_home, R.id.nav_gallery, R.id.nav_slideshow)
                 .setOpenableLayout(drawer)
@@ -75,40 +70,11 @@ public class WalletActivity extends AppCompatActivity {
 
         Intent intent = getIntent();
         textViewUsername.setText(intent.getStringExtra(LoginActivity.APP_PREFERENCES_USERNAME));
-        textViewEmail.setText(intent.getStringExtra(LoginActivity.APP_PREFERENCES_USER_EMAIL));
-    }
-
-    private void InitDB() {
-        AppDatabase db          = App.getInstance().getAppDatabase();
-
-        CategoryDAO categoryDAO = db.categoryDAO();
-
-        categoryDAO.insert(new Category( 1, "Зарплата"));
-         categoryDAO.insert(new Category(1, "Акции"));
-        categoryDAO.insert(new Category(1, "Квартира"));
-
-        CurrencyDAO currencyDAO = db.currencyDAO();
-
-        currencyDAO.insert(new Currency("Российский рубль", "₽"));
-        currencyDAO.insert(new Currency("Доллар США", "$"));
-        currencyDAO.insert(new Currency("Евро", "€"));
-
-        MoneySourceDAO moneySourceDAO = db.moneySourceDAO();
-
-        moneySourceDAO.insert(new MoneySource( "Работа 1"));
-        moneySourceDAO.insert(new MoneySource( "Работа 2"));
-        moneySourceDAO.insert(new MoneySource( "Работа 3"));
-
-        StorageLocationDAO storageLocationDAO = db.storageLocationDAO();
-
-        storageLocationDAO.insert(new StorageLocation( "Банк"));
-        storageLocationDAO.insert(new StorageLocation( "Кошелек"));
-        storageLocationDAO.insert(new StorageLocation( "Сейф"));
+        textViewEmail.setText(   intent.getStringExtra(LoginActivity.APP_PREFERENCES_USER_EMAIL));
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.wallet, menu);
         return true;
     }
@@ -118,5 +84,38 @@ public class WalletActivity extends AppCompatActivity {
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_wallet);
         return NavigationUI.navigateUp(navController, mAppBarConfiguration)
                 || super.onSupportNavigateUp();
+    }
+
+    private void InitDB() {
+        AppDatabase db          = App.getInstance().getAppDatabase();
+
+        initCategoryTable(db);
+        initCurrencyTable(db);
+        initStorageLocationTable(db);
+    }
+
+    private void initCategoryTable(AppDatabase db) {
+        CategoryDAO categoryDAO = db.categoryDAO();
+        categoryDAO.insert(new Category( 1, "Зарплата"));
+        categoryDAO.insert(new Category(1, "Акции"));
+        categoryDAO.insert(new Category(1, "Квартира"));
+
+        categoryDAO.insert(new Category( 1, "Кварплата"));
+        categoryDAO.insert(new Category(1, "Продукты"));
+        categoryDAO.insert(new Category(1, "Занятия"));
+    }
+
+    private void initCurrencyTable(AppDatabase db) {
+        CurrencyDAO currencyDAO = db.currencyDAO();
+        currencyDAO.insert(new Currency("Российский рубль", "₽"));
+        currencyDAO.insert(new Currency("Доллар США", "$"));
+        currencyDAO.insert(new Currency("Евро", "€"));
+    }
+
+    private void initStorageLocationTable(AppDatabase db) {
+        StorageLocationDAO storageLocationDAO = db.storageLocationDAO();
+        storageLocationDAO.insert(new StorageLocation( "Банк"));
+        storageLocationDAO.insert(new StorageLocation( "Кошелек"));
+        storageLocationDAO.insert(new StorageLocation( "Сейф"));
     }
 }

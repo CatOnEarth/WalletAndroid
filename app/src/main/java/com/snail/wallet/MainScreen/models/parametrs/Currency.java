@@ -1,4 +1,4 @@
-package com.snail.wallet.MainScreen.models;
+package com.snail.wallet.MainScreen.models.parametrs;
 
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
@@ -9,21 +9,23 @@ import androidx.room.PrimaryKey;
 public class Currency {
     @PrimaryKey(autoGenerate=true)
     @ColumnInfo(name = "id")
-    public int id;
+    public int    id;
+    @ColumnInfo(name = "type")
+    public int    type;
     @ColumnInfo(name = "name")
     public String name;
     @ColumnInfo(name = "symbol")
     public String symbol;
 
     public Currency(int id, String name, String symbol) {
-        this.id = id;
-        this.name = name;
+        this.id     = id;
+        this.name   = name;
         this.symbol = symbol;
     }
 
     @Ignore
     public Currency(String name, String symbol) {
-        this.name = name;
+        this.name   = name;
         this.symbol = symbol;
     }
 

@@ -6,7 +6,7 @@
     android:background="#fef1a2" >
 
     <TextView
-        android:id="@+id/textViewStorageLocationSpinnerAdapter"
+        android:id="@+id/textViewItemSpinnerAdapter"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_marginStart="15dp"

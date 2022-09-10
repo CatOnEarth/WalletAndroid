@@ -7,8 +7,7 @@ import androidx.room.Query;
 import androidx.room.Update;
 
 
-import com.snail.wallet.MainScreen.models.Category;
-import com.snail.wallet.MainScreen.models.MoneySource;
+import com.snail.wallet.MainScreen.models.parametrs.Category;
 
 import java.util.List;
 
@@ -17,6 +16,9 @@ import java.util.List;
 public interface CategoryDAO {
     @Query("SELECT * FROM category")
     List<Category> getAll();
+
+    @Query("SELECT * FROM category WHERE id = :id")
+    Category getCategoryById(int id);
 
     @Query("SELECT * FROM category WHERE name = :name")
     List<Category> getCategoryName(String name);

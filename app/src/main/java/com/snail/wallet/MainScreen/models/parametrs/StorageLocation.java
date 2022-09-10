@@ -1,4 +1,4 @@
-package com.snail.wallet.MainScreen.models;
+package com.snail.wallet.MainScreen.models.parametrs;
 
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
@@ -9,12 +9,12 @@ import androidx.room.PrimaryKey;
 public class StorageLocation {
     @PrimaryKey(autoGenerate=true)
     @ColumnInfo(name = "id")
-    public int id;
+    public int    id;
     @ColumnInfo(name = "location")
     public String location;
 
     public StorageLocation(int id, String location) {
-        this.id = id;
+        this.id       = id;
         this.location = location;
     }
 

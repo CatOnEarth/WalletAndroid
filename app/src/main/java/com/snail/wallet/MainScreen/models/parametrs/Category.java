@@ -1,4 +1,4 @@
-package com.snail.wallet.MainScreen.models;
+package com.snail.wallet.MainScreen.models.parametrs;
 
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
@@ -9,14 +9,14 @@ import androidx.room.PrimaryKey;
 public class Category {
     @PrimaryKey(autoGenerate=true)
     @ColumnInfo(name = "id")
-    public int id;
+    public int   id;
     @ColumnInfo(name = "type")
-    public int type;
+    public int   type;
     @ColumnInfo(name = "name")
     public String name;
 
     public Category(int id, int type, String name) {
-        this.id = id;
+        this.id  = id;
         this.type = type;
         this.name = name;
     }

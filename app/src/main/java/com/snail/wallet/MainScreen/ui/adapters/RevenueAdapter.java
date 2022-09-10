@@ -9,7 +9,11 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.snail.wallet.MainScreen.models.Revenues;
+import com.snail.wallet.MainScreen.db.App;
+import com.snail.wallet.MainScreen.db.AppDatabase;
+import com.snail.wallet.MainScreen.db.CategoryDAO.CategoryDAO;
+import com.snail.wallet.MainScreen.db.CurrencyDAO.CurrencyDAO;
+import com.snail.wallet.MainScreen.models.money.Revenues;
 import com.snail.wallet.R;
 
 import java.util.List;
@@ -60,7 +64,7 @@ public class RevenueAdapter extends RecyclerView.Adapter<RevenueAdapter.ViewHold
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup viewGroup, int viewType) {
         View view = LayoutInflater.from(viewGroup.getContext())
-                .inflate(R.layout.item_revenue_recyclerview, viewGroup, false);
+                .inflate(R.layout.item_recyclerview, viewGroup, false);
 
         return new ViewHolder(view);
     }
@@ -72,12 +76,16 @@ public class RevenueAdapter extends RecyclerView.Adapter<RevenueAdapter.ViewHold
      */
     @Override
     public void onBindViewHolder(ViewHolder viewHolder, final int position) {
+        AppDatabase db = App.getInstance().getAppDatabase();
+        CategoryDAO categoryDAO = db.categoryDAO();
+        CurrencyDAO currencyDAO = db.currencyDAO();
+
         Revenues revenues = localRevenues.get(position);
 
         viewHolder.textViewDescription.setText(revenues.getDescription());
-        viewHolder.textViewCategory.setText(String.valueOf(revenues.getCategory()));
+        viewHolder.textViewCategory.setText(categoryDAO.getCategoryById(revenues.getCategory()).getName());
 
-        String val = revenues.getValue() + revenues.getCurrencyType();
+        String val = revenues.getValue() + currencyDAO.getCurrencyById(revenues.getCurrency()).getSymbol();
         viewHolder.textViewValue.setText(val);
 
         viewHolder.itemView.setOnClickListener(view -> StartInfoActivity(position));

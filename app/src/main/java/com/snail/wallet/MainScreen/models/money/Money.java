@@ -1,4 +1,4 @@
-package com.snail.wallet.MainScreen.models;
+package com.snail.wallet.MainScreen.models.money;
 
 
 import androidx.room.ColumnInfo;
@@ -12,29 +12,29 @@ public class Money {
     @ColumnInfo(name = "value")
     public double value;
     @ColumnInfo(name = "currency")
-    public int   currency;
+    public int    currency;
     @ColumnInfo(name = "category")
-    public int   category;
+    public int    category;
     @ColumnInfo(name = "date")
-    public String   date;
+    public String date;
     @ColumnInfo(name = "description")
     public String description;
 
     public Money(int id, double value, int currency, int category, String date, String description) {
-        this.id = id;
-        this.value = value;
-        this.currency = currency;
-        this.category = category;
-        this.date = date;
+        this.id          = id;
+        this.value       = value;
+        this.currency    = currency;
+        this.category    = category;
+        this.date        = date;
         this.description = description;
     }
 
     @Ignore
     public Money(double value, int currency, int category, String date, String description) {
-        this.value = value;
-        this.currency = currency;
-        this.category = category;
-        this.date = date;
+        this.value      = value;
+        this.currency    = currency;
+        this.category    = category;
+        this.date        = date;
         this.description = description;
     }
 
@@ -46,82 +46,42 @@ public class Money {
         this.date = date;
     }
 
-    /**
-     *
-     * @return
-     */
     public int getId() {
         return id;
     }
 
-    /**
-     *
-     * @param id
-     */
     public void setId(int id) {
         this.id = id;
     }
 
-    /**
-     *
-     * @return
-     */
     public double getValue() {
         return value;
     }
 
-    /**
-     *
-     * @param value
-     */
     public void setValue(double value) {
         this.value = value;
     }
 
-    /**
-     *
-     * @return
-     */
     public int getCurrency() {
         return currency;
     }
 
-    /**
-     *
-     * @param currency
-     */
     public void setCurrency(int currency) {
         this.currency = currency;
     }
 
-    /**
-     *
-     * @return
-     */
     public int getCategory() {
         return category;
     }
 
-    /**
-     *
-     * @param category
-     */
     public void setCategory(int category) {
         this.category = category;
     }
 
-    /**
-     *
-     * @return
-     */
     public String getDescription() {
         return description;
     }
 
-    /**
-     *
-     * @param description
-     */
     public void setDescription(String description) {
         this.description = description;
     }

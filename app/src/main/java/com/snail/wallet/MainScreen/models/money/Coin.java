@@ -1,4 +1,4 @@
-package com.snail.wallet.MainScreen.models;
+package com.snail.wallet.MainScreen.models.money;
 
 import androidx.room.ColumnInfo;
 
@@ -9,7 +9,7 @@ public class Coin {
     public int   currency;
 
     public Coin(double value, int currency) {
-        this.value = value;
+        this.value    = value;
         this.currency = currency;
     }
 

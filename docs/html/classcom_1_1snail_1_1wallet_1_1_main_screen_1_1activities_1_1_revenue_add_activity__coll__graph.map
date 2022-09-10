@@ -1,4 +1,4 @@
-<map id="com.snail.wallet.MainScreen.activities.RevenueAddActivity" name="com.snail.wallet.MainScreen.activities.RevenueAddActivity">
+<map id="com.snail.wallet.MainScreen.activities.AddActivity" name="com.snail.wallet.MainScreen.activities.AddActivity">
 <area shape="rect" id="node1" title=" " alt="" coords="675,161,921,202"/>
 <area shape="rect" id="node2" title=" " alt="" coords="293,5,425,32"/>
 <area shape="rect" id="node3" title=" " alt="" coords="331,56,387,83"/>
