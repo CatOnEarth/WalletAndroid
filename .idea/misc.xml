@@ -8,6 +8,7 @@
         <entry key="..\:/development/android/Wallet/app/src/main/res/layout/activity_login.xml" value="0.5" />
         <entry key="..\:/development/android/Wallet/app/src/main/res/layout/activity_main.xml" value="0.33" />
         <entry key="..\:/development/android/Wallet/app/src/main/res/layout/activity_revenue_add.xml" value="0.33" />
+        <entry key="..\:/development/android/Wallet/app/src/main/res/layout/activity_show.xml" value="0.33" />
         <entry key="..\:/development/android/Wallet/app/src/main/res/layout/activity_wallet.xml" value="0.17831813576494426" />
         <entry key="..\:/development/android/Wallet/app/src/main/res/layout/adding_dialog.xml" value="0.365625" />
         <entry key="..\:/development/android/Wallet/app/src/main/res/layout/app_bar_wallet.xml" value="0.17831813576494426" />
@@ -29,6 +30,7 @@
         <entry key="..\:/development/android/Wallet/app/src/main/res/menu/action_menu.xml" value="0.2518518518518518" />
         <entry key="..\:/development/android/Wallet/app/src/main/res/menu/activity_main_drawer.xml" value="0.36102564102564105" />
         <entry key="..\:/development/android/Wallet/app/src/main/res/menu/add_revenue_menu.xml" value="0.18802083333333333" />
+        <entry key="..\:/development/android/Wallet/app/src/main/res/menu/menu_show.xml" value="0.2518518518518518" />
         <entry key="..\:/development/android/Wallet/app/src/main/res/menu/wallet.xml" value="0.2518518518518518" />
       </map>
     </option>

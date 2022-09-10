@@ -1,6 +1,9 @@
 package com.snail.wallet.MainScreen.ui.adapters;
 
+import static com.snail.wallet.MainScreen.activities.AddActivity.ADDING_OBJECT;
+
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,6 +13,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.snail.wallet.MainScreen.activities.AddActivity;
+import com.snail.wallet.MainScreen.activities.ShowActivity;
 import com.snail.wallet.MainScreen.db.App;
 import com.snail.wallet.MainScreen.db.AppDatabase;
 import com.snail.wallet.MainScreen.db.CategoryDAO.CategoryDAO;
@@ -94,7 +98,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
             String val = revenues.getValue() + currencyDAO.getCurrencyById(revenues.getCurrency()).getSymbol();
             viewHolder.textViewValue.setText(val);
 
-            viewHolder.itemView.setOnClickListener(view -> StartInfoActivity(position));
+            viewHolder.itemView.setOnClickListener(view -> StartInfoActivity(revenues.getId()));
         } else if (typeData == AddActivity.ADDING_EXPENSES) {
             Expenses expenses = (Expenses) localData.get(position);
 
@@ -104,11 +108,14 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
             String val = expenses.getValue() + currencyDAO.getCurrencyById(expenses.getCurrency()).getSymbol();
             viewHolder.textViewValue.setText(val);
 
-            viewHolder.itemView.setOnClickListener(view -> StartInfoActivity(position));
+            viewHolder.itemView.setOnClickListener(view -> StartInfoActivity(expenses.getId()));
         }
     }
 
-    public void StartInfoActivity(int position) {
+    public void StartInfoActivity(int id) {
+        Intent intent = new Intent(mContext, ShowActivity.class);
+        intent.putExtra(ADDING_OBJECT, typeData);
+        mContext.startActivity(intent);
     }
 
     /**Method to get number of item's to display in recyclerView

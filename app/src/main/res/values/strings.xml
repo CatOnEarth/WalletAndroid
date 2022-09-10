@@ -28,4 +28,5 @@
     <string name="textValue">Сумма</string>
     <string name="textCategory">Категория</string>
     <string name="textSelectDate">Выберите дату</string>
+    <string name="menuEdit">Редактировать</string>
 </resources>
