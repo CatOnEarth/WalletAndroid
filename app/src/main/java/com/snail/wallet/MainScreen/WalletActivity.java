@@ -32,6 +32,11 @@ import androidx.appcompat.app.AppCompatActivity;
 public class WalletActivity extends AppCompatActivity {
     private AppBarConfiguration   mAppBarConfiguration;
 
+    public static final int CODE_CURRENCY_RUBLE        = 1;
+    public static final int CODE_CURRENCY_DOLLAR       = 2;
+    public static final int CODE_CURRENCY_EURO         = 3;
+    public static final int CODE_CURRENCY_TURKISH_LIRA = 4;
+
     public static final int TYPE_CATEGORY         = 1;
     public static final int TYPE_CURRENCY         = 2;
     public static final int TYPE_STORAGE_LOCATION = 3;
@@ -108,9 +113,10 @@ public class WalletActivity extends AppCompatActivity {
 
     private void initCurrencyTable(AppDatabase db) {
         CurrencyDAO currencyDAO = db.currencyDAO();
-        currencyDAO.insert(new Currency("Российский рубль", "₽"));
-        currencyDAO.insert(new Currency("Доллар США", "$"));
-        currencyDAO.insert(new Currency("Евро", "€"));
+        currencyDAO.insert(new Currency(CODE_CURRENCY_RUBLE, "Российский рубль", "₽"));
+        currencyDAO.insert(new Currency(CODE_CURRENCY_DOLLAR, "Доллар США", "$"));
+        currencyDAO.insert(new Currency(CODE_CURRENCY_EURO, "Евро", "€"));
+        currencyDAO.insert(new Currency(CODE_CURRENCY_TURKISH_LIRA, "Турецкая лира", "₺"));
     }
 
     private void initStorageLocationTable(AppDatabase db) {

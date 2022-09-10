@@ -40,6 +40,7 @@ import com.snail.wallet.MainScreen.models.parametrs.StorageLocation;
 import com.snail.wallet.MainScreen.ui.adapters.SpinnerAdapter;
 import com.snail.wallet.R;
 
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 

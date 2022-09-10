@@ -18,7 +18,7 @@ public interface RevenueDAO {
     List<Revenues> getAll();
 
     @Query("SELECT value, currency FROM revenues")
-    List<Coin> getSum();
+    List<Coin> getValues();
 
     @Query("SELECT * FROM revenues WHERE id = :id")
     Revenues getById(int id);

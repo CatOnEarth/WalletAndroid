@@ -19,7 +19,7 @@ public interface ExpensesDAO {
     List<Expenses> getAll();
 
     @Query("SELECT value, currency FROM expenses")
-    List<Coin> getSum();
+    List<Coin> getValues();
 
     @Query("SELECT * FROM expenses WHERE id = :id")
     Expenses getById(int id);

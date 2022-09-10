@@ -17,14 +17,16 @@ public class Currency {
     @ColumnInfo(name = "symbol")
     public String symbol;
 
-    public Currency(int id, String name, String symbol) {
+    public Currency(int id, int type, String name, String symbol) {
         this.id     = id;
+        this.type   = type;
         this.name   = name;
         this.symbol = symbol;
     }
 
     @Ignore
-    public Currency(String name, String symbol) {
+    public Currency(int type, String name, String symbol) {
+        this.type   = type;
         this.name   = name;
         this.symbol = symbol;
     }

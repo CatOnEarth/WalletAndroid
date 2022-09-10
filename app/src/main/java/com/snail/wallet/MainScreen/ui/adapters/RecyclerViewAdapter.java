@@ -22,6 +22,7 @@ import com.snail.wallet.MainScreen.models.money.Expenses;
 import com.snail.wallet.MainScreen.models.money.Revenues;
 import com.snail.wallet.R;
 
+import java.text.DecimalFormat;
 import java.util.List;
 
 public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.ViewHolder>{
@@ -89,13 +90,16 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         CategoryDAO categoryDAO = db.categoryDAO();
         CurrencyDAO currencyDAO = db.currencyDAO();
 
+        DecimalFormat precision = new DecimalFormat("0.00");
+
         if (typeData == AddActivity.ADDING_REVENUE) {
             Revenues revenues = (Revenues) localData.get(position);
 
             viewHolder.textViewDescription.setText(revenues.getDescription());
             viewHolder.textViewCategory.setText(categoryDAO.getCategoryById(revenues.getCategory()).getName());
 
-            String val = revenues.getValue() + currencyDAO.getCurrencyById(revenues.getCurrency()).getSymbol();
+
+            String val = precision.format(revenues.getValue()) + currencyDAO.getCurrencyById(revenues.getCurrency()).getSymbol();
             viewHolder.textViewValue.setText(val);
 
             viewHolder.itemView.setOnClickListener(view -> StartInfoActivity(revenues.getId()));
@@ -105,7 +109,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
             viewHolder.textViewDescription.setText(expenses.getDescription());
             viewHolder.textViewCategory.setText(categoryDAO.getCategoryById(expenses.getCategory()).getName());
 
-            String val = expenses.getValue() + currencyDAO.getCurrencyById(expenses.getCurrency()).getSymbol();
+            String val = precision.format(expenses.getValue()) + currencyDAO.getCurrencyById(expenses.getCurrency()).getSymbol();
             viewHolder.textViewValue.setText(val);
 
             viewHolder.itemView.setOnClickListener(view -> StartInfoActivity(expenses.getId()));

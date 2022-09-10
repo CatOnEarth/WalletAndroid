@@ -20,6 +20,7 @@ import android.widget.TextView;
 import com.snail.wallet.MainScreen.db.App;
 import com.snail.wallet.MainScreen.db.AppDatabase;
 import com.snail.wallet.MainScreen.db.CategoryDAO.CategoryDAO;
+import com.snail.wallet.MainScreen.db.CurrencyDAO.CurrencyDAO;
 import com.snail.wallet.MainScreen.db.ExpensesDAO.ExpensesDAO;
 import com.snail.wallet.MainScreen.db.RevenueDAO.RevenueDAO;
 import com.snail.wallet.MainScreen.db.StorageLocationDAO.StorageLocationDAO;
@@ -27,6 +28,8 @@ import com.snail.wallet.MainScreen.models.money.Expenses;
 import com.snail.wallet.MainScreen.models.money.Revenues;
 import com.snail.wallet.MainScreen.models.parametrs.Date;
 import com.snail.wallet.R;
+
+import java.text.DecimalFormat;
 
 public class ShowActivity extends AppCompatActivity {
     private final String TAG = this.getClass().getSimpleName();
@@ -150,6 +153,7 @@ public class ShowActivity extends AppCompatActivity {
     private void initDataRevenue(AppDatabase db) {
         StorageLocationDAO storageLocationDAO = db.storageLocationDAO();
         CategoryDAO categoryDAO               = db.categoryDAO();
+        CurrencyDAO currencyDAO               = db.currencyDAO();
         RevenueDAO  revenueDAO                = db.revenueDAO();
         Date        custom_date               = revenueDAO.getDateById(id_item);
         Revenues    revenues                  = revenueDAO.getById(id_item);
@@ -160,7 +164,9 @@ public class ShowActivity extends AppCompatActivity {
         String storageLocation = getResources().getText(R.string.textStorageLocation) + ": " +
                                    storageLocationDAO.getLocationById(revenues.getStorage_location());
 
-        String value           = getResources().getText(R.string.textValue) + ": " + revenues.getValue();
+        DecimalFormat precision = new DecimalFormat("0.00");
+        String value           = getResources().getText(R.string.textValue) + ": " + precision.format(revenues.getValue())
+                                    + currencyDAO.getCurrencyById(revenues.getCurrency()).getSymbol();
 
         String date_item       = getResources().getText(R.string.textData) + ": " + custom_date.getDate_day() + "." +
                                    custom_date.getDate_month() + "." + custom_date.getDate_year();
@@ -177,6 +183,7 @@ public class ShowActivity extends AppCompatActivity {
 
     private void initDataExpenses(AppDatabase db) {
         CategoryDAO categoryDAO               = db.categoryDAO();
+        CurrencyDAO currencyDAO               = db.currencyDAO();
         ExpensesDAO expensesDAO               = db.expensesDAO();
         Date        custom_date               = expensesDAO.getDateById(id_item);
         Expenses    expenses                  = expensesDAO.getById(id_item);
@@ -184,7 +191,9 @@ public class ShowActivity extends AppCompatActivity {
         String category        = getResources().getText(R.string.textCategory) + ": " +
                 categoryDAO.getCategoryById(expenses.getCategory()).getName();
 
-        String value           = getResources().getText(R.string.textValue) + ": " + expenses.getValue();
+        DecimalFormat precision = new DecimalFormat("0.00");
+        String value           = getResources().getText(R.string.textValue) + ": " + precision.format(expenses.getValue()) +
+                                        currencyDAO.getCurrencyById(expenses.getCurrency()).getSymbol();
 
         String date_item       = getResources().getText(R.string.textData) + ": " + custom_date.getDate_day() + "." +
                 custom_date.getDate_month() + "." + custom_date.getDate_year();
