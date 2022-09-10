@@ -6,6 +6,7 @@ import static com.snail.wallet.MainScreen.activities.AddActivity.ADDING_REVENUE;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -75,8 +76,7 @@ public class ShowActivity extends AppCompatActivity {
             startEditingActivity();
             finish();
         } else if (item.getItemId() == R.id.menuDelete) {
-            deleteItem();
-            finish();
+            deleteDialog();
         }
 
         return(super.onOptionsItemSelected(item));
@@ -91,9 +91,26 @@ public class ShowActivity extends AppCompatActivity {
         } else if (type_item == ADDING_EXPENSES) {
             ExpensesDAO expensesDAO = db.expensesDAO();
             expensesDAO.deleteById(id_item);
-        } else {
-            finish();
         }
+
+        finish();
+    }
+
+    private void deleteDialog() {
+        AlertDialog.Builder alertDialog = new AlertDialog.Builder(ShowActivity.this);
+
+        alertDialog.setTitle("Удалить?");
+        alertDialog.setMessage("Вы точно хотите удалить?");
+
+        alertDialog.setPositiveButton("Да",
+                (dialog, which) -> deleteItem());
+
+        alertDialog.setNegativeButton("Нет",
+                (dialog, which) -> {
+                    dialog.cancel();
+                });
+
+        alertDialog.show();
     }
 
     private void initActionBar() {
@@ -143,7 +160,7 @@ public class ShowActivity extends AppCompatActivity {
         String storageLocation = getResources().getText(R.string.textStorageLocation) + ": " +
                                    storageLocationDAO.getLocationById(revenues.getStorage_location());
 
-        String value           = getResources().getText(R.string.textData) + ": " + revenues.getValue();
+        String value           = getResources().getText(R.string.textValue) + ": " + revenues.getValue();
 
         String date_item       = getResources().getText(R.string.textData) + ": " + custom_date.getDate_day() + "." +
                                    custom_date.getDate_month() + "." + custom_date.getDate_year();
@@ -167,7 +184,7 @@ public class ShowActivity extends AppCompatActivity {
         String category        = getResources().getText(R.string.textCategory) + ": " +
                 categoryDAO.getCategoryById(expenses.getCategory()).getName();
 
-        String value           = getResources().getText(R.string.textData) + ": " + expenses.getValue();
+        String value           = getResources().getText(R.string.textValue) + ": " + expenses.getValue();
 
         String date_item       = getResources().getText(R.string.textData) + ": " + custom_date.getDate_day() + "." +
                 custom_date.getDate_month() + "." + custom_date.getDate_year();

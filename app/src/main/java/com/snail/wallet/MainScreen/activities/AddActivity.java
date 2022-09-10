@@ -338,17 +338,17 @@ public class AddActivity extends AppCompatActivity {
 
     private void insertNewCategory(AppDatabase db, String str) {
         CategoryDAO categoryDAO = db.categoryDAO();
-        categoryDAO.insert(new Category(type_adding, str));
-        categoryList.clear();
-        categoryList.addAll(categoryDAO.getAll());
+        Category new_category = new Category(type_adding, str);
+        categoryDAO.insert(new_category);
+        categoryList.add(new_category);
         categoryAdapter.notifyDataSetChanged();
     }
 
     private void insertNewStorageLocation(AppDatabase db, String str) {
         StorageLocationDAO storageLocationDAO = db.storageLocationDAO();
-        storageLocationDAO.insert(new StorageLocation(str));
-        storageLocationList.clear();
-        storageLocationList.addAll(storageLocationDAO.getAll());
+        StorageLocation storageLocation = new StorageLocation(str);
+        storageLocationDAO.insert(storageLocation);
+        storageLocationList.add(storageLocation);
         storageLocationAdapter.notifyDataSetChanged();
     }
 
