@@ -11,6 +11,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.DatePickerDialog;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.format.DateUtils;
 import android.util.Log;
@@ -28,8 +29,10 @@ import com.snail.wallet.MainScreen.db.App;
 import com.snail.wallet.MainScreen.db.AppDatabase;
 import com.snail.wallet.MainScreen.db.CategoryDAO.CategoryDAO;
 import com.snail.wallet.MainScreen.db.CurrencyDAO.CurrencyDAO;
+import com.snail.wallet.MainScreen.db.ExpensesDAO.ExpensesDAO;
 import com.snail.wallet.MainScreen.db.RevenueDAO.RevenueDAO;
 import com.snail.wallet.MainScreen.db.StorageLocationDAO.StorageLocationDAO;
+import com.snail.wallet.MainScreen.models.money.Expenses;
 import com.snail.wallet.MainScreen.models.parametrs.Category;
 import com.snail.wallet.MainScreen.models.parametrs.Currency;
 import com.snail.wallet.MainScreen.models.money.Revenues;
@@ -42,6 +45,10 @@ import java.util.Calendar;
 
 public class AddActivity extends AppCompatActivity {
     private final String TAG = this.getClass().getSimpleName();
+
+    public static final String ADDING_OBJECT   = "obj_add";
+    public static final int    ADDING_REVENUE  = 1;
+    public static final int    ADDING_EXPENSES = 2;
 
     private Spinner spinnerCategory;
     private Spinner spinnerCurrency;
@@ -61,6 +68,8 @@ public class AddActivity extends AppCompatActivity {
     private ArrayList<Category>        categoryList;
     private ArrayList<StorageLocation> storageLocationList;
 
+    private int type_adding;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -78,6 +87,12 @@ public class AddActivity extends AppCompatActivity {
             finish();
         }
 
+        Intent intent = getIntent();
+        type_adding   = intent.getIntExtra(ADDING_OBJECT, -1);
+        if (type_adding == -1) {
+            finish();
+        }
+
         initFindView();
         initSpinners();
         setInitialDateTime();
@@ -88,7 +103,10 @@ public class AddActivity extends AppCompatActivity {
         AppDatabase db          = App.getInstance().getAppDatabase();
         initCategorySpinner(db);
         initCurrencySpinner(db);
-        initStorageLocationSpinner(db);
+
+        if (type_adding == ADDING_REVENUE) {
+            initStorageLocationSpinner(db);
+        }
     }
 
     private void initFindView() {
@@ -99,13 +117,21 @@ public class AddActivity extends AppCompatActivity {
         spinnerCurrency        = findViewById(R.id.spinnerCurrencyRevenue);
         spinnerStorageLocation = findViewById(R.id.spinnerStorageLocationRevenue);
 
-        date = findViewById(R.id.textViewDateSelectedRevenue);
+        if (type_adding == ADDING_EXPENSES) {
+            TextView textSpinnerStorageLocation = findViewById(R.id.textViewStorageLocationRevenue);
+            Button bAddStorageLocation = findViewById(R.id.buttonAddStorageLocation);
+            spinnerStorageLocation.setVisibility(View.INVISIBLE);
+            textSpinnerStorageLocation.setVisibility(View.INVISIBLE);
+            bAddStorageLocation.setVisibility(View.INVISIBLE);
+        }
+
+        date                   = findViewById(R.id.textViewDateSelectedRevenue);
     }
 
     private void initCategorySpinner(AppDatabase db) {
         CategoryDAO categoryDAO = db.categoryDAO();
         categoryList = new ArrayList<>();
-        categoryList = (ArrayList<Category>) categoryDAO.getAll();
+        categoryList = (ArrayList<Category>) categoryDAO.getCategoryByType(type_adding);
         categoryAdapter = new SpinnerAdapter( this, TYPE_CATEGORY, categoryList);
         spinnerCategory.setAdapter(categoryAdapter);
     }
@@ -129,8 +155,10 @@ public class AddActivity extends AppCompatActivity {
         Button bAddCategory = findViewById(R.id.buttonAddCategory);
         bAddCategory.setOnClickListener(view -> addingDialog(TYPE_CATEGORY));
 
-        Button bAddStorageLocation = findViewById(R.id.buttonAddStorageLocation);
-        bAddStorageLocation.setOnClickListener(view -> addingDialog(TYPE_STORAGE_LOCATION));
+        if (type_adding == ADDING_REVENUE) {
+            Button bAddStorageLocation = findViewById(R.id.buttonAddStorageLocation);
+            bAddStorageLocation.setOnClickListener(view -> addingDialog(TYPE_STORAGE_LOCATION));
+        }
 
         Button bSaveRevenue = findViewById(R.id.bAddRevenueSave);
         bSaveRevenue.setOnClickListener(view -> SaveRevenue());
@@ -190,19 +218,25 @@ public class AddActivity extends AppCompatActivity {
     private void SaveRevenue() {
         if (!IsAllCorrect()) return;
 
-        int    category         = ((Category)spinnerCategory.getSelectedItem()).getId();
-        String dateStr          = date.toString();
-        String description      = editTextDescription.getText().toString();
-        double value            = getValue();
-        int    currency         = ((Currency)spinnerCurrency.getSelectedItem()).getId();
-        int    storage_location = ((StorageLocation)spinnerStorageLocation.getSelectedItem()).getId();
-
-        Revenues revenue = new Revenues(value, currency, category, dateStr, description, storage_location);
-
         AppDatabase db        = App.getInstance().getAppDatabase();
-        RevenueDAO revenueDAO = db.revenueDAO();
 
-        revenueDAO.insert(revenue);
+        int    category       = ((Category)spinnerCategory.getSelectedItem()).getId();
+        String dateStr        = date.toString();
+        String description    = editTextDescription.getText().toString();
+        double value          = getValue();
+        int    currency       = ((Currency)spinnerCurrency.getSelectedItem()).getId();
+
+        if (type_adding == ADDING_REVENUE) {
+            int storage_location = ((StorageLocation) spinnerStorageLocation.getSelectedItem()).getId();
+
+            Revenues revenue      = new Revenues(value, currency, category, dateStr, description, storage_location);
+            RevenueDAO revenueDAO = db.revenueDAO();
+            revenueDAO.insert(revenue);
+        } else if (type_adding == ADDING_EXPENSES) {
+            Expenses expenses       = new Expenses(value, currency, category, dateStr, description);
+            ExpensesDAO expensesDAO = db.expensesDAO();
+            expensesDAO.insert(expenses);
+        }
 
         finish();
     }
@@ -296,7 +330,7 @@ public class AddActivity extends AppCompatActivity {
 
     private void insertNewCategory(AppDatabase db, String str) {
         CategoryDAO categoryDAO = db.categoryDAO();
-        categoryDAO.insert(new Category(1, str));
+        categoryDAO.insert(new Category(type_adding, str));
         categoryList.clear();
         categoryList.addAll(categoryDAO.getAll());
         categoryAdapter.notifyDataSetChanged();

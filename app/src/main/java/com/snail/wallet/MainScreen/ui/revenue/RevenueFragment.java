@@ -1,5 +1,7 @@
 package com.snail.wallet.MainScreen.ui.revenue;
 
+import static com.snail.wallet.MainScreen.activities.AddActivity.ADDING_REVENUE;
+
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
@@ -19,7 +21,7 @@ import com.snail.wallet.MainScreen.db.App;
 import com.snail.wallet.MainScreen.db.AppDatabase;
 import com.snail.wallet.MainScreen.db.RevenueDAO.RevenueDAO;
 import com.snail.wallet.MainScreen.models.money.Revenues;
-import com.snail.wallet.MainScreen.ui.adapters.RevenueAdapter;
+import com.snail.wallet.MainScreen.ui.adapters.RecyclerViewAdapter;
 import com.snail.wallet.databinding.FragmentRevenueBinding;
 
 import java.util.ArrayList;
@@ -31,7 +33,7 @@ public class RevenueFragment extends Fragment {
     private FragmentRevenueBinding binding;
 
     private RecyclerView   recyclerView;
-    private RevenueAdapter revenueAdapter;
+    private RecyclerViewAdapter recyclerViewAdapter;
 
     private RevenueDAO revenueDAO;
     private AppDatabase db;
@@ -51,9 +53,9 @@ public class RevenueFragment extends Fragment {
 
         revenues = new ArrayList<Revenues>();
         revenues.addAll(revenueDAO.getAll());
-        revenueAdapter = new RevenueAdapter(revenues, getContext());
+        recyclerViewAdapter = new RecyclerViewAdapter(ADDING_REVENUE, revenues, getContext());
 
-        recyclerView.setAdapter(revenueAdapter);
+        recyclerView.setAdapter(recyclerViewAdapter);
 
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
 
@@ -62,7 +64,7 @@ public class RevenueFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 Log.i(TAG, "floating button clicked");
-                StartRevenueAddActivity();
+                StartAddActivity();
             }
         });
 
@@ -75,11 +77,12 @@ public class RevenueFragment extends Fragment {
         Log.i(TAG, "onResume Fragment");
         revenues.clear();
         revenues.addAll(revenueDAO.getAll());
-        revenueAdapter.notifyItemRangeChanged(0, revenues.size());
+        recyclerViewAdapter.notifyItemRangeChanged(0, revenues.size());
     }
 
-    private void StartRevenueAddActivity() {
+    private void StartAddActivity() {
         Intent intent = new Intent(getContext(), AddActivity.class);
+        intent.putExtra(AddActivity.ADDING_OBJECT, ADDING_REVENUE);
         startActivity(intent);
     }
 

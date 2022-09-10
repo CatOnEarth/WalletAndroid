@@ -1,4 +1,4 @@
-<map id="com.snail.wallet.MainScreen.ui.adapters.RevenueAdapter.onBindViewHolder" name="com.snail.wallet.MainScreen.ui.adapters.RevenueAdapter.onBindViewHolder">
+<map id="com.snail.wallet.MainScreen.ui.adapters.RecyclerViewAdapter.onBindViewHolder" name="com.snail.wallet.MainScreen.ui.adapters.RecyclerViewAdapter.onBindViewHolder">
 <area shape="rect" id="node1" title=" " alt="" coords="5,136,265,177"/>
 <area shape="rect" id="node2" href="$classcom_1_1snail_1_1wallet_1_1_main_screen_1_1models_1_1_money.html#ad2a283cd14a3bd15cc235ab57a35b24b" title=" " alt="" coords="324,5,563,47"/>
 <area shape="rect" id="node3" href="$classcom_1_1snail_1_1wallet_1_1_main_screen_1_1models_1_1_money.html#ab95e02f769e053c5509368aa8e1092b3" title=" " alt="" coords="324,71,563,112"/>

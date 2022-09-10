@@ -9,6 +9,7 @@ import android.widget.TextView;
 import com.google.android.material.navigation.NavigationView;
 import com.snail.wallet.LoginScreen.LoginActivity;
 import com.snail.wallet.MainScreen.SharedPrefManager.PermanentStorage;
+import com.snail.wallet.MainScreen.activities.AddActivity;
 import com.snail.wallet.MainScreen.db.App;
 import com.snail.wallet.MainScreen.db.AppDatabase;
 import com.snail.wallet.MainScreen.db.CategoryDAO.CategoryDAO;
@@ -96,13 +97,13 @@ public class WalletActivity extends AppCompatActivity {
 
     private void initCategoryTable(AppDatabase db) {
         CategoryDAO categoryDAO = db.categoryDAO();
-        categoryDAO.insert(new Category( 1, "Зарплата"));
-        categoryDAO.insert(new Category(1, "Акции"));
-        categoryDAO.insert(new Category(1, "Квартира"));
+        categoryDAO.insert(new Category( AddActivity.ADDING_REVENUE, "Зарплата"));
+        categoryDAO.insert(new Category(AddActivity.ADDING_REVENUE, "Акции"));
+        categoryDAO.insert(new Category(AddActivity.ADDING_REVENUE, "Квартира"));
 
-        categoryDAO.insert(new Category( 1, "Кварплата"));
-        categoryDAO.insert(new Category(1, "Продукты"));
-        categoryDAO.insert(new Category(1, "Занятия"));
+        categoryDAO.insert(new Category(AddActivity.ADDING_EXPENSES, "Кварплата"));
+        categoryDAO.insert(new Category(AddActivity.ADDING_EXPENSES, "Продукты"));
+        categoryDAO.insert(new Category(AddActivity.ADDING_EXPENSES, "Занятия"));
     }
 
     private void initCurrencyTable(AppDatabase db) {

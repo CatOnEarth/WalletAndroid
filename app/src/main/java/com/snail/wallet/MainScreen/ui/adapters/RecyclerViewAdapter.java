@@ -9,20 +9,24 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.snail.wallet.MainScreen.activities.AddActivity;
 import com.snail.wallet.MainScreen.db.App;
 import com.snail.wallet.MainScreen.db.AppDatabase;
 import com.snail.wallet.MainScreen.db.CategoryDAO.CategoryDAO;
 import com.snail.wallet.MainScreen.db.CurrencyDAO.CurrencyDAO;
+import com.snail.wallet.MainScreen.models.money.Expenses;
 import com.snail.wallet.MainScreen.models.money.Revenues;
 import com.snail.wallet.R;
 
 import java.util.List;
 
-public class RevenueAdapter extends RecyclerView.Adapter<RevenueAdapter.ViewHolder>{
+public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.ViewHolder>{
     /** List of revenues which display in recyclerView */
-    private final List<Revenues> localRevenues;
+    private final List localData;
     /** Context */
     private final Context mContext;
+
+    private int typeData;
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
         /** TextView description revenue  in list */
@@ -46,12 +50,13 @@ public class RevenueAdapter extends RecyclerView.Adapter<RevenueAdapter.ViewHold
 
     /**Constructor custom adapter
      *
-     * @param revenues revenues list
+     * @param data data list
      * @param context context
      */
-    public RevenueAdapter(List<Revenues> revenues, Context context) {
-        localRevenues = revenues;
-        mContext      = context;
+    public RecyclerViewAdapter(int type, List data, Context context) {
+        typeData  = type;
+        localData = data;
+        mContext  = context;
     }
 
     /**Create new views (invoked by the layout manager)
@@ -80,15 +85,27 @@ public class RevenueAdapter extends RecyclerView.Adapter<RevenueAdapter.ViewHold
         CategoryDAO categoryDAO = db.categoryDAO();
         CurrencyDAO currencyDAO = db.currencyDAO();
 
-        Revenues revenues = localRevenues.get(position);
+        if (typeData == AddActivity.ADDING_REVENUE) {
+            Revenues revenues = (Revenues) localData.get(position);
 
-        viewHolder.textViewDescription.setText(revenues.getDescription());
-        viewHolder.textViewCategory.setText(categoryDAO.getCategoryById(revenues.getCategory()).getName());
+            viewHolder.textViewDescription.setText(revenues.getDescription());
+            viewHolder.textViewCategory.setText(categoryDAO.getCategoryById(revenues.getCategory()).getName());
 
-        String val = revenues.getValue() + currencyDAO.getCurrencyById(revenues.getCurrency()).getSymbol();
-        viewHolder.textViewValue.setText(val);
+            String val = revenues.getValue() + currencyDAO.getCurrencyById(revenues.getCurrency()).getSymbol();
+            viewHolder.textViewValue.setText(val);
 
-        viewHolder.itemView.setOnClickListener(view -> StartInfoActivity(position));
+            viewHolder.itemView.setOnClickListener(view -> StartInfoActivity(position));
+        } else if (typeData == AddActivity.ADDING_EXPENSES) {
+            Expenses expenses = (Expenses) localData.get(position);
+
+            viewHolder.textViewDescription.setText(expenses.getDescription());
+            viewHolder.textViewCategory.setText(categoryDAO.getCategoryById(expenses.getCategory()).getName());
+
+            String val = expenses.getValue() + currencyDAO.getCurrencyById(expenses.getCurrency()).getSymbol();
+            viewHolder.textViewValue.setText(val);
+
+            viewHolder.itemView.setOnClickListener(view -> StartInfoActivity(position));
+        }
     }
 
     public void StartInfoActivity(int position) {
@@ -100,6 +117,6 @@ public class RevenueAdapter extends RecyclerView.Adapter<RevenueAdapter.ViewHold
      */
     @Override
     public int getItemCount() {
-        return localRevenues.size();
+        return localData.size();
     }
 }
