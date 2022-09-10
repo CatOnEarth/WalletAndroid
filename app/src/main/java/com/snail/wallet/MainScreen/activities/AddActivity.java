@@ -188,6 +188,7 @@ public class AddActivity extends AppCompatActivity {
         dateAndTime.set(Calendar.MONTH, monthOfYear);
         dateAndTime.set(Calendar.DAY_OF_MONTH, dayOfMonth);
         setInitialDateTime();
+
     };
 
     @Override
@@ -221,7 +222,11 @@ public class AddActivity extends AppCompatActivity {
         AppDatabase db        = App.getInstance().getAppDatabase();
 
         int    category       = ((Category)spinnerCategory.getSelectedItem()).getId();
-        String dateStr        = date.toString();
+
+        int date_day   = dateAndTime.get(Calendar.DAY_OF_MONTH);
+        int date_month = dateAndTime.get(Calendar.MONTH) + 1;
+        int date_year  = dateAndTime.get(Calendar.YEAR);
+
         String description    = editTextDescription.getText().toString();
         double value          = getValue();
         int    currency       = ((Currency)spinnerCurrency.getSelectedItem()).getId();
@@ -229,11 +234,14 @@ public class AddActivity extends AppCompatActivity {
         if (type_adding == ADDING_REVENUE) {
             int storage_location = ((StorageLocation) spinnerStorageLocation.getSelectedItem()).getId();
 
-            Revenues revenue      = new Revenues(value, currency, category, dateStr, description, storage_location);
+            Revenues revenue      = new Revenues(value, currency, category, date_day,
+                                                 date_month, date_year, description,
+                                                 storage_location);
             RevenueDAO revenueDAO = db.revenueDAO();
             revenueDAO.insert(revenue);
         } else if (type_adding == ADDING_EXPENSES) {
-            Expenses expenses       = new Expenses(value, currency, category, dateStr, description);
+            Expenses expenses       = new Expenses(value, currency, category, date_day,
+                                                     date_month, date_year, description);
             ExpensesDAO expensesDAO = db.expensesDAO();
             expensesDAO.insert(expenses);
         }

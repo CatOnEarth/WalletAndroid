@@ -115,6 +115,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     public void StartInfoActivity(int id) {
         Intent intent = new Intent(mContext, ShowActivity.class);
         intent.putExtra(ADDING_OBJECT, typeData);
+        intent.putExtra(ShowActivity.ID_ITEM, id);
         mContext.startActivity(intent);
     }
 

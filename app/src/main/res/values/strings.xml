@@ -29,4 +29,5 @@
     <string name="textCategory">Категория</string>
     <string name="textSelectDate">Выберите дату</string>
     <string name="menuEdit">Редактировать</string>
+    <string name="textData">Дата</string>
 </resources>

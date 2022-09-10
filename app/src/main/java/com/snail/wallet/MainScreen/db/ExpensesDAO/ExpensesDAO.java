@@ -8,6 +8,8 @@ import androidx.room.Update;
 
 import com.snail.wallet.MainScreen.models.money.Coin;
 import com.snail.wallet.MainScreen.models.money.Expenses;
+import com.snail.wallet.MainScreen.models.money.Revenues;
+import com.snail.wallet.MainScreen.models.parametrs.Date;
 
 import java.util.List;
 
@@ -18,6 +20,12 @@ public interface ExpensesDAO {
 
     @Query("SELECT value, currency FROM expenses")
     List<Coin> getSum();
+
+    @Query("SELECT * FROM expenses WHERE id = :id")
+    Expenses getById(int id);
+
+    @Query("SELECT date_day, date_month, date_year FROM expenses WHERE id = :id")
+    Date getDateById(int id);
 
     @Insert
     void insert(Expenses expenses);
