@@ -41,11 +41,16 @@ import com.snail.wallet.MainScreen.models.parametrs.StorageLocation;
 import com.snail.wallet.MainScreen.ui.adapters.SpinnerAdapter;
 import com.snail.wallet.R;
 
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 
 public class AddActivity extends AppCompatActivity {
     private final String TAG = this.getClass().getSimpleName();
+
+    public static final String ID_EDITING    = "id_editing";
+    public static final String VALUE_EDITING = "val_editing";
+    public static final String DESC_EDITING  = "desc_editing";
 
     public static final String ADDING_OBJECT   = "obj_add";
     public static final int    ADDING_REVENUE  = 1;
@@ -69,6 +74,8 @@ public class AddActivity extends AppCompatActivity {
     private ArrayList<Category>        categoryList;
     private ArrayList<StorageLocation> storageLocationList;
 
+    private int id_editing;
+
     private int type_adding;
 
     @Override
@@ -90,14 +97,19 @@ public class AddActivity extends AppCompatActivity {
 
         Intent intent = getIntent();
         type_adding   = intent.getIntExtra(ADDING_OBJECT, -1);
-        if (type_adding == -1) {
+        id_editing    = intent.getIntExtra(ID_EDITING, -1);
+        if (type_adding == -1 || id_editing == -1) {
             finish();
         }
+
 
         initFindView();
         initSpinners();
         setInitialDateTime();
         initButtons();
+        if (id_editing != -1) {
+            setEditingData(intent);
+        }
     }
 
     private void initSpinners() {
@@ -140,7 +152,8 @@ public class AddActivity extends AppCompatActivity {
     private void initCurrencySpinner(AppDatabase db) {
         CurrencyDAO currencyDAO = db.currencyDAO();
         ArrayList<Currency> currencyList = (ArrayList<Currency>) currencyDAO.getAll();
-        SpinnerAdapter currencyAdapter = new SpinnerAdapter(this, TYPE_CURRENCY, currencyList);
+        SpinnerAdapter currencyAdapter = new SpinnerAdapter(this, TYPE_CURRENCY,
+                                                                                currencyList);
         spinnerCurrency.setAdapter(currencyAdapter);
     }
 
@@ -148,7 +161,8 @@ public class AddActivity extends AppCompatActivity {
         StorageLocationDAO storageLocationDAO = db.storageLocationDAO();
         storageLocationList = new ArrayList<>();
         storageLocationList.addAll(storageLocationDAO.getAll());
-        storageLocationAdapter = new SpinnerAdapter(this, TYPE_STORAGE_LOCATION, storageLocationList);
+        storageLocationAdapter = new SpinnerAdapter(this, TYPE_STORAGE_LOCATION,
+                                                                    storageLocationList);
         spinnerStorageLocation.setAdapter(storageLocationAdapter);
     }
 
@@ -233,7 +247,8 @@ public class AddActivity extends AppCompatActivity {
         int    currency       = ((Currency)spinnerCurrency.getSelectedItem()).getId();
 
         if (type_adding == ADDING_REVENUE) {
-            int storage_location = ((StorageLocation) spinnerStorageLocation.getSelectedItem()).getId();
+            int storage_location = ((StorageLocation) spinnerStorageLocation.getSelectedItem())
+                                                                            .getId();
 
             Revenues revenue      = new Revenues(value, currency, category, date_day,
                                                  date_month, date_year, description,
@@ -321,7 +336,8 @@ public class AddActivity extends AppCompatActivity {
                 (dialog, which) -> {
                     if (IsCorrectAdding(type, input.getText().toString())) {
                         addAddingVariable(type, input.getText().toString());
-                        Toast.makeText(ctxRevenueAdd, "Успено добавлена", Toast.LENGTH_LONG).show();
+                        Toast.makeText(ctxRevenueAdd, "Успено добавлена",
+                                Toast.LENGTH_LONG).show();
                     }
                 });
 
@@ -370,4 +386,11 @@ public class AddActivity extends AppCompatActivity {
             return false;
         }
     }
+
+    private void setEditingData(Intent intent) {
+        DecimalFormat precision = new DecimalFormat("0.00");
+        editTextValue.setText(precision.format(intent.getDoubleExtra(VALUE_EDITING, 0)));
+        editTextDescription.setText(intent.getStringExtra(DESC_EDITING));
+    }
+
 }

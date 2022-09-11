@@ -3,6 +3,9 @@ package com.snail.wallet.MainScreen.activities;
 import static com.snail.wallet.MainScreen.activities.AddActivity.ADDING_EXPENSES;
 import static com.snail.wallet.MainScreen.activities.AddActivity.ADDING_OBJECT;
 import static com.snail.wallet.MainScreen.activities.AddActivity.ADDING_REVENUE;
+import static com.snail.wallet.MainScreen.activities.AddActivity.DESC_EDITING;
+import static com.snail.wallet.MainScreen.activities.AddActivity.ID_EDITING;
+import static com.snail.wallet.MainScreen.activities.AddActivity.VALUE_EDITING;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
@@ -36,6 +39,9 @@ public class ShowActivity extends AppCompatActivity {
 
     public static final String ID_ITEM = "id_item";
 
+    private double value_double;
+    private String desc_str;
+
     private int id_item;
     private int type_item;
 
@@ -64,6 +70,12 @@ public class ShowActivity extends AppCompatActivity {
     }
 
     @Override
+    public void onResume() {
+        super.onResume();
+        initData();
+    }
+
+    @Override
     public boolean onCreateOptionsMenu(@NonNull Menu menu) {
         Log.i(TAG, "Start onCreateOptionsMenu method");
         getMenuInflater().inflate(R.menu.menu_show, menu);
@@ -77,7 +89,6 @@ public class ShowActivity extends AppCompatActivity {
             finish();
         } else if (item.getItemId() == R.id.menuEdit) {
             startEditingActivity();
-            finish();
         } else if (item.getItemId() == R.id.menuDelete) {
             deleteDialog();
         }
@@ -163,14 +174,15 @@ public class ShowActivity extends AppCompatActivity {
                                    storageLocationDAO.getLocationById(revenues.getStorage_location());
 
         DecimalFormat precision = new DecimalFormat("0.00");
-        String value           = getResources().getText(R.string.textValue) + ": " + precision.format(revenues.getValue())
+        value_double = revenues.getValue();
+        String value           = getResources().getText(R.string.textValue) + ": " + precision.format(value_double)
                                     + currencyDAO.getCurrencyById(revenues.getCurrency()).getSymbol();
 
         String date_item       = getResources().getText(R.string.textData) + ": " + custom_date.getDate_day() + "." +
                                    custom_date.getDate_month() + "." + custom_date.getDate_year();
 
-        String description     = getResources().getText(R.string.HintDescription) + ": " +
-                                   revenues.getDescription();
+        desc_str = revenues.getDescription();
+        String description     = getResources().getText(R.string.HintDescription) + ": " + desc_str;
 
         textViewCategory.setText(category);
         textViewStorageLocation.setText(storageLocation);
@@ -190,14 +202,15 @@ public class ShowActivity extends AppCompatActivity {
                 categoryDAO.getCategoryById(expenses.getCategory()).getName();
 
         DecimalFormat precision = new DecimalFormat("0.00");
-        String value           = getResources().getText(R.string.textValue) + ": " + precision.format(expenses.getValue()) +
+        value_double = expenses.getValue();
+        String value           = getResources().getText(R.string.textValue) + ": " + precision.format(value_double) +
                                         currencyDAO.getCurrencyById(expenses.getCurrency()).getSymbol();
 
         String date_item       = getResources().getText(R.string.textData) + ": " + custom_date.getDate_day() + "." +
                 custom_date.getDate_month() + "." + custom_date.getDate_year();
 
-        String description     = getResources().getText(R.string.HintDescription) + ": " +
-                expenses.getDescription();
+        desc_str = expenses.getDescription();
+        String description     = getResources().getText(R.string.HintDescription) + ": " + desc_str;
 
         textViewCategory.setText(category);
         textViewData.setText(date_item);
@@ -206,6 +219,12 @@ public class ShowActivity extends AppCompatActivity {
     }
 
     private void startEditingActivity() {
+        Intent intent = new Intent(ShowActivity.this, AddActivity.class);
+        intent.putExtra(ID_EDITING, id_item);
+        intent.putExtra(ADDING_OBJECT, ADDING_REVENUE);
+        intent.putExtra(VALUE_EDITING, value_double);
+        intent.putExtra(DESC_EDITING, desc_str);
 
+        startActivity(intent);
     }
 }
