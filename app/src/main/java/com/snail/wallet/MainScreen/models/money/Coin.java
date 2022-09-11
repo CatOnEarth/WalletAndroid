@@ -5,12 +5,12 @@ import androidx.room.ColumnInfo;
 public class Coin {
     @ColumnInfo(name = "value")
     public double value;
-    @ColumnInfo(name = "currency")
-    public int   currency;
+    @ColumnInfo(name = "type_currency")
+    public int   type_currency;
 
-    public Coin(double value, int currency) {
+    public Coin(double value, int type_currency) {
         this.value    = value;
-        this.currency = currency;
+        this.type_currency = type_currency;
     }
 
     public double getValue() {
@@ -21,11 +21,11 @@ public class Coin {
         this.value = value;
     }
 
-    public int getCurrency() {
-        return currency;
+    public int getType_currency() {
+        return type_currency;
     }
 
-    public void setCurrency(int currency) {
-        this.currency = currency;
+    public void setType_currency(int type_currency) {
+        this.type_currency = type_currency;
     }
 }

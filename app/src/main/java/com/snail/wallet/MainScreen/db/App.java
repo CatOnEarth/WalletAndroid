@@ -7,6 +7,7 @@ import androidx.room.Room;
 public class App extends Application {
 
     public static App instance;
+    public static final String DATABASE_NAME = "wallet_db";
 
     private AppDatabase database;
 
@@ -15,7 +16,7 @@ public class App extends Application {
         super.onCreate();
         instance = this;
 
-        database = Room.databaseBuilder(this, AppDatabase.class, "wallet_db")
+        database = Room.databaseBuilder(this, AppDatabase.class, DATABASE_NAME)
                 .allowMainThreadQueries()
                 .build();
     }

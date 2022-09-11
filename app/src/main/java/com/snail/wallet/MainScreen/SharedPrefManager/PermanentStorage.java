@@ -16,6 +16,10 @@ public class PermanentStorage {
         context = cxt;
     }
 
+    public static void clearPermanentStorage() {
+        context.getSharedPreferences(STORAGE_NAME, Context.MODE_PRIVATE).edit().clear().apply();
+    }
+
     private static void init(){
         settings = context.getSharedPreferences(STORAGE_NAME, Context.MODE_PRIVATE);
         editor   = settings.edit();
@@ -35,6 +39,13 @@ public class PermanentStorage {
         }
         editor.putBoolean( name, value );
         editor.apply();
+    }
+
+    public static String getPropertyString( String name ){
+        if( settings == null ){
+            init();
+        }
+        return settings.getString( name, "" );
     }
 
     public static Boolean getPropertyBoolean( String name ){

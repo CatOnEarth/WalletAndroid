@@ -99,7 +99,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
             viewHolder.textViewCategory.setText(categoryDAO.getCategoryById(revenues.getCategory()).getName());
 
 
-            String val = precision.format(revenues.getValue()) + currencyDAO.getCurrencyById(revenues.getCurrency()).getSymbol();
+            String val = precision.format(revenues.getValue()) + currencyDAO.getCurrencyByType(revenues.getType_currency()).getSymbol();
             viewHolder.textViewValue.setText(val);
 
             viewHolder.itemView.setOnClickListener(view -> StartInfoActivity(revenues.getId()));
@@ -109,14 +109,14 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
             viewHolder.textViewDescription.setText(expenses.getDescription());
             viewHolder.textViewCategory.setText(categoryDAO.getCategoryById(expenses.getCategory()).getName());
 
-            String val = precision.format(expenses.getValue()) + currencyDAO.getCurrencyById(expenses.getCurrency()).getSymbol();
+            String val = precision.format(expenses.getValue()) + currencyDAO.getCurrencyByType(expenses.getType_currency()).getSymbol();
             viewHolder.textViewValue.setText(val);
 
             viewHolder.itemView.setOnClickListener(view -> StartInfoActivity(expenses.getId()));
         }
     }
 
-    public void StartInfoActivity(int id) {
+    public void StartInfoActivity(long id) {
         Intent intent = new Intent(mContext, ShowActivity.class);
         intent.putExtra(ADDING_OBJECT, typeData);
         intent.putExtra(ShowActivity.ID_ITEM, id);

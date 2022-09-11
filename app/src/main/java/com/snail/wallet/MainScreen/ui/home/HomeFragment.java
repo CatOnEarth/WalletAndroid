@@ -111,13 +111,13 @@ public class HomeFragment extends Fragment {
         for (int ii = 0; ii < revenues.size(); ++ii) {
             temp = revenues.get(ii);
 
-            if (temp.getCurrency() == WalletActivity.CODE_CURRENCY_RUBLE) {
+            if (temp.getType_currency() == WalletActivity.CODE_CURRENCY_RUBLE) {
                 rubles += temp.getValue();
-            } else if (temp.getCurrency() == WalletActivity.CODE_CURRENCY_DOLLAR) {
+            } else if (temp.getType_currency() == WalletActivity.CODE_CURRENCY_DOLLAR) {
                 dollars += temp.getValue();
-            } else if (temp.getCurrency() == WalletActivity.CODE_CURRENCY_EURO) {
+            } else if (temp.getType_currency() == WalletActivity.CODE_CURRENCY_EURO) {
                 euro += temp.getValue();
-            } else if (temp.getCurrency() == WalletActivity.CODE_CURRENCY_TURKISH_LIRA) {
+            } else if (temp.getType_currency() == WalletActivity.CODE_CURRENCY_TURKISH_LIRA) {
                 lira += temp.getValue();
             }
         }
@@ -148,13 +148,13 @@ public class HomeFragment extends Fragment {
         for (int ii = 0; ii < expenses.size(); ++ii) {
             temp = expenses.get(ii);
 
-            if (temp.getCurrency() == WalletActivity.CODE_CURRENCY_RUBLE) {
+            if (temp.getType_currency() == WalletActivity.CODE_CURRENCY_RUBLE) {
                 rubles += temp.getValue();
-            } else if (temp.getCurrency() == WalletActivity.CODE_CURRENCY_DOLLAR) {
+            } else if (temp.getType_currency() == WalletActivity.CODE_CURRENCY_DOLLAR) {
                 dollars += temp.getValue();
-            } else if (temp.getCurrency() == WalletActivity.CODE_CURRENCY_EURO) {
+            } else if (temp.getType_currency() == WalletActivity.CODE_CURRENCY_EURO) {
                 euro += temp.getValue();
-            } else if (temp.getCurrency() == WalletActivity.CODE_CURRENCY_TURKISH_LIRA) {
+            } else if (temp.getType_currency() == WalletActivity.CODE_CURRENCY_TURKISH_LIRA) {
                 lira += temp.getValue();
             }
         }

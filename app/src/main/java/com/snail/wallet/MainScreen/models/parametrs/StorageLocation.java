@@ -9,11 +9,11 @@ import androidx.room.PrimaryKey;
 public class StorageLocation {
     @PrimaryKey(autoGenerate=true)
     @ColumnInfo(name = "id")
-    public int    id;
+    public long    id;
     @ColumnInfo(name = "location")
     public String location;
 
-    public StorageLocation(int id, String location) {
+    public StorageLocation(long id, String location) {
         this.id       = id;
         this.location = location;
     }
@@ -23,11 +23,11 @@ public class StorageLocation {
         this.location = location;
     }
 
-    public int getId() {
+    public long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(long id) {
         this.id = id;
     }
 

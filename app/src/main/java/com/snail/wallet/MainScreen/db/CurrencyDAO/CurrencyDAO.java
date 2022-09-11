@@ -17,10 +17,13 @@ public interface CurrencyDAO {
     List<Currency> getAll();
 
     @Query("SELECT * FROM currency WHERE id = :id")
-    Currency getCurrencyById(int id);
+    Currency getCurrencyById(long id);
+
+    @Query("SELECT * FROM currency WHERE type_currency = :type_currency")
+    Currency getCurrencyByType(int type_currency);
 
     @Insert
-    void insert(Currency currency);
+    long insert(Currency currency);
 
     @Update
     void update(Currency currency);

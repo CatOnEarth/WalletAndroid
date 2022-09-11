@@ -44,11 +44,11 @@ public class ShowActivity extends AppCompatActivity {
 
     private double value_double;
     private String desc_str;
-    private int category_id;
-    private int storage_location_id;
-    private int currency_id;
+    private long category_id;
+    private long storage_location_id;
+    private int currency_type;
 
-    private int id_item;
+    private long id_item;
     private int type_item;
 
     TextView textViewCategory;
@@ -63,10 +63,11 @@ public class ShowActivity extends AppCompatActivity {
         setContentView(R.layout.activity_show);
 
         Intent intent = getIntent();
-        id_item       = intent.getIntExtra(ID_ITEM, -1);
+        id_item       = intent.getLongExtra(ID_ITEM, -1);
         type_item     = intent.getIntExtra(ADDING_OBJECT, -1);
         if (id_item == -1 || type_item == -1) {
             finish();
+            return;
         }
 
         initFindView();
@@ -183,9 +184,9 @@ public class ShowActivity extends AppCompatActivity {
 
         DecimalFormat precision = new DecimalFormat("0.00");
         value_double = revenues.getValue();
-        currency_id  = revenues.getCurrency();
+        currency_type = revenues.getType_currency();
         String value           = getResources().getText(R.string.textValue) + ": " + precision.format(value_double)
-                                    + currencyDAO.getCurrencyById(revenues.getCurrency()).getSymbol();
+                                    + currencyDAO.getCurrencyByType(currency_type).getSymbol();
 
         String date_item       = getResources().getText(R.string.textData) + ": " + custom_date.getDate_day() + "." +
                                    custom_date.getDate_month() + "." + custom_date.getDate_year();
@@ -213,9 +214,9 @@ public class ShowActivity extends AppCompatActivity {
 
         DecimalFormat precision = new DecimalFormat("0.00");
         value_double = expenses.getValue();
-        currency_id  = expenses.getCurrency();
+        currency_type = expenses.getType_currency();
         String value           = getResources().getText(R.string.textValue) + ": " + precision.format(value_double) +
-                                        currencyDAO.getCurrencyById(expenses.getCurrency()).getSymbol();
+                                        currencyDAO.getCurrencyByType(currency_type).getSymbol();
 
         String date_item       = getResources().getText(R.string.textData) + ": " + custom_date.getDate_day() + "." +
                 custom_date.getDate_month() + "." + custom_date.getDate_year();
@@ -236,7 +237,7 @@ public class ShowActivity extends AppCompatActivity {
         intent.putExtra(VALUE_EDITING, value_double);
         intent.putExtra(DESC_EDITING, desc_str);
         intent.putExtra(CATEGORY_EDITING, category_id);
-        intent.putExtra(CURRENCY_EDITING, currency_id);
+        intent.putExtra(CURRENCY_EDITING, currency_type);
 
         if (type_item == ADDING_REVENUE) {
             intent.putExtra(STORAGE_LOCATION_EDITING, storage_location_id);

@@ -17,17 +17,17 @@ public interface RevenueDAO {
     @Query("SELECT * FROM revenues")
     List<Revenues> getAll();
 
-    @Query("SELECT value, currency FROM revenues")
+    @Query("SELECT value, type_currency FROM revenues")
     List<Coin> getValues();
 
     @Query("SELECT * FROM revenues WHERE id = :id")
-    Revenues getById(int id);
+    Revenues getById(long id);
 
     @Query("SELECT date_day, date_month, date_year FROM revenues WHERE id = :id")
-    Date getDateById(int id);
+    Date getDateById(long id);
 
     @Insert
-    void insert(Revenues revenue);
+    long insert(Revenues revenue);
 
     @Update
     void update(Revenues revenue);
@@ -36,5 +36,5 @@ public interface RevenueDAO {
     void delete(Revenues revenue);
 
     @Query("DELETE FROM revenues WHERE id = :id")
-    void deleteById(int id);
+    void deleteById(long id);
 }

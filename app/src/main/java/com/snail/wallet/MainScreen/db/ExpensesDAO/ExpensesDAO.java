@@ -17,17 +17,17 @@ public interface ExpensesDAO {
     @Query("SELECT * FROM expenses")
     List<Expenses> getAll();
 
-    @Query("SELECT value, currency FROM expenses")
+    @Query("SELECT value, type_currency FROM expenses")
     List<Coin> getValues();
 
     @Query("SELECT * FROM expenses WHERE id = :id")
-    Expenses getById(int id);
+    Expenses getById(long id);
 
     @Query("SELECT date_day, date_month, date_year FROM expenses WHERE id = :id")
-    Date getDateById(int id);
+    Date getDateById(long id);
 
     @Insert
-    void insert(Expenses expenses);
+    long insert(Expenses expenses);
 
     @Update
     void update(Expenses expenses);
@@ -36,5 +36,5 @@ public interface ExpensesDAO {
     void delete(Expenses expenses);
 
     @Query("DELETE FROM expenses WHERE id = :id")
-    void deleteById(int id);
+    void deleteById(long id);
 }

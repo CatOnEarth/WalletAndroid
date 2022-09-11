@@ -18,7 +18,7 @@ public interface CategoryDAO {
     List<Category> getAll();
 
     @Query("SELECT * FROM category WHERE id = :id")
-    Category getCategoryById(int id);
+    Category getCategoryById(long id);
 
     @Query("SELECT * FROM category WHERE name = :name")
     List<Category> getCategoryName(String name);
@@ -27,7 +27,7 @@ public interface CategoryDAO {
     List<Category> getCategoryByType(int type);
 
     @Insert
-    void insert(Category category);
+    long insert(Category category);
 
     @Update
     void update(Category category);

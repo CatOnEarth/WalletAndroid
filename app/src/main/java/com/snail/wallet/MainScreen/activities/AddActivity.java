@@ -78,7 +78,7 @@ public class AddActivity extends AppCompatActivity {
     private ArrayList<Category>        categoryList;
     private ArrayList<StorageLocation> storageLocationList;
 
-    private int id_editing;
+    private long id_editing;
 
     private int type_adding;
 
@@ -101,7 +101,7 @@ public class AddActivity extends AppCompatActivity {
 
         Intent intent = getIntent();
         type_adding   = intent.getIntExtra(ADDING_OBJECT, -1);
-        id_editing    = intent.getIntExtra(ID_EDITING, -1);
+        id_editing    = intent.getLongExtra(ID_EDITING, -1);
         if (type_adding == -1) {
             finish();
         }
@@ -240,7 +240,7 @@ public class AddActivity extends AppCompatActivity {
 
         AppDatabase db        = App.getInstance().getAppDatabase();
 
-        int    category       = ((Category)spinnerCategory.getSelectedItem()).getId();
+        long    category       = ((Category)spinnerCategory.getSelectedItem()).getId();
 
         int date_day   = dateAndTime.get(Calendar.DAY_OF_MONTH);
         int date_month = dateAndTime.get(Calendar.MONTH) + 1;
@@ -248,10 +248,10 @@ public class AddActivity extends AppCompatActivity {
 
         String description    = editTextDescription.getText().toString();
         double value          = getValue();
-        int    currency       = ((Currency)spinnerCurrency.getSelectedItem()).getId();
+        int    currency       = ((Currency)spinnerCurrency.getSelectedItem()).getType_currency();
 
         if (type_adding == ADDING_REVENUE) {
-            int storage_location = ((StorageLocation) spinnerStorageLocation.getSelectedItem())
+            long storage_location = ((StorageLocation) spinnerStorageLocation.getSelectedItem())
                                                                             .getId();
 
             Revenues revenue      = new Revenues(value, currency, category, date_day,
@@ -376,16 +376,18 @@ public class AddActivity extends AppCompatActivity {
     private void insertNewCategory(AppDatabase db, String str) {
         CategoryDAO categoryDAO = db.categoryDAO();
         Category new_category = new Category(type_adding, str);
-        categoryDAO.insert(new_category);
+        long new_category_id = categoryDAO.insert(new_category);
+        new_category.setId(new_category_id);
         categoryList.add(new_category);
         categoryAdapter.notifyDataSetChanged();
     }
 
     private void insertNewStorageLocation(AppDatabase db, String str) {
         StorageLocationDAO storageLocationDAO = db.storageLocationDAO();
-        StorageLocation storageLocation = new StorageLocation(str);
-        storageLocationDAO.insert(storageLocation);
-        storageLocationList.add(storageLocation);
+        StorageLocation new_storageLocation = new StorageLocation(str);
+        long new_storageLocation_id = storageLocationDAO.insert(new_storageLocation);
+        new_storageLocation.setId(new_storageLocation_id);
+        storageLocationList.add(new_storageLocation);
         storageLocationAdapter.notifyDataSetChanged();
     }
 
@@ -408,7 +410,7 @@ public class AddActivity extends AppCompatActivity {
         editTextValue.setText(precision.format(intent.getDoubleExtra(VALUE_EDITING, 0)));
         editTextDescription.setText(intent.getStringExtra(DESC_EDITING));
 
-        int category_id = intent.getIntExtra(CATEGORY_EDITING, 0);
+        long category_id = intent.getLongExtra(CATEGORY_EDITING, 0);
         for (int ii = 0; ii < categoryAdapter.getCount(); ++ii) {
             if (category_id == ((Category) categoryAdapter.getItem(ii)).getId()) {
                 spinnerCategory.setSelection(ii);

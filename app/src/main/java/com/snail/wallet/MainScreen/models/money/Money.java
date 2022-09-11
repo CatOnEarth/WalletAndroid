@@ -8,13 +8,13 @@ import androidx.room.PrimaryKey;
 public class Money {
     @PrimaryKey (autoGenerate=true)
     @ColumnInfo(name = "id")
-    public int    id;
+    public long   id;
     @ColumnInfo(name = "value")
     public double value;
-    @ColumnInfo(name = "currency")
-    public int    currency;
+    @ColumnInfo(name = "type_currency")
+    public int    type_currency;
     @ColumnInfo(name = "category")
-    public int    category;
+    public long    category;
     @ColumnInfo(name = "date_day")
     public int date_day;
     @ColumnInfo(name = "date_month")
@@ -24,11 +24,11 @@ public class Money {
     @ColumnInfo(name = "description")
     public String description;
 
-    public Money(int id, double value, int currency, int category, int date_day,
+    public Money(long id, double value, int type_currency, long category, int date_day,
                  int date_month, int date_year, String description) {
         this.id = id;
         this.value = value;
-        this.currency = currency;
+        this.type_currency = type_currency;
         this.category = category;
         this.date_day = date_day;
         this.date_month = date_month;
@@ -37,10 +37,10 @@ public class Money {
     }
 
     @Ignore
-    public Money(double value, int currency, int category, int date_day,
+    public Money(double value, int type_currency, long category, int date_day,
                  int date_month, int date_year, String description) {
         this.value = value;
-        this.currency = currency;
+        this.type_currency = type_currency;
         this.category = category;
         this.date_day = date_day;
         this.date_month = date_month;
@@ -48,11 +48,11 @@ public class Money {
         this.description = description;
     }
 
-    public int getId() {
+    public long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(long id) {
         this.id = id;
     }
 
@@ -64,19 +64,19 @@ public class Money {
         this.value = value;
     }
 
-    public int getCurrency() {
-        return currency;
+    public int getType_currency() {
+        return type_currency;
     }
 
-    public void setCurrency(int currency) {
-        this.currency = currency;
+    public void setType_currency(int type_currency) {
+        this.type_currency = type_currency;
     }
 
-    public int getCategory() {
+    public long getCategory() {
         return category;
     }
 
-    public void setCategory(int category) {
+    public void setCategory(long category) {
         this.category = category;
     }
 

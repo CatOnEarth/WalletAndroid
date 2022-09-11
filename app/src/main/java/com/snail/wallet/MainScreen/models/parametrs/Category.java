@@ -9,13 +9,13 @@ import androidx.room.PrimaryKey;
 public class Category {
     @PrimaryKey(autoGenerate=true)
     @ColumnInfo(name = "id")
-    public int   id;
+    public long   id;
     @ColumnInfo(name = "type")
     public int   type;
     @ColumnInfo(name = "name")
     public String name;
 
-    public Category(int id, int type, String name) {
+    public Category(long id, int type, String name) {
         this.id  = id;
         this.type = type;
         this.name = name;
@@ -27,11 +27,11 @@ public class Category {
         this.name = name;
     }
 
-    public int getId() {
+    public long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(long id) {
         this.id = id;
     }
 

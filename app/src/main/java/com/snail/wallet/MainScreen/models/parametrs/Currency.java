@@ -9,34 +9,42 @@ import androidx.room.PrimaryKey;
 public class Currency {
     @PrimaryKey(autoGenerate=true)
     @ColumnInfo(name = "id")
-    public int    id;
-    @ColumnInfo(name = "type")
-    public int    type;
+    public long    id;
+    @ColumnInfo(name = "type_currency")
+    public int    type_currency;
     @ColumnInfo(name = "name")
     public String name;
     @ColumnInfo(name = "symbol")
     public String symbol;
 
-    public Currency(int id, int type, String name, String symbol) {
+    public Currency(long id, int type_currency, String name, String symbol) {
         this.id     = id;
-        this.type   = type;
+        this.type_currency   = type_currency;
         this.name   = name;
         this.symbol = symbol;
     }
 
     @Ignore
-    public Currency(int type, String name, String symbol) {
-        this.type   = type;
+    public Currency(int type_currency, String name, String symbol) {
+        this.type_currency   = type_currency;
         this.name   = name;
         this.symbol = symbol;
     }
 
-    public int getId() {
+    public long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(long id) {
         this.id = id;
+    }
+
+    public int getType_currency() {
+        return type_currency;
+    }
+
+    public void setType_currency(int type_currency) {
+        this.type_currency = type_currency;
     }
 
     public String getName() {

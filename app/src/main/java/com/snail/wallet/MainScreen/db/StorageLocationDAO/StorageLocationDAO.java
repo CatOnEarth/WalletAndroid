@@ -20,10 +20,10 @@ public interface StorageLocationDAO {
     List<StorageLocation> getByStorageLocationName(String location);
 
     @Query("SELECT location FROM storage_location WHERE id = :id")
-    String getLocationById(int id);
+    String getLocationById(long id);
 
     @Insert
-    void insert(StorageLocation storage_location);
+    long insert(StorageLocation storage_location);
 
     @Update
     void update(StorageLocation storage_location);
