@@ -7,10 +7,13 @@ import static com.snail.wallet.WalletConstants.CODE_TYPE_PARAM_STORAGE_LOCATION;
 import android.app.Activity;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.text.InputFilter;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -73,6 +76,56 @@ public class SettingsRecyclerViewAdapter  extends RecyclerView.Adapter<SettingsR
                                                                             .getLocation());
         }
 
+        initClickListenerDelete(viewHolder, position);
+        initClickListenerEdit(viewHolder, position);
+    }
+
+    private void initClickListenerEdit(ViewHolder viewHolder, int position) {
+        viewHolder.imageButtonEditElemSetting.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                AlertDialog.Builder builder = new AlertDialog.Builder(context)
+                        .setTitle("Delete entry")
+                        .setMessage("Are you sure you want to delete this entry?");
+
+                final EditText input = new EditText(context);
+                LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(
+                        LinearLayout.LayoutParams.MATCH_PARENT,
+                        LinearLayout.LayoutParams.MATCH_PARENT);
+                int maxLength        = 32;
+                InputFilter[] fArray = new InputFilter[1];
+                fArray[0]            = new InputFilter.LengthFilter(maxLength);
+                input.setFilters(fArray);
+                input.setLayoutParams(lp);
+                builder.setView(input);
+
+                builder
+                        .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int which) {
+                                String new_name = input.getText().toString();
+                                if (new_name.length() == 0) return;
+
+                                int pos = viewHolder.getAdapterPosition();
+                                AppDatabase db = App.getInstance().getAppDatabase();
+
+                                if (typeSetting == CODE_TYPE_CATEGORY_REVENUE || typeSetting == CODE_TYPE_CATEGORY_EXPENSES) {
+                                    ((Category)localData.get(pos)).setName(new_name);
+                                    db.categoryDAO().update(((Category)localData.get(pos)));
+                                } else if (typeSetting == CODE_TYPE_PARAM_STORAGE_LOCATION) {
+                                    ((StorageLocation)(localData.get(pos))).setLocation(new_name);
+                                    db.storageLocationDAO().update(((StorageLocation)(localData.get(pos))));
+                                }
+
+                                notifyItemChanged(pos);
+                            }
+                        })
+                        .setNegativeButton(android.R.string.no, null)
+                        .show();
+            }
+        });
+    }
+
+    private void initClickListenerDelete(ViewHolder viewHolder, int position) {
         viewHolder.imageButtonDeleteElemSetting.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -94,7 +147,6 @@ public class SettingsRecyclerViewAdapter  extends RecyclerView.Adapter<SettingsR
                             }
                         })
                         .setNegativeButton(android.R.string.no, null)
-                        .setIcon(android.R.drawable.ic_dialog_alert)
                         .show();
             }
         });
