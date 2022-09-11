@@ -3,8 +3,11 @@ package com.snail.wallet.MainScreen.activities;
 import static com.snail.wallet.MainScreen.activities.AddActivity.ADDING_EXPENSES;
 import static com.snail.wallet.MainScreen.activities.AddActivity.ADDING_OBJECT;
 import static com.snail.wallet.MainScreen.activities.AddActivity.ADDING_REVENUE;
+import static com.snail.wallet.MainScreen.activities.AddActivity.CATEGORY_EDITING;
+import static com.snail.wallet.MainScreen.activities.AddActivity.CURRENCY_EDITING;
 import static com.snail.wallet.MainScreen.activities.AddActivity.DESC_EDITING;
 import static com.snail.wallet.MainScreen.activities.AddActivity.ID_EDITING;
+import static com.snail.wallet.MainScreen.activities.AddActivity.STORAGE_LOCATION_EDITING;
 import static com.snail.wallet.MainScreen.activities.AddActivity.VALUE_EDITING;
 
 import androidx.annotation.NonNull;
@@ -41,6 +44,9 @@ public class ShowActivity extends AppCompatActivity {
 
     private double value_double;
     private String desc_str;
+    private int category_id;
+    private int storage_location_id;
+    private int currency_id;
 
     private int id_item;
     private int type_item;
@@ -167,14 +173,17 @@ public class ShowActivity extends AppCompatActivity {
         Date        custom_date               = revenueDAO.getDateById(id_item);
         Revenues    revenues                  = revenueDAO.getById(id_item);
 
+        category_id = revenues.getCategory();
         String category        = getResources().getText(R.string.textCategory) + ": " +
                                    categoryDAO.getCategoryById(revenues.getCategory()).getName();
 
+        storage_location_id = revenues.getStorage_location();
         String storageLocation = getResources().getText(R.string.textStorageLocation) + ": " +
                                    storageLocationDAO.getLocationById(revenues.getStorage_location());
 
         DecimalFormat precision = new DecimalFormat("0.00");
         value_double = revenues.getValue();
+        currency_id  = revenues.getCurrency();
         String value           = getResources().getText(R.string.textValue) + ": " + precision.format(value_double)
                                     + currencyDAO.getCurrencyById(revenues.getCurrency()).getSymbol();
 
@@ -198,11 +207,13 @@ public class ShowActivity extends AppCompatActivity {
         Date        custom_date               = expensesDAO.getDateById(id_item);
         Expenses    expenses                  = expensesDAO.getById(id_item);
 
+        category_id = expenses.getCategory();
         String category        = getResources().getText(R.string.textCategory) + ": " +
                 categoryDAO.getCategoryById(expenses.getCategory()).getName();
 
         DecimalFormat precision = new DecimalFormat("0.00");
         value_double = expenses.getValue();
+        currency_id  = expenses.getCurrency();
         String value           = getResources().getText(R.string.textValue) + ": " + precision.format(value_double) +
                                         currencyDAO.getCurrencyById(expenses.getCurrency()).getSymbol();
 
@@ -221,9 +232,15 @@ public class ShowActivity extends AppCompatActivity {
     private void startEditingActivity() {
         Intent intent = new Intent(ShowActivity.this, AddActivity.class);
         intent.putExtra(ID_EDITING, id_item);
-        intent.putExtra(ADDING_OBJECT, ADDING_REVENUE);
+        intent.putExtra(ADDING_OBJECT, type_item);
         intent.putExtra(VALUE_EDITING, value_double);
         intent.putExtra(DESC_EDITING, desc_str);
+        intent.putExtra(CATEGORY_EDITING, category_id);
+        intent.putExtra(CURRENCY_EDITING, currency_id);
+
+        if (type_item == ADDING_REVENUE) {
+            intent.putExtra(STORAGE_LOCATION_EDITING, storage_location_id);
+        }
 
         startActivity(intent);
     }

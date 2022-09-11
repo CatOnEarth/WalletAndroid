@@ -48,9 +48,12 @@ import java.util.Calendar;
 public class AddActivity extends AppCompatActivity {
     private final String TAG = this.getClass().getSimpleName();
 
-    public static final String ID_EDITING    = "id_editing";
-    public static final String VALUE_EDITING = "val_editing";
-    public static final String DESC_EDITING  = "desc_editing";
+    public static final String ID_EDITING                = "id_editing";
+    public static final String VALUE_EDITING             = "val_editing";
+    public static final String DESC_EDITING              = "desc_editing";
+    public static final String CATEGORY_EDITING          = "category_editing";
+    public static final String CURRENCY_EDITING          = "currency_editing";
+    public static final String STORAGE_LOCATION_EDITING  = "storage_location_editing";
 
     public static final String ADDING_OBJECT   = "obj_add";
     public static final int    ADDING_REVENUE  = 1;
@@ -61,6 +64,7 @@ public class AddActivity extends AppCompatActivity {
     private Spinner spinnerStorageLocation;
 
     private SpinnerAdapter categoryAdapter;
+    private SpinnerAdapter currencyAdapter;
     private SpinnerAdapter storageLocationAdapter;
 
     private EditText editTextValue;
@@ -98,7 +102,7 @@ public class AddActivity extends AppCompatActivity {
         Intent intent = getIntent();
         type_adding   = intent.getIntExtra(ADDING_OBJECT, -1);
         id_editing    = intent.getIntExtra(ID_EDITING, -1);
-        if (type_adding == -1 || id_editing == -1) {
+        if (type_adding == -1) {
             finish();
         }
 
@@ -152,7 +156,7 @@ public class AddActivity extends AppCompatActivity {
     private void initCurrencySpinner(AppDatabase db) {
         CurrencyDAO currencyDAO = db.currencyDAO();
         ArrayList<Currency> currencyList = (ArrayList<Currency>) currencyDAO.getAll();
-        SpinnerAdapter currencyAdapter = new SpinnerAdapter(this, TYPE_CURRENCY,
+        currencyAdapter = new SpinnerAdapter(this, TYPE_CURRENCY,
                                                                                 currencyList);
         spinnerCurrency.setAdapter(currencyAdapter);
     }
@@ -254,12 +258,24 @@ public class AddActivity extends AppCompatActivity {
                                                  date_month, date_year, description,
                                                  storage_location);
             RevenueDAO revenueDAO = db.revenueDAO();
-            revenueDAO.insert(revenue);
+
+            if (id_editing == -1) {
+                revenueDAO.insert(revenue);
+            } else {
+                revenue.setId(id_editing);
+                revenueDAO.update(revenue);
+            }
         } else if (type_adding == ADDING_EXPENSES) {
             Expenses expenses       = new Expenses(value, currency, category, date_day,
                                                      date_month, date_year, description);
             ExpensesDAO expensesDAO = db.expensesDAO();
-            expensesDAO.insert(expenses);
+
+            if (id_editing == -1) {
+                expensesDAO.insert(expenses);
+            } else {
+                expenses.setId(id_editing);
+                expensesDAO.update(expenses);
+            }
         }
 
         finish();
@@ -391,6 +407,29 @@ public class AddActivity extends AppCompatActivity {
         DecimalFormat precision = new DecimalFormat("0.00");
         editTextValue.setText(precision.format(intent.getDoubleExtra(VALUE_EDITING, 0)));
         editTextDescription.setText(intent.getStringExtra(DESC_EDITING));
+
+        int category_id = intent.getIntExtra(CATEGORY_EDITING, 0);
+        for (int ii = 0; ii < categoryAdapter.getCount(); ++ii) {
+            if (category_id == ((Category) categoryAdapter.getItem(ii)).getId()) {
+                spinnerCategory.setSelection(ii);
+            }
+        }
+
+        int currency_id = intent.getIntExtra(CURRENCY_EDITING, 0);
+        for (int ii = 0; ii < currencyAdapter.getCount(); ++ii) {
+            if (currency_id == ((Currency) currencyAdapter.getItem(ii)).getId()) {
+                spinnerCurrency.setSelection(ii);
+            }
+        }
+        if (type_adding == ADDING_REVENUE) {
+            int storage_location_id = intent.getIntExtra(STORAGE_LOCATION_EDITING, 0);
+            for (int ii = 0; ii < storageLocationAdapter.getCount(); ++ii) {
+                if (storage_location_id == ((StorageLocation) storageLocationAdapter.getItem(ii)).getId()) {
+                    spinnerStorageLocation.setSelection(ii);
+                }
+            }
+        }
+
     }
 
 }
