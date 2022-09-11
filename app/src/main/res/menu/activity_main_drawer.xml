@@ -16,5 +16,17 @@
             android:id="@+id/nav_slideshow"
             android:icon="@drawable/ic_menu_slideshow"
             android:title="@string/menu_slideshow" />
+        <item
+            android:id="@+id/nav_calc_currency"
+            android:icon="@drawable/ic_menu_slideshow"
+            android:title="Калькулятор валют" />
+        <item
+            android:id="@+id/nav_settings"
+            android:icon="@drawable/ic_menu_slideshow"
+            android:title="Настройки" />
+        <item
+            android:id="@+id/nav_userdata"
+            android:icon="@drawable/ic_menu_slideshow"
+            android:title="О пользователе" />
     </group>
 </menu>
