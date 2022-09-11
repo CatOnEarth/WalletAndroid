@@ -7,7 +7,6 @@ import static com.snail.wallet.WalletConstants.APP_PREFERENCES_USER_EMAIL;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
-import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -20,9 +19,11 @@ import android.widget.TextView;
 
 import com.snail.wallet.MainScreen.SharedPrefManager.PermanentStorage;
 import com.snail.wallet.MainScreen.WalletActivity;
+import com.snail.wallet.MainScreen.ui.dialogs.DialogButtonListener;
+import com.snail.wallet.MainScreen.ui.dialogs.InfoDialogFragment;
 import com.snail.wallet.R;
 
-public class LoginActivity extends AppCompatActivity {
+public class LoginActivity extends AppCompatActivity implements DialogButtonListener {
     private final String TAG = this.getClass().getSimpleName();
 
 
@@ -96,14 +97,19 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     private void aboutDialog() {
-        AlertDialog.Builder alertDialog = new AlertDialog.Builder(LoginActivity.this);
+        InfoDialogFragment dialog = new InfoDialogFragment("О приложении", "Информация о приолжении",
+                true, "Ок", false, "");
 
-        alertDialog.setTitle("О приложении");
-        alertDialog.setMessage("О приложении");
+        dialog.show(getSupportFragmentManager(), TAG);
+    }
 
-        alertDialog.setPositiveButton("Ок",
-                (dialog, which) -> dialog.cancel());
+    @Override
+    public void PositiveButton() {
 
-        alertDialog.show();
+    }
+
+    @Override
+    public void NegativeButton() {
+
     }
 }
