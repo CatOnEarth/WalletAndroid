@@ -22,6 +22,7 @@ import com.snail.wallet.MainScreen.db.AppDatabase;
 import com.snail.wallet.MainScreen.db.CategoryDAO.CategoryDAO;
 import com.snail.wallet.MainScreen.db.StorageLocationDAO.StorageLocationDAO;
 import com.snail.wallet.MainScreen.ui.adapters.SettingsRecyclerViewAdapter;
+import com.snail.wallet.MainScreen.ui.dialogs.InfoDialogButtonListener;
 import com.snail.wallet.R;
 
 import java.util.ArrayList;
@@ -89,6 +90,8 @@ public class EditSettingActivity extends AppCompatActivity {
     }
 
     private void initData() {
+        settingsData.clear();
+
         AppDatabase db = App.getInstance().getAppDatabase();
 
         if        (typeSetting == CODE_TYPE_CATEGORY_REVENUE) {
