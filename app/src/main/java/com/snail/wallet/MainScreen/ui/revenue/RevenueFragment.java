@@ -1,6 +1,8 @@
 package com.snail.wallet.MainScreen.ui.revenue;
 
-import static com.snail.wallet.MainScreen.activities.AddActivity.ADDING_REVENUE;
+
+import static com.snail.wallet.WalletConstants.ADDING_OBJECT_TYPE;
+import static com.snail.wallet.WalletConstants.ADDING_OBJ_REVENUE_TYPE;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
@@ -51,7 +53,7 @@ public class RevenueFragment extends Fragment {
 
         revenues = new ArrayList<>();
         revenues.addAll(revenueDAO.getAll());
-        recyclerViewAdapter = new RecyclerViewAdapter(ADDING_REVENUE, revenues, getContext());
+        recyclerViewAdapter = new RecyclerViewAdapter(ADDING_OBJ_REVENUE_TYPE, revenues, getContext());
 
         recyclerView.setAdapter(recyclerViewAdapter);
 
@@ -78,7 +80,7 @@ public class RevenueFragment extends Fragment {
 
     private void StartAddActivity() {
         Intent intent = new Intent(getContext(), AddActivity.class);
-        intent.putExtra(AddActivity.ADDING_OBJECT, ADDING_REVENUE);
+        intent.putExtra(ADDING_OBJECT_TYPE, ADDING_OBJ_REVENUE_TYPE);
         startActivity(intent);
     }
 

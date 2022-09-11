@@ -1,27 +1,30 @@
 package com.snail.wallet.MainScreen.SharedPrefManager;
 
+import static com.snail.wallet.WalletConstants.SHARED_PREF_MANAGER_STORAGE_NAME;
+
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.SharedPreferences;
 
 public class PermanentStorage {
-    public static final String STORAGE_NAME = "WalletPermanent";
-
-    private static SharedPreferences settings = null;
+    private static SharedPreferences settings      = null;
     private static SharedPreferences.Editor editor = null;
     @SuppressLint("StaticFieldLeak")
-    private static Context context = null;
+    private static Context context                 = null;
 
     public static void init( Context cxt ){
         context = cxt;
     }
 
     public static void clearPermanentStorage() {
-        context.getSharedPreferences(STORAGE_NAME, Context.MODE_PRIVATE).edit().clear().apply();
+        context.getSharedPreferences(SHARED_PREF_MANAGER_STORAGE_NAME, Context.MODE_PRIVATE)
+                .edit()
+                .clear()
+                .apply();
     }
 
     private static void init(){
-        settings = context.getSharedPreferences(STORAGE_NAME, Context.MODE_PRIVATE);
+        settings = context.getSharedPreferences(SHARED_PREF_MANAGER_STORAGE_NAME, Context.MODE_PRIVATE);
         editor   = settings.edit();
     }
 
@@ -29,6 +32,7 @@ public class PermanentStorage {
         if( settings == null ){
             init();
         }
+
         editor.putString( name, value );
         editor.apply();
     }
@@ -37,6 +41,7 @@ public class PermanentStorage {
         if( settings == null ){
             init();
         }
+
         editor.putBoolean( name, value );
         editor.apply();
     }
@@ -45,6 +50,7 @@ public class PermanentStorage {
         if( settings == null ){
             init();
         }
+
         return settings.getString( name, "" );
     }
 
@@ -52,6 +58,7 @@ public class PermanentStorage {
         if( settings == null ){
             init();
         }
+
         return settings.getBoolean( name, false );
     }
 }

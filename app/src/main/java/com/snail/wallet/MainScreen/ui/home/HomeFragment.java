@@ -1,5 +1,13 @@
 package com.snail.wallet.MainScreen.ui.home;
 
+import static com.snail.wallet.WalletConstants.ADDING_OBJECT_TYPE;
+import static com.snail.wallet.WalletConstants.ADDING_OBJ_EXPENSES_TYPE;
+import static com.snail.wallet.WalletConstants.ADDING_OBJ_REVENUE_TYPE;
+import static com.snail.wallet.WalletConstants.CODE_TYPE_CURRENCY_DOLLAR;
+import static com.snail.wallet.WalletConstants.CODE_TYPE_CURRENCY_EURO;
+import static com.snail.wallet.WalletConstants.CODE_TYPE_CURRENCY_RUBLE;
+import static com.snail.wallet.WalletConstants.CODE_TYPE_CURRENCY_TURKISH_LIRA;
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -11,7 +19,6 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
-import com.snail.wallet.MainScreen.WalletActivity;
 import com.snail.wallet.MainScreen.activities.AddActivity;
 import com.snail.wallet.MainScreen.db.App;
 import com.snail.wallet.MainScreen.db.AppDatabase;
@@ -68,14 +75,14 @@ public class HomeFragment extends Fragment {
         ImageButton bAddRevenue  = root.findViewById(R.id.bAddRevenuesHome);
         ImageButton bAddExpenses = root.findViewById(R.id.bAddExpensesHome);
 
-        bAddRevenue.setOnClickListener(view -> startAddActivity(AddActivity.ADDING_REVENUE));
+        bAddRevenue.setOnClickListener(view -> startAddActivity(ADDING_OBJ_REVENUE_TYPE));
 
-        bAddExpenses.setOnClickListener(view -> startAddActivity(AddActivity.ADDING_EXPENSES));
+        bAddExpenses.setOnClickListener(view -> startAddActivity(ADDING_OBJ_EXPENSES_TYPE));
     }
 
     private void startAddActivity(int type_add) {
         Intent intent = new Intent(getContext(), AddActivity.class);
-        intent.putExtra(AddActivity.ADDING_OBJECT, type_add);
+        intent.putExtra(ADDING_OBJECT_TYPE, type_add);
         requireContext().startActivity(intent);
     }
 
@@ -111,13 +118,13 @@ public class HomeFragment extends Fragment {
         for (int ii = 0; ii < revenues.size(); ++ii) {
             temp = revenues.get(ii);
 
-            if (temp.getType_currency() == WalletActivity.CODE_CURRENCY_RUBLE) {
+            if (temp.getType_currency() == CODE_TYPE_CURRENCY_RUBLE) {
                 rubles += temp.getValue();
-            } else if (temp.getType_currency() == WalletActivity.CODE_CURRENCY_DOLLAR) {
+            } else if (temp.getType_currency() == CODE_TYPE_CURRENCY_DOLLAR) {
                 dollars += temp.getValue();
-            } else if (temp.getType_currency() == WalletActivity.CODE_CURRENCY_EURO) {
+            } else if (temp.getType_currency() == CODE_TYPE_CURRENCY_EURO) {
                 euro += temp.getValue();
-            } else if (temp.getType_currency() == WalletActivity.CODE_CURRENCY_TURKISH_LIRA) {
+            } else if (temp.getType_currency() == CODE_TYPE_CURRENCY_TURKISH_LIRA) {
                 lira += temp.getValue();
             }
         }
@@ -148,13 +155,13 @@ public class HomeFragment extends Fragment {
         for (int ii = 0; ii < expenses.size(); ++ii) {
             temp = expenses.get(ii);
 
-            if (temp.getType_currency() == WalletActivity.CODE_CURRENCY_RUBLE) {
+            if (temp.getType_currency() == CODE_TYPE_CURRENCY_RUBLE) {
                 rubles += temp.getValue();
-            } else if (temp.getType_currency() == WalletActivity.CODE_CURRENCY_DOLLAR) {
+            } else if (temp.getType_currency() == CODE_TYPE_CURRENCY_DOLLAR) {
                 dollars += temp.getValue();
-            } else if (temp.getType_currency() == WalletActivity.CODE_CURRENCY_EURO) {
+            } else if (temp.getType_currency() == CODE_TYPE_CURRENCY_EURO) {
                 euro += temp.getValue();
-            } else if (temp.getType_currency() == WalletActivity.CODE_CURRENCY_TURKISH_LIRA) {
+            } else if (temp.getType_currency() == CODE_TYPE_CURRENCY_TURKISH_LIRA) {
                 lira += temp.getValue();
             }
         }

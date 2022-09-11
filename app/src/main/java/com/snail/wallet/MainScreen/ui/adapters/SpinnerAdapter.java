@@ -1,8 +1,9 @@
 package com.snail.wallet.MainScreen.ui.adapters;
 
-import static com.snail.wallet.MainScreen.WalletActivity.TYPE_CATEGORY;
-import static com.snail.wallet.MainScreen.WalletActivity.TYPE_CURRENCY;
-import static com.snail.wallet.MainScreen.WalletActivity.TYPE_STORAGE_LOCATION;
+
+import static com.snail.wallet.WalletConstants.CODE_TYPE_PARAM_CATEGORY;
+import static com.snail.wallet.WalletConstants.CODE_TYPE_PARAM_CURRENCY;
+import static com.snail.wallet.WalletConstants.CODE_TYPE_PARAM_STORAGE_LOCATION;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -57,11 +58,11 @@ public class SpinnerAdapter extends ArrayAdapter {
     }
 
     private void selectLayoutData(TextView textViewName, int position) {
-        if        (type_spinner == TYPE_CATEGORY) {
+        if        (type_spinner == CODE_TYPE_PARAM_CATEGORY) {
             setDataCategoryLayout(textViewName, position);
-        } else if (type_spinner == TYPE_CURRENCY) {
+        } else if (type_spinner == CODE_TYPE_PARAM_CURRENCY) {
             setDataCurrencyLayout(textViewName, position);
-        } else if (type_spinner == TYPE_STORAGE_LOCATION) {
+        } else if (type_spinner == CODE_TYPE_PARAM_STORAGE_LOCATION) {
             setDataStorageLocationLayout(textViewName, position);
         }
     }

@@ -1,6 +1,10 @@
 package com.snail.wallet.MainScreen.ui.adapters;
 
-import static com.snail.wallet.MainScreen.activities.AddActivity.ADDING_OBJECT;
+
+import static com.snail.wallet.WalletConstants.ADDING_OBJECT_TYPE;
+import static com.snail.wallet.WalletConstants.ADDING_OBJ_EXPENSES_TYPE;
+import static com.snail.wallet.WalletConstants.ADDING_OBJ_REVENUE_TYPE;
+import static com.snail.wallet.WalletConstants.ID_SHOW_OBJ;
 
 import android.content.Context;
 import android.content.Intent;
@@ -12,7 +16,6 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.snail.wallet.MainScreen.activities.AddActivity;
 import com.snail.wallet.MainScreen.activities.ShowActivity;
 import com.snail.wallet.MainScreen.db.App;
 import com.snail.wallet.MainScreen.db.AppDatabase;
@@ -92,7 +95,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
         DecimalFormat precision = new DecimalFormat("0.00");
 
-        if (typeData == AddActivity.ADDING_REVENUE) {
+        if (typeData == ADDING_OBJ_REVENUE_TYPE) {
             Revenues revenues = (Revenues) localData.get(position);
 
             viewHolder.textViewDescription.setText(revenues.getDescription());
@@ -103,7 +106,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
             viewHolder.textViewValue.setText(val);
 
             viewHolder.itemView.setOnClickListener(view -> StartInfoActivity(revenues.getId()));
-        } else if (typeData == AddActivity.ADDING_EXPENSES) {
+        } else if (typeData == ADDING_OBJ_EXPENSES_TYPE) {
             Expenses expenses = (Expenses) localData.get(position);
 
             viewHolder.textViewDescription.setText(expenses.getDescription());
@@ -118,8 +121,8 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
     public void StartInfoActivity(long id) {
         Intent intent = new Intent(mContext, ShowActivity.class);
-        intent.putExtra(ADDING_OBJECT, typeData);
-        intent.putExtra(ShowActivity.ID_ITEM, id);
+        intent.putExtra(ADDING_OBJECT_TYPE, typeData);
+        intent.putExtra(ID_SHOW_OBJ, id);
         mContext.startActivity(intent);
     }
 

@@ -1,5 +1,8 @@
 package com.snail.wallet.MainScreen.ui.userdata;
 
+import static com.snail.wallet.WalletConstants.APP_PREFERENCES_USERNAME;
+import static com.snail.wallet.WalletConstants.APP_PREFERENCES_USER_EMAIL;
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -41,8 +44,8 @@ public class UserDataFragment extends Fragment {
         TextView textViewUsername  = root.findViewById(R.id.textViewUserNameDataFragment);
         TextView textViewEmailUser = root.findViewById(R.id.textViewEmailUserDataFragment);
 
-        textViewUsername.setText(PermanentStorage.getPropertyString(LoginActivity.APP_PREFERENCES_USERNAME));
-        textViewEmailUser.setText(PermanentStorage.getPropertyString(LoginActivity.APP_PREFERENCES_USER_EMAIL));
+        textViewUsername.setText(PermanentStorage.getPropertyString(APP_PREFERENCES_USERNAME));
+        textViewEmailUser.setText(PermanentStorage.getPropertyString(APP_PREFERENCES_USER_EMAIL));
 
         Button bLogOut = root.findViewById(R.id.bLogOutUserDataFragment);
         bLogOut.setOnClickListener(new View.OnClickListener() {

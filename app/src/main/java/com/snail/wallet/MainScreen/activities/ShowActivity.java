@@ -1,14 +1,16 @@
 package com.snail.wallet.MainScreen.activities;
 
-import static com.snail.wallet.MainScreen.activities.AddActivity.ADDING_EXPENSES;
-import static com.snail.wallet.MainScreen.activities.AddActivity.ADDING_OBJECT;
-import static com.snail.wallet.MainScreen.activities.AddActivity.ADDING_REVENUE;
-import static com.snail.wallet.MainScreen.activities.AddActivity.CATEGORY_EDITING;
-import static com.snail.wallet.MainScreen.activities.AddActivity.CURRENCY_EDITING;
-import static com.snail.wallet.MainScreen.activities.AddActivity.DESC_EDITING;
-import static com.snail.wallet.MainScreen.activities.AddActivity.ID_EDITING;
-import static com.snail.wallet.MainScreen.activities.AddActivity.STORAGE_LOCATION_EDITING;
-import static com.snail.wallet.MainScreen.activities.AddActivity.VALUE_EDITING;
+
+import static com.snail.wallet.WalletConstants.ADDING_OBJECT_TYPE;
+import static com.snail.wallet.WalletConstants.ADDING_OBJ_EXPENSES_TYPE;
+import static com.snail.wallet.WalletConstants.ADDING_OBJ_REVENUE_TYPE;
+import static com.snail.wallet.WalletConstants.CATEGORY_EDITING_OBJ;
+import static com.snail.wallet.WalletConstants.CURRENCY_EDITING_OBJ;
+import static com.snail.wallet.WalletConstants.DESC_EDITING_OBJ;
+import static com.snail.wallet.WalletConstants.ID_EDITING_OBJ;
+import static com.snail.wallet.WalletConstants.ID_SHOW_OBJ;
+import static com.snail.wallet.WalletConstants.STORAGE_LOCATION_EDITING_OBJ;
+import static com.snail.wallet.WalletConstants.VALUE_EDITING_OBJ;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
@@ -40,8 +42,6 @@ import java.text.DecimalFormat;
 public class ShowActivity extends AppCompatActivity {
     private final String TAG = this.getClass().getSimpleName();
 
-    public static final String ID_ITEM = "id_item";
-
     private double value_double;
     private String desc_str;
     private long category_id;
@@ -63,8 +63,8 @@ public class ShowActivity extends AppCompatActivity {
         setContentView(R.layout.activity_show);
 
         Intent intent = getIntent();
-        id_item       = intent.getLongExtra(ID_ITEM, -1);
-        type_item     = intent.getIntExtra(ADDING_OBJECT, -1);
+        id_item       = intent.getLongExtra(ID_SHOW_OBJ, -1);
+        type_item     = intent.getIntExtra(ADDING_OBJECT_TYPE, -1);
         if (id_item == -1 || type_item == -1) {
             finish();
             return;
@@ -106,10 +106,10 @@ public class ShowActivity extends AppCompatActivity {
     private void deleteItem() {
         AppDatabase db = App.getInstance().getAppDatabase();
 
-        if (type_item == ADDING_REVENUE) {
+        if (type_item == ADDING_OBJ_REVENUE_TYPE) {
             RevenueDAO revenueDAO = db.revenueDAO();
             revenueDAO.deleteById(id_item);
-        } else if (type_item == ADDING_EXPENSES) {
+        } else if (type_item == ADDING_OBJ_EXPENSES_TYPE) {
             ExpensesDAO expensesDAO = db.expensesDAO();
             expensesDAO.deleteById(id_item);
         }
@@ -151,7 +151,7 @@ public class ShowActivity extends AppCompatActivity {
         textViewDescription     = findViewById(R.id.textViewDescriptionShow);
         textViewStorageLocation = findViewById(R.id.textViewStorageLocationShow);
 
-        if (type_item == ADDING_EXPENSES) {
+        if (type_item == ADDING_OBJ_EXPENSES_TYPE) {
             textViewStorageLocation.setVisibility(View.INVISIBLE);
         }
     }
@@ -159,9 +159,9 @@ public class ShowActivity extends AppCompatActivity {
     private void initData() {
         AppDatabase db = App.getInstance().getAppDatabase();
 
-        if (type_item == ADDING_REVENUE) {
+        if (type_item == ADDING_OBJ_REVENUE_TYPE) {
             initDataRevenue(db);
-        } else if (type_item == ADDING_EXPENSES) {
+        } else if (type_item == ADDING_OBJ_EXPENSES_TYPE) {
             initDataExpenses(db);
         }
     }
@@ -232,15 +232,15 @@ public class ShowActivity extends AppCompatActivity {
 
     private void startEditingActivity() {
         Intent intent = new Intent(ShowActivity.this, AddActivity.class);
-        intent.putExtra(ID_EDITING, id_item);
-        intent.putExtra(ADDING_OBJECT, type_item);
-        intent.putExtra(VALUE_EDITING, value_double);
-        intent.putExtra(DESC_EDITING, desc_str);
-        intent.putExtra(CATEGORY_EDITING, category_id);
-        intent.putExtra(CURRENCY_EDITING, currency_type);
+        intent.putExtra(ID_EDITING_OBJ, id_item);
+        intent.putExtra(ADDING_OBJECT_TYPE, type_item);
+        intent.putExtra(VALUE_EDITING_OBJ, value_double);
+        intent.putExtra(DESC_EDITING_OBJ, desc_str);
+        intent.putExtra(CATEGORY_EDITING_OBJ, category_id);
+        intent.putExtra(CURRENCY_EDITING_OBJ, currency_type);
 
-        if (type_item == ADDING_REVENUE) {
-            intent.putExtra(STORAGE_LOCATION_EDITING, storage_location_id);
+        if (type_item == ADDING_OBJ_REVENUE_TYPE) {
+            intent.putExtra(STORAGE_LOCATION_EDITING_OBJ, storage_location_id);
         }
 
         startActivity(intent);

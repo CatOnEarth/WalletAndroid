@@ -1,8 +1,17 @@
 package com.snail.wallet.MainScreen.activities;
 
-import static com.snail.wallet.MainScreen.WalletActivity.TYPE_CATEGORY;
-import static com.snail.wallet.MainScreen.WalletActivity.TYPE_CURRENCY;
-import static com.snail.wallet.MainScreen.WalletActivity.TYPE_STORAGE_LOCATION;
+import static com.snail.wallet.WalletConstants.ADDING_OBJECT_TYPE;
+import static com.snail.wallet.WalletConstants.ADDING_OBJ_EXPENSES_TYPE;
+import static com.snail.wallet.WalletConstants.ADDING_OBJ_REVENUE_TYPE;
+import static com.snail.wallet.WalletConstants.CATEGORY_EDITING_OBJ;
+import static com.snail.wallet.WalletConstants.CODE_TYPE_PARAM_CATEGORY;
+import static com.snail.wallet.WalletConstants.CODE_TYPE_PARAM_CURRENCY;
+import static com.snail.wallet.WalletConstants.CODE_TYPE_PARAM_STORAGE_LOCATION;
+import static com.snail.wallet.WalletConstants.CURRENCY_EDITING_OBJ;
+import static com.snail.wallet.WalletConstants.DESC_EDITING_OBJ;
+import static com.snail.wallet.WalletConstants.ID_EDITING_OBJ;
+import static com.snail.wallet.WalletConstants.STORAGE_LOCATION_EDITING_OBJ;
+import static com.snail.wallet.WalletConstants.VALUE_EDITING_OBJ;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
@@ -48,17 +57,6 @@ import java.util.Calendar;
 public class AddActivity extends AppCompatActivity {
     private final String TAG = this.getClass().getSimpleName();
 
-    public static final String ID_EDITING                = "id_editing";
-    public static final String VALUE_EDITING             = "val_editing";
-    public static final String DESC_EDITING              = "desc_editing";
-    public static final String CATEGORY_EDITING          = "category_editing";
-    public static final String CURRENCY_EDITING          = "currency_editing";
-    public static final String STORAGE_LOCATION_EDITING  = "storage_location_editing";
-
-    public static final String ADDING_OBJECT   = "obj_add";
-    public static final int    ADDING_REVENUE  = 1;
-    public static final int    ADDING_EXPENSES = 2;
-
     private Spinner spinnerCategory;
     private Spinner spinnerCurrency;
     private Spinner spinnerStorageLocation;
@@ -100,8 +98,8 @@ public class AddActivity extends AppCompatActivity {
         }
 
         Intent intent = getIntent();
-        type_adding   = intent.getIntExtra(ADDING_OBJECT, -1);
-        id_editing    = intent.getLongExtra(ID_EDITING, -1);
+        type_adding   = intent.getIntExtra(ADDING_OBJECT_TYPE, -1);
+        id_editing    = intent.getLongExtra(ID_EDITING_OBJ, -1);
         if (type_adding == -1) {
             finish();
         }
@@ -121,7 +119,7 @@ public class AddActivity extends AppCompatActivity {
         initCategorySpinner(db);
         initCurrencySpinner(db);
 
-        if (type_adding == ADDING_REVENUE) {
+        if (type_adding == ADDING_OBJ_REVENUE_TYPE) {
             initStorageLocationSpinner(db);
         }
     }
@@ -134,7 +132,7 @@ public class AddActivity extends AppCompatActivity {
         spinnerCurrency        = findViewById(R.id.spinnerCurrencyRevenue);
         spinnerStorageLocation = findViewById(R.id.spinnerStorageLocationRevenue);
 
-        if (type_adding == ADDING_EXPENSES) {
+        if (type_adding == ADDING_OBJ_EXPENSES_TYPE) {
             TextView textSpinnerStorageLocation = findViewById(R.id.textViewStorageLocationRevenue);
             Button bAddStorageLocation = findViewById(R.id.buttonAddStorageLocation);
             spinnerStorageLocation.setVisibility(View.INVISIBLE);
@@ -149,14 +147,14 @@ public class AddActivity extends AppCompatActivity {
         CategoryDAO categoryDAO = db.categoryDAO();
         categoryList = new ArrayList<>();
         categoryList = (ArrayList<Category>) categoryDAO.getCategoryByType(type_adding);
-        categoryAdapter = new SpinnerAdapter( this, TYPE_CATEGORY, categoryList);
+        categoryAdapter = new SpinnerAdapter( this, CODE_TYPE_PARAM_CATEGORY, categoryList);
         spinnerCategory.setAdapter(categoryAdapter);
     }
 
     private void initCurrencySpinner(AppDatabase db) {
         CurrencyDAO currencyDAO = db.currencyDAO();
         ArrayList<Currency> currencyList = (ArrayList<Currency>) currencyDAO.getAll();
-        currencyAdapter = new SpinnerAdapter(this, TYPE_CURRENCY,
+        currencyAdapter = new SpinnerAdapter(this, CODE_TYPE_PARAM_CURRENCY,
                                                                                 currencyList);
         spinnerCurrency.setAdapter(currencyAdapter);
     }
@@ -165,18 +163,18 @@ public class AddActivity extends AppCompatActivity {
         StorageLocationDAO storageLocationDAO = db.storageLocationDAO();
         storageLocationList = new ArrayList<>();
         storageLocationList.addAll(storageLocationDAO.getAll());
-        storageLocationAdapter = new SpinnerAdapter(this, TYPE_STORAGE_LOCATION,
+        storageLocationAdapter = new SpinnerAdapter(this, CODE_TYPE_PARAM_STORAGE_LOCATION,
                                                                     storageLocationList);
         spinnerStorageLocation.setAdapter(storageLocationAdapter);
     }
 
     private void initButtons() {
         Button bAddCategory = findViewById(R.id.buttonAddCategory);
-        bAddCategory.setOnClickListener(view -> addingDialog(TYPE_CATEGORY));
+        bAddCategory.setOnClickListener(view -> addingDialog(CODE_TYPE_PARAM_CATEGORY));
 
-        if (type_adding == ADDING_REVENUE) {
+        if (type_adding == ADDING_OBJ_REVENUE_TYPE) {
             Button bAddStorageLocation = findViewById(R.id.buttonAddStorageLocation);
-            bAddStorageLocation.setOnClickListener(view -> addingDialog(TYPE_STORAGE_LOCATION));
+            bAddStorageLocation.setOnClickListener(view -> addingDialog(CODE_TYPE_PARAM_STORAGE_LOCATION));
         }
 
         Button bSaveRevenue = findViewById(R.id.bAddRevenueSave);
@@ -250,7 +248,7 @@ public class AddActivity extends AppCompatActivity {
         double value          = getValue();
         int    currency       = ((Currency)spinnerCurrency.getSelectedItem()).getType_currency();
 
-        if (type_adding == ADDING_REVENUE) {
+        if (type_adding == ADDING_OBJ_REVENUE_TYPE) {
             long storage_location = ((StorageLocation) spinnerStorageLocation.getSelectedItem())
                                                                             .getId();
 
@@ -265,7 +263,7 @@ public class AddActivity extends AppCompatActivity {
                 revenue.setId(id_editing);
                 revenueDAO.update(revenue);
             }
-        } else if (type_adding == ADDING_EXPENSES) {
+        } else if (type_adding == ADDING_OBJ_EXPENSES_TYPE) {
             Expenses expenses       = new Expenses(value, currency, category, date_day,
                                                      date_month, date_year, description);
             ExpensesDAO expensesDAO = db.expensesDAO();
@@ -327,10 +325,10 @@ public class AddActivity extends AppCompatActivity {
 
     private void addingDialog(int type) {
         AlertDialog.Builder alertDialog = new AlertDialog.Builder(AddActivity.this);
-        if        (type == TYPE_CATEGORY) {
+        if        (type == CODE_TYPE_PARAM_CATEGORY) {
             alertDialog.setTitle("Категория");
             alertDialog.setMessage("Добавить категорию");
-        } else if (type == TYPE_STORAGE_LOCATION) {
+        } else if (type == CODE_TYPE_PARAM_STORAGE_LOCATION) {
             alertDialog.setTitle("Место хранения");
             alertDialog.setMessage("Добавить место хранения");
         } else {
@@ -366,9 +364,9 @@ public class AddActivity extends AppCompatActivity {
     private void addAddingVariable(int type, String str) {
         AppDatabase db = App.getInstance().getAppDatabase();
 
-        if        (type == TYPE_CATEGORY) {
+        if        (type == CODE_TYPE_PARAM_CATEGORY) {
             insertNewCategory(db, str);
-        } else if (type == TYPE_STORAGE_LOCATION) {
+        } else if (type == CODE_TYPE_PARAM_STORAGE_LOCATION) {
             insertNewStorageLocation(db, str);
         }
     }
@@ -396,9 +394,9 @@ public class AddActivity extends AppCompatActivity {
 
         AppDatabase db = App.getInstance().getAppDatabase();
 
-         if       (type == TYPE_CATEGORY) {
+         if       (type == CODE_TYPE_PARAM_CATEGORY) {
             return db.categoryDAO().getCategoryName(str).size() == 0;
-        } else if (type == TYPE_STORAGE_LOCATION) {
+        } else if (type == CODE_TYPE_PARAM_STORAGE_LOCATION) {
             return db.storageLocationDAO().getByStorageLocationName(str).size() == 0;
         } else {
             return false;
@@ -407,24 +405,24 @@ public class AddActivity extends AppCompatActivity {
 
     private void setEditingData(Intent intent) {
         DecimalFormat precision = new DecimalFormat("0.00");
-        editTextValue.setText(precision.format(intent.getDoubleExtra(VALUE_EDITING, 0)));
-        editTextDescription.setText(intent.getStringExtra(DESC_EDITING));
+        editTextValue.setText(precision.format(intent.getDoubleExtra(VALUE_EDITING_OBJ, 0)));
+        editTextDescription.setText(intent.getStringExtra(DESC_EDITING_OBJ));
 
-        long category_id = intent.getLongExtra(CATEGORY_EDITING, 0);
+        long category_id = intent.getLongExtra(CATEGORY_EDITING_OBJ, 0);
         for (int ii = 0; ii < categoryAdapter.getCount(); ++ii) {
             if (category_id == ((Category) categoryAdapter.getItem(ii)).getId()) {
                 spinnerCategory.setSelection(ii);
             }
         }
 
-        int currency_id = intent.getIntExtra(CURRENCY_EDITING, 0);
+        int currency_id = intent.getIntExtra(CURRENCY_EDITING_OBJ, 0);
         for (int ii = 0; ii < currencyAdapter.getCount(); ++ii) {
             if (currency_id == ((Currency) currencyAdapter.getItem(ii)).getId()) {
                 spinnerCurrency.setSelection(ii);
             }
         }
-        if (type_adding == ADDING_REVENUE) {
-            int storage_location_id = intent.getIntExtra(STORAGE_LOCATION_EDITING, 0);
+        if (type_adding == ADDING_OBJ_REVENUE_TYPE) {
+            int storage_location_id = intent.getIntExtra(STORAGE_LOCATION_EDITING_OBJ, 0);
             for (int ii = 0; ii < storageLocationAdapter.getCount(); ++ii) {
                 if (storage_location_id == ((StorageLocation) storageLocationAdapter.getItem(ii)).getId()) {
                     spinnerStorageLocation.setSelection(ii);

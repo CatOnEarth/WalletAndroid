@@ -1,5 +1,15 @@
 package com.snail.wallet.MainScreen;
 
+import static com.snail.wallet.WalletConstants.ADDING_OBJ_EXPENSES_TYPE;
+import static com.snail.wallet.WalletConstants.ADDING_OBJ_REVENUE_TYPE;
+import static com.snail.wallet.WalletConstants.APP_PREFERENCES_IS_INIT_DB;
+import static com.snail.wallet.WalletConstants.APP_PREFERENCES_USERNAME;
+import static com.snail.wallet.WalletConstants.APP_PREFERENCES_USER_EMAIL;
+import static com.snail.wallet.WalletConstants.CODE_TYPE_CURRENCY_DOLLAR;
+import static com.snail.wallet.WalletConstants.CODE_TYPE_CURRENCY_EURO;
+import static com.snail.wallet.WalletConstants.CODE_TYPE_CURRENCY_RUBLE;
+import static com.snail.wallet.WalletConstants.CODE_TYPE_CURRENCY_TURKISH_LIRA;
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -9,9 +19,7 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.google.android.material.navigation.NavigationView;
-import com.snail.wallet.LoginScreen.LoginActivity;
 import com.snail.wallet.MainScreen.SharedPrefManager.PermanentStorage;
-import com.snail.wallet.MainScreen.activities.AddActivity;
 import com.snail.wallet.MainScreen.db.App;
 import com.snail.wallet.MainScreen.db.AppDatabase;
 import com.snail.wallet.MainScreen.db.CategoryDAO.CategoryDAO;
@@ -36,17 +44,6 @@ public class WalletActivity extends AppCompatActivity {
     private final String TAG = this.getClass().getSimpleName();
 
     private AppBarConfiguration   mAppBarConfiguration;
-
-    public static final int CODE_CURRENCY_RUBLE        = 1;
-    public static final int CODE_CURRENCY_DOLLAR       = 2;
-    public static final int CODE_CURRENCY_EURO         = 3;
-    public static final int CODE_CURRENCY_TURKISH_LIRA = 4;
-
-    public static final int TYPE_CATEGORY         = 1;
-    public static final int TYPE_CURRENCY         = 2;
-    public static final int TYPE_STORAGE_LOCATION = 3;
-
-    public static final String APP_PREFERENCES_IS_INIT_DB   = "is_init_db";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -81,8 +78,8 @@ public class WalletActivity extends AppCompatActivity {
         TextView textViewEmail    = mHeaderView.findViewById(R.id.textViewNavViewEmail);
 
         Intent intent = getIntent();
-        textViewUsername.setText(intent.getStringExtra(LoginActivity.APP_PREFERENCES_USERNAME));
-        textViewEmail.setText(   intent.getStringExtra(LoginActivity.APP_PREFERENCES_USER_EMAIL));
+        textViewUsername.setText(intent.getStringExtra(APP_PREFERENCES_USERNAME));
+        textViewEmail.setText(   intent.getStringExtra(APP_PREFERENCES_USER_EMAIL));
     }
 
     @Override
@@ -118,21 +115,21 @@ public class WalletActivity extends AppCompatActivity {
 
     private void initCategoryTable(AppDatabase db) {
         CategoryDAO categoryDAO = db.categoryDAO();
-        categoryDAO.insert(new Category( AddActivity.ADDING_REVENUE, "Зарплата"));
-        categoryDAO.insert(new Category(AddActivity.ADDING_REVENUE, "Акции"));
-        categoryDAO.insert(new Category(AddActivity.ADDING_REVENUE, "Квартира"));
+        categoryDAO.insert(new Category(ADDING_OBJ_REVENUE_TYPE, "Зарплата"));
+        categoryDAO.insert(new Category(ADDING_OBJ_REVENUE_TYPE, "Акции"));
+        categoryDAO.insert(new Category(ADDING_OBJ_REVENUE_TYPE, "Квартира"));
 
-        categoryDAO.insert(new Category(AddActivity.ADDING_EXPENSES, "Кварплата"));
-        categoryDAO.insert(new Category(AddActivity.ADDING_EXPENSES, "Продукты"));
-        categoryDAO.insert(new Category(AddActivity.ADDING_EXPENSES, "Занятия"));
+        categoryDAO.insert(new Category(ADDING_OBJ_EXPENSES_TYPE, "Кварплата"));
+        categoryDAO.insert(new Category(ADDING_OBJ_EXPENSES_TYPE, "Продукты"));
+        categoryDAO.insert(new Category(ADDING_OBJ_EXPENSES_TYPE, "Занятия"));
     }
 
     private void initCurrencyTable(AppDatabase db) {
         CurrencyDAO currencyDAO = db.currencyDAO();
-        currencyDAO.insert(new Currency(CODE_CURRENCY_RUBLE, "Российский рубль", "₽"));
-        currencyDAO.insert(new Currency(CODE_CURRENCY_DOLLAR, "Доллар США", "$"));
-        currencyDAO.insert(new Currency(CODE_CURRENCY_EURO, "Евро", "€"));
-        currencyDAO.insert(new Currency(CODE_CURRENCY_TURKISH_LIRA, "Турецкая лира", "₺"));
+        currencyDAO.insert(new Currency(CODE_TYPE_CURRENCY_RUBLE, "Российский рубль", "₽"));
+        currencyDAO.insert(new Currency(CODE_TYPE_CURRENCY_DOLLAR, "Доллар США", "$"));
+        currencyDAO.insert(new Currency(CODE_TYPE_CURRENCY_EURO, "Евро", "€"));
+        currencyDAO.insert(new Currency(CODE_TYPE_CURRENCY_TURKISH_LIRA, "Турецкая лира", "₺"));
     }
 
     private void initStorageLocationTable(AppDatabase db) {

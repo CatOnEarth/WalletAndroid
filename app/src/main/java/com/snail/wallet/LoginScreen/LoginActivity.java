@@ -1,5 +1,10 @@
 package com.snail.wallet.LoginScreen;
 
+import static com.snail.wallet.WalletConstants.APP_PREFERENCES_IS_INIT_DB;
+import static com.snail.wallet.WalletConstants.APP_PREFERENCES_IS_USER_LOG;
+import static com.snail.wallet.WalletConstants.APP_PREFERENCES_USERNAME;
+import static com.snail.wallet.WalletConstants.APP_PREFERENCES_USER_EMAIL;
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AlertDialog;
@@ -17,21 +22,10 @@ import com.snail.wallet.MainScreen.SharedPrefManager.PermanentStorage;
 import com.snail.wallet.MainScreen.WalletActivity;
 import com.snail.wallet.R;
 
-/** Login activity class */
 public class LoginActivity extends AppCompatActivity {
-    /**  */
     private final String TAG = this.getClass().getSimpleName();
-    /** Key to save username in preferences */
-    public static final String APP_PREFERENCES_USERNAME   = "user_name";
-    /** Key to save user's email in preferences */
-    public static final String APP_PREFERENCES_USER_EMAIL = "user_email";
-    /** Key to save user's email in preferences */
-    public static final String APP_PREFERENCES_IS_USER_LOG = "is_user_log";
 
-    /**onCreate method of LoginActivity
-     *
-     * @param savedInstanceState a reference to a Bundle object that is passed into the onCreate method of every Android Activity
-     */
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         Log.i(TAG, "Start onCreate method LoginActivity");
@@ -90,7 +84,7 @@ public class LoginActivity extends AppCompatActivity {
         PermanentStorage.addPropertyString(APP_PREFERENCES_USERNAME, "local");
         PermanentStorage.addPropertyString(APP_PREFERENCES_USER_EMAIL, "local@local.ru");
         PermanentStorage.addPropertyBoolean(APP_PREFERENCES_IS_USER_LOG, true);
-        PermanentStorage.addPropertyBoolean(WalletActivity.APP_PREFERENCES_IS_INIT_DB, false);
+        PermanentStorage.addPropertyBoolean(APP_PREFERENCES_IS_INIT_DB, false);
     }
 
     public void startOfflineApp() {

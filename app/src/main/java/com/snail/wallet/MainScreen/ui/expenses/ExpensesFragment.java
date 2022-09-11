@@ -1,6 +1,7 @@
 package com.snail.wallet.MainScreen.ui.expenses;
 
-import static com.snail.wallet.MainScreen.activities.AddActivity.ADDING_EXPENSES;
+import static com.snail.wallet.WalletConstants.ADDING_OBJECT_TYPE;
+import static com.snail.wallet.WalletConstants.ADDING_OBJ_EXPENSES_TYPE;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
@@ -50,7 +51,7 @@ public class ExpensesFragment extends Fragment {
 
         expenses = new ArrayList<>();
         expenses.addAll(expensesDAO.getAll());
-        recyclerViewAdapter = new RecyclerViewAdapter(ADDING_EXPENSES, expenses, getContext());
+        recyclerViewAdapter = new RecyclerViewAdapter(ADDING_OBJ_EXPENSES_TYPE, expenses, getContext());
 
         recyclerView.setAdapter(recyclerViewAdapter);
 
@@ -67,7 +68,7 @@ public class ExpensesFragment extends Fragment {
 
     private void StartAddActivity() {
         Intent intent = new Intent(getContext(), AddActivity.class);
-        intent.putExtra(AddActivity.ADDING_OBJECT, ADDING_EXPENSES);
+        intent.putExtra(ADDING_OBJECT_TYPE, ADDING_OBJ_EXPENSES_TYPE);
         startActivity(intent);
     }
 
