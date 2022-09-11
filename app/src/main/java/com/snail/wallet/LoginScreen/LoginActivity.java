@@ -19,11 +19,11 @@ import android.widget.TextView;
 
 import com.snail.wallet.MainScreen.SharedPrefManager.PermanentStorage;
 import com.snail.wallet.MainScreen.WalletActivity;
-import com.snail.wallet.MainScreen.ui.dialogs.DialogButtonListener;
+import com.snail.wallet.MainScreen.ui.dialogs.InfoDialogButtonListener;
 import com.snail.wallet.MainScreen.ui.dialogs.InfoDialogFragment;
 import com.snail.wallet.R;
 
-public class LoginActivity extends AppCompatActivity implements DialogButtonListener {
+public class LoginActivity extends AppCompatActivity implements InfoDialogButtonListener {
     private final String TAG = this.getClass().getSimpleName();
 
 
@@ -104,12 +104,12 @@ public class LoginActivity extends AppCompatActivity implements DialogButtonList
     }
 
     @Override
-    public void PositiveButton() {
+    public void InfoDialogPositiveButton() {
 
     }
 
     @Override
-    public void NegativeButton() {
+    public void InfoDialogNegativeButton() {
 
     }
 }

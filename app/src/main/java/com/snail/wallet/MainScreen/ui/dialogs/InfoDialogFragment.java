@@ -10,7 +10,7 @@ import androidx.fragment.app.DialogFragment;
 
 public class InfoDialogFragment extends DialogFragment {
 
-    private DialogButtonListener dialogButtonListener;
+    private InfoDialogButtonListener infoDialogButtonListener;
 
     private final String  title;
     private final String  message;
@@ -22,7 +22,7 @@ public class InfoDialogFragment extends DialogFragment {
     @Override
     public void onAttach(@NonNull Context context){
         super.onAttach(context);
-        dialogButtonListener = (DialogButtonListener) context;
+        infoDialogButtonListener = (InfoDialogButtonListener) context;
     }
 
     public InfoDialogFragment(String title, String message, boolean is_pos_button,
@@ -44,12 +44,12 @@ public class InfoDialogFragment extends DialogFragment {
                 .setMessage(message);
 
         if (is_pos_button) {
-            builder.setPositiveButton(pos_button, (dialog, which) -> dialogButtonListener
-                                                                        .PositiveButton());
+            builder.setPositiveButton(pos_button, (dialog, which) -> infoDialogButtonListener
+                                                                        .InfoDialogPositiveButton());
         }
         if (is_neg_button) {
-            builder.setNegativeButton(neg_button, (dialog, which) -> dialogButtonListener
-                                                                        .NegativeButton());
+            builder.setNegativeButton(neg_button, (dialog, which) -> infoDialogButtonListener
+                                                                        .InfoDialogNegativeButton());
         }
 
         return builder.create();

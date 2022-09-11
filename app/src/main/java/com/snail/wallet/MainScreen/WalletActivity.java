@@ -28,10 +28,11 @@ import com.snail.wallet.MainScreen.db.StorageLocationDAO.StorageLocationDAO;
 import com.snail.wallet.MainScreen.models.parametrs.Category;
 import com.snail.wallet.MainScreen.models.parametrs.Currency;
 import com.snail.wallet.MainScreen.models.parametrs.StorageLocation;
+import com.snail.wallet.MainScreen.ui.dialogs.InfoDialogButtonListener;
+import com.snail.wallet.MainScreen.ui.dialogs.InfoDialogFragment;
 import com.snail.wallet.R;
 import com.snail.wallet.databinding.ActivityWalletBinding;
 
-import androidx.appcompat.app.AlertDialog;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
@@ -40,10 +41,13 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.appcompat.app.AppCompatActivity;
 
 
-public class WalletActivity extends AppCompatActivity {
+public class WalletActivity extends AppCompatActivity implements InfoDialogButtonListener {
     private final String TAG = this.getClass().getSimpleName();
 
     private AppBarConfiguration   mAppBarConfiguration;
+
+    private TextView textViewUsername;
+    private TextView textViewEmail;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,7 +59,13 @@ public class WalletActivity extends AppCompatActivity {
 
         super.onCreate(savedInstanceState);
 
-        com.snail.wallet.databinding.ActivityWalletBinding binding = ActivityWalletBinding.inflate(getLayoutInflater());
+        initViews();
+        initData();
+    }
+
+    private void initViews() {
+        com.snail.wallet.databinding.ActivityWalletBinding binding = ActivityWalletBinding
+                                                                      .inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
         setSupportActionBar(binding.appBarWallet.toolbar);
@@ -68,15 +78,19 @@ public class WalletActivity extends AppCompatActivity {
                 R.id.nav_settings, R.id.nav_userdata)
                 .setOpenableLayout(drawer)
                 .build();
-        NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_wallet);
-        NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
+        NavController navController = Navigation.findNavController(this,
+                                                        R.id.nav_host_fragment_content_wallet);
+        NavigationUI.setupActionBarWithNavController(this, navController,
+                                                                        mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);
 
         View mHeaderView =  navigationView.getHeaderView(0);
 
-        TextView textViewUsername = mHeaderView.findViewById(R.id.textViewNavViewUsername);
-        TextView textViewEmail    = mHeaderView.findViewById(R.id.textViewNavViewEmail);
+        textViewUsername = mHeaderView.findViewById(R.id.textViewNavViewUsername);
+        textViewEmail    = mHeaderView.findViewById(R.id.textViewNavViewEmail);
+    }
 
+    private void initData() {
         Intent intent = getIntent();
         textViewUsername.setText(intent.getStringExtra(APP_PREFERENCES_USERNAME));
         textViewEmail.setText(   intent.getStringExtra(APP_PREFERENCES_USER_EMAIL));
@@ -100,7 +114,8 @@ public class WalletActivity extends AppCompatActivity {
 
     @Override
     public boolean onSupportNavigateUp() {
-        NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_wallet);
+        NavController navController = Navigation.findNavController(this,
+                                                            R.id.nav_host_fragment_content_wallet);
         return NavigationUI.navigateUp(navController, mAppBarConfiguration)
                 || super.onSupportNavigateUp();
     }
@@ -126,10 +141,14 @@ public class WalletActivity extends AppCompatActivity {
 
     private void initCurrencyTable(AppDatabase db) {
         CurrencyDAO currencyDAO = db.currencyDAO();
-        currencyDAO.insert(new Currency(CODE_TYPE_CURRENCY_RUBLE, "Российский рубль", "₽"));
-        currencyDAO.insert(new Currency(CODE_TYPE_CURRENCY_DOLLAR, "Доллар США", "$"));
-        currencyDAO.insert(new Currency(CODE_TYPE_CURRENCY_EURO, "Евро", "€"));
-        currencyDAO.insert(new Currency(CODE_TYPE_CURRENCY_TURKISH_LIRA, "Турецкая лира", "₺"));
+        currencyDAO.insert(new Currency(CODE_TYPE_CURRENCY_RUBLE, "Российский рубль",
+                                                                                "₽"));
+        currencyDAO.insert(new Currency(CODE_TYPE_CURRENCY_DOLLAR, "Доллар США",
+                                                                                "$"));
+        currencyDAO.insert(new Currency(CODE_TYPE_CURRENCY_EURO, "Евро",
+                                                                                "€"));
+        currencyDAO.insert(new Currency(CODE_TYPE_CURRENCY_TURKISH_LIRA, "Турецкая лира",
+                                                                                "₺"));
     }
 
     private void initStorageLocationTable(AppDatabase db) {
@@ -140,14 +159,20 @@ public class WalletActivity extends AppCompatActivity {
     }
 
     private void aboutDialog() {
-        AlertDialog.Builder alertDialog = new AlertDialog.Builder(WalletActivity.this);
+        InfoDialogFragment dialog = new InfoDialogFragment("О приложении",
+                "Информация о приолжении", true, "Ок",
+                false, "");
 
-        alertDialog.setTitle("О приложении");
-        alertDialog.setMessage("О приложении");
+        dialog.show(getSupportFragmentManager(), TAG);
+    }
 
-        alertDialog.setPositiveButton("Ок",
-                (dialog, which) -> dialog.cancel());
+    @Override
+    public void InfoDialogPositiveButton() {
 
-        alertDialog.show();
+    }
+
+    @Override
+    public void InfoDialogNegativeButton() {
+
     }
 }

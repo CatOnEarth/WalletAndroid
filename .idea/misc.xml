@@ -9,6 +9,7 @@
         <entry key="..\:/development/android/Wallet/app/src/main/res/layout-port/activity_login_portrait.xml" value="0.14661654135338345" />
         <entry key="..\:/development/android/Wallet/app/src/main/res/layout/activity_add.xml" value="0.33" />
         <entry key="..\:/development/android/Wallet/app/src/main/res/layout/activity_adding_variants.xml" value="0.12318840579710146" />
+        <entry key="..\:/development/android/Wallet/app/src/main/res/layout/activity_edit_setting.xml" value="0.30085470085470084" />
         <entry key="..\:/development/android/Wallet/app/src/main/res/layout/activity_expenses_add.xml" value="0.12318840579710146" />
         <entry key="..\:/development/android/Wallet/app/src/main/res/layout/activity_login.xml" value="0.5" />
         <entry key="..\:/development/android/Wallet/app/src/main/res/layout/activity_main.xml" value="0.33" />
@@ -33,6 +34,7 @@
         <entry key="..\:/development/android/Wallet/app/src/main/res/layout/item_expenses_recyclerview.xml" value="0.12318840579710146" />
         <entry key="..\:/development/android/Wallet/app/src/main/res/layout/item_recyclerview.xml" value="0.33" />
         <entry key="..\:/development/android/Wallet/app/src/main/res/layout/item_revenue_recyclerview.xml" value="0.33" />
+        <entry key="..\:/development/android/Wallet/app/src/main/res/layout/item_setting_recyclerview.xml" value="0.30085470085470084" />
         <entry key="..\:/development/android/Wallet/app/src/main/res/layout/item_source_spinner.xml" value="0.12318840579710146" />
         <entry key="..\:/development/android/Wallet/app/src/main/res/layout/item_spinner.xml" value="0.12318840579710146" />
         <entry key="..\:/development/android/Wallet/app/src/main/res/layout/item_storage_location_spinner.xml" value="0.12318840579710146" />

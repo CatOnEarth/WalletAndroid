@@ -29,5 +29,12 @@ public class WalletConstants {
 
     public static final String ID_SHOW_OBJ = "id_item";
 
+    public static final String   SETTING_TYPE  = "setting_type";
+    public static final String[] LIST_SETTINGS = {"Категории доходов", "Категории расходов",
+                                                 "Места хранения"};
+    public static final int CODE_TYPE_CATEGORY_REVENUE  = 1;
+    public static final int CODE_TYPE_CATEGORY_EXPENSES = 2;
+    public static final int CODE_TYPE_STORAGE_LOCATION  = 3;
+
 
 }
