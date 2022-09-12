@@ -3,6 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.snail.wallet">
 
+    <uses-permission android:name="android.permission.INTERNET"/>
+
     <application
         android:name="com.snail.wallet.MainScreen.db.App"
         android:allowBackup="true"
