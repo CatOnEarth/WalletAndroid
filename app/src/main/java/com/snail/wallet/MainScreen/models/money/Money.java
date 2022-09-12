@@ -13,8 +13,8 @@ public class Money {
     public double value;
     @ColumnInfo(name = "type_currency")
     public int    type_currency;
-    @ColumnInfo(name = "category")
-    public long    category;
+    @ColumnInfo(name = "id_category")
+    public long id_category;
     @ColumnInfo(name = "date_day")
     public int date_day;
     @ColumnInfo(name = "date_month")
@@ -24,12 +24,12 @@ public class Money {
     @ColumnInfo(name = "description")
     public String description;
 
-    public Money(long id, double value, int type_currency, long category, int date_day,
+    public Money(long id, double value, int type_currency, long id_category, int date_day,
                  int date_month, int date_year, String description) {
         this.id = id;
         this.value = value;
         this.type_currency = type_currency;
-        this.category = category;
+        this.id_category = id_category;
         this.date_day = date_day;
         this.date_month = date_month;
         this.date_year = date_year;
@@ -37,11 +37,11 @@ public class Money {
     }
 
     @Ignore
-    public Money(double value, int type_currency, long category, int date_day,
+    public Money(double value, int type_currency, long id_category, int date_day,
                  int date_month, int date_year, String description) {
         this.value = value;
         this.type_currency = type_currency;
-        this.category = category;
+        this.id_category = id_category;
         this.date_day = date_day;
         this.date_month = date_month;
         this.date_year = date_year;
@@ -72,12 +72,12 @@ public class Money {
         this.type_currency = type_currency;
     }
 
-    public long getCategory() {
-        return category;
+    public long getId_category() {
+        return id_category;
     }
 
-    public void setCategory(long category) {
-        this.category = category;
+    public void setId_category(long id_category) {
+        this.id_category = id_category;
     }
 
     public String getDescription() {

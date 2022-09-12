@@ -22,6 +22,9 @@ public interface StorageLocationDAO {
     @Query("SELECT location FROM storage_location WHERE id = :id")
     String getLocationById(long id);
 
+    @Query("SELECT location FROM storage_location WHERE location = :location")
+    List<String> getLocationByName(String location);
+
     @Insert
     long insert(StorageLocation storage_location);
 

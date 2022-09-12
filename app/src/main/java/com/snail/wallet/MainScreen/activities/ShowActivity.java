@@ -174,9 +174,9 @@ public class ShowActivity extends AppCompatActivity {
         Date        custom_date               = revenueDAO.getDateById(id_item);
         Revenues    revenues                  = revenueDAO.getById(id_item);
 
-        category_id = revenues.getCategory();
+        category_id = revenues.getId_category();
         String category        = getResources().getText(R.string.textCategory) + ": " +
-                                   categoryDAO.getCategoryById(revenues.getCategory()).getName();
+                                   categoryDAO.getCategoryById(revenues.getId_category()).getName();
 
         storage_location_id = revenues.getStorage_location();
         String storageLocation = getResources().getText(R.string.textStorageLocation) + ": " +
@@ -208,9 +208,9 @@ public class ShowActivity extends AppCompatActivity {
         Date        custom_date               = expensesDAO.getDateById(id_item);
         Expenses    expenses                  = expensesDAO.getById(id_item);
 
-        category_id = expenses.getCategory();
+        category_id = expenses.getId_category();
         String category        = getResources().getText(R.string.textCategory) + ": " +
-                categoryDAO.getCategoryById(expenses.getCategory()).getName();
+                categoryDAO.getCategoryById(expenses.getId_category()).getName();
 
         DecimalFormat precision = new DecimalFormat("0.00");
         value_double = expenses.getValue();

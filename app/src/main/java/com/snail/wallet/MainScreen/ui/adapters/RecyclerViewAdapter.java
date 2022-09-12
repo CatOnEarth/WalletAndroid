@@ -93,7 +93,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         Expenses expenses = (Expenses) obj;
 
         viewHolder.textViewDescription.setText(expenses.getDescription());
-        viewHolder.textViewCategory.setText(categoryDAO.getCategoryById(expenses.getCategory())
+        viewHolder.textViewCategory.setText(categoryDAO.getCategoryById(expenses.getId_category())
                                                                                 .getName());
         String val = precision.format(expenses.getValue()) + currencyDAO.getCurrencyByType(expenses
                                                                 .getType_currency()).getSymbol();
@@ -109,7 +109,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         Revenues revenues = (Revenues) obj;
 
         viewHolder.textViewDescription.setText(revenues.getDescription());
-        viewHolder.textViewCategory.setText(categoryDAO.getCategoryById(revenues.getCategory())
+        viewHolder.textViewCategory.setText(categoryDAO.getCategoryById(revenues.getId_category())
                                                                                 .getName());
         String val = precision.format(revenues.getValue()) + currencyDAO.getCurrencyByType(revenues
                                                                 .getType_currency()).getSymbol();

@@ -26,6 +26,9 @@ public interface CategoryDAO {
     @Query("SELECT * FROM category WHERE type = :type")
     List<Category> getCategoryByType(int type);
 
+    @Query("SELECT name FROM category WHERE type = :type AND name = :name")
+    List<String> getByNameAndTypeCategory(int type, String name);
+
     @Insert
     long insert(Category category);
 

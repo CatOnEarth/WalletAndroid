@@ -35,6 +35,9 @@ public interface ExpensesDAO {
     @Delete
     void delete(Expenses expenses);
 
+    @Query("DELETE FROM expenses WHERE id_category = :id_category")
+    void deleteByIdCategory(long id_category);
+
     @Query("DELETE FROM expenses WHERE id = :id")
     void deleteById(long id);
 }

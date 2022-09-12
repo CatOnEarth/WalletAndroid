@@ -14,6 +14,7 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
@@ -21,6 +22,8 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.snail.wallet.MainScreen.db.App;
 import com.snail.wallet.MainScreen.db.AppDatabase;
+import com.snail.wallet.MainScreen.db.CategoryDAO.CategoryDAO;
+import com.snail.wallet.MainScreen.db.StorageLocationDAO.StorageLocationDAO;
 import com.snail.wallet.MainScreen.models.parametrs.Category;
 import com.snail.wallet.MainScreen.models.parametrs.StorageLocation;
 import com.snail.wallet.R;
@@ -110,30 +113,65 @@ public class SettingsRecyclerViewAdapter  extends RecyclerView.Adapter<SettingsR
     private void editNameElem(String new_name, int pos) {
         Log.d(TAG, "editNameElem method");
 
-        if (new_name.length() == 0) return;
-
         AppDatabase db = App.getInstance().getAppDatabase();
 
+        if (new_name.length() == 0) return;
+
         if (typeSetting == CODE_TYPE_CATEGORY_REVENUE || typeSetting == CODE_TYPE_CATEGORY_EXPENSES) {
-            ((Category)localData.get(pos)).setName(new_name);
-            db.categoryDAO().update(((Category)localData.get(pos)));
+            if (!isExistNewNameCategory(db, ((Category)localData.get(pos)).getType(), new_name)) {
+                ((Category)localData.get(pos)).setName(new_name);
+                db.categoryDAO().update(((Category)localData.get(pos)));
+                notifyItemChanged(pos);
+
+                return;
+            }
         } else if (typeSetting == CODE_TYPE_PARAM_STORAGE_LOCATION) {
-            ((StorageLocation)(localData.get(pos))).setLocation(new_name);
-            db.storageLocationDAO().update(((StorageLocation)(localData.get(pos))));
+            if (!isExistNewNameStorageLocation(db, new_name)) {
+                ((StorageLocation)(localData.get(pos))).setLocation(new_name);
+                db.storageLocationDAO().update(((StorageLocation)(localData.get(pos))));
+                notifyItemChanged(pos);
+
+                return;
+            }
+        } else {
+            Log.w(TAG, "typeSetting unknown");
+            return;
         }
 
-        notifyItemChanged(pos);
+        Toast.makeText(context, "Такое имя уже существует", Toast.LENGTH_LONG).show();
+    }
+
+    private boolean isExistNewNameCategory(AppDatabase db, int type_category, String new_name) {
+        CategoryDAO categoryDAO = db.categoryDAO();
+        return categoryDAO.getByNameAndTypeCategory(type_category, new_name).size() != 0;
+    }
+
+    private boolean isExistNewNameStorageLocation(AppDatabase db, String new_name) {
+        StorageLocationDAO storageLocationDAO = db.storageLocationDAO();
+        return storageLocationDAO.getLocationByName(new_name).size() != 0;
     }
 
     private void initClickListenerDelete(ViewHolder viewHolder, int position) {
         Log.d(TAG, "initClickListenerDelete method");
 
-        viewHolder.imageButtonDeleteElemSetting.setOnClickListener(view -> new AlertDialog.Builder(context)
-                .setTitle("Delete entry")
-                .setMessage("Are you sure you want to delete this entry?")
-                .setPositiveButton(android.R.string.yes, (dialog, which) -> deleteElem(viewHolder.getAdapterPosition()))
-                .setNegativeButton(android.R.string.no, null)
-                .show());
+        viewHolder.imageButtonDeleteElemSetting.setOnClickListener(view -> {
+            AlertDialog.Builder builder = new AlertDialog.Builder(context);
+            builder.setTitle("Удалить элемент");
+            builder.setPositiveButton(android.R.string.yes, (dialog, which) -> deleteElem(viewHolder.getAdapterPosition()));
+            builder.setNegativeButton(android.R.string.no, null);
+
+            if (typeSetting == CODE_TYPE_PARAM_STORAGE_LOCATION) {
+                builder.setMessage("Будут удалены все элеметны, в которых указано данное место хранения");
+            } else if (typeSetting == CODE_TYPE_CATEGORY_REVENUE || typeSetting == CODE_TYPE_CATEGORY_EXPENSES) {
+                builder.setMessage("Будут удалены все элеметны с этой категорией");
+            } else {
+                Log.w(TAG, "typeSetting unknown");
+            }
+
+            builder.show();
+        });
+
+
     }
 
     private void deleteElem(int pos) {
@@ -142,8 +180,14 @@ public class SettingsRecyclerViewAdapter  extends RecyclerView.Adapter<SettingsR
         AppDatabase db = App.getInstance().getAppDatabase();
         if (typeSetting == CODE_TYPE_CATEGORY_REVENUE || typeSetting == CODE_TYPE_CATEGORY_EXPENSES) {
             db.categoryDAO().delete(((Category)localData.get(pos)));
+            if (typeSetting == CODE_TYPE_CATEGORY_REVENUE) {
+                db.revenueDAO().deleteByIdCategory(((Category)localData.get(pos)).getId());
+            } else {
+                db.expensesDAO().deleteByIdCategory(((Category)localData.get(pos)).getId());
+            }
         } else if (typeSetting == CODE_TYPE_PARAM_STORAGE_LOCATION) {
             db.storageLocationDAO().delete(((StorageLocation)(localData.get(pos))));
+            db.revenueDAO().deleteByStorageLocation(((StorageLocation)(localData.get(pos))).getId());
         }
 
         localData.remove(pos);

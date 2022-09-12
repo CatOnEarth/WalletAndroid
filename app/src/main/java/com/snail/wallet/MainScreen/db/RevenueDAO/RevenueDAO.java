@@ -35,6 +35,12 @@ public interface RevenueDAO {
     @Delete
     void delete(Revenues revenue);
 
+    @Query("DELETE FROM revenues WHERE id_category = :id_category")
+    void deleteByIdCategory(long id_category);
+
+    @Query("DELETE FROM revenues WHERE storage_location = :storage_location")
+    void deleteByStorageLocation(long storage_location);
+
     @Query("DELETE FROM revenues WHERE id = :id")
     void deleteById(long id);
 }
