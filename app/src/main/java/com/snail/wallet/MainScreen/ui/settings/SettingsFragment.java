@@ -8,10 +8,10 @@ import static com.snail.wallet.WalletConstants.SETTING_TYPE;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
@@ -32,44 +32,53 @@ public class SettingsFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
 
+        Log.d(TAG, "onCreateView method");
+
         binding = FragmentSettingsBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
         initFindViews(root);
+        initListViewAdapter();
+
+        return root;
+    }
+
+    private void initListViewAdapter() {
+        Log.d(TAG, "initListViewAdapter method");
 
         ArrayAdapter<String> adapterListSettings = new ArrayAdapter<>(requireContext(),
                 android.R.layout.simple_list_item_1, LIST_SETTINGS);
 
         listViewSettings.setAdapter(adapterListSettings);
-        listViewSettings.setOnItemClickListener(new AdapterView.OnItemClickListener(){
-            @Override
-            public void onItemClick(AdapterView<?> parent, View v, int position, long id) {
-                ++position;
-                if        (position == CODE_TYPE_CATEGORY_REVENUE) {
-                    startEditingSettingActivity(CODE_TYPE_CATEGORY_REVENUE);
-                } else if (position == CODE_TYPE_CATEGORY_EXPENSES) {
-                    startEditingSettingActivity(CODE_TYPE_CATEGORY_EXPENSES);
-                } else if (position == CODE_TYPE_STORAGE_LOCATION) {
-                    startEditingSettingActivity(CODE_TYPE_STORAGE_LOCATION);
-                }
+        listViewSettings.setOnItemClickListener((parent, v, position, id) -> {
+            ++position;
+            if        (position == CODE_TYPE_CATEGORY_REVENUE) {
+                startEditingSettingActivity(CODE_TYPE_CATEGORY_REVENUE);
+            } else if (position == CODE_TYPE_CATEGORY_EXPENSES) {
+                startEditingSettingActivity(CODE_TYPE_CATEGORY_EXPENSES);
+            } else if (position == CODE_TYPE_STORAGE_LOCATION) {
+                startEditingSettingActivity(CODE_TYPE_STORAGE_LOCATION);
             }
         });
-
-
-        return root;
     }
 
     @Override
     public void onDestroyView() {
+        Log.d(TAG, "onDestroyView method");
+
         super.onDestroyView();
         binding = null;
     }
 
     private void initFindViews(View root) {
+        Log.d(TAG, "initFindViews method");
+
         listViewSettings = root.findViewById(R.id.listViewSettingFragment);
     }
 
     private void startEditingSettingActivity(int code_type) {
+        Log.d(TAG, "startEditingSettingActivity method");
+
         Intent intent = new Intent(requireContext(), EditSettingActivity.class);
         intent.putExtra(SETTING_TYPE, code_type);
         startActivity(intent);

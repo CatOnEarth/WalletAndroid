@@ -5,6 +5,7 @@ import static com.snail.wallet.WalletConstants.ADDING_OBJ_REVENUE_TYPE;
 import static com.snail.wallet.WalletConstants.APP_PREFERENCES_IS_INIT_DB;
 import static com.snail.wallet.WalletConstants.APP_PREFERENCES_USERNAME;
 import static com.snail.wallet.WalletConstants.APP_PREFERENCES_USER_EMAIL;
+import static com.snail.wallet.WalletConstants.CODE_ABOUT_DIALOG;
 import static com.snail.wallet.WalletConstants.CODE_TYPE_CURRENCY_DOLLAR;
 import static com.snail.wallet.WalletConstants.CODE_TYPE_CURRENCY_EURO;
 import static com.snail.wallet.WalletConstants.CODE_TYPE_CURRENCY_RUBLE;
@@ -28,7 +29,6 @@ import com.snail.wallet.MainScreen.db.StorageLocationDAO.StorageLocationDAO;
 import com.snail.wallet.MainScreen.models.parametrs.Category;
 import com.snail.wallet.MainScreen.models.parametrs.Currency;
 import com.snail.wallet.MainScreen.models.parametrs.StorageLocation;
-import com.snail.wallet.MainScreen.ui.dialogs.InfoDialogButtonListener;
 import com.snail.wallet.MainScreen.ui.dialogs.InfoDialogFragment;
 import com.snail.wallet.R;
 import com.snail.wallet.databinding.ActivityWalletBinding;
@@ -41,7 +41,7 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.appcompat.app.AppCompatActivity;
 
 
-public class WalletActivity extends AppCompatActivity implements InfoDialogButtonListener {
+public class WalletActivity extends AppCompatActivity {
     private final String TAG = this.getClass().getSimpleName();
 
     private AppBarConfiguration   mAppBarConfiguration;
@@ -51,19 +51,32 @@ public class WalletActivity extends AppCompatActivity implements InfoDialogButto
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        PermanentStorage.init(this);
-        if (!PermanentStorage.getPropertyBoolean(APP_PREFERENCES_IS_INIT_DB)) {
-            InitDB();
-            PermanentStorage.addPropertyBoolean(APP_PREFERENCES_IS_INIT_DB, true);
-        }
+        Log.d(TAG, "onCreate method");
+
+        CheckIsInitDB();
 
         super.onCreate(savedInstanceState);
 
         initViews();
-        initData();
+        initUserData();
+    }
+
+    private void CheckIsInitDB() {
+        Log.d(TAG, "CheckIsInitDB method");
+
+        PermanentStorage.init(this);
+        if (!PermanentStorage.getPropertyBoolean(APP_PREFERENCES_IS_INIT_DB)) {
+            Log.d(TAG, "DB is not init");
+            InitDB();
+            PermanentStorage.addPropertyBoolean(APP_PREFERENCES_IS_INIT_DB, true);
+        }
+
+        Log.d(TAG, "DB is init");
     }
 
     private void initViews() {
+        Log.d(TAG, "initViews method");
+
         com.snail.wallet.databinding.ActivityWalletBinding binding = ActivityWalletBinding
                                                                       .inflate(getLayoutInflater());
         setContentView(binding.getRoot());
@@ -90,7 +103,9 @@ public class WalletActivity extends AppCompatActivity implements InfoDialogButto
         textViewEmail    = mHeaderView.findViewById(R.id.textViewNavViewEmail);
     }
 
-    private void initData() {
+    private void initUserData() {
+        Log.d(TAG, "initUserData method");
+
         Intent intent = getIntent();
         textViewUsername.setText(intent.getStringExtra(APP_PREFERENCES_USERNAME));
         textViewEmail.setText(   intent.getStringExtra(APP_PREFERENCES_USER_EMAIL));
@@ -98,15 +113,21 @@ public class WalletActivity extends AppCompatActivity implements InfoDialogButto
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
+        Log.d(TAG, "onCreateOptionsMenu method");
+
         getMenuInflater().inflate(R.menu.wallet, menu);
         return true;
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        Log.i(TAG, "Start onOptionsItemSelected method");
+        Log.d(TAG, "onOptionsItemSelected method");
+
         if (item.getItemId() == R.id.about_wallet_activity) {
-            aboutDialog();
+            Log.d(TAG, "About choose in menu actionBar");
+            startAboutDialog();
+        } else {
+            Log.w(TAG, "Choose some item in menu, but can't find this view elem");
         }
 
         return(super.onOptionsItemSelected(item));
@@ -114,6 +135,8 @@ public class WalletActivity extends AppCompatActivity implements InfoDialogButto
 
     @Override
     public boolean onSupportNavigateUp() {
+        Log.d(TAG, "onSupportNavigateUp method");
+
         NavController navController = Navigation.findNavController(this,
                                                             R.id.nav_host_fragment_content_wallet);
         return NavigationUI.navigateUp(navController, mAppBarConfiguration)
@@ -121,6 +144,8 @@ public class WalletActivity extends AppCompatActivity implements InfoDialogButto
     }
 
     private void InitDB() {
+        Log.d(TAG, "InitDB method");
+
         AppDatabase db          = App.getInstance().getAppDatabase();
 
         initCategoryTable(db);
@@ -129,6 +154,8 @@ public class WalletActivity extends AppCompatActivity implements InfoDialogButto
     }
 
     private void initCategoryTable(AppDatabase db) {
+        Log.d(TAG, "initCategoryTable method");
+
         CategoryDAO categoryDAO = db.categoryDAO();
         categoryDAO.insert(new Category(ADDING_OBJ_REVENUE_TYPE, "Зарплата"));
         categoryDAO.insert(new Category(ADDING_OBJ_REVENUE_TYPE, "Акции"));
@@ -140,6 +167,8 @@ public class WalletActivity extends AppCompatActivity implements InfoDialogButto
     }
 
     private void initCurrencyTable(AppDatabase db) {
+        Log.d(TAG, "initCurrencyTable method");
+
         CurrencyDAO currencyDAO = db.currencyDAO();
         currencyDAO.insert(new Currency(CODE_TYPE_CURRENCY_RUBLE, "Российский рубль",
                                                                                 "₽"));
@@ -152,27 +181,21 @@ public class WalletActivity extends AppCompatActivity implements InfoDialogButto
     }
 
     private void initStorageLocationTable(AppDatabase db) {
+        Log.d(TAG, "initStorageLocationTable method");
+
         StorageLocationDAO storageLocationDAO = db.storageLocationDAO();
         storageLocationDAO.insert(new StorageLocation( "Банк"));
         storageLocationDAO.insert(new StorageLocation( "Кошелек"));
         storageLocationDAO.insert(new StorageLocation( "Сейф"));
     }
 
-    private void aboutDialog() {
-        InfoDialogFragment dialog = new InfoDialogFragment("О приложении",
+    private void startAboutDialog() {
+        Log.d(TAG, "aboutDialog method");
+
+        InfoDialogFragment dialog = new InfoDialogFragment(CODE_ABOUT_DIALOG, "О приложении",
                 "Информация о приолжении", true, "Ок",
                 false, "");
 
         dialog.show(getSupportFragmentManager(), TAG);
-    }
-
-    @Override
-    public void InfoDialogPositiveButton() {
-
-    }
-
-    @Override
-    public void InfoDialogNegativeButton() {
-
     }
 }

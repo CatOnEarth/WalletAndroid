@@ -18,66 +18,77 @@ import androidx.fragment.app.Fragment;
 
 import com.snail.wallet.LoginScreen.LoginActivity;
 import com.snail.wallet.MainScreen.SharedPrefManager.PermanentStorage;
-import com.snail.wallet.MainScreen.WalletActivity;
-import com.snail.wallet.MainScreen.activities.AddActivity;
 import com.snail.wallet.MainScreen.db.App;
 import com.snail.wallet.MainScreen.db.AppDatabase;
-import com.snail.wallet.R;
 import com.snail.wallet.databinding.FragmentUserdataBinding;
 
-import java.util.Objects;
 
 public class UserDataFragment extends Fragment {
     private final String TAG = this.getClass().getSimpleName();
 
     private FragmentUserdataBinding binding;
 
+    private TextView textViewUsername;
+    private TextView textViewEmailUser;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
 
+        Log.d(TAG, "onCreateView method");
+
         binding = FragmentUserdataBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
-        PermanentStorage.init(getContext());
-
-        TextView textViewUsername  = root.findViewById(R.id.textViewUserNameDataFragment);
-        TextView textViewEmailUser = root.findViewById(R.id.textViewEmailUserDataFragment);
-
-        textViewUsername.setText(PermanentStorage.getPropertyString(APP_PREFERENCES_USERNAME));
-        textViewEmailUser.setText(PermanentStorage.getPropertyString(APP_PREFERENCES_USER_EMAIL));
-
-        Button bLogOut = root.findViewById(R.id.bLogOutUserDataFragment);
-        bLogOut.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                warningDialogAllDataClear();
-            }
-        });
+        initViews();
+        initUserData();
 
         return root;
     }
 
+    private void initUserData() {
+        Log.d(TAG, "initUserData method");
+
+        PermanentStorage.init(requireContext());
+
+        textViewUsername.setText(PermanentStorage.getPropertyString(APP_PREFERENCES_USERNAME));
+        textViewEmailUser.setText(PermanentStorage.getPropertyString(APP_PREFERENCES_USER_EMAIL));
+    }
+
+    private void initViews() {
+        Log.d(TAG, "initViews method");
+
+        textViewUsername  = binding.textViewUserNameDataFragment;
+        textViewEmailUser = binding.textViewEmailUserDataFragment;
+
+        Button bLogOut    = binding.bLogOutUserDataFragment;
+        bLogOut.setOnClickListener(view -> warningDialogAllDataClear());
+    }
+
     @Override
     public void onDestroyView() {
+        Log.d(TAG, "onDestroyView method");
         super.onDestroyView();
         binding = null;
     }
 
     private void logOut() {
-        PermanentStorage.init(getContext());
+        Log.d(TAG, "logOut method");
+
+        PermanentStorage.init(requireContext());
         PermanentStorage.clearPermanentStorage();
 
         AppDatabase db = App.getInstance().getAppDatabase();
         db.clearAllTables();
 
-        Intent intent = new Intent(requireActivity(), LoginActivity.class);
+        Intent intent  = new Intent(requireActivity(), LoginActivity.class);
         startActivity(intent);
 
         requireActivity().finish();
     }
 
     private void warningDialogAllDataClear() {
+        Log.d(TAG, "warningDialogAllDataClear method");
+
         AlertDialog.Builder alertDialog = new AlertDialog.Builder(requireActivity());
 
         alertDialog.setTitle("Вы точно хотите выйти?");
@@ -87,9 +98,7 @@ public class UserDataFragment extends Fragment {
                 (dialog, which) -> logOut());
 
         alertDialog.setNegativeButton("Нет",
-                (dialog, which) -> {
-                    dialog.cancel();
-                });
+                (dialog, which) -> dialog.cancel());
 
         alertDialog.show();
     }

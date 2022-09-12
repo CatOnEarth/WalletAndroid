@@ -33,6 +33,7 @@ public class ExpensesFragment extends Fragment {
 
     private FragmentExpensesBinding binding;
 
+    private RecyclerView        recyclerViewExpenses;
     private RecyclerViewAdapter recyclerViewAdapter;
 
     private ExpensesDAO    expensesDAO;
@@ -41,42 +42,64 @@ public class ExpensesFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
 
+        Log.d(TAG, "onCreate method");
+
         binding = FragmentExpensesBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
-        RecyclerView recyclerView = binding.recyclerViewExpenses;
+        initViews();
+        initRecyclerViewExpenses();
+
+        return root;
+    }
+
+    private void initViews() {
+        Log.d(TAG, "initViews method");
+
+        recyclerViewExpenses = binding.recyclerViewExpenses;
+
+        FloatingActionButton bAddRevenue = binding.floatingActionButtonExpenses;
+        bAddRevenue.setOnClickListener(view -> {
+            Log.i(TAG, "floating button add expenses clicked");
+            StartAddActivity();
+        });
+    }
+
+    private void initRecyclerViewExpenses() {
+        Log.d(TAG, "initRecyclerViewExpenses method");
 
         AppDatabase db = App.getInstance().getAppDatabase();
-        expensesDAO = db.expensesDAO();
+        expensesDAO    = db.expensesDAO();
 
         expenses = new ArrayList<>();
         expenses.addAll(expensesDAO.getAll());
         recyclerViewAdapter = new RecyclerViewAdapter(ADDING_OBJ_EXPENSES_TYPE, expenses, getContext());
 
-        recyclerView.setAdapter(recyclerViewAdapter);
+        recyclerViewExpenses.setAdapter(recyclerViewAdapter);
 
-        recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
-
-        FloatingActionButton bAddRevenue = binding.floatingActionButtonExpenses;
-        bAddRevenue.setOnClickListener(view -> {
-            Log.i(TAG, "floating button clicked");
-            StartAddActivity();
-        });
-
-        return root;
+        recyclerViewExpenses.setLayoutManager(new LinearLayoutManager(getContext()));
     }
 
     private void StartAddActivity() {
+        Log.d(TAG, "StartAddActivity method");
+
         Intent intent = new Intent(getContext(), AddActivity.class);
         intent.putExtra(ADDING_OBJECT_TYPE, ADDING_OBJ_EXPENSES_TYPE);
         startActivity(intent);
     }
 
-    @SuppressLint("NotifyDataSetChanged")
     @Override
     public void onResume() {
+        Log.d(TAG, "onResume method");
         super.onResume();
-        Log.i(TAG, "onResume Fragment");
+
+        updateExpensesAdapter();
+    }
+
+    @SuppressLint("NotifyDataSetChanged")
+    private void updateExpensesAdapter() {
+        Log.d(TAG, "updateExpensesAdapter method");
+
         expenses.clear();
         expenses.addAll(expensesDAO.getAll());
         recyclerViewAdapter.notifyDataSetChanged();
@@ -84,6 +107,7 @@ public class ExpensesFragment extends Fragment {
 
     @Override
     public void onDestroyView() {
+        Log.d(TAG, "onDestroyView method");
         super.onDestroyView();
         binding = null;
     }

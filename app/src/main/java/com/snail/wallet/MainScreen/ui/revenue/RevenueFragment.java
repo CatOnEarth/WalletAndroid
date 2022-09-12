@@ -34,51 +34,74 @@ public class RevenueFragment extends Fragment {
 
     private FragmentRevenueBinding binding;
 
+    private RecyclerView        recyclerViewRevenue;
     private RecyclerViewAdapter recyclerViewAdapter;
 
-    private RevenueDAO revenueDAO;
+    private RevenueDAO     revenueDAO;
     private List<Revenues> revenues;
 
     @SuppressLint("NotifyDataSetChanged")
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
 
+        Log.d(TAG, "onCreateView method");
+
         binding = FragmentRevenueBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
-        RecyclerView recyclerView = binding.recyclerViewRevenue;
+        initViews();
+        initRecyclerViewRevenue();
+
+        return root;
+    }
+
+    private void initRecyclerViewRevenue() {
+        Log.d(TAG, "initRecyclerViewRevenue method");
 
         AppDatabase db = App.getInstance().getAppDatabase();
-        revenueDAO = db.revenueDAO();
+        revenueDAO     = db.revenueDAO();
 
         revenues = new ArrayList<>();
         revenues.addAll(revenueDAO.getAll());
         recyclerViewAdapter = new RecyclerViewAdapter(ADDING_OBJ_REVENUE_TYPE, revenues, getContext());
 
-        recyclerView.setAdapter(recyclerViewAdapter);
+        recyclerViewRevenue.setAdapter(recyclerViewAdapter);
 
-        recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+        recyclerViewRevenue.setLayoutManager(new LinearLayoutManager(getContext()));
+    }
+
+    private void initViews() {
+        Log.d(TAG, "initViews method");
+
+        recyclerViewRevenue = binding.recyclerViewRevenue;
 
         FloatingActionButton bAddRevenue = binding.floatingActionButtonAdd;
         bAddRevenue.setOnClickListener(view -> {
-            Log.i(TAG, "floating button clicked");
+            Log.i(TAG, "floating button add revenue clicked");
             StartAddActivity();
         });
-
-        return root;
     }
 
-    @SuppressLint("NotifyDataSetChanged")
     @Override
     public void onResume() {
         super.onResume();
-        Log.i(TAG, "onResume Fragment");
+        Log.d(TAG, "onResume method");
+
+        updateRevenueAdapter();
+    }
+
+    @SuppressLint("NotifyDataSetChanged")
+    private void updateRevenueAdapter() {
+        Log.d(TAG, "updateRevenueAdapter method");
+
         revenues.clear();
         revenues.addAll(revenueDAO.getAll());
         recyclerViewAdapter.notifyDataSetChanged();
     }
 
     private void StartAddActivity() {
+        Log.d(TAG, "StartAddActivity method");
+
         Intent intent = new Intent(getContext(), AddActivity.class);
         intent.putExtra(ADDING_OBJECT_TYPE, ADDING_OBJ_REVENUE_TYPE);
         startActivity(intent);
@@ -86,6 +109,8 @@ public class RevenueFragment extends Fragment {
 
     @Override
     public void onDestroyView() {
+        Log.d(TAG, "onDestroyView method");
+
         super.onDestroyView();
         binding = null;
     }

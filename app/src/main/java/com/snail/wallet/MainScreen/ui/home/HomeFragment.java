@@ -10,6 +10,7 @@ import static com.snail.wallet.WalletConstants.CODE_TYPE_CURRENCY_TURKISH_LIRA;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -32,21 +33,23 @@ import java.text.DecimalFormat;
 import java.util.List;
 
 public class HomeFragment extends Fragment {
+    private final String TAG = this.getClass().getSimpleName();
 
     private FragmentHomeBinding binding;
 
-    TextView textViewRevenueRubles;
-    TextView textViewRevenueDollars;
-    TextView textViewRevenueEuro;
-    TextView textViewRevenueLira;
+    private TextView textViewRevenueRubles;
+    private TextView textViewRevenueDollars;
+    private TextView textViewRevenueEuro;
+    private TextView textViewRevenueLira;
 
-    TextView textViewExpensesRubles;
-    TextView textViewExpensesDollars;
-    TextView textViewExpensesEuro;
-    TextView textViewExpensesLira;
+    private TextView textViewExpensesRubles;
+    private TextView textViewExpensesDollars;
+    private TextView textViewExpensesEuro;
+    private TextView textViewExpensesLira;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
+        Log.d(TAG, "onCreate method");
 
         binding = FragmentHomeBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
@@ -61,17 +64,23 @@ public class HomeFragment extends Fragment {
 
     @Override
     public void onResume() {
+        Log.d(TAG, "onResume method");
+
         super.onResume();
         initData();
     }
 
     @Override
     public void onDestroyView() {
+        Log.d(TAG, "onDestroyView method");
+
         super.onDestroyView();
         binding = null;
     }
 
     private void initButtons(View root) {
+        Log.d(TAG, "initButtons method");
+
         ImageButton bAddRevenue  = root.findViewById(R.id.bAddRevenuesHome);
         ImageButton bAddExpenses = root.findViewById(R.id.bAddExpensesHome);
 
@@ -81,12 +90,16 @@ public class HomeFragment extends Fragment {
     }
 
     private void startAddActivity(int type_add) {
+        Log.d(TAG, "startAddActivity method");
+
         Intent intent = new Intent(getContext(), AddActivity.class);
         intent.putExtra(ADDING_OBJECT_TYPE, type_add);
         requireContext().startActivity(intent);
     }
 
     private void initFindView(View root) {
+        Log.d(TAG, "initFindView method");
+
         textViewRevenueRubles   = root.findViewById(R.id.textViewHomeRevenueDisplayRubles);
         textViewRevenueDollars  = root.findViewById(R.id.textViewHomeRevenueDisplayDollars);
         textViewRevenueEuro     = root.findViewById(R.id.textViewHomeRevenueDisplayEuro);
@@ -99,42 +112,57 @@ public class HomeFragment extends Fragment {
     }
 
     private void initData() {
-        AppDatabase db = App.getInstance().getAppDatabase();
+        Log.d(TAG, "initData method");
 
-        initDataRevenues(db);
-        initDataExpenses(db);
-    }
+        AppDatabase db          = App.getInstance().getAppDatabase();
 
-    private void initDataRevenues(AppDatabase db) {
-        RevenueDAO revenueDAO = db.revenueDAO();
-        List<Coin> revenues   = revenueDAO.getValues();
+        RevenueDAO revenueDAO   = db.revenueDAO();
+        ExpensesDAO expensesDAO = db.expensesDAO();
+        List<Coin> revenues     = revenueDAO.getValues();
+        List<Coin> expenses     = expensesDAO.getValues();
 
-        double rubles  = 0;
-        double dollars = 0;
-        double euro    = 0;
-        double lira    = 0;
-
-        Coin temp;
-        for (int ii = 0; ii < revenues.size(); ++ii) {
-            temp = revenues.get(ii);
-
-            if (temp.getType_currency() == CODE_TYPE_CURRENCY_RUBLE) {
-                rubles += temp.getValue();
-            } else if (temp.getType_currency() == CODE_TYPE_CURRENCY_DOLLAR) {
-                dollars += temp.getValue();
-            } else if (temp.getType_currency() == CODE_TYPE_CURRENCY_EURO) {
-                euro += temp.getValue();
-            } else if (temp.getType_currency() == CODE_TYPE_CURRENCY_TURKISH_LIRA) {
-                lira += temp.getValue();
-            }
-        }
+        double[] revenue_data  = countMoneyData(revenues);
+        double[] expenses_data = countMoneyData(expenses);
 
         DecimalFormat precision = new DecimalFormat("0.00");
 
-        String rubles_str  = precision.format(rubles) + "₽";
-        String dollars_str = precision.format(dollars) + "$";
-        String euro_str    = precision.format(euro) + "€";
-        String lira_str    = precision.format(lira) + "₺";
+        initDataRevenue(revenue_data, precision);
+        initDataExpenses(expenses_data, precision);
+    }
+
+    private double[] countMoneyData(List<Coin> coins) {
+        Log.d(TAG, "countMoneyData method");
+
+        double rubles       = 0;
+        double dollars      = 0;
+        double euro         = 0;
+        double turk_lira    = 0;
+
+        Coin temp;
+        for (int ii = 0; ii < coins.size(); ++ii) {
+            temp = coins.get(ii);
+
+            if        (temp.getType_currency() == CODE_TYPE_CURRENCY_RUBLE) {
+                rubles      += temp.getValue();
+            } else if (temp.getType_currency() == CODE_TYPE_CURRENCY_DOLLAR) {
+                dollars     += temp.getValue();
+            } else if (temp.getType_currency() == CODE_TYPE_CURRENCY_EURO) {
+                euro        += temp.getValue();
+            } else if (temp.getType_currency() == CODE_TYPE_CURRENCY_TURKISH_LIRA) {
+                turk_lira   += temp.getValue();
+            }
+        }
+
+        return new double[] {rubles, dollars, euro, turk_lira};
+    }
+
+    private void initDataRevenue(double[] money, DecimalFormat precision) {
+        Log.d(TAG, "initDataRevenue method");
+
+        String rubles_str  = precision.format(money[CODE_TYPE_CURRENCY_RUBLE]) + "₽";
+        String dollars_str = precision.format(money[CODE_TYPE_CURRENCY_DOLLAR]) + "$";
+        String euro_str    = precision.format(money[CODE_TYPE_CURRENCY_EURO]) + "€";
+        String lira_str    = precision.format(money[CODE_TYPE_CURRENCY_TURKISH_LIRA]) + "₺";
 
         textViewRevenueRubles.setText(rubles_str);
         textViewRevenueDollars.setText(dollars_str);
@@ -142,41 +170,17 @@ public class HomeFragment extends Fragment {
         textViewRevenueLira.setText(lira_str);
     }
 
-    private void initDataExpenses(AppDatabase db) {
-        ExpensesDAO expensesDAO = db.expensesDAO();
-        List<Coin> expenses     = expensesDAO.getValues();
+    private void initDataExpenses(double[] money, DecimalFormat precision) {
+        Log.d(TAG, "initDataExpenses method");
 
-        double rubles  = 0;
-        double dollars = 0;
-        double euro    = 0;
-        double lira    = 0;
-
-        Coin temp;
-        for (int ii = 0; ii < expenses.size(); ++ii) {
-            temp = expenses.get(ii);
-
-            if (temp.getType_currency() == CODE_TYPE_CURRENCY_RUBLE) {
-                rubles += temp.getValue();
-            } else if (temp.getType_currency() == CODE_TYPE_CURRENCY_DOLLAR) {
-                dollars += temp.getValue();
-            } else if (temp.getType_currency() == CODE_TYPE_CURRENCY_EURO) {
-                euro += temp.getValue();
-            } else if (temp.getType_currency() == CODE_TYPE_CURRENCY_TURKISH_LIRA) {
-                lira += temp.getValue();
-            }
-        }
-
-        DecimalFormat precision = new DecimalFormat("0.00");
-
-        String rubles_str  = precision.format(rubles) + "₽";
-        String dollars_str = precision.format(dollars) + "$";
-        String euro_str    = precision.format(euro) + "€";
-        String lira_str    = precision.format(lira) + "₺";
+        String rubles_str  = precision.format(money[CODE_TYPE_CURRENCY_RUBLE]) + "₽";
+        String dollars_str = precision.format(money[CODE_TYPE_CURRENCY_DOLLAR]) + "$";
+        String euro_str    = precision.format(money[CODE_TYPE_CURRENCY_EURO]) + "€";
+        String lira_str    = precision.format(money[CODE_TYPE_CURRENCY_TURKISH_LIRA]) + "₺";
 
         textViewExpensesRubles.setText(rubles_str);
         textViewExpensesDollars.setText(dollars_str);
         textViewExpensesEuro.setText(euro_str);
         textViewExpensesLira.setText(lira_str);
     }
-
 }

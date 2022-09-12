@@ -7,10 +7,10 @@ public class WalletConstants {
     public static final String APP_PREFERENCES_IS_USER_LOG      = "is_user_log";
     public static final String APP_PREFERENCES_IS_INIT_DB       = "is_init_db";
 
-    public static final int CODE_TYPE_CURRENCY_RUBLE        = 1;
-    public static final int CODE_TYPE_CURRENCY_DOLLAR       = 2;
-    public static final int CODE_TYPE_CURRENCY_EURO         = 3;
-    public static final int CODE_TYPE_CURRENCY_TURKISH_LIRA = 4;
+    public static final int CODE_TYPE_CURRENCY_RUBLE        = 0;
+    public static final int CODE_TYPE_CURRENCY_DOLLAR       = 1;
+    public static final int CODE_TYPE_CURRENCY_EURO         = 2;
+    public static final int CODE_TYPE_CURRENCY_TURKISH_LIRA = 3;
 
     public static final int CODE_TYPE_PARAM_CATEGORY         = 1;
     public static final int CODE_TYPE_PARAM_CURRENCY         = 2;
@@ -36,5 +36,5 @@ public class WalletConstants {
     public static final int CODE_TYPE_CATEGORY_EXPENSES = 2;
     public static final int CODE_TYPE_STORAGE_LOCATION  = 3;
 
-
+    public static final int CODE_ABOUT_DIALOG = 50;
 }

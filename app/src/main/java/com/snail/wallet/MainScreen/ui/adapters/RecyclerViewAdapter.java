@@ -8,6 +8,7 @@ import static com.snail.wallet.WalletConstants.ID_SHOW_OBJ;
 
 import android.content.Context;
 import android.content.Intent;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -29,25 +30,17 @@ import java.text.DecimalFormat;
 import java.util.List;
 
 public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.ViewHolder>{
-    /** List of revenues which display in recyclerView */
-    private final List localData;
-    /** Context */
-    private final Context mContext;
+    private final String TAG = this.getClass().getSimpleName();
 
-    private final int typeData;
+    private final List    localData;
+    private final Context mContext;
+    private final int     typeData;
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
-        /** TextView description revenue  in list */
         private final TextView textViewDescription;
-        /** TextView category revenue in list */
         private final TextView textViewCategory;
-        /** TextView value revenue in list */
         private final TextView textViewValue;
 
-        /** Constructor
-         *
-         * @param view View
-         */
         public ViewHolder(View view) {
             super(view);
             textViewDescription = view.findViewById(R.id.textViewRecyclerViewDescription);
@@ -56,23 +49,14 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         }
     }
 
-    /**Constructor custom adapter
-     *
-     * @param data data list
-     * @param context context
-     */
     public RecyclerViewAdapter(int type, List data, Context context) {
+        Log.d(TAG, "RecyclerViewAdapter method");
+
         typeData  = type;
         localData = data;
         mContext  = context;
     }
 
-    /**Create new views (invoked by the layout manager)
-     *
-     * @param viewGroup The ViewGroup into which the new View will be added after it is bound to an adapter position.
-     * @param viewType The view type of the new View.
-     * @return A new ViewHolder that holds a View of the given view type.
-     */
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup viewGroup, int viewType) {
@@ -82,13 +66,10 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         return new ViewHolder(view);
     }
 
-    /**Replace the contents of a view (invoked by the layout manager)
-     *
-     * @param viewHolder The ViewHolder which should be updated to represent the contents of the item at the given position in the data set.
-     * @param position The position of the item within the adapter's data set.
-     */
     @Override
     public void onBindViewHolder(@NonNull ViewHolder viewHolder, final int position) {
+        Log.d(TAG, "onBindViewHolder method");
+
         AppDatabase db = App.getInstance().getAppDatabase();
         CategoryDAO categoryDAO = db.categoryDAO();
         CurrencyDAO currencyDAO = db.currencyDAO();
@@ -96,40 +77,55 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         DecimalFormat precision = new DecimalFormat("0.00");
 
         if (typeData == ADDING_OBJ_REVENUE_TYPE) {
-            Revenues revenues = (Revenues) localData.get(position);
-
-            viewHolder.textViewDescription.setText(revenues.getDescription());
-            viewHolder.textViewCategory.setText(categoryDAO.getCategoryById(revenues.getCategory()).getName());
-
-
-            String val = precision.format(revenues.getValue()) + currencyDAO.getCurrencyByType(revenues.getType_currency()).getSymbol();
-            viewHolder.textViewValue.setText(val);
-
-            viewHolder.itemView.setOnClickListener(view -> StartInfoActivity(revenues.getId()));
+            initRevenueAddObj(viewHolder, precision, categoryDAO, currencyDAO,
+                                                                    localData.get(position));
         } else if (typeData == ADDING_OBJ_EXPENSES_TYPE) {
-            Expenses expenses = (Expenses) localData.get(position);
-
-            viewHolder.textViewDescription.setText(expenses.getDescription());
-            viewHolder.textViewCategory.setText(categoryDAO.getCategoryById(expenses.getCategory()).getName());
-
-            String val = precision.format(expenses.getValue()) + currencyDAO.getCurrencyByType(expenses.getType_currency()).getSymbol();
-            viewHolder.textViewValue.setText(val);
-
-            viewHolder.itemView.setOnClickListener(view -> StartInfoActivity(expenses.getId()));
+            initExpensesAddObj(viewHolder, precision, categoryDAO, currencyDAO,
+                                                                    localData.get(position));
         }
     }
 
+    private void initExpensesAddObj(ViewHolder viewHolder, DecimalFormat precision,
+                                    CategoryDAO categoryDAO, CurrencyDAO currencyDAO, Object obj) {
+
+        Log.d(TAG, "initExpensesAddObj method");
+
+        Expenses expenses = (Expenses) obj;
+
+        viewHolder.textViewDescription.setText(expenses.getDescription());
+        viewHolder.textViewCategory.setText(categoryDAO.getCategoryById(expenses.getCategory())
+                                                                                .getName());
+        String val = precision.format(expenses.getValue()) + currencyDAO.getCurrencyByType(expenses
+                                                                .getType_currency()).getSymbol();
+        viewHolder.textViewValue.setText(val);
+        viewHolder.itemView.setOnClickListener(view -> StartInfoActivity(expenses.getId()));
+    }
+
+    private void initRevenueAddObj(ViewHolder viewHolder, DecimalFormat precision,
+                                   CategoryDAO categoryDAO, CurrencyDAO currencyDAO, Object obj) {
+
+        Log.d(TAG, "initRevenueAddObj method");
+
+        Revenues revenues = (Revenues) obj;
+
+        viewHolder.textViewDescription.setText(revenues.getDescription());
+        viewHolder.textViewCategory.setText(categoryDAO.getCategoryById(revenues.getCategory())
+                                                                                .getName());
+        String val = precision.format(revenues.getValue()) + currencyDAO.getCurrencyByType(revenues
+                                                                .getType_currency()).getSymbol();
+        viewHolder.textViewValue.setText(val);
+        viewHolder.itemView.setOnClickListener(view -> StartInfoActivity(revenues.getId()));
+    }
+
     public void StartInfoActivity(long id) {
+        Log.d(TAG, "StartInfoActivity method");
+
         Intent intent = new Intent(mContext, ShowActivity.class);
         intent.putExtra(ADDING_OBJECT_TYPE, typeData);
         intent.putExtra(ID_SHOW_OBJ, id);
         mContext.startActivity(intent);
     }
 
-    /**Method to get number of item's to display in recyclerView
-     *
-     * @return num of item's to display
-     */
     @Override
     public int getItemCount() {
         return localData.size();
