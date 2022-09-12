@@ -3,6 +3,8 @@ package com.snail.wallet.MainScreen.ui.calcCurrency;
 import static com.snail.wallet.WalletConstants.CODE_TYPE_PARAM_CURRENCY;
 
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -64,6 +66,12 @@ public class CalcCurrencyFragment extends Fragment {
             Log.i(TAG, "Click button exchange update");
             updateExchange();
         });
+
+        initTextChangersListeners();
+    }
+
+    private void initTextChangersListeners() {
+        
     }
 
     private void updateExchange() {

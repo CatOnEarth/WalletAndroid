@@ -29,7 +29,7 @@
 
     <Spinner
         android:id="@+id/spinnerExchangeCurrencyUp"
-        android:layout_width="wrap_content"
+        android:layout_width="120dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
         android:minHeight="48dp"
@@ -59,7 +59,7 @@
 
     <Spinner
         android:id="@+id/spinnerExchangeDown"
-        android:layout_width="wrap_content"
+        android:layout_width="120dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
         android:minHeight="48dp"
