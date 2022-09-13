@@ -1,6 +1,7 @@
 package com.snail.wallet.LoginScreen;
 
 import static com.snail.wallet.WalletConstants.APP_PREFERENCES_IS_INIT_DB;
+import static com.snail.wallet.WalletConstants.APP_PREFERENCES_IS_INIT_RATES;
 import static com.snail.wallet.WalletConstants.APP_PREFERENCES_IS_USER_LOG;
 import static com.snail.wallet.WalletConstants.APP_PREFERENCES_USERNAME;
 import static com.snail.wallet.WalletConstants.APP_PREFERENCES_USER_EMAIL;
@@ -115,6 +116,7 @@ public class LoginActivity extends AppCompatActivity {
         PermanentStorage.addPropertyString(APP_PREFERENCES_USER_EMAIL, "local@local.ru");
         PermanentStorage.addPropertyBoolean(APP_PREFERENCES_IS_USER_LOG, true);
         PermanentStorage.addPropertyBoolean(APP_PREFERENCES_IS_INIT_DB, false);
+        PermanentStorage.addPropertyBoolean(APP_PREFERENCES_IS_INIT_RATES, false);
     }
 
     public void startOfflineApp() {

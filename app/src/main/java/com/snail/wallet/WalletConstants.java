@@ -6,6 +6,7 @@ public class WalletConstants {
     public static final String APP_PREFERENCES_USER_EMAIL       = "user_email";
     public static final String APP_PREFERENCES_IS_USER_LOG      = "is_user_log";
     public static final String APP_PREFERENCES_IS_INIT_DB       = "is_init_db";
+    public static final String APP_PREFERENCES_IS_INIT_RATES    = "is_init_rates";
 
     public static final int CODE_TYPE_CURRENCY_RUBLE        = 0;
     public static final int CODE_TYPE_CURRENCY_DOLLAR       = 1;

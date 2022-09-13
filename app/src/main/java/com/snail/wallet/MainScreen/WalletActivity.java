@@ -3,6 +3,7 @@ package com.snail.wallet.MainScreen;
 import static com.snail.wallet.WalletConstants.ADDING_OBJ_EXPENSES_TYPE;
 import static com.snail.wallet.WalletConstants.ADDING_OBJ_REVENUE_TYPE;
 import static com.snail.wallet.WalletConstants.APP_PREFERENCES_IS_INIT_DB;
+import static com.snail.wallet.WalletConstants.APP_PREFERENCES_IS_INIT_RATES;
 import static com.snail.wallet.WalletConstants.APP_PREFERENCES_USERNAME;
 import static com.snail.wallet.WalletConstants.APP_PREFERENCES_USER_EMAIL;
 import static com.snail.wallet.WalletConstants.CODE_ABOUT_DIALOG;
@@ -17,7 +18,9 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ProgressBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.material.navigation.NavigationView;
 import com.snail.wallet.MainScreen.SharedPrefManager.PermanentStorage;
@@ -25,14 +28,20 @@ import com.snail.wallet.MainScreen.db.App;
 import com.snail.wallet.MainScreen.db.AppDatabase;
 import com.snail.wallet.MainScreen.db.CategoryDAO.CategoryDAO;
 import com.snail.wallet.MainScreen.db.CurrencyDAO.CurrencyDAO;
+import com.snail.wallet.MainScreen.db.RatesDAO.RatesDAO;
 import com.snail.wallet.MainScreen.db.StorageLocationDAO.StorageLocationDAO;
 import com.snail.wallet.MainScreen.models.parametrs.Category;
 import com.snail.wallet.MainScreen.models.parametrs.Currency;
+import com.snail.wallet.MainScreen.models.parametrs.Rates;
 import com.snail.wallet.MainScreen.models.parametrs.StorageLocation;
+import com.snail.wallet.MainScreen.models.retrofit.ExchangeRate;
+import com.snail.wallet.MainScreen.retrofit.ExchangeRateService;
+import com.snail.wallet.MainScreen.retrofit.RetrofitService;
 import com.snail.wallet.MainScreen.ui.dialogs.InfoDialogFragment;
 import com.snail.wallet.R;
 import com.snail.wallet.databinding.ActivityWalletBinding;
 
+import androidx.annotation.NonNull;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
@@ -40,14 +49,18 @@ import androidx.navigation.ui.NavigationUI;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.appcompat.app.AppCompatActivity;
 
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+
 
 public class WalletActivity extends AppCompatActivity {
     private final String TAG = this.getClass().getSimpleName();
 
     private AppBarConfiguration   mAppBarConfiguration;
 
-    private TextView textViewUsername;
-    private TextView textViewEmail;
+    private TextView    textViewUsername;
+    private TextView    textViewEmail;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,6 +72,7 @@ public class WalletActivity extends AppCompatActivity {
 
         initViews();
         initUserData();
+        initRates();
     }
 
     private void CheckIsInitDB() {
@@ -109,6 +123,78 @@ public class WalletActivity extends AppCompatActivity {
         Intent intent = getIntent();
         textViewUsername.setText(intent.getStringExtra(APP_PREFERENCES_USERNAME));
         textViewEmail.setText(   intent.getStringExtra(APP_PREFERENCES_USER_EMAIL));
+    }
+
+    public void initRates() {
+        Log.d(TAG, "initRates method");
+
+        ProgressBar progressBar = new ProgressBar(getApplicationContext(), null, android.R.attr.progressBarStyleHorizontal);;
+        initProgressBar(progressBar);
+
+        ExchangeRateService service = RetrofitService.createService(ExchangeRateService.class);
+        Call<ExchangeRate> call     = service.getExchangeRate();
+
+        call.enqueue(new Callback<ExchangeRate>() {
+            @Override
+            public void onResponse(@NonNull Call<ExchangeRate> call, @NonNull Response<ExchangeRate> response) {
+                Log.i(TAG, "onResponse get answer");
+
+                PermanentStorage.init(getApplicationContext());
+                if (!PermanentStorage.getPropertyBoolean(APP_PREFERENCES_IS_INIT_RATES)) {
+                    setRates(response);
+                    PermanentStorage.addPropertyBoolean(APP_PREFERENCES_IS_INIT_RATES, true);
+                } else {
+                    updateRates(response);
+                }
+
+                stopProgressBar(progressBar);
+
+                Toast.makeText(getApplicationContext(), "Курсы валют обновлены", Toast.LENGTH_SHORT).show();
+            }
+
+            @Override
+            public void onFailure(@NonNull Call<ExchangeRate> call, @NonNull Throwable t) {
+                Log.i(TAG, "onFailure with  error: ", t);
+                Toast.makeText(getApplicationContext(), "Не удалось обновить курс валют", Toast.LENGTH_SHORT).show();
+
+                stopProgressBar(progressBar);
+            }
+        });
+    }
+
+    private void initProgressBar(ProgressBar progressBar) {
+
+    }
+
+    private void stopProgressBar(ProgressBar progressBar) {
+
+    }
+
+    private void setRates(Response<ExchangeRate> response) {
+        AppDatabase db    = App.getInstance().getAppDatabase();
+        RatesDAO ratesDAO = db.ratesDAO();
+
+        ExchangeRate exchangeRate = response.body();
+
+        assert exchangeRate != null;
+        ratesDAO.insert(new Rates(CODE_TYPE_CURRENCY_DOLLAR,       exchangeRate.getRates().getUSD()));
+        ratesDAO.insert(new Rates(CODE_TYPE_CURRENCY_EURO,         exchangeRate.getRates().getEUR()));
+        ratesDAO.insert(new Rates(CODE_TYPE_CURRENCY_TURKISH_LIRA, exchangeRate.getRates().getTRY()));
+    }
+
+    private void updateRates(Response<ExchangeRate> response) {
+        AppDatabase db    = App.getInstance().getAppDatabase();
+        RatesDAO ratesDAO = db.ratesDAO();
+
+        ExchangeRate exchangeRate = response.body();
+
+        assert exchangeRate != null;
+        ratesDAO.update(new Rates(CODE_TYPE_CURRENCY_DOLLAR - 1,
+                                CODE_TYPE_CURRENCY_DOLLAR,       exchangeRate.getRates().getUSD()));
+        ratesDAO.update(new Rates(CODE_TYPE_CURRENCY_EURO - 1,
+                                CODE_TYPE_CURRENCY_EURO,         exchangeRate.getRates().getEUR()));
+        ratesDAO.update(new Rates(CODE_TYPE_CURRENCY_TURKISH_LIRA - 1,
+                                CODE_TYPE_CURRENCY_TURKISH_LIRA, exchangeRate.getRates().getTRY()));
     }
 
     @Override
