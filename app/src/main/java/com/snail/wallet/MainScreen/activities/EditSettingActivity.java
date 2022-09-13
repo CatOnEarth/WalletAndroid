@@ -32,8 +32,6 @@ public class EditSettingActivity extends AppCompatActivity {
 
     private int typeSetting;
 
-    private RecyclerView                recyclerViewSettings;
-    private SettingsRecyclerViewAdapter settingsRecyclerViewAdapter;
     private List                        settingsData;
 
     @Override
@@ -47,9 +45,9 @@ public class EditSettingActivity extends AppCompatActivity {
         getIntentData();
         initData();
 
-        recyclerViewSettings = findViewById(R.id.recyclerViewSetting);
+        RecyclerView recyclerViewSettings = findViewById(R.id.recyclerViewSetting);
 
-        settingsRecyclerViewAdapter = new SettingsRecyclerViewAdapter(typeSetting, settingsData, this);
+        SettingsRecyclerViewAdapter settingsRecyclerViewAdapter = new SettingsRecyclerViewAdapter(typeSetting, settingsData, this);
 
         recyclerViewSettings.setAdapter(settingsRecyclerViewAdapter);
 

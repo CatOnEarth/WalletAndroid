@@ -134,32 +134,32 @@ public class WalletActivity extends AppCompatActivity {
         ExchangeRateService service = RetrofitService.createService(ExchangeRateService.class);
         Call<ExchangeRate> call     = service.getExchangeRate();
 
-//        call.enqueue(new Callback<ExchangeRate>() {
-//            @Override
-//            public void onResponse(@NonNull Call<ExchangeRate> call, @NonNull Response<ExchangeRate> response) {
-//                Log.i(TAG, "onResponse get answer");
-//
-//                PermanentStorage.init(getApplicationContext());
-//                if (!PermanentStorage.getPropertyBoolean(APP_PREFERENCES_IS_INIT_RATES)) {
-//                    setRates(response);
-//                    PermanentStorage.addPropertyBoolean(APP_PREFERENCES_IS_INIT_RATES, true);
-//                } else {
-//                    updateRates(response);
-//                }
-//
-//                stopProgressBar(progressBar);
-//
-//                Toast.makeText(getApplicationContext(), "Курсы валют обновлены", Toast.LENGTH_SHORT).show();
-//            }
-//
-//            @Override
-//            public void onFailure(@NonNull Call<ExchangeRate> call, @NonNull Throwable t) {
-//                Log.i(TAG, "onFailure with  error: ", t);
-//                Toast.makeText(getApplicationContext(), "Не удалось обновить курс валют", Toast.LENGTH_SHORT).show();
-//
-//                stopProgressBar(progressBar);
-//            }
-//        });
+        call.enqueue(new Callback<ExchangeRate>() {
+            @Override
+            public void onResponse(@NonNull Call<ExchangeRate> call, @NonNull Response<ExchangeRate> response) {
+                Log.i(TAG, "onResponse get answer");
+
+                PermanentStorage.init(getApplicationContext());
+                if (!PermanentStorage.getPropertyBoolean(APP_PREFERENCES_IS_INIT_RATES)) {
+                    setRates(response);
+                    PermanentStorage.addPropertyBoolean(APP_PREFERENCES_IS_INIT_RATES, true);
+                } else {
+                    updateRates(response);
+                }
+
+                stopProgressBar(progressBar);
+
+                Toast.makeText(getApplicationContext(), "Курсы валют обновлены", Toast.LENGTH_SHORT).show();
+            }
+
+            @Override
+            public void onFailure(@NonNull Call<ExchangeRate> call, @NonNull Throwable t) {
+                Log.i(TAG, "onFailure with  error: ", t);
+                Toast.makeText(getApplicationContext(), "Не удалось обновить курс валют", Toast.LENGTH_SHORT).show();
+
+                stopProgressBar(progressBar);
+            }
+        });
     }
 
     private void initProgressBar(ProgressBar progressBar) {

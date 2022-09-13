@@ -104,7 +104,7 @@ public class SettingsRecyclerViewAdapter  extends RecyclerView.Adapter<SettingsR
 
             builder
                     .setPositiveButton(android.R.string.yes, (dialog, which) -> editNameElem(input.getText().toString(),
-                            viewHolder.getAdapterPosition()))
+                            viewHolder.getBindingAdapterPosition()))
                     .setNegativeButton(android.R.string.no, null)
                     .show();
         });

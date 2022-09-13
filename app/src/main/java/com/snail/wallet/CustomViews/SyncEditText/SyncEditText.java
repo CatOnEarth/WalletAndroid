@@ -10,6 +10,8 @@ import android.util.Log;
 import androidx.appcompat.widget.AppCompatEditText;
 
 public class SyncEditText extends AppCompatEditText implements TextWatcher {
+    private final String TAG = this.getClass().getSimpleName();
+
     private SyncEditText[] mDependencies;
     private boolean shouldSync = true;
 
@@ -37,7 +39,7 @@ public class SyncEditText extends AppCompatEditText implements TextWatcher {
         shouldSync = syncDependencies;
         setText(text);
 
-        Log.d("Log", "Text sync: " + text);
+        Log.d(TAG, "Text sync: " + text);
     }
 
     @Override
@@ -57,7 +59,7 @@ public class SyncEditText extends AppCompatEditText implements TextWatcher {
             return;
         }
 
-        Log.d("Log", "Text input: " + charSequence);
+        Log.d(TAG, "Text input: " + charSequence);
 
         for (SyncEditText syncEditText : mDependencies) {
             syncEditText.setText(charSequence, false);

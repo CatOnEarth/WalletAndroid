@@ -16,9 +16,6 @@ public interface CurrencyDAO {
     @Query("SELECT * FROM currency")
     List<Currency> getAll();
 
-    @Query("SELECT * FROM currency WHERE id = :id")
-    Currency getCurrencyById(long id);
-
     @Query("SELECT * FROM currency WHERE type_currency = :type_currency")
     Currency getCurrencyByType(int type_currency);
 

@@ -76,10 +76,6 @@ public class Money {
         return id_category;
     }
 
-    public void setId_category(long id_category) {
-        this.id_category = id_category;
-    }
-
     public String getDescription() {
         return description;
     }
