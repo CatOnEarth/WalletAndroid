@@ -15,7 +15,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="25dp"
         android:layout_marginTop="120dp"
-        android:text="@string/textCategory"
+        android:text="@string/text_category"
         android:textColor="#000000"
         android:textSize="24sp" />
 
@@ -25,7 +25,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="25dp"
         android:layout_marginTop="50dp"
-        android:text="@string/textValue"
+        android:text="@string/text_value"
         android:textColor="#000000"
         android:textSize="24sp" />
 
@@ -35,7 +35,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="25dp"
         android:layout_marginTop="50dp"
-        android:text="@string/textData"
+        android:text="@string/text_data"
         android:textColor="#000000"
         android:textSize="24sp" />
 
@@ -45,7 +45,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="25dp"
         android:layout_marginTop="50dp"
-        android:text="@string/textStorageLocation"
+        android:text="@string/text_storage_location"
         android:textColor="#000000"
         android:textSize="24sp" />
 
@@ -55,7 +55,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="25dp"
         android:layout_marginTop="50dp"
-        android:text="@string/HintDescription"
+        android:text="@string/text_description"
         android:textColor="#000000"
         android:textSize="24sp" />
 

@@ -144,7 +144,7 @@ public class AddActivity extends AppCompatActivity {
             bAddStorageLocation.setVisibility(View.INVISIBLE);
         }
 
-        date                   = findViewById(R.id.textViewAddActivityDateSelecter);
+        date                   = findViewById(R.id.textViewAddActivityDateSelector);
     }
 
     private void initCategorySpinner(AppDatabase db) {

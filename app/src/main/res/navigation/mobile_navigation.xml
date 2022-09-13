@@ -8,36 +8,36 @@
     <fragment
         android:id="@+id/nav_home"
         android:name="com.snail.wallet.MainScreen.ui.home.HomeFragment"
-        android:label="@string/menu_home"
+        android:label="@string/text_home"
         tools:layout="@layout/fragment_home" />
 
     <fragment
         android:id="@+id/nav_gallery"
         android:name="com.snail.wallet.MainScreen.ui.revenue.RevenueFragment"
-        android:label="@string/menu_gallery"
+        android:label="@string/text_revenue"
         tools:layout="@layout/fragment_revenue" />
 
     <fragment
         android:id="@+id/nav_slideshow"
         android:name="com.snail.wallet.MainScreen.ui.expenses.ExpensesFragment"
-        android:label="@string/menu_slideshow"
+        android:label="@string/text_expenses"
         tools:layout="@layout/fragment_expenses" />
 
     <fragment
         android:id="@+id/nav_calc_currency"
         android:name="com.snail.wallet.MainScreen.ui.calcCurrency.CalcCurrencyFragment"
-        android:label="Калькулятор валют"
+        android:label="@string/text_calc_currency"
         tools:layout="@layout/fragment_calc_currency" />
 
     <fragment
         android:id="@+id/nav_settings"
         android:name="com.snail.wallet.MainScreen.ui.settings.SettingsFragment"
-        android:label="Настройки"
+        android:label="@string/text_settings"
         tools:layout="@layout/fragment_settings" />
 
     <fragment
         android:id="@+id/nav_userdata"
         android:name="com.snail.wallet.MainScreen.ui.userdata.UserDataFragment"
-        android:label="О пользователе"
+        android:label="@string/text_about_user"
         tools:layout="@layout/fragment_userdata" />
 </navigation>

@@ -179,25 +179,25 @@ public class ShowActivity extends AppCompatActivity {
         Revenues    revenues                  = revenueDAO.getById(id_item);
 
         category_id = revenues.getId_category();
-        String category        = getResources().getText(R.string.textCategory) + ": " +
+        String category        = getResources().getText(R.string.text_category) + ": " +
                                    categoryDAO.getCategoryById(revenues.getId_category()).getName();
 
         storage_location_id = revenues.getStorage_location();
-        String storageLocation = getResources().getText(R.string.textStorageLocation) + ": " +
+        String storageLocation = getResources().getText(R.string.text_storage_location) + ": " +
                                    storageLocationDAO.getLocationById(revenues.getStorage_location());
 
         DecimalFormat precision = new DecimalFormat("0.00");
         value_double = revenues.getValue();
         currency_type = revenues.getType_currency();
-        String value           = getResources().getText(R.string.textValue) + ": " + precision.format(value_double)
+        String value           = getResources().getText(R.string.text_value) + ": " + precision.format(value_double)
                                     + currencyDAO.getCurrencyByType(currency_type).getSymbol();
 
         date_editing = custom_date;
-        String date_item       = getResources().getText(R.string.textData) + ": " + custom_date.getDate_day() + "." +
+        String date_item       = getResources().getText(R.string.text_data) + ": " + custom_date.getDate_day() + "." +
                                    custom_date.getDate_month() + "." + custom_date.getDate_year();
 
         desc_str = revenues.getDescription();
-        String description     = getResources().getText(R.string.HintDescription) + ": " + desc_str;
+        String description     = getResources().getText(R.string.text_description) + ": " + desc_str;
 
         textViewCategory.setText(category);
         textViewStorageLocation.setText(storageLocation);
@@ -214,20 +214,20 @@ public class ShowActivity extends AppCompatActivity {
         Expenses    expenses                  = expensesDAO.getById(id_item);
 
         category_id = expenses.getId_category();
-        String category        = getResources().getText(R.string.textCategory) + ": " +
+        String category        = getResources().getText(R.string.text_category) + ": " +
                 categoryDAO.getCategoryById(expenses.getId_category()).getName();
 
         DecimalFormat precision = new DecimalFormat("0.00");
         value_double = expenses.getValue();
         currency_type = expenses.getType_currency();
-        String value           = getResources().getText(R.string.textValue) + ": " + precision.format(value_double) +
+        String value           = getResources().getText(R.string.text_value) + ": " + precision.format(value_double) +
                                         currencyDAO.getCurrencyByType(currency_type).getSymbol();
 
-        String date_item       = getResources().getText(R.string.textData) + ": " + custom_date.getDate_day() + "." +
+        String date_item       = getResources().getText(R.string.text_data) + ": " + custom_date.getDate_day() + "." +
                 custom_date.getDate_month() + "." + custom_date.getDate_year();
 
         desc_str = expenses.getDescription();
-        String description     = getResources().getText(R.string.HintDescription) + ": " + desc_str;
+        String description     = getResources().getText(R.string.text_description) + ": " + desc_str;
 
         textViewCategory.setText(category);
         textViewData.setText(date_item);
