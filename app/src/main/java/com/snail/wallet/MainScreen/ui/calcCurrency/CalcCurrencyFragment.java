@@ -1,5 +1,6 @@
 package com.snail.wallet.MainScreen.ui.calcCurrency;
 
+import static com.snail.wallet.WalletConstants.CODE_TYPE_CURRENCY_RUBLE;
 import static com.snail.wallet.WalletConstants.CODE_TYPE_PARAM_CURRENCY;
 
 import android.os.Bundle;
@@ -8,7 +9,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
@@ -18,6 +21,7 @@ import com.snail.wallet.MainScreen.WalletActivity;
 import com.snail.wallet.MainScreen.db.App;
 import com.snail.wallet.MainScreen.db.AppDatabase;
 import com.snail.wallet.MainScreen.db.CurrencyDAO.CurrencyDAO;
+import com.snail.wallet.MainScreen.db.RatesDAO.RatesDAO;
 import com.snail.wallet.MainScreen.models.parametrs.Currency;
 import com.snail.wallet.MainScreen.models.retrofit.ExchangeRate;
 import com.snail.wallet.MainScreen.retrofit.ExchangeRateService;
@@ -25,7 +29,9 @@ import com.snail.wallet.MainScreen.retrofit.RetrofitService;
 import com.snail.wallet.MainScreen.ui.adapters.SpinnerAdapter;
 import com.snail.wallet.databinding.FragmentCalcCurrencyBinding;
 
+import java.text.DecimalFormat;
 import java.util.ArrayList;
+import java.util.Objects;
 
 import okhttp3.ResponseBody;
 import retrofit2.Call;
@@ -39,9 +45,6 @@ public class CalcCurrencyFragment extends Fragment {
 
     private Spinner spinnerCurrencyUp;
     private Spinner spinnerCurrencyDown;
-
-    private SpinnerAdapter spinnerCurrencyUpAdapter;
-    private SpinnerAdapter spinnerCurrencyDownAdapter;
 
     private SyncEditText editTextValueUp;
     private SyncEditText editTextValueDown;
@@ -74,12 +77,63 @@ public class CalcCurrencyFragment extends Fragment {
             updateExchange();
         });
 
-        initEditTextSync();
+        ImageButton bCountValueByExchangeRate = binding.imageButtonCountValueByExchangeRate;
+        bCountValueByExchangeRate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Log.i(TAG, "Click button bCountValueByExchangeRate");
+
+                countValueExchangeRate();
+            }
+        });
     }
 
-    private void initEditTextSync() {
-        editTextValueUp.setDependencies(editTextValueDown);
-        editTextValueDown.setDependencies(editTextValueUp);
+    private void countValueExchangeRate() {
+        Log.d(TAG, "countValueExchangeRate method");
+
+        double input_val = 0;
+        try {
+           input_val =  Double.parseDouble(Objects.requireNonNull(editTextValueUp.getText()).toString());
+        } catch (NumberFormatException e) {
+            Log.e(TAG, "cannot parse input value of exchange rate to double");
+            Toast.makeText(requireContext(), "Введено неверное число", Toast.LENGTH_LONG).show();
+
+            return;
+        }
+
+        if (input_val < 0) {
+            Toast.makeText(requireContext(), "Введите положительное число", Toast.LENGTH_LONG).show();
+            return;
+        }
+
+        exchangeRate(input_val);
+    }
+
+    private void exchangeRate(double input_val) {
+        AppDatabase db          = App.getInstance().getAppDatabase();
+        CurrencyDAO currencyDAO = db.currencyDAO();
+        RatesDAO ratesDAO       = db.ratesDAO();
+        double output_val       = 0;
+        DecimalFormat precision = new DecimalFormat("0.00");
+
+        int currency_type_input  = ((Currency)spinnerCurrencyUp.getSelectedItem()).getType_currency();
+        int currency_type_output = ((Currency)spinnerCurrencyDown.getSelectedItem()).getType_currency();
+
+        if (currency_type_input == currency_type_output) {
+            editTextValueDown.setText(precision.format(input_val));
+            return;
+        }
+
+        if (currency_type_input != CODE_TYPE_CURRENCY_RUBLE) {
+            output_val = input_val / ratesDAO.getByTypeCurrency(currency_type_input);
+        } else {
+            output_val = input_val;
+        }
+
+        if (currency_type_output != CODE_TYPE_CURRENCY_RUBLE) {
+            output_val = output_val * ratesDAO.getByTypeCurrency(currency_type_output);
+        }
+        editTextValueDown.setText(precision.format(output_val));
     }
 
     private void updateExchange() {
@@ -96,11 +150,11 @@ public class CalcCurrencyFragment extends Fragment {
 
         ArrayList<Currency> currencyList = (ArrayList<Currency>) currencyDAO.getAll();
 
-        spinnerCurrencyUpAdapter = new SpinnerAdapter(requireContext(), CODE_TYPE_PARAM_CURRENCY,
+        SpinnerAdapter spinnerCurrencyUpAdapter = new SpinnerAdapter(requireContext(), CODE_TYPE_PARAM_CURRENCY,
                 currencyList);
         spinnerCurrencyUp.setAdapter(spinnerCurrencyUpAdapter);
 
-        spinnerCurrencyDownAdapter = new SpinnerAdapter(requireContext(), CODE_TYPE_PARAM_CURRENCY,
+        SpinnerAdapter spinnerCurrencyDownAdapter = new SpinnerAdapter(requireContext(), CODE_TYPE_PARAM_CURRENCY,
                 currencyList);
         spinnerCurrencyDown.setAdapter(spinnerCurrencyDownAdapter);
     }
