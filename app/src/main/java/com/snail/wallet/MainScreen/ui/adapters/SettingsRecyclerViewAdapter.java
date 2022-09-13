@@ -71,19 +71,21 @@ public class SettingsRecyclerViewAdapter  extends RecyclerView.Adapter<SettingsR
     @Override
     public void onBindViewHolder(@NonNull ViewHolder viewHolder, final int position) {
         Log.d(TAG, "onBindViewHolder method");
+        String name = "";
 
         if (typeSetting == CODE_TYPE_CATEGORY_REVENUE || typeSetting == CODE_TYPE_CATEGORY_EXPENSES) {
-            viewHolder.textViewElemSettingName.setText(((Category)localData.get(position)).getName());
+            name = ((Category)localData.get(position)).getName();
+            viewHolder.textViewElemSettingName.setText(name);
         } else if (typeSetting == CODE_TYPE_PARAM_STORAGE_LOCATION) {
-            viewHolder.textViewElemSettingName.setText(((StorageLocation)(localData.get(position)))
-                                                                            .getLocation());
+            name = ((StorageLocation)(localData.get(position))).getLocation();
+            viewHolder.textViewElemSettingName.setText(name);
         }
 
         initClickListenerDelete(viewHolder, position);
-        initClickListenerEdit(viewHolder, position);
+        initClickListenerEdit(viewHolder, name, position);
     }
 
-    private void initClickListenerEdit(ViewHolder viewHolder, int position) {
+    private void initClickListenerEdit(ViewHolder viewHolder, String old_name, int position) {
         Log.d(TAG, "initClickListenerEdit method");
 
         viewHolder.imageButtonEditElemSetting.setOnClickListener(view -> {
@@ -95,6 +97,7 @@ public class SettingsRecyclerViewAdapter  extends RecyclerView.Adapter<SettingsR
             LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(
                     LinearLayout.LayoutParams.MATCH_PARENT,
                     LinearLayout.LayoutParams.MATCH_PARENT);
+            input.setText(old_name);
             int maxLength        = 32;
             InputFilter[] fArray = new InputFilter[1];
             fArray[0]            = new InputFilter.LengthFilter(maxLength);
@@ -103,15 +106,19 @@ public class SettingsRecyclerViewAdapter  extends RecyclerView.Adapter<SettingsR
             builder.setView(input);
 
             builder
-                    .setPositiveButton(android.R.string.yes, (dialog, which) -> editNameElem(input.getText().toString(),
+                    .setPositiveButton(android.R.string.yes, (dialog, which) -> editNameElem(input.getText().toString(), old_name,
                             viewHolder.getBindingAdapterPosition()))
                     .setNegativeButton(android.R.string.no, null)
                     .show();
         });
     }
 
-    private void editNameElem(String new_name, int pos) {
+    private void editNameElem(String new_name, String old_name, int pos) {
         Log.d(TAG, "editNameElem method");
+
+        if (old_name.equals(new_name)) {
+            return;
+        }
 
         AppDatabase db = App.getInstance().getAppDatabase();
 
@@ -142,11 +149,15 @@ public class SettingsRecyclerViewAdapter  extends RecyclerView.Adapter<SettingsR
     }
 
     private boolean isExistNewNameCategory(AppDatabase db, int type_category, String new_name) {
+        Log.d(TAG, "isExistNewNameCategory method");
+
         CategoryDAO categoryDAO = db.categoryDAO();
         return categoryDAO.getByNameAndTypeCategory(type_category, new_name).size() != 0;
     }
 
     private boolean isExistNewNameStorageLocation(AppDatabase db, String new_name) {
+        Log.d(TAG, "isExistNewNameStorageLocation method");
+
         StorageLocationDAO storageLocationDAO = db.storageLocationDAO();
         return storageLocationDAO.getLocationByName(new_name).size() != 0;
     }
@@ -157,7 +168,7 @@ public class SettingsRecyclerViewAdapter  extends RecyclerView.Adapter<SettingsR
         viewHolder.imageButtonDeleteElemSetting.setOnClickListener(view -> {
             AlertDialog.Builder builder = new AlertDialog.Builder(context);
             builder.setTitle("Удалить элемент");
-            builder.setPositiveButton(android.R.string.yes, (dialog, which) -> deleteElem(viewHolder.getAdapterPosition()));
+            builder.setPositiveButton(android.R.string.yes, (dialog, which) -> deleteElem(viewHolder.getBindingAdapterPosition()));
             builder.setNegativeButton(android.R.string.no, null);
 
             if (typeSetting == CODE_TYPE_PARAM_STORAGE_LOCATION) {
