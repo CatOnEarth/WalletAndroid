@@ -73,7 +73,7 @@ public class SettingsFragment extends Fragment {
     private void initFindViews(View root) {
         Log.d(TAG, "initFindViews method");
 
-        listViewSettings = root.findViewById(R.id.listViewSettingFragment);
+        listViewSettings = root.findViewById(R.id.listViewSettingFragmentSettingsListView);
     }
 
     private void startEditingSettingActivity(int code_type) {

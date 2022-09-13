@@ -8,7 +8,7 @@
     tools:context=".MainScreen.ui.home.HomeFragment">
 
     <TextView
-        android:id="@+id/textView9"
+        android:id="@+id/textViewHomeFragmentRevenue"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
@@ -20,17 +20,17 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageButton
-        android:id="@+id/bAddRevenuesHome"
+        android:id="@+id/buttonHomeFragmentAddRevenue"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:background="#00FFFFFF"
         android:src="@android:drawable/ic_input_add"
-        app:layout_constraintStart_toEndOf="@+id/textView9"
-        app:layout_constraintTop_toTopOf="@+id/textView9" />
+        app:layout_constraintStart_toEndOf="@+id/textViewHomeFragmentRevenue"
+        app:layout_constraintTop_toTopOf="@+id/textViewHomeFragmentRevenue" />
 
     <TableLayout
-        android:id="@+id/tableLayout"
+        android:id="@+id/tableLayoutHomeFragmentTableRevenue"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -38,7 +38,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.251"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView9">
+        app:layout_constraintTop_toBottomOf="@+id/textViewHomeFragmentRevenue">
 
 
         <TableRow
@@ -58,7 +58,7 @@
                 android:textSize="20sp" />
 
             <TextView
-                android:id="@+id/textViewHomeRevenueDisplayRubles"
+                android:id="@+id/textViewHomeFragmentRevenueDisplayRubles"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
@@ -73,7 +73,7 @@
             android:layout_height="match_parent">
 
             <TextView
-                android:id="@+id/textView15"
+                android:id="@+id/textViewHomeFragmentRevenueDollars"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
@@ -84,7 +84,7 @@
                 android:textSize="20sp" />
 
             <TextView
-                android:id="@+id/textViewHomeRevenueDisplayDollars"
+                android:id="@+id/textViewHomeFragmentRevenueDisplayDollars"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
@@ -99,7 +99,7 @@
             android:layout_height="match_parent">
 
             <TextView
-                android:id="@+id/textView17"
+                android:id="@+id/textViewHomeFragmentRevenueEuro"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
@@ -110,7 +110,7 @@
                 android:textSize="20sp" />
 
             <TextView
-                android:id="@+id/textViewHomeRevenueDisplayEuro"
+                android:id="@+id/textViewHomeFragmentRevenueDisplayEuro"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
@@ -125,7 +125,7 @@
             android:layout_height="match_parent">
 
             <TextView
-                android:id="@+id/textView3"
+                android:id="@+id/textViewHomeFragmentRevenueTurkishLira"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
@@ -136,7 +136,7 @@
                 android:textSize="20sp" />
 
             <TextView
-                android:id="@+id/textViewHomeRevenueDisplayLira"
+                android:id="@+id/textViewHomeFragmentRevenueDisplayLira"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
@@ -148,8 +148,20 @@
 
     </TableLayout>
 
+    <View
+        android:id="@+id/dividerHomeFragmentDividerRevenueExpenses"
+        android:layout_width="wrap_content"
+        android:layout_height="2dp"
+        android:background="?android:attr/listDivider"
+        app:layout_constraintBottom_toTopOf="@+id/textViewHomeFragmentExpenses"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tableLayoutHomeFragmentTableRevenue"
+        app:layout_constraintVertical_bias="0.086" />
+
     <TextView
-        android:id="@+id/textView10"
+        android:id="@+id/textViewHomeFragmentExpenses"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
@@ -158,39 +170,27 @@
         android:textSize="26sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tableLayout" />
+        app:layout_constraintTop_toBottomOf="@+id/tableLayoutHomeFragmentTableRevenue" />
 
     <ImageButton
-        android:id="@+id/bAddExpensesHome"
+        android:id="@+id/buttonHomeFragmentAddExpenses"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:background="#00FFFFFF"
         android:src="@android:drawable/ic_input_add"
-        app:layout_constraintStart_toEndOf="@+id/textView10"
-        app:layout_constraintTop_toTopOf="@+id/textView10" />
-
-    <View
-        android:id="@+id/divider"
-        android:layout_width="wrap_content"
-        android:layout_height="2dp"
-        android:background="?android:attr/listDivider"
-        app:layout_constraintBottom_toTopOf="@+id/textView10"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tableLayout"
-        app:layout_constraintVertical_bias="0.086" />
+        app:layout_constraintStart_toEndOf="@+id/textViewHomeFragmentExpenses"
+        app:layout_constraintTop_toTopOf="@+id/textViewHomeFragmentExpenses" />
 
     <TableLayout
-        android:id="@+id/tableLayout2"
+        android:id="@+id/tableLayoutHomeFragmentExpenses"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.281"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView10">
+        app:layout_constraintTop_toBottomOf="@+id/textViewHomeFragmentExpenses">
 
         <TableRow
             android:layout_width="match_parent"
@@ -198,7 +198,7 @@
             android:layout_margin="5dp">
 
             <TextView
-                android:id="@+id/textView25"
+                android:id="@+id/textViewHomeFragmentExpensesRubles"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
@@ -209,7 +209,7 @@
                 android:textSize="20sp" />
 
             <TextView
-                android:id="@+id/textViewHomeExpensesDisplayRubles"
+                android:id="@+id/textViewHomeFragmentExpensesDisplayRubles"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
@@ -224,7 +224,7 @@
             android:layout_height="match_parent">
 
             <TextView
-                android:id="@+id/textView23"
+                android:id="@+id/textViewHomeFragmentExpensesDollars"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
@@ -235,7 +235,7 @@
                 android:textSize="20sp" />
 
             <TextView
-                android:id="@+id/textViewHomeExpensesDisplayDollars"
+                android:id="@+id/textViewHomeFragmentExpensesDisplayDollars"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
@@ -250,7 +250,7 @@
             android:layout_height="match_parent">
 
             <TextView
-                android:id="@+id/textView21"
+                android:id="@+id/textViewHomeFragmentExpensesEuro"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
@@ -261,7 +261,7 @@
                 android:textSize="20sp" />
 
             <TextView
-                android:id="@+id/textViewHomeExpensesDisplayEuro"
+                android:id="@+id/textViewHomeFragmentExpensesDisplayEuro"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
@@ -276,7 +276,7 @@
             android:layout_height="match_parent">
 
             <TextView
-                android:id="@+id/textView11"
+                android:id="@+id/textViewHomeFragmentExpensesTurkishLira"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
@@ -287,7 +287,7 @@
                 android:textSize="20sp" />
 
             <TextView
-                android:id="@+id/textViewHomeExpensesDisplayLira"
+                android:id="@+id/textViewHomeFragmentExpensesDisplayLira"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"

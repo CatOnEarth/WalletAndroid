@@ -95,10 +95,10 @@ public class WalletActivity extends AppCompatActivity {
                                                                       .inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-        setSupportActionBar(binding.appBarWallet.toolbar);
+        setSupportActionBar(binding.appBarWalletWalletActivityAppBar.toolbar);
 
-        DrawerLayout drawer           = binding.drawerLayout;
-        NavigationView navigationView = binding.navView;
+        DrawerLayout drawer           = binding.drawerLayoutWalletActivityMainLayout;
+        NavigationView navigationView = binding.navViewWalletActivityNavView;
 
         mAppBarConfiguration = new AppBarConfiguration.Builder(
                 R.id.nav_home, R.id.nav_gallery, R.id.nav_slideshow, R.id.nav_calc_currency,

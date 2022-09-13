@@ -1,20 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/linearLayoutItemRecyclerViewMainLayout"
     android:layout_width="match_parent"
-    android:minHeight="60dp"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:minHeight="60dp">
 
     <androidx.cardview.widget.CardView
+        android:id="@+id/cardViewItemRecyclerViewCardView"
         android:layout_width="0dp"
         android:layout_height="match_parent"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="4dp"
         android:layout_weight="1"
         android:background="#fef1a2"
         app:cardBackgroundColor="#fef1a2"
-        android:layout_marginEnd="4dp"
-        android:layout_marginStart="4dp"
-        android:layout_marginTop="8dp"
         app:cardElevation="2dp">
 
         <TableRow
@@ -24,7 +25,7 @@
             android:background="#F3E16D">
 
             <TextView
-                android:id="@+id/textViewCategoryRecyclerView"
+                android:id="@+id/textViewItemRecyclerViewCategory"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:gravity="center"
@@ -32,7 +33,7 @@
                 android:textSize="20sp" />
 
             <TextView
-                android:id="@+id/textViewRecyclerViewDescription"
+                android:id="@+id/textViewItemRecyclerViewDescription"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:gravity="center"
@@ -40,7 +41,7 @@
                 android:textSize="16sp" />
 
             <TextView
-                android:id="@+id/textViewValueRecyclerView"
+                android:id="@+id/textViewItemRecyclerViewValue"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:gravity="center"

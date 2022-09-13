@@ -2,62 +2,14 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/constrainLayoutAddActivityMainLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#fef1a2"
     tools:context=".MainScreen.activities.AddActivity">
 
     <TextView
-        android:id="@+id/textViewDateSelectedRevenue"
-        android:layout_width="wrap_content"
-        android:layout_height="37dp"
-        android:textSize="24sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.099"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.211" />
-
-    <TextView
-        android:id="@+id/textViewSelectDateRevenue"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/textSelectDate"
-        android:textColor="#33691E"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.092"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.179" />
-
-    <Button
-        android:id="@+id/buttonAddCategory"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/textButtonAdd"
-        android:textSize="12sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.523"
-        app:layout_constraintStart_toEndOf="@+id/spinnerCategoryRevenue"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.062" />
-
-    <Spinner
-        android:id="@+id/spinnerCategoryRevenue"
-        android:layout_width="270dp"
-        android:layout_height="48dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.203"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.067" />
-
-    <TextView
-        android:id="@+id/textViewCategoryRevenue"
+        android:id="@+id/textViewAddActivityCategory"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/textCategory"
@@ -69,8 +21,57 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.037" />
 
+    <Spinner
+        android:id="@+id/spinnerAddActivityCategory"
+        android:layout_width="270dp"
+        android:layout_height="48dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.203"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.067" />
+
+    <Button
+        android:id="@+id/buttonAddActivityAddCategory"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/textButtonAdd"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.523"
+        app:layout_constraintStart_toEndOf="@+id/spinnerAddActivityCategory"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.062" />
+
     <TextView
-        android:id="@+id/textViewValueRevenue"
+        android:id="@+id/textViewAddActivityDateSelect"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/textSelectDate"
+        android:textColor="#33691E"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.092"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.179" />
+
+    <TextView
+        android:id="@+id/textViewAddActivityDateSelecter"
+        android:layout_width="wrap_content"
+        android:layout_height="37dp"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.099"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.211" />
+
+    <TextView
+        android:id="@+id/textViewAddActivityValue"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/textValue"
@@ -83,9 +84,10 @@
         app:layout_constraintVertical_bias="0.313" />
 
     <EditText
-        android:id="@+id/editTextNumberValueRevenue"
+        android:id="@+id/editTextNumberAddActivityValue"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:autofillHints="creditCardNumber"
         android:ems="10"
         android:inputType="number|textMultiLine"
         android:maxLength="10"
@@ -96,11 +98,10 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.352"
-        android:autofillHints="creditCardNumber"
         tools:ignore="LabelFor" />
 
     <TextView
-        android:id="@+id/textViewCurrencyRevenue"
+        android:id="@+id/textViewAddActivityCurrency"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/textCurrency"
@@ -113,7 +114,7 @@
         app:layout_constraintVertical_bias="0.313" />
 
     <Spinner
-        android:id="@+id/spinnerCurrencyRevenue"
+        android:id="@+id/spinnerAddActivityCurrency"
         android:layout_width="149dp"
         android:layout_height="48dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -124,7 +125,7 @@
         app:layout_constraintVertical_bias="0.352" />
 
     <TextView
-        android:id="@+id/textViewStorageLocationRevenue"
+        android:id="@+id/textViewAddActivityStorageLocation"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/textStorageLocation"
@@ -137,7 +138,7 @@
         app:layout_constraintVertical_bias="0.469" />
 
     <Spinner
-        android:id="@+id/spinnerStorageLocationRevenue"
+        android:id="@+id/spinnerAddActivityStorageLocation"
         android:layout_width="270dp"
         android:layout_height="48dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -148,7 +149,7 @@
         app:layout_constraintVertical_bias="0.514" />
 
     <Button
-        android:id="@+id/buttonAddStorageLocation"
+        android:id="@+id/buttonAddActivityAddStorageLocation"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/textButtonAdd"
@@ -161,9 +162,10 @@
         app:layout_constraintVertical_bias="0.512" />
 
     <EditText
-        android:id="@+id/editTextTextDescriptionRevenue"
+        android:id="@+id/editTextAddActivityTextDescription"
         android:layout_width="373dp"
         android:layout_height="155dp"
+        android:autofillHints=""
         android:ems="10"
         android:hint="@string/HintDescription"
         android:inputType="textPersonName|textMultiLine"
@@ -174,11 +176,10 @@
         app:layout_constraintHorizontal_bias="0.578"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.788"
-        android:autofillHints="" />
+        app:layout_constraintVertical_bias="0.788" />
 
     <Button
-        android:id="@+id/bAddRevenueSave"
+        android:id="@+id/buttonAddActivitySave"
         android:layout_width="223dp"
         android:layout_height="48dp"
         android:text="@string/textButtonSave"

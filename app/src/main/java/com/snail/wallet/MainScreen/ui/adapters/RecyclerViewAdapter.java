@@ -43,9 +43,9 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
         public ViewHolder(View view) {
             super(view);
-            textViewDescription = view.findViewById(R.id.textViewRecyclerViewDescription);
-            textViewCategory    = view.findViewById(R.id.textViewCategoryRecyclerView);
-            textViewValue       = view.findViewById(R.id.textViewValueRecyclerView);
+            textViewDescription = view.findViewById(R.id.textViewItemRecyclerViewDescription);
+            textViewCategory    = view.findViewById(R.id.textViewItemRecyclerViewCategory);
+            textViewValue       = view.findViewById(R.id.textViewItemRecyclerViewValue);
         }
     }
 

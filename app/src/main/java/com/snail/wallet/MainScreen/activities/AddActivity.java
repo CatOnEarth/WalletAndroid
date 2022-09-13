@@ -8,6 +8,9 @@ import static com.snail.wallet.WalletConstants.CODE_TYPE_PARAM_CATEGORY;
 import static com.snail.wallet.WalletConstants.CODE_TYPE_PARAM_CURRENCY;
 import static com.snail.wallet.WalletConstants.CODE_TYPE_PARAM_STORAGE_LOCATION;
 import static com.snail.wallet.WalletConstants.CURRENCY_EDITING_OBJ;
+import static com.snail.wallet.WalletConstants.DATE_DAY_EDITING_OBJ;
+import static com.snail.wallet.WalletConstants.DATE_MONTH_EDITING_OBJ;
+import static com.snail.wallet.WalletConstants.DATE_YEAR_EDITING_OBJ;
 import static com.snail.wallet.WalletConstants.DESC_EDITING_OBJ;
 import static com.snail.wallet.WalletConstants.ID_EDITING_OBJ;
 import static com.snail.wallet.WalletConstants.STORAGE_LOCATION_EDITING_OBJ;
@@ -70,6 +73,7 @@ public class AddActivity extends AppCompatActivity {
 
     private TextView       date;
     private final Calendar dateAndTime = Calendar.getInstance();
+    private boolean firstSetDate       = false;
 
     private Context ctxRevenueAdd;
 
@@ -125,22 +129,22 @@ public class AddActivity extends AppCompatActivity {
     }
 
     private void initFindView() {
-        editTextValue       = findViewById(R.id.editTextNumberValueRevenue);
-        editTextDescription = findViewById(R.id.editTextTextDescriptionRevenue);
+        editTextValue       = findViewById(R.id.editTextNumberAddActivityValue);
+        editTextDescription = findViewById(R.id.editTextAddActivityTextDescription);
 
-        spinnerCategory        = findViewById(R.id.spinnerCategoryRevenue);
-        spinnerCurrency        = findViewById(R.id.spinnerCurrencyRevenue);
-        spinnerStorageLocation = findViewById(R.id.spinnerStorageLocationRevenue);
+        spinnerCategory        = findViewById(R.id.spinnerAddActivityCategory);
+        spinnerCurrency        = findViewById(R.id.spinnerAddActivityCurrency);
+        spinnerStorageLocation = findViewById(R.id.spinnerAddActivityStorageLocation);
 
         if (type_adding == ADDING_OBJ_EXPENSES_TYPE) {
-            TextView textSpinnerStorageLocation = findViewById(R.id.textViewStorageLocationRevenue);
-            Button bAddStorageLocation = findViewById(R.id.buttonAddStorageLocation);
+            TextView textSpinnerStorageLocation = findViewById(R.id.textViewAddActivityStorageLocation);
+            Button bAddStorageLocation = findViewById(R.id.buttonAddActivityAddStorageLocation);
             spinnerStorageLocation.setVisibility(View.INVISIBLE);
             textSpinnerStorageLocation.setVisibility(View.INVISIBLE);
             bAddStorageLocation.setVisibility(View.INVISIBLE);
         }
 
-        date                   = findViewById(R.id.textViewDateSelectedRevenue);
+        date                   = findViewById(R.id.textViewAddActivityDateSelecter);
     }
 
     private void initCategorySpinner(AppDatabase db) {
@@ -169,22 +173,30 @@ public class AddActivity extends AppCompatActivity {
     }
 
     private void initButtons() {
-        Button bAddCategory = findViewById(R.id.buttonAddCategory);
+        Button bAddCategory = findViewById(R.id.buttonAddActivityAddCategory);
         bAddCategory.setOnClickListener(view -> addingDialog(CODE_TYPE_PARAM_CATEGORY));
 
         if (type_adding == ADDING_OBJ_REVENUE_TYPE) {
-            Button bAddStorageLocation = findViewById(R.id.buttonAddStorageLocation);
+            Button bAddStorageLocation = findViewById(R.id.buttonAddActivityAddStorageLocation);
             bAddStorageLocation.setOnClickListener(view -> addingDialog(CODE_TYPE_PARAM_STORAGE_LOCATION));
         }
 
-        Button bSaveRevenue = findViewById(R.id.bAddRevenueSave);
-        bSaveRevenue.setOnClickListener(view -> SaveRevenue());
+        Button bSaveRevenue = findViewById(R.id.buttonAddActivitySave);
+        bSaveRevenue.setOnClickListener(view -> SaveElem());
 
         date.setOnClickListener(this::setDate);
     }
 
     // установка начальных даты и времени
     private void setInitialDateTime() {
+        if (id_editing != -1 && !firstSetDate) {
+            Intent intent = getIntent();
+            dateAndTime.set(intent.getIntExtra(DATE_YEAR_EDITING_OBJ, 1),
+                    intent.getIntExtra(DATE_MONTH_EDITING_OBJ, 1),
+                    intent.getIntExtra(DATE_DAY_EDITING_OBJ, 1));
+            firstSetDate = true;
+        }
+
         date.setText(DateUtils.formatDateTime(this,
                 dateAndTime.getTimeInMillis(),
                 DateUtils.FORMAT_SHOW_DATE | DateUtils.FORMAT_SHOW_YEAR));
@@ -220,7 +232,7 @@ public class AddActivity extends AppCompatActivity {
         Log.i(TAG, "Start onOptionsItemSelected method");
         if (item.getItemId() == R.id.save) {
             Log.i(TAG, "save choose in menu actionBar");
-            SaveRevenue();
+            SaveElem();
         } else if (item.getItemId() == android.R.id.home) {
             exitDialog();
         }
@@ -233,7 +245,7 @@ public class AddActivity extends AppCompatActivity {
         exitDialog();
     }
 
-    private void SaveRevenue() {
+    private void SaveElem() {
         if (!IsAllCorrect()) return;
 
         AppDatabase db        = App.getInstance().getAppDatabase();
@@ -241,7 +253,7 @@ public class AddActivity extends AppCompatActivity {
         long    category       = ((Category)spinnerCategory.getSelectedItem()).getId();
 
         int date_day   = dateAndTime.get(Calendar.DAY_OF_MONTH);
-        int date_month = dateAndTime.get(Calendar.MONTH) + 1;
+        int date_month = dateAndTime.get(Calendar.MONTH);
         int date_year  = dateAndTime.get(Calendar.YEAR);
 
         String description    = editTextDescription.getText().toString();
@@ -312,7 +324,7 @@ public class AddActivity extends AppCompatActivity {
         alertDialog.setMessage("Сохранить введенные данные?");
 
         alertDialog.setPositiveButton("Да",
-                (dialog, which) -> SaveRevenue());
+                (dialog, which) -> SaveElem());
 
         alertDialog.setNegativeButton("Нет",
                 (dialog, which) -> {

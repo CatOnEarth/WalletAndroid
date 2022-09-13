@@ -6,6 +6,9 @@ import static com.snail.wallet.WalletConstants.ADDING_OBJ_EXPENSES_TYPE;
 import static com.snail.wallet.WalletConstants.ADDING_OBJ_REVENUE_TYPE;
 import static com.snail.wallet.WalletConstants.CATEGORY_EDITING_OBJ;
 import static com.snail.wallet.WalletConstants.CURRENCY_EDITING_OBJ;
+import static com.snail.wallet.WalletConstants.DATE_DAY_EDITING_OBJ;
+import static com.snail.wallet.WalletConstants.DATE_MONTH_EDITING_OBJ;
+import static com.snail.wallet.WalletConstants.DATE_YEAR_EDITING_OBJ;
 import static com.snail.wallet.WalletConstants.DESC_EDITING_OBJ;
 import static com.snail.wallet.WalletConstants.ID_EDITING_OBJ;
 import static com.snail.wallet.WalletConstants.ID_SHOW_OBJ;
@@ -44,9 +47,10 @@ public class ShowActivity extends AppCompatActivity {
 
     private double value_double;
     private String desc_str;
-    private long category_id;
-    private long storage_location_id;
-    private int currency_type;
+    private long   category_id;
+    private long   storage_location_id;
+    private int    currency_type;
+    private Date   date_editing;
 
     private long id_item;
     private int type_item;
@@ -145,11 +149,11 @@ public class ShowActivity extends AppCompatActivity {
     }
 
     private void initFindView() {
-        textViewCategory        = findViewById(R.id.textViewCategoryShow);
-        textViewData            = findViewById(R.id.textViewDataShow);
-        textViewValue           = findViewById(R.id.textViewValueShow);
-        textViewDescription     = findViewById(R.id.textViewDescriptionShow);
-        textViewStorageLocation = findViewById(R.id.textViewStorageLocationShow);
+        textViewCategory        = findViewById(R.id.textViewShowActivityCategory);
+        textViewData            = findViewById(R.id.textViewShowActivityData);
+        textViewValue           = findViewById(R.id.textViewShowActivityValue);
+        textViewDescription     = findViewById(R.id.textViewShowActivityDescription);
+        textViewStorageLocation = findViewById(R.id.textViewShowActivityStorageLocation);
 
         if (type_item == ADDING_OBJ_EXPENSES_TYPE) {
             textViewStorageLocation.setVisibility(View.INVISIBLE);
@@ -188,6 +192,7 @@ public class ShowActivity extends AppCompatActivity {
         String value           = getResources().getText(R.string.textValue) + ": " + precision.format(value_double)
                                     + currencyDAO.getCurrencyByType(currency_type).getSymbol();
 
+        date_editing = custom_date;
         String date_item       = getResources().getText(R.string.textData) + ": " + custom_date.getDate_day() + "." +
                                    custom_date.getDate_month() + "." + custom_date.getDate_year();
 
@@ -232,12 +237,15 @@ public class ShowActivity extends AppCompatActivity {
 
     private void startEditingActivity() {
         Intent intent = new Intent(ShowActivity.this, AddActivity.class);
-        intent.putExtra(ID_EDITING_OBJ, id_item);
-        intent.putExtra(ADDING_OBJECT_TYPE, type_item);
-        intent.putExtra(VALUE_EDITING_OBJ, value_double);
-        intent.putExtra(DESC_EDITING_OBJ, desc_str);
-        intent.putExtra(CATEGORY_EDITING_OBJ, category_id);
-        intent.putExtra(CURRENCY_EDITING_OBJ, currency_type);
+        intent.putExtra(ID_EDITING_OBJ,         id_item);
+        intent.putExtra(ADDING_OBJECT_TYPE,     type_item);
+        intent.putExtra(VALUE_EDITING_OBJ,      value_double);
+        intent.putExtra(DESC_EDITING_OBJ,       desc_str);
+        intent.putExtra(CATEGORY_EDITING_OBJ,   category_id);
+        intent.putExtra(CURRENCY_EDITING_OBJ,   currency_type);
+        intent.putExtra(DATE_DAY_EDITING_OBJ,   date_editing.getDate_day());
+        intent.putExtra(DATE_MONTH_EDITING_OBJ, date_editing.getDate_month());
+        intent.putExtra(DATE_YEAR_EDITING_OBJ,  date_editing.getDate_year());
 
         if (type_item == ADDING_OBJ_REVENUE_TYPE) {
             intent.putExtra(STORAGE_LOCATION_EDITING_OBJ, storage_location_id);

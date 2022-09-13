@@ -58,18 +58,18 @@ public class CalcCurrencyFragment extends Fragment {
     private void initViews() {
         Log.d(TAG, "initViews method");
 
-        spinnerCurrencyUp   = binding.spinnerExchangeCurrencyUp;
-        spinnerCurrencyDown = binding.spinnerExchangeDown;
-        editTextValueUp     = binding.editTextNumberValueExchangeUp;
-        editTextValueDown   = binding.editTextNumberValueExchangeDown;
+        spinnerCurrencyUp   = binding.spinnerCalcCurrencyFragmentExchangeUp;
+        spinnerCurrencyDown = binding.spinnerCalcCurrencyFragmentExchangeDown;
+        editTextValueUp     = binding.editTextNumberCalcCurrencyFragmentValueExchangeUp;
+        editTextValueDown   = binding.editTextNumberCalcCurrencyFragmentValueExchangeDown;
 
-        Button bUpdateExchange = binding.buttonUpdateExchangeCalcCurrencyFragment;
+        Button bUpdateExchange = binding.buttonCalcCurrencyFragmentUpdateExchange;
         bUpdateExchange.setOnClickListener(view -> {
             Log.i(TAG, "Click button exchange update");
             updateExchange();
         });
 
-        ImageButton bCountValueByExchangeRate = binding.imageButtonCountValueByExchangeRate;
+        ImageButton bCountValueByExchangeRate = binding.imageButtonCalcCurrencyFragmentCountValueByExchangeRate;
         bCountValueByExchangeRate.setOnClickListener(view -> {
             Log.i(TAG, "Click button bCountValueByExchangeRate");
 

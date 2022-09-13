@@ -52,7 +52,7 @@ public class SpinnerAdapter extends ArrayAdapter {
 
         if (convertView == null) {
             convertView = LayoutInflater.from(getContext()).inflate(R.layout.item_spinner, parent, false);
-            textViewName = convertView.findViewById(R.id.textViewItemSpinnerAdapter);
+            textViewName = convertView.findViewById(R.id.textViewItemSpinnerNameItem);
         } else {
             return convertView;
         }

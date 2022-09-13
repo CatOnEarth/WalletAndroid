@@ -73,9 +73,9 @@ public class RevenueFragment extends Fragment {
     private void initViews() {
         Log.d(TAG, "initViews method");
 
-        recyclerViewRevenue = binding.recyclerViewRevenue;
+        recyclerViewRevenue = binding.recyclerViewRevenueFragmentRevenue;
 
-        FloatingActionButton bAddRevenue = binding.floatingActionButtonAdd;
+        FloatingActionButton bAddRevenue = binding.floatingActionButtonRevenueFragmentAddRevenue;
         bAddRevenue.setOnClickListener(view -> {
             Log.i(TAG, "floating button add revenue clicked");
             StartAddActivity();

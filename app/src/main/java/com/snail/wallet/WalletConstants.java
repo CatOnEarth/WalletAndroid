@@ -22,6 +22,9 @@ public class WalletConstants {
     public static final String DESC_EDITING_OBJ             = "desc_editing";
     public static final String CATEGORY_EDITING_OBJ         = "category_editing";
     public static final String CURRENCY_EDITING_OBJ         = "currency_editing";
+    public static final String DATE_DAY_EDITING_OBJ         = "date_day_editing";
+    public static final String DATE_MONTH_EDITING_OBJ       = "date_month_editing";
+    public static final String DATE_YEAR_EDITING_OBJ        = "date_year_editing";
     public static final String STORAGE_LOCATION_EDITING_OBJ = "storage_location_editing";
 
     public static final String ADDING_OBJECT_TYPE       = "obj_add";

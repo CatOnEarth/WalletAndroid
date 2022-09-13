@@ -44,9 +44,9 @@ public class LoginActivity extends AppCompatActivity {
     private void initViews() {
         Log.d(TAG, "initViews method");
 
-        Button   bLogIn           = findViewById(R.id.buttonLogIn);
-        TextView bTextViewReg     = findViewById(R.id.textViewRegistration);
-        TextView bTextViewOffline = findViewById(R.id.textViewOffline);
+        Button   bLogIn           = findViewById(R.id.buttonLoginActivityLogIn);
+        TextView bTextViewReg     = findViewById(R.id.textViewLoginActivityRegistration);
+        TextView bTextViewOffline = findViewById(R.id.textViewLoginActivityLogOffline);
 
         bLogIn.setOnClickListener(view -> Log.d(TAG, "Press logIn button"));
 

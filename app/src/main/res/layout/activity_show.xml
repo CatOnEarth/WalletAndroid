@@ -2,6 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/linerLayoutShowActivityMainLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#fef1a2"
@@ -9,7 +10,7 @@
     tools:context=".MainScreen.activities.ShowActivity">
 
     <TextView
-        android:id="@+id/textViewCategoryShow"
+        android:id="@+id/textViewShowActivityCategory"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="25dp"
@@ -19,7 +20,7 @@
         android:textSize="24sp" />
 
     <TextView
-        android:id="@+id/textViewValueShow"
+        android:id="@+id/textViewShowActivityValue"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="25dp"
@@ -29,7 +30,7 @@
         android:textSize="24sp" />
 
     <TextView
-        android:id="@+id/textViewDataShow"
+        android:id="@+id/textViewShowActivityData"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="25dp"
@@ -39,7 +40,7 @@
         android:textSize="24sp" />
 
     <TextView
-        android:id="@+id/textViewStorageLocationShow"
+        android:id="@+id/textViewShowActivityStorageLocation"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="25dp"
@@ -49,7 +50,7 @@
         android:textSize="24sp" />
 
     <TextView
-        android:id="@+id/textViewDescriptionShow"
+        android:id="@+id/textViewShowActivityDescription"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="25dp"

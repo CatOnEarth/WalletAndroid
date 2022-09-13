@@ -2,14 +2,14 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/linearLayout"
+    android:id="@+id/linearLayoutUserDataFragmentMainLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/background_main_color"
     tools:context=".MainScreen.ui.userdata.UserDataFragment">
 
     <TableLayout
-        android:id="@+id/tableLayout3"
+        android:id="@+id/tableLayoutUserDataFragmentTableUserData"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -65,7 +65,19 @@
     </TableLayout>
 
     <Button
-        android:id="@+id/bLogOutUserDataFragment"
+        android:id="@+id/buttonUserDataFragmentChangePassword"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Сменить пароль"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tableLayoutUserDataFragmentTableUserData"
+        app:layout_constraintVertical_bias="0.216" />
+
+    <Button
+        android:id="@+id/buttonUserDataFragmentLogOut"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Выйти"
@@ -77,25 +89,13 @@
         app:layout_constraintVertical_bias="0.631" />
 
     <Button
-        android:id="@+id/button4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Сменить пароль"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tableLayout3"
-        app:layout_constraintVertical_bias="0.216" />
-
-    <Button
-        android:id="@+id/button5"
+        android:id="@+id/buttonUserDataFragmentRemoveAccount"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Удалить аккаунт"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/bLogOutUserDataFragment" />
+        app:layout_constraintTop_toBottomOf="@+id/buttonUserDataFragmentLogOut" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

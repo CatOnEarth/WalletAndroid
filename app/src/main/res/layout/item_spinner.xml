@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/relativeLayoutItemSpinnerMainLayout"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="#fef1a2" >
+    android:background="#fef1a2">
 
     <TextView
-        android:id="@+id/textViewItemSpinnerAdapter"
+        android:id="@+id/textViewItemSpinnerNameItem"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_marginStart="15dp"

@@ -45,9 +45,9 @@ public class SettingsRecyclerViewAdapter  extends RecyclerView.Adapter<SettingsR
         public ViewHolder(View view) {
             super(view);
 
-            textViewElemSettingName      = view.findViewById(R.id.textViewRecyclerViewSettingElem);
-            imageButtonEditElemSetting   = view.findViewById(R.id.imageButtonEditSettingElem);
-            imageButtonDeleteElemSetting = view.findViewById(R.id.imageButtonDeleteSettingElem);
+            textViewElemSettingName      = view.findViewById(R.id.textViewItemSettingRecyclerViewSettingElem);
+            imageButtonEditElemSetting   = view.findViewById(R.id.imageButtonItemSettingRecyclerViewEditSettingElem);
+            imageButtonDeleteElemSetting = view.findViewById(R.id.imageButtonItemSettingRecyclerViewDeleteSettingElem);
         }
     }
 

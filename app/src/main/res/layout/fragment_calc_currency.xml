@@ -7,16 +7,16 @@
     android:background="@color/background_main_color">
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/textViewCalcCurrencyFragmentEnterTextUp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:text="Укажите сумму"
-        app:layout_constraintBottom_toTopOf="@+id/editTextNumberValueExchangeUp"
+        app:layout_constraintBottom_toTopOf="@+id/editTextNumberCalcCurrencyFragmentValueExchangeUp"
         app:layout_constraintStart_toStartOf="parent" />
 
     <com.snail.wallet.CustomViews.SyncEditText.SyncEditText
-        android:id="@+id/editTextNumberValueExchangeUp"
+        android:id="@+id/editTextNumberCalcCurrencyFragmentValueExchangeUp"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -28,25 +28,25 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Spinner
-        android:id="@+id/spinnerExchangeCurrencyUp"
+        android:id="@+id/spinnerCalcCurrencyFragmentExchangeUp"
         android:layout_width="120dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
         android:minHeight="48dp"
-        app:layout_constraintStart_toEndOf="@+id/editTextNumberValueExchangeUp"
-        app:layout_constraintTop_toTopOf="@+id/editTextNumberValueExchangeUp" />
+        app:layout_constraintStart_toEndOf="@+id/editTextNumberCalcCurrencyFragmentValueExchangeUp"
+        app:layout_constraintTop_toTopOf="@+id/editTextNumberCalcCurrencyFragmentValueExchangeUp" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/textViewCalcCurrencyFragmentEnterTextDown"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:text="Укажите сумму"
-        app:layout_constraintBottom_toTopOf="@+id/editTextNumberValueExchangeDown"
+        app:layout_constraintBottom_toTopOf="@+id/editTextNumberCalcCurrencyFragmentValueExchangeDown"
         app:layout_constraintStart_toStartOf="parent" />
 
     <com.snail.wallet.CustomViews.SyncEditText.SyncEditText
-        android:id="@+id/editTextNumberValueExchangeDown"
+        android:id="@+id/editTextNumberCalcCurrencyFragmentValueExchangeDown"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -55,16 +55,16 @@
         android:inputType="number"
         android:minHeight="48dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextNumberValueExchangeUp" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextNumberCalcCurrencyFragmentValueExchangeUp" />
 
     <Spinner
-        android:id="@+id/spinnerExchangeDown"
+        android:id="@+id/spinnerCalcCurrencyFragmentExchangeDown"
         android:layout_width="120dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
         android:minHeight="48dp"
-        app:layout_constraintStart_toEndOf="@+id/editTextNumberValueExchangeDown"
-        app:layout_constraintTop_toTopOf="@+id/editTextNumberValueExchangeDown" />
+        app:layout_constraintStart_toEndOf="@+id/editTextNumberCalcCurrencyFragmentValueExchangeDown"
+        app:layout_constraintTop_toTopOf="@+id/editTextNumberCalcCurrencyFragmentValueExchangeDown" />
 
     <TableLayout
         android:id="@+id/tableLayoutExchangeValues"
@@ -75,13 +75,13 @@
         android:layout_marginEnd="8dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextNumberValueExchangeDown"
+        app:layout_constraintTop_toBottomOf="@+id/editTextNumberCalcCurrencyFragmentValueExchangeDown"
         app:tabMode="scrollable">
 
     </TableLayout>
 
     <Button
-        android:id="@+id/buttonUpdateExchangeCalcCurrencyFragment"
+        android:id="@+id/buttonCalcCurrencyFragmentUpdateExchange"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
@@ -91,15 +91,15 @@
         app:layout_constraintTop_toBottomOf="@+id/tableLayoutExchangeValues" />
 
     <ImageButton
-        android:id="@+id/imageButtonCountValueByExchangeRate"
+        android:id="@+id/imageButtonCalcCurrencyFragmentCountValueByExchangeRate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="#00FFFFFF"
         android:rotation="90"
-        app:layout_constraintBottom_toTopOf="@+id/editTextNumberValueExchangeDown"
+        app:layout_constraintBottom_toTopOf="@+id/editTextNumberCalcCurrencyFragmentValueExchangeDown"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextNumberValueExchangeUp"
+        app:layout_constraintTop_toBottomOf="@+id/editTextNumberCalcCurrencyFragmentValueExchangeUp"
         app:srcCompat="@android:drawable/ic_media_pause" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

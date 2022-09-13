@@ -18,7 +18,6 @@ import android.os.Bundle;
 import android.text.InputFilter;
 import android.util.Log;
 import android.view.MenuItem;
-import android.view.View;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.Toast;
@@ -66,15 +65,10 @@ public class EditSettingActivity extends AppCompatActivity {
     }
 
     private void initViews() {
-        recyclerViewSettings = findViewById(R.id.recyclerViewSetting);
+        recyclerViewSettings = findViewById(R.id.recyclerViewEditSettingActivitySetting);
 
-        FloatingActionButton bAddNewSetting = findViewById(R.id.floatingActionButtonAddNewSetting);
-        bAddNewSetting.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                dialogNewSetting();
-            }
-        });
+        FloatingActionButton bAddNewSetting = findViewById(R.id.floatingActionButtonEditSettingActivityAddNewSetting);
+        bAddNewSetting.setOnClickListener(view -> dialogNewSetting());
     }
 
     @Override

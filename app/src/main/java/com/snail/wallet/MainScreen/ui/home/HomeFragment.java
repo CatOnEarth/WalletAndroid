@@ -81,8 +81,8 @@ public class HomeFragment extends Fragment {
     private void initButtons(View root) {
         Log.d(TAG, "initButtons method");
 
-        ImageButton bAddRevenue  = root.findViewById(R.id.bAddRevenuesHome);
-        ImageButton bAddExpenses = root.findViewById(R.id.bAddExpensesHome);
+        ImageButton bAddRevenue  = root.findViewById(R.id.buttonHomeFragmentAddRevenue);
+        ImageButton bAddExpenses = root.findViewById(R.id.buttonHomeFragmentAddExpenses);
 
         bAddRevenue.setOnClickListener(view -> startAddActivity(ADDING_OBJ_REVENUE_TYPE));
 
@@ -100,15 +100,15 @@ public class HomeFragment extends Fragment {
     private void initFindView(View root) {
         Log.d(TAG, "initFindView method");
 
-        textViewRevenueRubles   = root.findViewById(R.id.textViewHomeRevenueDisplayRubles);
-        textViewRevenueDollars  = root.findViewById(R.id.textViewHomeRevenueDisplayDollars);
-        textViewRevenueEuro     = root.findViewById(R.id.textViewHomeRevenueDisplayEuro);
-        textViewRevenueLira     = root.findViewById(R.id.textViewHomeRevenueDisplayLira);
+        textViewRevenueRubles   = root.findViewById(R.id.textViewHomeFragmentRevenueDisplayRubles);
+        textViewRevenueDollars  = root.findViewById(R.id.textViewHomeFragmentRevenueDisplayDollars);
+        textViewRevenueEuro     = root.findViewById(R.id.textViewHomeFragmentRevenueDisplayEuro);
+        textViewRevenueLira     = root.findViewById(R.id.textViewHomeFragmentRevenueDisplayLira);
 
-        textViewExpensesRubles  = root.findViewById(R.id.textViewHomeExpensesDisplayRubles);
-        textViewExpensesDollars = root.findViewById(R.id.textViewHomeExpensesDisplayDollars);
-        textViewExpensesEuro    = root.findViewById(R.id.textViewHomeExpensesDisplayEuro);
-        textViewExpensesLira    = root.findViewById(R.id.textViewHomeExpensesDisplayLira);
+        textViewExpensesRubles  = root.findViewById(R.id.textViewHomeFragmentExpensesDisplayRubles);
+        textViewExpensesDollars = root.findViewById(R.id.textViewHomeFragmentExpensesDisplayDollars);
+        textViewExpensesEuro    = root.findViewById(R.id.textViewHomeFragmentExpensesDisplayEuro);
+        textViewExpensesLira    = root.findViewById(R.id.textViewHomeFragmentExpensesDisplayLira);
     }
 
     private void initData() {

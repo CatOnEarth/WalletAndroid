@@ -58,7 +58,7 @@ public class ExpensesFragment extends Fragment {
 
         recyclerViewExpenses = binding.recyclerViewExpenses;
 
-        FloatingActionButton bAddRevenue = binding.floatingActionButtonExpenses;
+        FloatingActionButton bAddRevenue = binding.floatingActionButtonExpensesExpensesAdd;
         bAddRevenue.setOnClickListener(view -> {
             Log.i(TAG, "floating button add expenses clicked");
             StartAddActivity();
