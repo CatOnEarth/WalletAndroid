@@ -6,7 +6,6 @@ import androidx.room.Insert;
 import androidx.room.Query;
 import androidx.room.Update;
 
-import com.snail.wallet.MainScreen.models.money.Revenues;
 import com.snail.wallet.MainScreen.models.parametrs.Rates;
 
 @Dao

@@ -23,20 +23,12 @@ import com.snail.wallet.MainScreen.db.AppDatabase;
 import com.snail.wallet.MainScreen.db.CurrencyDAO.CurrencyDAO;
 import com.snail.wallet.MainScreen.db.RatesDAO.RatesDAO;
 import com.snail.wallet.MainScreen.models.parametrs.Currency;
-import com.snail.wallet.MainScreen.models.retrofit.ExchangeRate;
-import com.snail.wallet.MainScreen.retrofit.ExchangeRateService;
-import com.snail.wallet.MainScreen.retrofit.RetrofitService;
 import com.snail.wallet.MainScreen.ui.adapters.SpinnerAdapter;
 import com.snail.wallet.databinding.FragmentCalcCurrencyBinding;
 
 import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.Objects;
-
-import okhttp3.ResponseBody;
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
 
 public class CalcCurrencyFragment extends Fragment {
     private final String TAG = this.getClass().getSimpleName();
@@ -78,20 +70,17 @@ public class CalcCurrencyFragment extends Fragment {
         });
 
         ImageButton bCountValueByExchangeRate = binding.imageButtonCountValueByExchangeRate;
-        bCountValueByExchangeRate.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Log.i(TAG, "Click button bCountValueByExchangeRate");
+        bCountValueByExchangeRate.setOnClickListener(view -> {
+            Log.i(TAG, "Click button bCountValueByExchangeRate");
 
-                countValueExchangeRate();
-            }
+            countValueExchangeRate();
         });
     }
 
     private void countValueExchangeRate() {
         Log.d(TAG, "countValueExchangeRate method");
 
-        double input_val = 0;
+        double input_val;
         try {
            input_val =  Double.parseDouble(Objects.requireNonNull(editTextValueUp.getText()).toString());
         } catch (NumberFormatException e) {
@@ -111,9 +100,9 @@ public class CalcCurrencyFragment extends Fragment {
 
     private void exchangeRate(double input_val) {
         AppDatabase db          = App.getInstance().getAppDatabase();
-        CurrencyDAO currencyDAO = db.currencyDAO();
         RatesDAO ratesDAO       = db.ratesDAO();
-        double output_val       = 0;
+
+        double output_val;
         DecimalFormat precision = new DecimalFormat("0.00");
 
         int currency_type_input  = ((Currency)spinnerCurrencyUp.getSelectedItem()).getType_currency();

@@ -49,8 +49,4 @@ public class Rates {
     public double getRate_to_rubel() {
         return rate_to_rubel;
     }
-
-    public void setRate_to_rubel(double rate_to_rubel) {
-        this.rate_to_rubel = rate_to_rubel;
-    }
 }
