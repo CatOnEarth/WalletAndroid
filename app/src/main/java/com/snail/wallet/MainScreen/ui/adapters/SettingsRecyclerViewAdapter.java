@@ -107,7 +107,7 @@ public class SettingsRecyclerViewAdapter  extends RecyclerView.Adapter<SettingsR
 
             builder
                     .setPositiveButton(android.R.string.yes, (dialog, which) -> editNameElem(input.getText().toString(), old_name,
-                            viewHolder.getBindingAdapterPosition()))
+                            viewHolder.getAdapterPosition()))
                     .setNegativeButton(android.R.string.no, null)
                     .show();
         });
@@ -168,7 +168,7 @@ public class SettingsRecyclerViewAdapter  extends RecyclerView.Adapter<SettingsR
         viewHolder.imageButtonDeleteElemSetting.setOnClickListener(view -> {
             AlertDialog.Builder builder = new AlertDialog.Builder(context);
             builder.setTitle("Удалить элемент");
-            builder.setPositiveButton(android.R.string.yes, (dialog, which) -> deleteElem(viewHolder.getBindingAdapterPosition()));
+            builder.setPositiveButton(android.R.string.yes, (dialog, which) -> deleteElem(viewHolder.getAdapterPosition()));
             builder.setNegativeButton(android.R.string.no, null);
 
             if (typeSetting == CODE_TYPE_PARAM_STORAGE_LOCATION) {

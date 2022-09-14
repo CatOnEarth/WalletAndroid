@@ -3,6 +3,20 @@ plugins {
 }
 
 android {
+    signingConfigs {
+        debug {
+            storeFile file('D:\\development\\android\\key_sign.jks')
+            storePassword 'vfrcbv&2143'
+            keyAlias 'CatOnEarth'
+            keyPassword 'vfrcbv&2143'
+        }
+        release {
+            storeFile file('D:\\development\\android\\key_sign.jks')
+            storePassword 'vfrcbv&2143'
+            keyAlias 'CatOnEarth'
+            keyPassword 'vfrcbv&2143'
+        }
+    }
     compileSdk 32
 
     defaultConfig {
@@ -13,6 +27,7 @@ android {
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        signingConfig signingConfigs.release
     }
 
     buildTypes {
