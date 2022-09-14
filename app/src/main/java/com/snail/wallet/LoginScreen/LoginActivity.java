@@ -18,6 +18,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.snail.wallet.MainScreen.SharedPrefManager.PermanentStorage;
 import com.snail.wallet.MainScreen.WalletActivity;
@@ -48,9 +49,17 @@ public class LoginActivity extends AppCompatActivity {
         TextView bTextViewReg     = findViewById(R.id.textViewLoginActivityRegistration);
         TextView bTextViewOffline = findViewById(R.id.textViewLoginActivityLogOffline);
 
-        bLogIn.setOnClickListener(view -> Log.d(TAG, "Press logIn button"));
+        bLogIn.setOnClickListener(view -> {
+            Log.d(TAG, "Press logIn button");
 
-        bTextViewReg.setOnClickListener(view -> Log.d(TAG, "Press TextViewReg text"));
+            Toast.makeText(this, "Не реализовано", Toast.LENGTH_LONG).show();
+        });
+
+        bTextViewReg.setOnClickListener(view -> {
+            Log.d(TAG, "Press TextViewReg text");
+
+            Toast.makeText(this, "Не реализовано", Toast.LENGTH_LONG).show();
+        });
 
         bTextViewOffline.setOnClickListener(view -> {
             Log.d(TAG, "Press TextViewOffline text LoginActivity");

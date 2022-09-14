@@ -27,4 +27,18 @@ public class Date {
     public int getDate_year() {
         return date_year;
     }
+
+    public String getDateString() {
+        String res = "";
+        if (date_day < 10) {
+            res += "0";
+        }
+        res += date_day + ".";
+        if (date_month < 10) {
+            res += "0";
+        }
+        res += date_month + "." + date_year;
+
+        return res;
+    }
 }

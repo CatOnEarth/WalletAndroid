@@ -16,10 +16,10 @@
     <string name="text_currency_dollar_usa">Доллар США</string>
     <string name="text_currency_euro">Евро</string>
     <string name="text_currency_turkish_lira">Турецкая лира</string>
-    <string name="text_currency_russian_ruble_with_colon">Российский рубль: </string>
-    <string name="text_currency_dollar_usa_with_colon">Доллар США: </string>
-    <string name="text_currency_euro_with_colon">Евро: </string>
-    <string name="text_currency_turkish_lira_with_colon">Турецкая лира: </string>
+    <string name="text_currency_russian_ruble_with_colon">Российский рубль:\u0020</string>
+    <string name="text_currency_dollar_usa_with_colon">Доллар США:\u0020</string>
+    <string name="text_currency_euro_with_colon">Евро:\u0020</string>
+    <string name="text_currency_turkish_lira_with_colon">Турецкая лира:\u0020</string>
     <string name="text_about_app">О приложении</string>
     <string name="text_about_app_text">Описание приложения</string>
     <string name="text_home">Главная</string>
@@ -69,6 +69,6 @@
     <string name="text_delete">Удалить</string>
     <string name="text_delete_category_warning">Будут удалены все элементы с этой категорией</string>
     <string name="text_delete_storage_location_warning">Будут удалены все элементы, в которых указано данное место хранения</string>
-    <string name="text_current_exchange_rate">Текущий курс</string>
+    <string name="text_current_exchange_rate">Текущий курс\nк Российскому рублю</string>
 
 </resources>

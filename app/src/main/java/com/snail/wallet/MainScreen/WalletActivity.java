@@ -18,7 +18,6 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -128,9 +127,6 @@ public class WalletActivity extends AppCompatActivity {
     public void initRates() {
         Log.d(TAG, "initRates method");
 
-        ProgressBar progressBar = new ProgressBar(getApplicationContext(), null, android.R.attr.progressBarStyleHorizontal);;
-        initProgressBar(progressBar);
-
         ExchangeRateService service = RetrofitService.createService(ExchangeRateService.class);
         Call<ExchangeRate> call     = service.getExchangeRate();
 
@@ -147,8 +143,6 @@ public class WalletActivity extends AppCompatActivity {
                     updateRates(response);
                 }
 
-                stopProgressBar(progressBar);
-
                 Toast.makeText(getApplicationContext(), "Курсы валют обновлены", Toast.LENGTH_SHORT).show();
             }
 
@@ -156,18 +150,8 @@ public class WalletActivity extends AppCompatActivity {
             public void onFailure(@NonNull Call<ExchangeRate> call, @NonNull Throwable t) {
                 Log.i(TAG, "onFailure with  error: ", t);
                 Toast.makeText(getApplicationContext(), "Не удалось обновить курс валют", Toast.LENGTH_SHORT).show();
-
-                stopProgressBar(progressBar);
             }
         });
-    }
-
-    private void initProgressBar(ProgressBar progressBar) {
-
-    }
-
-    private void stopProgressBar(ProgressBar progressBar) {
-
     }
 
     private void setRates(Response<ExchangeRate> response) {

@@ -193,8 +193,7 @@ public class ShowActivity extends AppCompatActivity {
                                     + currencyDAO.getCurrencyByType(currency_type).getSymbol();
 
         date_editing = custom_date;
-        String date_item       = getResources().getText(R.string.text_data) + ": " + custom_date.getDate_day() + "." +
-                                   custom_date.getDate_month() + "." + custom_date.getDate_year();
+        String date_item       = getResources().getText(R.string.text_data) + ": " + custom_date.getDateString();
 
         desc_str = revenues.getDescription();
         String description     = getResources().getText(R.string.text_description) + ": " + desc_str;
@@ -223,8 +222,7 @@ public class ShowActivity extends AppCompatActivity {
         String value           = getResources().getText(R.string.text_value) + ": " + precision.format(value_double) +
                                         currencyDAO.getCurrencyByType(currency_type).getSymbol();
 
-        String date_item       = getResources().getText(R.string.text_data) + ": " + custom_date.getDate_day() + "." +
-                custom_date.getDate_month() + "." + custom_date.getDate_year();
+        String date_item       = getResources().getText(R.string.text_data) + ": " + custom_date.getDateString();
 
         desc_str = expenses.getDescription();
         String description     = getResources().getText(R.string.text_description) + ": " + desc_str;
