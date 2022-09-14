@@ -5,13 +5,13 @@
 	<dimen name="height_desc_editText">55dp</dimen>
 	<dimen name="width_min_item_setting_recyclerView">110dp</dimen>
 	<dimen name="height_min_item_setting_recyclerView">55dp</dimen>
-	<dimen name="width_value_editText">198dp</dimen>
+	<dimen name="width_value_editText">180dp</dimen>
 	<dimen name="height_large_spinner">55dp</dimen>
 	<dimen name="height_item_spinner">55dp</dimen>
 	<dimen name="activity_vertical_margin">17.6dp</dimen>
 	<dimen name="action_bar_height">50.6dp</dimen>
 	<dimen name="width_login_editText">220dp</dimen>
-	<dimen name="width_large_spinner">198dp</dimen>
+	<dimen name="width_large_spinner">180dp</dimen>
 	<dimen name="width_min_image">77dp</dimen>
 	<dimen name="margin_large">70.4dp</dimen>
 	<dimen name="margin_very_tiny">4.4dp</dimen>

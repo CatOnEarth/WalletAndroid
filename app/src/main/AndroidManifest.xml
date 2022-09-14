@@ -19,25 +19,30 @@
         <activity
             android:name=".MainScreen.activities.EditSettingActivity"
             android:exported="false"
-            android:screenOrientation="fullSensor" />
+            android:screenOrientation="sensorPortrait"
+            tools:ignore="LockedOrientationActivity" />
         <activity
             android:name=".MainScreen.activities.ShowActivity"
             android:exported="false"
-            android:screenOrientation="fullSensor" />
+            android:screenOrientation="sensorPortrait"
+            tools:ignore="LockedOrientationActivity" />
         <activity
             android:name=".MainScreen.activities.AddActivity"
             android:exported="false"
-            android:screenOrientation="fullSensor" />
+            android:screenOrientation="sensorPortrait"
+            tools:ignore="LockedOrientationActivity" />
         <activity
             android:name=".MainScreen.WalletActivity"
             android:exported="false"
             android:label="@string/text_wallet_activity_label"
-            android:screenOrientation="fullSensor"
+            android:screenOrientation="sensorPortrait"
+            tools:ignore="LockedOrientationActivity"
             android:theme="@style/Theme.Wallet.NoActionBar" />
         <activity
             android:name=".LoginScreen.LoginActivity"
             android:exported="true"
-            android:screenOrientation="fullSensor">
+            android:screenOrientation="sensorPortrait"
+            tools:ignore="LockedOrientationActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
