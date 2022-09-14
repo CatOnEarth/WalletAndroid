@@ -57,8 +57,8 @@ public class UserDataFragment extends Fragment {
     private void initViews() {
         Log.d(TAG, "initViews method");
 
-        textViewUsername  = binding.textViewUserNameDataFragment;
-        textViewEmailUser = binding.textViewEmailUserDataFragment;
+        textViewUsername  = binding.textViewUserDataFragmentUserName;
+        textViewEmailUser = binding.textViewUserDataFragmentEmail;
 
         Button bLogOut    = binding.buttonUserDataFragmentLogOut;
         bLogOut.setOnClickListener(view -> warningDialogAllDataClear());

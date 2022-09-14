@@ -11,14 +11,15 @@
         android:id="@+id/floatingActionButtonEditSettingActivityAddNewSetting"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="@dimen/margin_tiny"
+        android:layout_marginBottom="@dimen/margin_tiny"
         android:clickable="true"
         android:focusable="true"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:srcCompat="@android:drawable/ic_input_add"
-        tools:ignore="ImageContrastCheck" />
+        tools:ignore="ImageContrastCheck"
+        android:contentDescription="@string/text_add" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerViewEditSettingActivitySetting"

@@ -1,8 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- Default screen margins, per the Android Design guidelines. -->
-    <dimen name="activity_horizontal_margin">16dp</dimen>
-    <dimen name="activity_vertical_margin">16dp</dimen>
-    <dimen name="nav_header_vertical_spacing">8dp</dimen>
-    <dimen name="nav_header_height">176dp</dimen>
-    <dimen name="fab_margin">16dp</dimen>
+
+  <dimen name="margin_very_tiny">4dp</dimen>
+  <dimen name="margin_tiny">8dp</dimen>
+  <dimen name="margin_small">16dp</dimen>
+  <dimen name="margin_middle">24dp</dimen>
+  <dimen name="margin_big">32dp</dimen>
+  <dimen name="margin_large">64dp</dimen>
+
+  <dimen name="text_size_tiny">10sp</dimen>
+  <dimen name="text_size_more_middle">12sp</dimen>
+  <dimen name="text_size_big">14sp</dimen>
+  <dimen name="text_size_large">16sp</dimen>
+  <dimen name="text_size_very_large">18sp</dimen>
+
+  <dimen name="width_small_spinner">17dp</dimen>
+  <dimen name="height_small_spinner">48dp</dimen>
+
+  <dimen name="width_large_spinner">240dp</dimen>
+  <dimen name="height_large_spinner">50dp</dimen>
+
+  <dimen name="width_desc_editText">200dp</dimen>
+  <dimen name="height_desc_editText">80dp</dimen>
+
+  <dimen name="width_value_editText">200dp</dimen>
+  <dimen name="height_value_editText">80dp</dimen>
+
+  <dimen name="width_login_editText">200dp</dimen>
+  <dimen name="height_login_editText">80dp</dimen>
+
+  <dimen name="width_login_imageApp">70dp</dimen>
+  <dimen name="height_login_imageApp">70dp</dimen>
+
+  <dimen name="height_min_editText">48dp</dimen>
+
+  <dimen name="height_item_recyclerView">50dp</dimen>
+
+  <dimen name="width_min_image">70dp</dimen>
+  <dimen name="height_min_image">70dp</dimen>
+
+  <dimen name="width_min_item_setting_recyclerView">100dp</dimen>
+  <dimen name="height_min_item_setting_recyclerView">50dp</dimen>
+
+  <dimen name="card_elevation">2dp</dimen>
+
+  <dimen name="height_item_spinner">50dp</dimen>
+
+  <dimen name="nav_header_height">50dp</dimen>
+
+  <dimen name="activity_horizontal_margin">50dp</dimen>
+  <dimen name="activity_vertical_margin">50dp</dimen>
+
+  <dimen name="nav_header_vertical_spacing">50dp</dimen>
 </resources>

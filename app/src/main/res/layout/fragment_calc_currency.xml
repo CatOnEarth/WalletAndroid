@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/background_main_color">
@@ -10,29 +9,29 @@
         android:id="@+id/textViewCalcCurrencyFragmentEnterTextUp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:text="Укажите сумму"
+        android:layout_marginStart="@dimen/margin_small"
+        android:text="@string/text_input_value"
         app:layout_constraintBottom_toTopOf="@+id/editTextNumberCalcCurrencyFragmentValueExchangeUp"
         app:layout_constraintStart_toStartOf="parent" />
 
     <com.snail.wallet.CustomViews.SyncEditText.SyncEditText
         android:id="@+id/editTextNumberCalcCurrencyFragmentValueExchangeUp"
-        android:layout_width="150dp"
+        android:layout_width="@dimen/width_value_editText"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginStart="@dimen/margin_small"
+        android:layout_marginTop="@dimen/margin_big"
         android:ems="10"
         android:inputType="number"
-        android:minHeight="48dp"
+        android:minHeight="@dimen/height_min_editText"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Spinner
         android:id="@+id/spinnerCalcCurrencyFragmentExchangeUp"
-        android:layout_width="120dp"
+        android:layout_width="@dimen/width_small_spinner"
         android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:minHeight="48dp"
+        android:layout_marginStart="@dimen/margin_middle"
+        android:minHeight="@dimen/height_min_editText"
         app:layout_constraintStart_toEndOf="@+id/editTextNumberCalcCurrencyFragmentValueExchangeUp"
         app:layout_constraintTop_toTopOf="@+id/editTextNumberCalcCurrencyFragmentValueExchangeUp" />
 
@@ -40,29 +39,29 @@
         android:id="@+id/textViewCalcCurrencyFragmentEnterTextDown"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:text="Укажите сумму"
+        android:layout_marginStart="@dimen/margin_small"
+        android:text="@string/text_input_value"
         app:layout_constraintBottom_toTopOf="@+id/editTextNumberCalcCurrencyFragmentValueExchangeDown"
         app:layout_constraintStart_toStartOf="parent" />
 
     <com.snail.wallet.CustomViews.SyncEditText.SyncEditText
         android:id="@+id/editTextNumberCalcCurrencyFragmentValueExchangeDown"
-        android:layout_width="150dp"
+        android:layout_width="@dimen/width_value_editText"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="64dp"
+        android:layout_marginStart="@dimen/margin_small"
+        android:layout_marginTop="@dimen/margin_large"
         android:ems="10"
         android:inputType="number"
-        android:minHeight="48dp"
+        android:minHeight="@dimen/height_min_editText"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextNumberCalcCurrencyFragmentValueExchangeUp" />
 
     <Spinner
         android:id="@+id/spinnerCalcCurrencyFragmentExchangeDown"
-        android:layout_width="120dp"
+        android:layout_width="@dimen/width_small_spinner"
         android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:minHeight="48dp"
+        android:layout_marginStart="@dimen/margin_middle"
+        android:minHeight="@dimen/margin_big"
         app:layout_constraintStart_toEndOf="@+id/editTextNumberCalcCurrencyFragmentValueExchangeDown"
         app:layout_constraintTop_toTopOf="@+id/editTextNumberCalcCurrencyFragmentValueExchangeDown" />
 
@@ -70,9 +69,9 @@
         android:id="@+id/tableLayoutExchangeValues"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="8dp"
+        android:layout_marginStart="@dimen/margin_tiny"
+        android:layout_marginTop="@dimen/margin_small"
+        android:layout_marginEnd="@dimen/margin_tiny"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextNumberCalcCurrencyFragmentValueExchangeDown"
@@ -84,8 +83,8 @@
         android:id="@+id/buttonCalcCurrencyFragmentUpdateExchange"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="Обновить курс"
+        android:layout_marginTop="@dimen/margin_small"
+        android:text="@string/text_update_exchange_rate"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tableLayoutExchangeValues" />
@@ -94,12 +93,13 @@
         android:id="@+id/imageButtonCalcCurrencyFragmentCountValueByExchangeRate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="#00FFFFFF"
+        android:background="@color/transparent"
         android:rotation="90"
         app:layout_constraintBottom_toTopOf="@+id/editTextNumberCalcCurrencyFragmentValueExchangeDown"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextNumberCalcCurrencyFragmentValueExchangeUp"
-        app:srcCompat="@android:drawable/ic_media_pause" />
+        app:srcCompat="@android:drawable/ic_media_pause"
+        android:contentDescription="@string/text_update_exchange_rate" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

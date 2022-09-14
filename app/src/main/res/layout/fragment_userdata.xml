@@ -22,23 +22,23 @@
         <TableRow
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginBottom="15dp">
+            android:layout_marginBottom="@dimen/margin_small">
 
             <TextView
-                android:id="@+id/textView14"
+                android:id="@+id/textViewUserDataFragmentHintUserName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Имя пользователя: "
-                android:textColor="#000000"
-                android:textSize="20sp" />
+                android:text="@string/text_username_with_colon"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_size_big" />
 
             <TextView
-                android:id="@+id/textViewUserNameDataFragment"
+                android:id="@+id/textViewUserDataFragmentUserName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="local"
-                android:textColor="#000000"
-                android:textSize="20sp" />
+                android:text="@string/text_nav_header_username"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_size_big" />
         </TableRow>
 
         <TableRow
@@ -46,21 +46,21 @@
             android:layout_height="match_parent">
 
             <TextView
-                android:id="@+id/textView18"
+                android:id="@+id/textViewUserDataFragmentHintEmail"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="end"
-                android:text="Email: "
-                android:textColor="#000000"
-                android:textSize="20sp" />
+                android:text="@string/text_user_email_with_colon"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_size_big" />
 
             <TextView
-                android:id="@+id/textViewEmailUserDataFragment"
+                android:id="@+id/textViewUserDataFragmentEmail"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="local@local.ru"
-                android:textColor="#000000"
-                android:textSize="20sp"/>
+                android:text="@string/text_nav_header_user_email"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_size_big"/>
         </TableRow>
     </TableLayout>
 
@@ -68,7 +68,7 @@
         android:id="@+id/buttonUserDataFragmentChangePassword"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Сменить пароль"
+        android:text="@string/text_change_password"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
@@ -80,7 +80,7 @@
         android:id="@+id/buttonUserDataFragmentLogOut"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Выйти"
+        android:text="@string/text_log_out"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
@@ -92,7 +92,7 @@
         android:id="@+id/buttonUserDataFragmentRemoveAccount"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Удалить аккаунт"
+        android:text="@string/text_delete_account"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

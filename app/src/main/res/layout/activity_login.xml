@@ -5,34 +5,46 @@
     android:id="@+id/constrainLayoutLoginActivityMainLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#fef1a2"
+    android:background="@color/background_main_color"
     tools:context=".LoginScreen.LoginActivity">
+
+    <ImageView
+        android:id="@+id/imageViewLoginActivityImageApp"
+        android:layout_width="@dimen/width_login_imageApp"
+        android:layout_height="@dimen/height_login_imageApp"
+        android:contentDescription="@string/text_app_name"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.156"
+        app:srcCompat="@android:drawable/ic_menu_today"
+        tools:ignore="ImageContrastCheck" />
 
     <TextView
         android:id="@+id/textViewLoginActivityEmailAddress"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
         android:text="@string/text_user_email"
-        android:textColor="#33691E"
-        android:textSize="16sp"
+        android:textColor="@color/black"
+        android:textSize="@dimen/text_size_more_middle"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.133"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/editTextLoginActivityTextEmailAddress"
         app:layout_constraintTop_toBottomOf="@+id/imageViewLoginActivityImageApp"
-        app:layout_constraintVertical_bias="0.056" />
+        app:layout_constraintVertical_bias="0.054" />
 
     <EditText
         android:id="@+id/editTextLoginActivityTextEmailAddress"
-        android:layout_width="270dp"
-        android:layout_height="48dp"
-        android:layout_marginStart="16dp"
+        android:layout_width="@dimen/width_login_editText"
+        android:layout_height="@dimen/height_login_editText"
+        android:layout_marginStart="@dimen/margin_small"
         android:autofillHints=""
         android:ems="10"
         android:hint="@string/text_user_email"
         android:inputType="textEmailAddress"
-        android:minHeight="48dp"
+        android:minHeight="@dimen/height_min_editText"
         android:textColorHint="#33691E"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -40,33 +52,32 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textViewLoginActivityEmailAddress"
         app:layout_constraintVertical_bias="0.0"
-        tools:ignore="DuplicateSpeakableTextCheck" />
+        tools:ignore="DuplicateSpeakableTextCheck,TextContrastCheck" />
 
     <TextView
         android:id="@+id/textViewLoginActivityPassword"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
         android:text="@string/text_password"
-        android:textColor="#33691E"
-        android:textSize="16sp"
+        android:textColor="@color/black"
+        android:textSize="@dimen/text_size_more_middle"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.14"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/editTextTextPassword"
         app:layout_constraintTop_toBottomOf="@+id/editTextLoginActivityTextEmailAddress"
-        app:layout_constraintVertical_bias="0.062" />
+        app:layout_constraintVertical_bias="0.059" />
 
     <EditText
         android:id="@+id/editTextTextPassword"
-        android:layout_width="270dp"
-        android:layout_height="48dp"
-        android:layout_marginStart="16dp"
-        android:autofillHints=""
+        android:layout_width="@dimen/width_login_editText"
+        android:layout_height="@dimen/height_login_editText"
+        android:layout_marginStart="@dimen/margin_small"
+        android:autofillHints="password"
         android:ems="10"
         android:hint="@string/text_password"
         android:inputType="textPassword"
-        android:minHeight="48dp"
+        android:minHeight="@dimen/height_min_editText"
         android:textColorHint="#33691E"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -93,8 +104,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/text_registration"
-        android:textColor="#33691E"
-        android:textSize="16sp"
+        android:textColor="@color/black"
+        android:textSize="@dimen/text_size_more_middle"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
@@ -108,25 +119,12 @@
         android:layout_height="wrap_content"
         android:gravity="center"
         android:text="@string/text_continue_local"
-        android:textColor="#33691E"
-        android:textSize="16sp"
+        android:textColor="@color/black"
+        android:textSize="@dimen/text_size_more_middle"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textViewLoginActivityRegistration"
         app:layout_constraintVertical_bias="0.267" />
-
-    <ImageView
-        android:id="@+id/imageViewLoginActivityImageApp"
-        android:layout_width="67dp"
-        android:layout_height="71dp"
-        android:contentDescription="@string/text_app_name"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.156"
-        app:srcCompat="@android:drawable/ic_menu_today"
-        tools:ignore="ImageContrastCheck" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

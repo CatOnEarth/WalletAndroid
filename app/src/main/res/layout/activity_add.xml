@@ -5,188 +5,187 @@
     android:id="@+id/constrainLayoutAddActivityMainLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#fef1a2"
+    android:background="@color/background_main_color"
     tools:context=".MainScreen.activities.AddActivity">
 
     <TextView
         android:id="@+id/textViewAddActivityCategory"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_middle"
+        android:layout_marginTop="@dimen/margin_small"
         android:text="@string/text_category"
-        android:textColor="#33691E"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:textColor="@color/black"
+        android:textSize="@dimen/text_size_tiny"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.084"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.037" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Spinner
         android:id="@+id/spinnerAddActivityCategory"
-        android:layout_width="270dp"
-        android:layout_height="48dp"
+        android:layout_width="@dimen/width_large_spinner"
+        android:layout_height="@dimen/height_large_spinner"
+        android:layout_marginStart="@dimen/margin_small"
+        android:contentDescription="@string/text_categories_revenue"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.203"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.067" />
+        app:layout_constraintTop_toBottomOf="@+id/textViewAddActivityCategory"
+        app:layout_constraintVertical_bias="0.0" />
 
     <Button
         android:id="@+id/buttonAddActivityAddCategory"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_tiny"
         android:text="@string/text_add"
-        android:textSize="12sp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:textSize="@dimen/text_size_tiny"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.523"
         app:layout_constraintStart_toEndOf="@+id/spinnerAddActivityCategory"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.062" />
+        app:layout_constraintTop_toTopOf="@+id/spinnerAddActivityCategory"
+        tools:ignore="DuplicateSpeakableTextCheck" />
 
     <TextView
         android:id="@+id/textViewAddActivityDateSelect"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_small"
+        android:layout_marginTop="@dimen/margin_tiny"
         android:text="@string/text_select_date"
-        android:textColor="#33691E"
+        android:textColor="@color/black"
+        android:textSize="@dimen/text_size_tiny"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.092"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.179" />
+        app:layout_constraintTop_toBottomOf="@+id/spinnerAddActivityCategory"
+        app:layout_constraintVertical_bias="0.045" />
 
     <TextView
         android:id="@+id/textViewAddActivityDateSelector"
         android:layout_width="wrap_content"
-        android:layout_height="37dp"
-        android:textSize="24sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.099"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_middle"
+        android:textSize="@dimen/text_size_large"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.211" />
+        app:layout_constraintTop_toBottomOf="@+id/textViewAddActivityDateSelect" />
 
     <TextView
         android:id="@+id/textViewAddActivityValue"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_middle"
+        android:layout_marginTop="@dimen/margin_small"
         android:text="@string/text_value"
-        android:textColor="#33691E"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.079"
+        android:textColor="@color/black"
+        android:textSize="@dimen/text_size_tiny"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.313" />
+        app:layout_constraintTop_toBottomOf="@+id/textViewAddActivityDateSelector" />
 
     <EditText
         android:id="@+id/editTextNumberAddActivityValue"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="@dimen/width_value_editText"
+        android:layout_height="@dimen/height_value_editText"
+        android:layout_marginStart="@dimen/margin_middle"
         android:autofillHints="creditCardNumber"
         android:ems="10"
+        android:hint="@string/text_value"
         android:inputType="number|textMultiLine"
         android:maxLength="10"
-        android:minHeight="48dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.144"
+        android:minHeight="@dimen/height_min_editText"
+        android:textColorHint="#33691E"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.352"
-        tools:ignore="LabelFor" />
+        app:layout_constraintTop_toBottomOf="@+id/textViewAddActivityValue"
+        tools:ignore="LabelFor,DuplicateSpeakableTextCheck" />
 
     <TextView
         android:id="@+id/textViewAddActivityCurrency"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_small"
         android:text="@string/text_currency"
-        android:textColor="#33691E"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:textColor="@color/black"
+        android:textSize="@dimen/text_size_tiny"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.698"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.313" />
+        app:layout_constraintHorizontal_bias="0.588"
+        app:layout_constraintStart_toEndOf="@+id/textViewAddActivityValue"
+        app:layout_constraintTop_toBottomOf="@+id/textViewAddActivityDateSelector" />
 
     <Spinner
         android:id="@+id/spinnerAddActivityCurrency"
-        android:layout_width="149dp"
-        android:layout_height="48dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.961"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.352" />
+        android:layout_width="@dimen/width_small_spinner"
+        android:layout_height="@dimen/height_small_spinner"
+        android:layout_marginStart="@dimen/margin_tiny"
+        android:contentDescription="@string/text_currency"
+        app:layout_constraintStart_toEndOf="@+id/editTextNumberAddActivityValue"
+        app:layout_constraintTop_toBottomOf="@+id/textViewAddActivityCurrency"
+        tools:ignore="DuplicateSpeakableTextCheck" />
 
     <TextView
         android:id="@+id/textViewAddActivityStorageLocation"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_middle"
+        android:layout_marginTop="@dimen/margin_small"
         android:text="@string/text_storage_location"
-        android:textColor="#33691E"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:textColor="@color/black"
+        android:textSize="@dimen/text_size_tiny"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.095"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.469" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextNumberAddActivityValue" />
 
     <Spinner
         android:id="@+id/spinnerAddActivityStorageLocation"
-        android:layout_width="270dp"
-        android:layout_height="48dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_width="@dimen/width_large_spinner"
+        android:layout_height="@dimen/height_large_spinner"
+        android:layout_marginStart="@dimen/margin_middle"
+        android:contentDescription="@string/text_storage_location"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.205"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.514" />
+        app:layout_constraintTop_toBottomOf="@+id/textViewAddActivityStorageLocation"
+        tools:ignore="DuplicateSpeakableTextCheck" />
 
     <Button
         android:id="@+id/buttonAddActivityAddStorageLocation"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_tiny"
+        android:layout_marginEnd="@dimen/margin_small"
         android:text="@string/text_add"
-        android:textSize="12sp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:textSize="@dimen/text_size_tiny"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.968"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.512" />
+        app:layout_constraintStart_toEndOf="@+id/spinnerAddActivityStorageLocation"
+        app:layout_constraintTop_toTopOf="@+id/spinnerAddActivityStorageLocation" />
 
     <EditText
         android:id="@+id/editTextAddActivityTextDescription"
-        android:layout_width="373dp"
-        android:layout_height="155dp"
+        android:layout_width="@dimen/height_desc_editText"
+        android:layout_height="@dimen/width_desc_editText"
+        android:layout_marginTop="@dimen/margin_middle"
         android:autofillHints=""
         android:ems="10"
         android:hint="@string/text_description"
         android:inputType="textPersonName|textMultiLine"
         android:maxLength="128"
-        android:textColorHint="#33691E"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:textColorHint="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.578"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.788" />
+        app:layout_constraintTop_toBottomOf="@+id/spinnerAddActivityStorageLocation" />
 
     <Button
         android:id="@+id/buttonAddActivitySave"
-        android:layout_width="223dp"
-        android:layout_height="48dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:text="@string/text_save"
+        android:textSize="@dimen/text_size_tiny"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.515"
+        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.934" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextAddActivityTextDescription"
+        app:layout_constraintVertical_bias="0.228" />
 </androidx.constraintlayout.widget.ConstraintLayout>

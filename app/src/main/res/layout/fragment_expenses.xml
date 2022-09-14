@@ -5,7 +5,7 @@
     android:id="@+id/constrainLayoutExpensesFragmentMainLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#fef1a2"
+    android:background="@color/background_main_color"
     tools:context=".MainScreen.ui.expenses.ExpensesFragment">
 
     <androidx.recyclerview.widget.RecyclerView

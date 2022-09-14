@@ -4,17 +4,17 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#fef1a2"
+    android:background="@color/background_main_color"
     tools:context=".MainScreen.ui.home.HomeFragment">
 
     <TextView
         android:id="@+id/textViewHomeFragmentRevenue"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:text="Доходы"
-        android:textColor="#000000"
-        android:textSize="26sp"
+        android:layout_marginTop="@dimen/margin_tiny"
+        android:text="@string/text_revenue"
+        android:textColor="@color/black"
+        android:textSize="@dimen/text_size_very_large"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -23,18 +23,19 @@
         android:id="@+id/buttonHomeFragmentAddRevenue"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:background="#00FFFFFF"
+        android:layout_marginStart="@dimen/margin_small"
+        android:background="@color/transparent"
         android:src="@android:drawable/ic_input_add"
         app:layout_constraintStart_toEndOf="@+id/textViewHomeFragmentRevenue"
-        app:layout_constraintTop_toTopOf="@+id/textViewHomeFragmentRevenue" />
+        app:layout_constraintTop_toTopOf="@+id/textViewHomeFragmentRevenue"
+        android:contentDescription="@string/text_add" />
 
     <TableLayout
         android:id="@+id/tableLayoutHomeFragmentTableRevenue"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginStart="@dimen/margin_tiny"
+        android:layout_marginTop="@dimen/margin_small"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.251"
         app:layout_constraintStart_toStartOf="parent"
@@ -44,28 +45,28 @@
         <TableRow
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_margin="5dp">
+            android:layout_margin="@dimen/margin_very_tiny">
 
             <TextView
                 android:id="@+id/textView13"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_margin="10dp"
+                android:layout_margin="@dimen/margin_tiny"
                 android:layout_weight="0.3"
                 android:gravity="center|end"
-                android:text="Рубли:"
-                android:textColor="#000000"
-                android:textSize="20sp" />
+                android:text="@string/text_currency_russian_ruble_with_colon"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_size_big" />
 
             <TextView
                 android:id="@+id/textViewHomeFragmentRevenueDisplayRubles"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_margin="10dp"
+                android:layout_margin="@dimen/margin_tiny"
                 android:layout_weight="1"
                 android:gravity="center|start"
-                android:textColor="#000000"
-                android:textSize="20sp" />
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_size_big" />
         </TableRow>
 
         <TableRow
@@ -76,22 +77,22 @@
                 android:id="@+id/textViewHomeFragmentRevenueDollars"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_margin="10dp"
+                android:layout_margin="@dimen/margin_tiny"
                 android:layout_weight="0.3"
                 android:gravity="center|end"
-                android:text="Доллары:"
-                android:textColor="#000000"
-                android:textSize="20sp" />
+                android:text="@string/text_currency_dollar_usa_with_colon"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_size_big" />
 
             <TextView
                 android:id="@+id/textViewHomeFragmentRevenueDisplayDollars"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_margin="10dp"
+                android:layout_margin="@dimen/margin_tiny"
                 android:layout_weight="1"
                 android:gravity="center|start"
-                android:textColor="#000000"
-                android:textSize="20sp" />
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_size_big" />
         </TableRow>
 
         <TableRow
@@ -105,19 +106,19 @@
                 android:layout_margin="10dp"
                 android:layout_weight="0.3"
                 android:gravity="center|end"
-                android:text="Евро:"
-                android:textColor="#000000"
-                android:textSize="20sp" />
+                android:text="@string/text_currency_euro_with_colon"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_size_big" />
 
             <TextView
                 android:id="@+id/textViewHomeFragmentRevenueDisplayEuro"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_margin="10dp"
+                android:layout_margin="@dimen/margin_tiny"
                 android:layout_weight="1"
                 android:gravity="center|start"
-                android:textColor="#000000"
-                android:textSize="20sp" />
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_size_big" />
         </TableRow>
 
         <TableRow
@@ -128,22 +129,22 @@
                 android:id="@+id/textViewHomeFragmentRevenueTurkishLira"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_margin="10dp"
+                android:layout_margin="@dimen/margin_tiny"
                 android:layout_weight="0.3"
                 android:gravity="center|end"
-                android:text="Турецкая лира:"
-                android:textColor="#000000"
-                android:textSize="20sp" />
+                android:text="@string/text_currency_turkish_lira_with_colon"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_size_big" />
 
             <TextView
                 android:id="@+id/textViewHomeFragmentRevenueDisplayLira"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_margin="10dp"
+                android:layout_margin="@dimen/margin_tiny"
                 android:layout_weight="1"
                 android:gravity="center|start"
-                android:textColor="#000000"
-                android:textSize="20sp" />
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_size_big" />
         </TableRow>
 
     </TableLayout>
@@ -164,10 +165,10 @@
         android:id="@+id/textViewHomeFragmentExpenses"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="Расходы"
-        android:textColor="#000000"
-        android:textSize="26sp"
+        android:layout_marginTop="@dimen/margin_small"
+        android:text="@string/text_expenses"
+        android:textColor="@color/black"
+        android:textSize="@dimen/text_size_large"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tableLayoutHomeFragmentTableRevenue" />
@@ -176,17 +177,18 @@
         android:id="@+id/buttonHomeFragmentAddExpenses"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:background="#00FFFFFF"
+        android:layout_marginStart="@dimen/margin_small"
+        android:background="@color/transparent"
         android:src="@android:drawable/ic_input_add"
         app:layout_constraintStart_toEndOf="@+id/textViewHomeFragmentExpenses"
-        app:layout_constraintTop_toTopOf="@+id/textViewHomeFragmentExpenses" />
+        app:layout_constraintTop_toTopOf="@+id/textViewHomeFragmentExpenses"
+        android:contentDescription="@string/text_add" />
 
     <TableLayout
         android:id="@+id/tableLayoutHomeFragmentExpenses"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="@dimen/margin_small"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.281"
         app:layout_constraintStart_toStartOf="parent"
@@ -201,22 +203,22 @@
                 android:id="@+id/textViewHomeFragmentExpensesRubles"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_margin="10dp"
+                android:layout_margin="@dimen/margin_tiny"
                 android:layout_weight="0.3"
                 android:gravity="center|end"
-                android:text="Рубли:"
-                android:textColor="#000000"
-                android:textSize="20sp" />
+                android:text="@string/text_currency_russian_ruble_with_colon"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_size_big" />
 
             <TextView
                 android:id="@+id/textViewHomeFragmentExpensesDisplayRubles"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_margin="10dp"
+                android:layout_margin="@dimen/margin_tiny"
                 android:layout_weight="1"
                 android:gravity="center|start"
-                android:textColor="#000000"
-                android:textSize="20sp" />
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_size_big" />
         </TableRow>
 
         <TableRow
@@ -227,22 +229,22 @@
                 android:id="@+id/textViewHomeFragmentExpensesDollars"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_margin="10dp"
+                android:layout_margin="@dimen/margin_tiny"
                 android:layout_weight="0.3"
                 android:gravity="center|end"
-                android:text="Доллары:"
-                android:textColor="#000000"
-                android:textSize="20sp" />
+                android:text="@string/text_currency_dollar_usa_with_colon"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_size_big" />
 
             <TextView
                 android:id="@+id/textViewHomeFragmentExpensesDisplayDollars"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_margin="10dp"
+                android:layout_margin="@dimen/margin_tiny"
                 android:layout_weight="1"
                 android:gravity="center|start"
-                android:textColor="#000000"
-                android:textSize="20sp" />
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_size_big" />
         </TableRow>
 
         <TableRow
@@ -253,22 +255,22 @@
                 android:id="@+id/textViewHomeFragmentExpensesEuro"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_margin="10dp"
+                android:layout_margin="@dimen/margin_tiny"
                 android:layout_weight="0.3"
                 android:gravity="center|end"
-                android:text="Евро:"
-                android:textColor="#000000"
-                android:textSize="20sp" />
+                android:text="@string/text_currency_euro_with_colon"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_size_big" />
 
             <TextView
                 android:id="@+id/textViewHomeFragmentExpensesDisplayEuro"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_margin="10dp"
+                android:layout_margin="@dimen/margin_tiny"
                 android:layout_weight="1"
                 android:gravity="center|start"
-                android:textColor="#000000"
-                android:textSize="20sp" />
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_size_big" />
         </TableRow>
 
         <TableRow
@@ -279,22 +281,22 @@
                 android:id="@+id/textViewHomeFragmentExpensesTurkishLira"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_margin="10dp"
+                android:layout_margin="@dimen/margin_tiny"
                 android:layout_weight="0.3"
                 android:gravity="center|end"
-                android:text="Турецкая лира:"
-                android:textColor="#000000"
-                android:textSize="20sp" />
+                android:text="@string/text_currency_turkish_lira_with_colon"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_size_big" />
 
             <TextView
                 android:id="@+id/textViewHomeFragmentExpensesDisplayLira"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_margin="10dp"
+                android:layout_margin="@dimen/margin_tiny"
                 android:layout_weight="1"
                 android:gravity="center|start"
-                android:textColor="#000000"
-                android:textSize="20sp" />
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_size_big" />
         </TableRow>
     </TableLayout>
 

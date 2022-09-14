@@ -5,6 +5,6 @@
         android:id="@+id/about_login_activity"
         android:icon="@android:drawable/ic_dialog_info"
         app:showAsAction="never"
-        android:title="@string/about">
+        android:title="@string/text_about_app">
     </item>
 </menu>

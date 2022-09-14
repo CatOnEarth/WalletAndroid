@@ -5,7 +5,7 @@
     android:id="@+id/constrainLayoutRevenueFragmentMainLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#fef1a2"
+    android:background="@color/background_main_color"
     tools:context=".MainScreen.ui.revenue.RevenueFragment">
 
     <androidx.recyclerview.widget.RecyclerView
