@@ -189,11 +189,11 @@ public class WalletActivity extends AppCompatActivity {
         ExchangeRate exchangeRate = response.body();
 
         assert exchangeRate != null;
-        ratesDAO.update(new Rates(CODE_TYPE_CURRENCY_DOLLAR - 1,
+        ratesDAO.update(new Rates(CODE_TYPE_CURRENCY_DOLLAR ,
                                 CODE_TYPE_CURRENCY_DOLLAR,       exchangeRate.getRates().getUSD()));
-        ratesDAO.update(new Rates(CODE_TYPE_CURRENCY_EURO - 1,
+        ratesDAO.update(new Rates(CODE_TYPE_CURRENCY_EURO,
                                 CODE_TYPE_CURRENCY_EURO,         exchangeRate.getRates().getEUR()));
-        ratesDAO.update(new Rates(CODE_TYPE_CURRENCY_TURKISH_LIRA - 1,
+        ratesDAO.update(new Rates(CODE_TYPE_CURRENCY_TURKISH_LIRA,
                                 CODE_TYPE_CURRENCY_TURKISH_LIRA, exchangeRate.getRates().getTRY()));
     }
 

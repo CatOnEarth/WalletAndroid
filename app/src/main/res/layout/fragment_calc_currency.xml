@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/background_main_color">
@@ -22,16 +23,19 @@
         android:layout_marginStart="@dimen/margin_small"
         android:layout_marginTop="@dimen/margin_big"
         android:ems="10"
+        android:hint="@string/text_value"
         android:inputType="number"
         android:minHeight="@dimen/height_min_editText"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="DuplicateSpeakableTextCheck" />
 
     <Spinner
         android:id="@+id/spinnerCalcCurrencyFragmentExchangeUp"
         android:layout_width="@dimen/width_small_spinner"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
+        android:contentDescription="@string/text_continue_local"
         android:minHeight="@dimen/height_min_editText"
         app:layout_constraintStart_toEndOf="@+id/editTextNumberCalcCurrencyFragmentValueExchangeUp"
         app:layout_constraintTop_toTopOf="@+id/editTextNumberCalcCurrencyFragmentValueExchangeUp" />
@@ -53,8 +57,10 @@
         android:layout_marginStart="@dimen/margin_small"
         android:layout_marginTop="@dimen/margin_large"
         android:ems="10"
+        android:hint="@string/text_value"
         android:inputType="number"
         android:minHeight="@dimen/height_min_editText"
+        android:textColorHint="#827717"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextNumberCalcCurrencyFragmentValueExchangeUp" />
 
@@ -63,46 +69,127 @@
         android:layout_width="@dimen/width_small_spinner"
         android:layout_height="@dimen/height_small_spinner"
         android:layout_marginStart="16dp"
+        android:contentDescription="@string/text_currency"
         android:minHeight="@dimen/margin_big"
         app:layout_constraintStart_toEndOf="@+id/editTextNumberCalcCurrencyFragmentValueExchangeDown"
         app:layout_constraintTop_toTopOf="@+id/editTextNumberCalcCurrencyFragmentValueExchangeDown" />
+
+    <TextView
+        android:id="@+id/textViewCalcCurrencyFragmentCurrentExchangeRate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="@string/text_current_exchange_rate"
+        android:textColor="@color/black"
+        android:textSize="@dimen/text_size_large"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonCalcCurrencyFragmentUpdateExchange" />
 
     <TableLayout
         android:id="@+id/tableLayoutExchangeValues"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/margin_tiny"
-        android:layout_marginTop="@dimen/margin_small"
-        android:layout_marginEnd="@dimen/margin_tiny"
+        android:layout_marginTop="20dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.241"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextNumberCalcCurrencyFragmentValueExchangeDown"
+        app:layout_constraintTop_toBottomOf="@+id/textViewCalcCurrencyFragmentCurrentExchangeRate"
         app:tabMode="scrollable">
 
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="@dimen/margin_very_tiny">
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="end"
+                android:text="@string/text_currency_dollar_usa_with_colon"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_size_big" />
+
+            <TextView
+                android:id="@+id/textViewCalcCurrencyFragmentCurrentExchangeRateDollar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_size_big"/>
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="end"
+                android:text="@string/text_currency_euro_with_colon"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_size_big" />
+
+            <TextView
+                android:id="@+id/textViewCalcCurrencyFragmentCurrentExchangeRateEuro"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_size_big"/>
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/textView6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="end"
+                android:text="@string/text_currency_turkish_lira_with_colon"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_size_big" />
+
+            <TextView
+                android:id="@+id/textViewCalcCurrencyFragmentCurrentExchangeRateTurkishLira"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_size_big"/>
+        </TableRow>
     </TableLayout>
 
     <Button
         android:id="@+id/buttonCalcCurrencyFragmentUpdateExchange"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/margin_small"
+        android:layout_marginTop="24dp"
         android:text="@string/text_update_exchange_rate"
         android:textSize="@dimen/text_size_tiny"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tableLayoutExchangeValues" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextNumberCalcCurrencyFragmentValueExchangeDown"
+        tools:ignore="DuplicateSpeakableTextCheck" />
 
     <ImageButton
         android:id="@+id/imageButtonCalcCurrencyFragmentCountValueByExchangeRate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@color/transparent"
+        android:contentDescription="@string/text_update_exchange_rate"
+        android:minWidth="48dp"
+        android:minHeight="48dp"
         android:rotation="90"
         app:layout_constraintBottom_toTopOf="@+id/editTextNumberCalcCurrencyFragmentValueExchangeDown"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextNumberCalcCurrencyFragmentValueExchangeUp"
         app:srcCompat="@android:drawable/ic_media_pause"
-        android:contentDescription="@string/text_update_exchange_rate" />
+        tools:ignore="ImageContrastCheck" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

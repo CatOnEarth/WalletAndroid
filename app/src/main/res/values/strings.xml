@@ -69,5 +69,6 @@
     <string name="text_delete">Удалить</string>
     <string name="text_delete_category_warning">Будут удалены все элементы с этой категорией</string>
     <string name="text_delete_storage_location_warning">Будут удалены все элементы, в которых указано данное место хранения</string>
+    <string name="text_current_exchange_rate">Текущий курс</string>
 
 </resources>
