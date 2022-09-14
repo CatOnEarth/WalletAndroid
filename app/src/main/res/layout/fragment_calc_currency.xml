@@ -11,13 +11,14 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/margin_small"
         android:text="@string/text_input_value"
+        android:textSize="@dimen/text_size_more_middle"
         app:layout_constraintBottom_toTopOf="@+id/editTextNumberCalcCurrencyFragmentValueExchangeUp"
         app:layout_constraintStart_toStartOf="parent" />
 
     <com.snail.wallet.CustomViews.SyncEditText.SyncEditText
         android:id="@+id/editTextNumberCalcCurrencyFragmentValueExchangeUp"
         android:layout_width="@dimen/width_value_editText"
-        android:layout_height="wrap_content"
+        android:layout_height="@dimen/height_small_spinner"
         android:layout_marginStart="@dimen/margin_small"
         android:layout_marginTop="@dimen/margin_big"
         android:ems="10"
@@ -41,6 +42,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/margin_small"
         android:text="@string/text_input_value"
+        android:textSize="@dimen/text_size_more_middle"
         app:layout_constraintBottom_toTopOf="@+id/editTextNumberCalcCurrencyFragmentValueExchangeDown"
         app:layout_constraintStart_toStartOf="parent" />
 
@@ -59,7 +61,7 @@
     <Spinner
         android:id="@+id/spinnerCalcCurrencyFragmentExchangeDown"
         android:layout_width="@dimen/width_small_spinner"
-        android:layout_height="wrap_content"
+        android:layout_height="@dimen/height_small_spinner"
         android:layout_marginStart="@dimen/margin_middle"
         android:minHeight="@dimen/margin_big"
         app:layout_constraintStart_toEndOf="@+id/editTextNumberCalcCurrencyFragmentValueExchangeDown"
@@ -85,6 +87,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/margin_small"
         android:text="@string/text_update_exchange_rate"
+        android:textSize="@dimen/text_size_tiny"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tableLayoutExchangeValues" />

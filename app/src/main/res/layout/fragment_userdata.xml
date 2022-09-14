@@ -30,7 +30,7 @@
                 android:layout_height="wrap_content"
                 android:text="@string/text_username_with_colon"
                 android:textColor="@color/black"
-                android:textSize="@dimen/text_size_big" />
+                android:textSize="@dimen/text_size_large" />
 
             <TextView
                 android:id="@+id/textViewUserDataFragmentUserName"
@@ -38,7 +38,7 @@
                 android:layout_height="wrap_content"
                 android:text="@string/text_nav_header_username"
                 android:textColor="@color/black"
-                android:textSize="@dimen/text_size_big" />
+                android:textSize="@dimen/text_size_large" />
         </TableRow>
 
         <TableRow
@@ -52,7 +52,7 @@
                 android:gravity="end"
                 android:text="@string/text_user_email_with_colon"
                 android:textColor="@color/black"
-                android:textSize="@dimen/text_size_big" />
+                android:textSize="@dimen/text_size_large" />
 
             <TextView
                 android:id="@+id/textViewUserDataFragmentEmail"
@@ -60,7 +60,7 @@
                 android:layout_height="wrap_content"
                 android:text="@string/text_nav_header_user_email"
                 android:textColor="@color/black"
-                android:textSize="@dimen/text_size_big"/>
+                android:textSize="@dimen/text_size_large"/>
         </TableRow>
     </TableLayout>
 
@@ -69,6 +69,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/text_change_password"
+        android:textSize="@dimen/text_size_tiny"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
@@ -81,6 +82,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/text_log_out"
+        android:textSize="@dimen/text_size_tiny"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
@@ -93,6 +95,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/text_delete_account"
+        android:textSize="@dimen/text_size_tiny"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

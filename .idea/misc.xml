@@ -7,7 +7,7 @@
         <entry key="..\:/development/android/Wallet/app/src/main/res/layout-land/activity_login_portrain.xml" value="0.11623931623931624" />
         <entry key="..\:/development/android/Wallet/app/src/main/res/layout-land/fragment_home.xml" value="0.23560910307898258" />
         <entry key="..\:/development/android/Wallet/app/src/main/res/layout-port/activity_login_portrait.xml" value="0.14661654135338345" />
-        <entry key="..\:/development/android/Wallet/app/src/main/res/layout/activity_add.xml" value="0.75" />
+        <entry key="..\:/development/android/Wallet/app/src/main/res/layout/activity_add.xml" value="1.5" />
         <entry key="..\:/development/android/Wallet/app/src/main/res/layout/activity_adding_variants.xml" value="0.12318840579710146" />
         <entry key="..\:/development/android/Wallet/app/src/main/res/layout/activity_edit_setting.xml" value="0.30085470085470084" />
         <entry key="..\:/development/android/Wallet/app/src/main/res/layout/activity_expenses_add.xml" value="0.12318840579710146" />
@@ -19,7 +19,7 @@
         <entry key="..\:/development/android/Wallet/app/src/main/res/layout/adding_dialog.xml" value="0.365625" />
         <entry key="..\:/development/android/Wallet/app/src/main/res/layout/app_bar_wallet.xml" value="0.17831813576494426" />
         <entry key="..\:/development/android/Wallet/app/src/main/res/layout/content_wallet.xml" value="0.17831813576494426" />
-        <entry key="..\:/development/android/Wallet/app/src/main/res/layout/fragment_calc_currency.xml" value="0.33" />
+        <entry key="..\:/development/android/Wallet/app/src/main/res/layout/fragment_calc_currency.xml" value="1.319767441860465" />
         <entry key="..\:/development/android/Wallet/app/src/main/res/layout/fragment_category_expenses.xml" value="0.14667781027998328" />
         <entry key="..\:/development/android/Wallet/app/src/main/res/layout/fragment_category_revenue.xml" value="0.14667781027998328" />
         <entry key="..\:/development/android/Wallet/app/src/main/res/layout/fragment_expenses.xml" value="0.12318840579710146" />

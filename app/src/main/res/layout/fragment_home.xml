@@ -168,7 +168,7 @@
         android:layout_marginTop="@dimen/margin_small"
         android:text="@string/text_expenses"
         android:textColor="@color/black"
-        android:textSize="@dimen/text_size_large"
+        android:textSize="@dimen/text_size_very_large"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tableLayoutHomeFragmentTableRevenue" />
