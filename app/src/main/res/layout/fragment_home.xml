@@ -165,7 +165,7 @@
         android:id="@+id/textViewHomeFragmentExpenses"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/margin_small"
+        android:layout_marginTop="@dimen/margin_tiny"
         android:text="@string/text_expenses"
         android:textColor="@color/black"
         android:textSize="@dimen/text_size_very_large"

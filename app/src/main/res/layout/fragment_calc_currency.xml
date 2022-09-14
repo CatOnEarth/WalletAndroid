@@ -31,7 +31,7 @@
         android:id="@+id/spinnerCalcCurrencyFragmentExchangeUp"
         android:layout_width="@dimen/width_small_spinner"
         android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/margin_middle"
+        android:layout_marginStart="16dp"
         android:minHeight="@dimen/height_min_editText"
         app:layout_constraintStart_toEndOf="@+id/editTextNumberCalcCurrencyFragmentValueExchangeUp"
         app:layout_constraintTop_toTopOf="@+id/editTextNumberCalcCurrencyFragmentValueExchangeUp" />
@@ -62,7 +62,7 @@
         android:id="@+id/spinnerCalcCurrencyFragmentExchangeDown"
         android:layout_width="@dimen/width_small_spinner"
         android:layout_height="@dimen/height_small_spinner"
-        android:layout_marginStart="@dimen/margin_middle"
+        android:layout_marginStart="16dp"
         android:minHeight="@dimen/margin_big"
         app:layout_constraintStart_toEndOf="@+id/editTextNumberCalcCurrencyFragmentValueExchangeDown"
         app:layout_constraintTop_toTopOf="@+id/editTextNumberCalcCurrencyFragmentValueExchangeDown" />

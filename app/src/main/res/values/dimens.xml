@@ -14,7 +14,7 @@
   <dimen name="text_size_large">16sp</dimen>
   <dimen name="text_size_very_large">18sp</dimen>
 
-  <dimen name="width_small_spinner">50dp</dimen>
+  <dimen name="width_small_spinner">90dp</dimen>
   <dimen name="height_small_spinner">50dp</dimen>
 
   <dimen name="width_large_spinner">180dp</dimen>
@@ -23,7 +23,7 @@
   <dimen name="width_desc_editText">200dp</dimen>
   <dimen name="height_desc_editText">50dp</dimen>
 
-  <dimen name="width_value_editText">200dp</dimen>
+  <dimen name="width_value_editText">180dp</dimen>
   <dimen name="height_value_editText">50dp</dimen>
 
   <dimen name="width_login_editText">200dp</dimen>
@@ -49,7 +49,7 @@
   <dimen name="activity_horizontal_margin">16dp</dimen>
   <dimen name="activity_vertical_margin">16dp</dimen>
   <dimen name="nav_header_vertical_spacing">8dp</dimen>
-  <dimen name="nav_header_height">176dp</dimen>
+  <dimen name="nav_header_height">150dp</dimen>
 
   <dimen name="action_bar_height">46dp</dimen>
 </resources>

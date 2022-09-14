@@ -12,6 +12,6 @@
         android:layout_marginStart="@dimen/margin_small"
         android:gravity="center"
         android:textColor="@android:color/black"
-        android:textSize="@dimen/text_size_big" />
+        android:textSize="@dimen/text_size_large" />
 
 </RelativeLayout>
